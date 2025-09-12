@@ -1,0 +1,25 @@
+{
+  "publicSpots": [
+    {
+      "id": "unique_spot_name_1",
+      "name": "Name des Ortes (z.B. Vulkan Höhle)",
+      "lat": 50.5,
+      "lon": 30.3,
+      "icon": "https://url.zum/icon.png",
+      "image": "https://url.zum/bild.jpg",
+      "shortDescription": "Eine kurze Beschreibung für die kleine Karte im Slider.",
+      "longDescription": "Eine ausführliche Beschreibung, die im Pop-up-Fenster angezeigt wird. Hier können Sie auch <strong>HTML-Tags</strong> verwenden, um den Text zu formatieren."
+    },
+    {
+      "id": "another_unique_spot_2",
+      "name": "Ein weiterer Ort",
+      "lat": 65.1,
+      "lon": 78.9,
+      "icon": "https://url.zum/anderen_icon.png",
+      "image": "https://url.zum/anderen_bild.jpg",
+      "shortDescription": "Kurzinfo zu diesem zweiten Ort.",
+      "longDescription": "Hier folgt die detaillierte Beschreibung für den zweiten Ort, ebenfalls mit möglicher HTML-Formatierung."
+    }
+  ]
+}
+}
