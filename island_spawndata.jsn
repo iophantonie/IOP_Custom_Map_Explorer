@@ -106376,6 +106376,85 @@
                     "lon": 55.6
                 }
             }
+        ],
+        "Carcharodontosaurus": [
+            {
+                "isCave": true,
+                "max": {
+                    "lat": 39.5,
+                    "lon": 39.4
+                },
+                "min": {
+                    "lat": 39.500219,
+                    "lon": 39.4
+                }
+            },
+            {
+                "isCave": true,
+                "max": {
+                    "lat": 40,
+                    "lon": 40
+                },
+                "min": {
+                    "lat": 39.3,
+                    "lon": 39.000205
+                }
+            },
+            {
+                "isCave": false,
+                "max": {
+                    "lat": 30.200207,
+                    "lon": 32.2
+                },
+                "min": {
+                    "lat": 20.8,
+                    "lon": 21.6
+                }
+            },
+            {
+                "isCave": false,
+                "max": {
+                    "lat": 37.4,
+                    "lon": 61.700205
+                },
+                "min": {
+                    "lat": 33.1,
+                    "lon": 56.9
+                }
+            },
+            {
+                "isCave": false,
+                "max": {
+                    "lat": 36.3,
+                    "lon": 81.6
+                },
+                "min": {
+                    "lat": 32.000208,
+                    "lon": 76.8
+                }
+            },
+            {
+                "isCave": false,
+                "max": {
+                    "lat": 44.2,
+                    "lon": 41.1
+                },
+                "min": {
+                    "lat": 39.9,
+                    "lon": 36.300221
+                }
+            },
+            {
+                "isCave": false,
+                "max": {
+                    "lat": 23.600146,
+                    "lon": 55.3
+                },
+                "min": {
+                    "lat": 19.3,
+                    "lon": 50.5
+                }
+            }
         ]
     }
 }
