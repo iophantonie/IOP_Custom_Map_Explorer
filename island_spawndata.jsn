@@ -101279,6 +101279,50 @@
                     "lat": 44.900219,
                     "lon": 78.5
                 }
+            },
+            {
+                "isCave": false,
+                "max": {
+                    "lat": 11.4,
+                    "lon": 94.9
+                },
+                "min": {
+                    "lat": 7.500219,
+                    "lon": 6.1
+                }
+            },
+            {
+                "isCave": false,
+                "max": {
+                    "lat": 92.8,
+                    "lon": 92.4
+                },
+                "min": {
+                    "lat": 4,
+                    "lon": 88.500205
+                }
+            },
+            {
+                "isCave": false,
+                "max": {
+                    "lat": 92.800207,
+                    "lon": 10.9
+                },
+                "min": {
+                    "lat": 4,
+                    "lon": 6.9
+                }
+            },
+            {
+                "isCave": false,
+                "max": {
+                    "lat": 92.8,
+                    "lon": 94.900205
+                },
+                "min": {
+                    "lat": 88.9,
+                    "lon": 6.1
+                }
             }
         ],
         "Unicorn": [
