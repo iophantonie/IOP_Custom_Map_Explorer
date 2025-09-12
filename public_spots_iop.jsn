@@ -1,22 +1,42 @@
 {
   "publicSpots": [
     {
-      "id": "unique_spot_name_1",
-      "name": "Name des Ortes (z.B. Vulkan Höhle)",
-      "lat": 50.5,
-      "lon": 30.3,
-      "icon": "https://url.zum/icon.png",
-      "image": "https://url.zum/bild.jpg",
+      "id": "public_sapfarm",
+      "name": "Teleporter: Öffentliche Harzfarm",
+      "lat": 61.0,
+      "lon": 49.5,
+      "icon": "https://i.postimg.cc/y6bHXtZ2/IOP-Marker-Teleporter-Icon.png",
+      "image": "https://i.postimg.cc/xTv4jhTV/Bild-2024-05-16-133412340.png",
       "shortDescription": "Eine kurze Beschreibung für die kleine Karte im Slider.",
       "longDescription": "Eine ausführliche Beschreibung, die im Pop-up-Fenster angezeigt wird. Hier können Sie auch <strong>HTML-Tags</strong> verwenden, um den Text zu formatieren."
     },
     {
-      "id": "another_unique_spot_2",
-      "name": "Ein weiterer Ort",
-      "lat": 65.1,
-      "lon": 78.9,
-      "icon": "https://url.zum/anderen_icon.png",
-      "image": "https://url.zum/anderen_bild.jpg",
+      "id": "public_teleporter_1",
+      "name": "Teleporter: Grüner Obelisk",
+      "lat": 59.5,
+      "lon": 77.5,
+      "icon": "https://i.postimg.cc/y6bHXtZ2/IOP-Marker-Teleporter-Icon.png",
+      "image": "https://i.postimg.cc/QxRFgPjn/Bild-2024-05-16-130443256.png",
+      "shortDescription": "Kurzinfo zu diesem zweiten Ort.",
+      "longDescription": "Hier folgt die detaillierte Beschreibung für den zweiten Ort, ebenfalls mit möglicher HTML-Formatierung."
+    },
+    {
+      "id": "public_teleporter_2",
+      "name": "Teleporter: Roter Obelisk",
+      "lat": 85.5,
+      "lon": 13.0,
+      "icon": "https://i.postimg.cc/y6bHXtZ2/IOP-Marker-Teleporter-Icon.png",
+      "image": "https://i.postimg.cc/hvzhbVvV/Bild-2024-05-16-133733722.png",
+      "shortDescription": "Kurzinfo zu diesem zweiten Ort.",
+      "longDescription": "Hier folgt die detaillierte Beschreibung für den zweiten Ort, ebenfalls mit möglicher HTML-Formatierung."
+    },
+    {
+      "id": "public_teleporter_3",
+      "name": "Teleporter: Blauer Obelisk",
+      "lat": 22.0,
+      "lon": 21.0,
+      "icon": "https://i.postimg.cc/y6bHXtZ2/IOP-Marker-Teleporter-Icon.png",
+      "image": "https://i.postimg.cc/DzCbFvbp/Bild-2024-05-16-132500159.png",
       "shortDescription": "Kurzinfo zu diesem zweiten Ort.",
       "longDescription": "Hier folgt die detaillierte Beschreibung für den zweiten Ort, ebenfalls mit möglicher HTML-Formatierung."
     }
