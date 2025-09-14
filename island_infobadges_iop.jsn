@@ -30,21 +30,22 @@
             "Stärke"
         ]
     },
-  "specialInfo": {
-    "Kategorie": "S-Kreaturen",
-    "Liste": [
-      "S-Rhyniognatha",
-      "S-Otter",
-      "S-Megalodon",
-      "S-Basilosaurus",
-      "S-Therizinosaurus",
-      "S-Allosaurus",
-      "S-Ceratosaurus",
-    ]
-    "OnEachMap_Liste": [
-      "S-Queen Bee",
-      "S-Unicorn",
-      "S-Cat",
-      "S-Fantastic Tames"
-  }
+    "specialInfo": {
+        "Kategorie": "S-Kreaturen",
+        "Liste": [
+            "S-Rhyniognatha",
+            "S-Otter",
+            "S-Megalodon",
+            "S-Basilosaurus",
+            "S-Therizinosaurus",
+            "S-Allosaurus",
+            "S-Ceratosaurus"
+        ],
+        "OnEachMap_Liste": [
+            "S-Queen Bee",
+            "S-Unicorn",
+            "S-Cat",
+            "S-Fantastic Tames"
+        ]
+    }
 }
