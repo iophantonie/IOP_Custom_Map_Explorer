@@ -1,0 +1,30 @@
+{
+  "infoBadges": {
+    "Kartenart": "Vanilla Karte",
+    "Bosse": [
+      "Broodmother",
+      "Megapithecus",
+      "Dragon",
+      "Overseer"
+    ],
+    "Besonderheiten": [
+      "Tek-Höhle",
+      "Aufstieg"
+    ],
+    "Höhlen": [
+      "10"
+    ],
+    "Artefakte": [
+      "Jäger",
+      "Meute",
+      "Massiv",
+      "Verstand",
+      "Schlau",
+      "Himmelsfürst",
+      "Verschlinger",
+      "Brutal",
+      "Immunität",
+      "Stärke"
+    ]
+  }
+}
