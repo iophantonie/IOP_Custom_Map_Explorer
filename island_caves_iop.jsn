@@ -5,28 +5,28 @@
       "name": "Höhle des Südens",
       "lat": 80.2,
       "lon": 53.5,
-      "icon": "[https://beispiel.com/icon/cave_icon.png](https://beispiel.com/icon/cave_icon.png)",
-      "image": "[https://beispiel.com/image/cave_south.jpg](https://beispiel.com/image/cave_south.jpg)",
+      "icon": "https://ark.wiki.gg/images/CaveEntranceIcon.png?31c6d3",
+      "image": "https://i.postimg.cc/Fsfddxfy/Bild-2024-06-30-171335914.png",
       "difficulty": "Leicht",
       "description": "Diese Höhle ist relativ einfach zu navigieren und beherbergt hauptsächlich schwächere Kreaturen. Sie ist ein guter Ausgangspunkt für neue Abenteurer.",
       "equipment": [
         {
           "name": "Fackel",
-          "iconUrl": "[https://beispiel.com/icon/torch.png](https://beispiel.com/icon/torch.png)"
+          "iconUrl": "https://static.wikia.nocookie.net/arksurvivalevolved_gamepedia/images/b/b2/Torch.png/revision/latest?cb=20150615120234"
         },
         {
           "name": "Spitzhacke",
-          "iconUrl": "[https://beispiel.com/icon/pickaxe.png](https://beispiel.com/icon/pickaxe.png)"
+          "iconUrl": "https://ark.wiki.gg/images/thumb/9/9f/Metal_Pick.png/228px-Metal_Pick.png?afd47d"
         }
       ],
       "tames": [
         {
           "name": "Raptor",
-          "iconUrl": "[https://beispiel.com/icon/raptor.png](https://beispiel.com/icon/raptor.png)"
+          "iconUrl": "https://ark-unity.com/images/icons/Empty_RaptorHead_Icon.webp"
         },
         {
           "name": "Baryonyx",
-          "iconUrl": "[https://beispiel.com/icon/baryonyx.png](https://beispiel.com/icon/baryonyx.png)"
+          "iconUrl": "https://ark-unity.com/images/icons/Empty_BaryonyxHead_Icon.webp"
         }
       ],
       "creatures": [
