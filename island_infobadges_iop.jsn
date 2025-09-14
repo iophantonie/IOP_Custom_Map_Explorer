@@ -1,33 +1,50 @@
 {
-  "infoBadges": {
-    "Kartenart": "Vanilla Karte",
-    "Bosse": [
-      "Broodmother",
-      "Megapithecus",
-      "Dragon",
-      "Overseer"
-    ],
-    "Besonderheiten": [
-      "Tek-Höhle",
-      "Aufstieg"
-    ],
-    "Öffentliche Farmen & Fallen": [
-      "Öffentliche Harzfarm"
-    ],
-    "Höhlen": [
-      "10"
-    ],
-    "Artefakte": [
-      "Jäger",
-      "Meute",
-      "Massiv",
-      "Verstand",
-      "Schlau",
-      "Himmelsfürst",
-      "Verschlinger",
-      "Brutal",
-      "Immunität",
-      "Stärke"
+    "infoBadges": {
+        "Kartenart": "Vanilla Karte",
+        "Bosse": [
+            "Broodmother",
+            "Megapithecus",
+            "Dragon",
+            "Overseer"
+        ],
+        "Besonderheiten": [
+            "Tek-Höhle",
+            "Aufstieg"
+        ],
+        "Öffentliche Farmen & Fallen": [
+            "Öffentliche Harzfarm"
+        ],
+        "Höhlen": [
+            "10"
+        ],
+        "Artefakte": [
+            "Jäger",
+            "Meute",
+            "Massiv",
+            "Verstand",
+            "Schlau",
+            "Himmelsfürst",
+            "Verschlinger",
+            "Brutal",
+            "Immunität",
+            "Stärke"
+        ]
+    },
+  "specialInfo": {
+    "Kategorie": "S-Kreaturen",
+    "Liste": [
+      "S-Rhyniognatha",
+      "S-Otter",
+      "S-Megalodon",
+      "S-Basilosaurus",
+      "S-Therizinosaurus",
+      "S-Allosaurus",
+      "S-Ceratosaurus",
     ]
+    "OnEachMap_Liste": [
+      "S-Queen Bee",
+      "S-Unicorn",
+      "S-Cat",
+      "S-Fantastic Tames"
   }
 }
