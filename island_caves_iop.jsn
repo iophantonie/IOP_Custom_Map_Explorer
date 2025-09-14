@@ -1,0 +1,49 @@
+{
+  "caveSpots": [
+    {
+      "id": "lower_south",
+      "name": "Höhle des Südens",
+      "lat": 80.2,
+      "lon": 53.5,
+      "icon": "[https://beispiel.com/icon/cave_icon.png](https://beispiel.com/icon/cave_icon.png)",
+      "image": "[https://beispiel.com/image/cave_south.jpg](https://beispiel.com/image/cave_south.jpg)",
+      "difficulty": "Leicht",
+      "description": "Diese Höhle ist relativ einfach zu navigieren und beherbergt hauptsächlich schwächere Kreaturen. Sie ist ein guter Ausgangspunkt für neue Abenteurer.",
+      "equipment": [
+        {
+          "name": "Fackel",
+          "iconUrl": "[https://beispiel.com/icon/torch.png](https://beispiel.com/icon/torch.png)"
+        },
+        {
+          "name": "Spitzhacke",
+          "iconUrl": "[https://beispiel.com/icon/pickaxe.png](https://beispiel.com/icon/pickaxe.png)"
+        }
+      ],
+      "tames": [
+        {
+          "name": "Raptor",
+          "iconUrl": "[https://beispiel.com/icon/raptor.png](https://beispiel.com/icon/raptor.png)"
+        },
+        {
+          "name": "Baryonyx",
+          "iconUrl": "[https://beispiel.com/icon/baryonyx.png](https://beispiel.com/icon/baryonyx.png)"
+        }
+      ],
+      "creatures": [
+        "Araneo",
+        "Onyc",
+        "Piranha",
+        "Sarcosuchus",
+        "Titanoboa"
+      ],
+      "resources": [
+        "Kristall",
+        "Metall",
+        "Obsidian"
+      ],
+      "artifacts": [
+        "Artefakt des Jägers"
+      ]
+    }
+  ]
+}
