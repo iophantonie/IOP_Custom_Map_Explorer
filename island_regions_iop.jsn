@@ -1,0 +1,34 @@
+{
+  "regions": [
+    {
+      "id": "region_ice",
+      "name": "Eis Gebiet",
+      "imageUrl": "https://i.postimg.cc/0NK46yPV/Island-Ice-Region.png"
+    },
+    {
+      "id": "region_redwood",
+      "name": "Redwood",
+      "imageUrl": "https://i.postimg.cc/9MKgc3vv/Island-Redwood-Region.png"
+    },
+    {
+      "id": "region_swamp",
+      "name": "Sumpf",
+      "imageUrl": "https://i.postimg.cc/3xtBK5Gn/Island-Swamp-Region.png"
+    },
+    {
+      "id": "region_vulcan",
+      "name": "Vulkan",
+      "imageUrl": "https://i.postimg.cc/GhBvn8Qg/Island-Volcan-Region.png"
+    },
+    {
+      "id": "region_carnivore_Island",
+      "name": "Fleischfresser Insel",
+      "imageUrl": "https://i.postimg.cc/bvK1JzwH/Island-Carnivore-Island-Region.png"
+    },
+    {
+      "id": "region_herbivore_Island",
+      "name": "Pflanzenfresser Insel",
+      "imageUrl": "https://i.postimg.cc/J08JNPJs/Island-Herbivore-island-Region.png"
+    }
+  ]
+}
