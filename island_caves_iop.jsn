@@ -5,44 +5,33 @@
             "name": "Höhle des Südens",
             "lat": 80.2,
             "lon": 53.5,
-            "icon": "https://i.postimg.cc/v8V7j2vx/Cave-Entrance-Icon.webp",
+            "icon": "https://www.google.com/search?q=https://i.postimg.cc/v8V7j2vx/Cave-Entrance-Icon.webp",
             "difficulty": "Leicht",
             "recommendedlevel": "30",
             "images": [
-                "https://i.postimg.cc/Fsfddxfy/Bild-2024-06-30-171335914.png",
-                "https://survivetheark.com/uploads/monthly_2017_05/large.590cb3783124e_TEKCave00.jpg.443f04fe8156e441e782d1821bbc8ada.jpg",
-                "https://pbs.twimg.com/media/C1G40yAWIAIIcod.jpg:large"
+                "https://www.google.com/search?q=https://i.postimg.cc/Fsfddxfy/Bild-2024-06-30-171335914.png",
+                "https://www.google.com/search?q=https://survivetheark.com/uploads/monthly_2017_05/large.590cb3783124e_TEKCave00.jpg.443f04fe8156e441e782d1821bbc8ada.jpg"
             ],
-            "description": "Diese Höhle ist relativ einfach zu navigieren und beherbergt hauptsächlich schwächere Kreaturen. Sie ist ein guter Ausgangspunkt für neue Abenteurer.",
+            "description": "Diese Höhle ist relativ einfach zu navigieren...",
+            "specialinfos": [
+                "In dieser Höhle befindet sich im Eingangsbereich meist ein Dung-Beetle..."
+            ],
             "equipment": [
                 {
                     "name": "Fackel",
-                    "iconUrl": "https://static.wikia.nocookie.net/arksurvivalevolved_gamepedia/images/b/b2/Torch.png/revision/latest?cb=20150615120234"
-                },
-                {
-                    "name": "Spitzhacke",
-                    "iconUrl": "https://ark.wiki.gg/images/thumb/9/9f/Metal_Pick.png/228px-Metal_Pick.png?afd47d"
+                    "iconUrl": "https://www.google.com/search?q=https://static.wikia.nocookie.net/arksurvivalevolved_gamepedia/images/b/b2/Torch.png/revision/latest%3Fcb%3D20150615120234"
                 }
-            ],
-            "specialinfos": [
-                "In dieser Höhle befindet sich im Eingangsbereich meist ein Dung-Beetle, der ohne Probleme gezähmt werden kann. Ab und an, muss man einen Arthropluera töten, der ebenfalls im Höhlen Start sitzt. Ein Ziehmlich guter Bonus, um schnell an einen Mistkäfer zu kommen, um eine Dünger Produktion zu starten."
             ],
             "tames": [
                 {
                     "name": "Raptor",
-                    "iconUrl": "https://ark-unity.com/images/icons/Empty_RaptorHead_Icon.webp"
-                },
-                {
-                    "name": "Baryonyx",
-                    "iconUrl": "https://ark-unity.com/images/icons/Empty_BaryonyxHead_Icon.webp"
+                    "iconUrl": "https://www.google.com/search?q=https://ark-unity.com/images/icons/Empty_RaptorHead_Icon.webp"
                 }
             ],
             "creatures": [
                 "Araneo",
                 "Onyc",
-                "Piranha",
-                "Sarcosuchus",
-                "Titanoboa"
+                "Piranha"
             ],
             "resources": [
                 "Kristall",
@@ -51,20 +40,8 @@
             ],
             "artifacts": [
                 {
-                    "artefactname_1": "Artefakt des Rudels",
-                    "artefacticonUrl_1": "https://ark-unity.com/images/icons/Empty_RaptorHead_Icon.webp"
-                },
-                {
-                    "artefactname_2": "",
-                    "artefacticonUrl_2": ""
-                },
-                {
-                    "artefactname_3": "",
-                    "artefacticonUrl_3": ""
-                },
-                {
-                    "artefactname_4": "",
-                    "artefacticonUrl_4": ""
+                    "name": "Artefakt des Rudels",
+                    "iconUrl": "https://ark-unity.com/images/icons/Empty_RaptorHead_Icon.webp"
                 }
             ]
         }
