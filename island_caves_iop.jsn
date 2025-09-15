@@ -6,7 +6,7 @@
             "lat": 80.2,
             "lon": 53.5,
             "icon": "https://i.postimg.cc/v8V7j2vx/Cave-Entrance-Icon.webp",
-            "difficultly": "Schwierigkeitsstufe: Leicht",
+            "difficulty": "Schwierigkeitsstufe: Leicht",
             "recommendedlevel": "30",
             "images": [
                 "https://i.postimg.cc/Fsfddxfy/Bild-2024-06-30-171335914.png",
