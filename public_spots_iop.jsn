@@ -11,6 +11,16 @@
                 "https://i.postimg.cc/xTv4jhTV/Bild-2024-05-16-133412340.png",
                 "https://i.postimg.cc/xTv4jhTV/Bild-2024-05-16-133412340.png"
             ],
+            "infoBadges": [
+                {
+                    "text": "Teleporter",
+                    "type": "oceanblue"
+                },
+                {
+                    "text": "Öffi Farm",
+                    "type": "orange"
+                }
+            ],
             "shortDescription": "Eine kurze Beschreibung für die kleine Karte im Slider.",
             "longDescription": "Eine ausführliche Beschreibung, die im Pop-up-Fenster angezeigt wird. Hier können Sie auch <strong>HTML-Tags</strong> verwenden, um den Text zu formatieren."
         },
@@ -24,6 +34,16 @@
                 "https://i.postimg.cc/QxRFgPjn/Bild-2024-05-16-130443256.png",
                 "https://i.postimg.cc/QxRFgPjn/Bild-2024-05-16-130443256.png",
                 "https://i.postimg.cc/QxRFgPjn/Bild-2024-05-16-130443256.png"
+            ],
+            "infoBadges": [
+                {
+                    "text": "Teleporter",
+                    "type": "oceanblue"
+                },
+                {
+                    "text": "Öffi Farm",
+                    "type": "orange"
+                }
             ],
             "shortDescription": "Kurzinfo zu diesem zweiten Ort.",
             "longDescription": "Hier folgt die detaillierte Beschreibung für den zweiten Ort, ebenfalls mit möglicher HTML-Formatierung."
@@ -39,6 +59,16 @@
                 "https://i.postimg.cc/hvzhbVvV/Bild-2024-05-16-133733722.png",
                 "https://i.postimg.cc/hvzhbVvV/Bild-2024-05-16-133733722.png"
             ],
+            "infoBadges": [
+                {
+                    "text": "Teleporter",
+                    "type": "oceanblue"
+                },
+                {
+                    "text": "Öffi Farm",
+                    "type": "orange"
+                }
+            ],
             "shortDescription": "Kurzinfo zu diesem zweiten Ort.",
             "longDescription": "Hier folgt die detaillierte Beschreibung für den zweiten Ort, ebenfalls mit möglicher HTML-Formatierung."
         },
@@ -52,6 +82,16 @@
                 "https://i.postimg.cc/DzCbFvbp/Bild-2024-05-16-132500159.png",
                 "https://i.postimg.cc/DzCbFvbp/Bild-2024-05-16-132500159.png",
                 "https://i.postimg.cc/DzCbFvbp/Bild-2024-05-16-132500159.png"
+            ],
+            "infoBadges": [
+                {
+                    "text": "Teleporter",
+                    "type": "oceanblue"
+                },
+                {
+                    "text": "Öffi Farm",
+                    "type": "orange"
+                }
             ],
             "shortDescription": "Kurzinfo zu diesem zweiten Ort.",
             "longDescription": "Hier folgt die detaillierte Beschreibung für den zweiten Ort, ebenfalls mit möglicher HTML-Formatierung."
