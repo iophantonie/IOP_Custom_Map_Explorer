@@ -14,7 +14,7 @@
             "infoBadges": [
                 {
                     "text": "Teleporter",
-                    "type": "oceanblue"
+                    "type": "blue"
                 },
                 {
                     "text": "Öffi Farm",
@@ -38,7 +38,7 @@
             "infoBadges": [
                 {
                     "text": "Teleporter",
-                    "type": "oceanblue"
+                    "type": "blue"
                 }
             ],
             "shortDescription": "Kurzinfo zu diesem zweiten Ort.",
@@ -58,7 +58,7 @@
             "infoBadges": [
                 {
                     "text": "Teleporter",
-                    "type": "oceanblue"
+                    "type": "blue"
                 }
             ],
             "shortDescription": "Kurzinfo zu diesem zweiten Ort.",
@@ -78,7 +78,7 @@
             "infoBadges": [
                 {
                     "text": "Teleporter",
-                    "type": "oceanblue"
+                    "type": "blue"
                 }
             ],
             "shortDescription": "Kurzinfo zu diesem zweiten Ort.",
