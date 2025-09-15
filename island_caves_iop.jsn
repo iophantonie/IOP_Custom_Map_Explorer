@@ -17,16 +17,12 @@
                 "In dieser Höhle befindet sich im Eingangsbereich meist ein Dung-Beetle, der ohne Probleme gezähmt werden kann. Ab und an, muss man einen Arthropluera töten, der ebenfalls im Höhlen Start sitzt. Ein Ziehmlich guter Bonus, um schnell an einen Mistkäfer zu kommen, um eine Dünger Produktion zu starten."
             ],
             "equipment": [
-                {
-                    "name": "Fackel",
-                    "iconUrl": "https://www.google.com/search?q=https://static.wikia.nocookie.net/arksurvivalevolved_gamepedia/images/b/b2/Torch.png/revision/latest%3Fcb%3D20150615120234"
-                }
+                "Fackel",
+                "Spitzhacke"
             ],
             "tames": [
-                {
-                    "name": "Raptor",
-                    "iconUrl": "https://www.google.com/search?q=https://ark-unity.com/images/icons/Empty_RaptorHead_Icon.webp"
-                }
+                "Raptor",
+                "Baryonyx"
             ],
             "creatures": [
                 "Araneo",
