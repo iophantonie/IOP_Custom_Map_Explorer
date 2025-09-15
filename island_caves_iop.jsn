@@ -6,7 +6,9 @@
             "lat": 80.2,
             "lon": 53.5,
             "icon": "https://i.postimg.cc/v8V7j2vx/Cave-Entrance-Icon.webp",
-            "image": "https://i.postimg.cc/Fsfddxfy/Bild-2024-06-30-171335914.png",
+            "images": [
+                "https://i.postimg.cc/Fsfddxfy/Bild-2024-06-30-171335914.png"
+            ],
             "description": "Diese Höhle ist relativ einfach zu navigieren und beherbergt hauptsächlich schwächere Kreaturen. Sie ist ein guter Ausgangspunkt für neue Abenteurer.",
             "equipment": [
                 {
