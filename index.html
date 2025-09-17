@@ -9,12 +9,12 @@
     <style>
         body {
             font-family: 'Acme', sans-serif;
-            background-image: url('');
+            background-image: url('https://i.postimg.cc/cJZNn6hx/ce504d7b512d006900399dead32eccd3.jpg');
             background-size: cover;
             background-position: center;
             background-attachment: fixed;
             background-repeat: no-repeat;
-            background-color: #00000000; /* Fallback color */
+            background-color: #111111; /* Fallback color */
             color: #f5f3e6;
             min-height: 100vh;
         }
@@ -379,16 +379,16 @@
 
             <div class="control-panel mt-4">
                 <div id="public-spots-panel" class="relative" style="display: none;">
-                     <div class="absolute top-0 right-0">
-                        <label for="spots-toggle" class="flex items-center cursor-pointer">
-                            <span id="spots-toggle-label" class="mr-3 text-sm text-white">Verstecken</span>
-                            <div class="relative">
-                                <input type="checkbox" id="spots-toggle" class="sr-only">
-                                <div class="toggle-bg block bg-gray-600 w-14 h-8 rounded-full"></div>
-                                <div class="toggle-dot absolute left-1 top-1 bg-white w-6 h-6 rounded-full transition-transform"></div>
-                            </div>
-                        </label>
-                    </div>
+                       <div class="absolute top-0 right-0">
+                            <label for="spots-toggle" class="flex items-center cursor-pointer">
+                                <span id="spots-toggle-label" class="mr-3 text-sm text-white">Verstecken</span>
+                                <div class="relative">
+                                    <input type="checkbox" id="spots-toggle" class="sr-only">
+                                    <div class="toggle-bg block bg-gray-600 w-14 h-8 rounded-full"></div>
+                                    <div class="toggle-dot absolute left-1 top-1 bg-white w-6 h-6 rounded-full transition-transform"></div>
+                                </div>
+                            </label>
+                        </div>
                     <h3 class="text-lg font-bold text-fire-red mb-3">Öffentliche Orte</h3>
                     <div id="public-spots-container" class="relative flex justify-center">
                         <div id="public-spots-slider" class="flex justify-center overflow-x-auto snap-x snap-mandatory scroll-smooth scrollbar-hide gap-4 p-6 -m-2">
@@ -413,7 +413,7 @@
                         </label>
                     </div>
                     <h3 class="text-lg font-bold text-fire-red mb-3">Höhlen</h3>
-                     <div id="cave-spots-container" class="relative flex justify-center">
+                       <div id="cave-spots-container" class="relative flex justify-center">
                         <div id="cave-spots-slider" class="flex justify-center overflow-x-auto snap-x snap-mandatory scroll-smooth scrollbar-hide gap-4 p-8 -m-2">
                             <!-- Cave Spot Cards will be injected here -->
                         </div>
@@ -1681,19 +1681,19 @@
 
             let artifactHtml = '';
             if (spot.artifacts && spot.artifacts.length > 0) {
-                  const artifactItems = spot.artifacts.map(artifact => {
-                      const name = artifact.name;
-                      const icon = artifact.iconUrl;
-                      if(name && icon) {
-                          return `<div class="flex items-center justify-end"><span class="mr-2">${name}</span><img src="${icon}" class="w-6 h-6 object-contain"></div>`;
-                      }
-                      return '';
-                  }).join('');
-                  if (artifactItems) {
-                      artifactHtml = `<div class="py-1 px-2 border border-red-500 rounded-md text-red-400 text-lg">
+                 const artifactItems = spot.artifacts.map(artifact => {
+                     const name = artifact.name;
+                     const icon = artifact.iconUrl;
+                     if(name && icon) {
+                         return `<div class="flex items-center justify-end"><span class="mr-2">${name}</span><img src="${icon}" class="w-6 h-6 object-contain"></div>`;
+                     }
+                     return '';
+                 }).join('');
+                 if (artifactItems) {
+                     artifactHtml = `<div class="py-1 px-2 border border-red-500 rounded-md text-red-400 text-lg">
                           ${artifactItems}
-                      </div>`;
-                  }
+                     </div>`;
+                 }
             }
 
 
