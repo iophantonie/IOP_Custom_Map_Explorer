@@ -43,6 +43,402 @@
                     "iconUrl": "https://static.wikia.nocookie.net/arksurvivalevolved_gamepedia/images/c/c6/Artifact_of_the_Massive.png/revision/latest?cb=20200518132920"
                 }
             ]
+        },
+{
+            "id": "lower_south",
+            "name": "Höhle des Südens",
+            "lat": 80.2,
+            "lon": 53.5,
+            "icon": "https://i.postimg.cc/T3rPcXVQ/Cave-Entrance-Icon.webp",
+            "difficulty": "Leicht",
+            "recommendedlevel": "30",
+            "images": [
+                "https://i.postimg.cc/Fsfddxfy/Bild-2024-06-30-171335914.png",
+                "https://ark.wiki.gg/images/thumb/CaveSwamp.jpg/1120px-CaveSwamp.jpg?e55b90"
+            ],
+            "description": "Diese Höhle ist relativ einfach zu navigieren und beherbergt hauptsächlich schwächere Kreaturen. Sie ist ein guter Ausgangspunkt für neue Abenteurer.",
+            "specialinfos": [
+                "In dieser Höhle befindet sich im Eingangsbereich meist ein Dung-Beetle, der ohne Probleme gezähmt werden kann. Ab und an, muss man einen Arthropluera töten, der ebenfalls im Höhlen Start sitzt. Ein Ziehmlich guter Bonus, um schnell an einen Mistkäfer zu kommen, um eine Dünger Produktion zu starten."
+            ],
+            "equipment": [
+                "Fackel",
+                "Spitzhacke"
+            ],
+            "tames": [
+                "Raptor",
+                "Baryonyx"
+            ],
+            "strategy": [
+                "Diesen Dungen, schließt man am besten gar nicht ab, da mir die informationen für unsere Explorer Seite noch fehlen :D."
+            ],
+            "creatures": [
+                "Araneo",
+                "Onyc",
+                "Piranha"
+            ],
+            "resources": [
+                "Kristall",
+                "Metall",
+                "Obsidian"
+            ],
+            "artifacts": [
+                {
+                    "name": "Artefakt des Rudels",
+                    "iconUrl": "https://static.wikia.nocookie.net/arksurvivalevolved_gamepedia/images/c/c6/Artifact_of_the_Massive.png/revision/latest?cb=20200518132920"
+                }
+            ]
+        },
+{
+            "id": "lower_south",
+            "name": "Höhle des Südens",
+            "lat": 80.2,
+            "lon": 53.5,
+            "icon": "https://i.postimg.cc/T3rPcXVQ/Cave-Entrance-Icon.webp",
+            "difficulty": "Leicht",
+            "recommendedlevel": "30",
+            "images": [
+                "https://i.postimg.cc/Fsfddxfy/Bild-2024-06-30-171335914.png",
+                "https://ark.wiki.gg/images/thumb/CaveSwamp.jpg/1120px-CaveSwamp.jpg?e55b90"
+            ],
+            "description": "Diese Höhle ist relativ einfach zu navigieren und beherbergt hauptsächlich schwächere Kreaturen. Sie ist ein guter Ausgangspunkt für neue Abenteurer.",
+            "specialinfos": [
+                "In dieser Höhle befindet sich im Eingangsbereich meist ein Dung-Beetle, der ohne Probleme gezähmt werden kann. Ab und an, muss man einen Arthropluera töten, der ebenfalls im Höhlen Start sitzt. Ein Ziehmlich guter Bonus, um schnell an einen Mistkäfer zu kommen, um eine Dünger Produktion zu starten."
+            ],
+            "equipment": [
+                "Fackel",
+                "Spitzhacke"
+            ],
+            "tames": [
+                "Raptor",
+                "Baryonyx"
+            ],
+            "strategy": [
+                "Diesen Dungen, schließt man am besten gar nicht ab, da mir die informationen für unsere Explorer Seite noch fehlen :D."
+            ],
+            "creatures": [
+                "Araneo",
+                "Onyc",
+                "Piranha"
+            ],
+            "resources": [
+                "Kristall",
+                "Metall",
+                "Obsidian"
+            ],
+            "artifacts": [
+                {
+                    "name": "Artefakt des Rudels",
+                    "iconUrl": "https://static.wikia.nocookie.net/arksurvivalevolved_gamepedia/images/c/c6/Artifact_of_the_Massive.png/revision/latest?cb=20200518132920"
+                }
+            ]
+        },
+{
+            "id": "lower_south",
+            "name": "Höhle des Südens",
+            "lat": 80.2,
+            "lon": 53.5,
+            "icon": "https://i.postimg.cc/T3rPcXVQ/Cave-Entrance-Icon.webp",
+            "difficulty": "Leicht",
+            "recommendedlevel": "30",
+            "images": [
+                "https://i.postimg.cc/Fsfddxfy/Bild-2024-06-30-171335914.png",
+                "https://ark.wiki.gg/images/thumb/CaveSwamp.jpg/1120px-CaveSwamp.jpg?e55b90"
+            ],
+            "description": "Diese Höhle ist relativ einfach zu navigieren und beherbergt hauptsächlich schwächere Kreaturen. Sie ist ein guter Ausgangspunkt für neue Abenteurer.",
+            "specialinfos": [
+                "In dieser Höhle befindet sich im Eingangsbereich meist ein Dung-Beetle, der ohne Probleme gezähmt werden kann. Ab und an, muss man einen Arthropluera töten, der ebenfalls im Höhlen Start sitzt. Ein Ziehmlich guter Bonus, um schnell an einen Mistkäfer zu kommen, um eine Dünger Produktion zu starten."
+            ],
+            "equipment": [
+                "Fackel",
+                "Spitzhacke"
+            ],
+            "tames": [
+                "Raptor",
+                "Baryonyx"
+            ],
+            "strategy": [
+                "Diesen Dungen, schließt man am besten gar nicht ab, da mir die informationen für unsere Explorer Seite noch fehlen :D."
+            ],
+            "creatures": [
+                "Araneo",
+                "Onyc",
+                "Piranha"
+            ],
+            "resources": [
+                "Kristall",
+                "Metall",
+                "Obsidian"
+            ],
+            "artifacts": [
+                {
+                    "name": "Artefakt des Rudels",
+                    "iconUrl": "https://static.wikia.nocookie.net/arksurvivalevolved_gamepedia/images/c/c6/Artifact_of_the_Massive.png/revision/latest?cb=20200518132920"
+                }
+            ]
+        },
+{
+            "id": "lower_south",
+            "name": "Höhle des Südens",
+            "lat": 80.2,
+            "lon": 53.5,
+            "icon": "https://i.postimg.cc/T3rPcXVQ/Cave-Entrance-Icon.webp",
+            "difficulty": "Leicht",
+            "recommendedlevel": "30",
+            "images": [
+                "https://i.postimg.cc/Fsfddxfy/Bild-2024-06-30-171335914.png",
+                "https://ark.wiki.gg/images/thumb/CaveSwamp.jpg/1120px-CaveSwamp.jpg?e55b90"
+            ],
+            "description": "Diese Höhle ist relativ einfach zu navigieren und beherbergt hauptsächlich schwächere Kreaturen. Sie ist ein guter Ausgangspunkt für neue Abenteurer.",
+            "specialinfos": [
+                "In dieser Höhle befindet sich im Eingangsbereich meist ein Dung-Beetle, der ohne Probleme gezähmt werden kann. Ab und an, muss man einen Arthropluera töten, der ebenfalls im Höhlen Start sitzt. Ein Ziehmlich guter Bonus, um schnell an einen Mistkäfer zu kommen, um eine Dünger Produktion zu starten."
+            ],
+            "equipment": [
+                "Fackel",
+                "Spitzhacke"
+            ],
+            "tames": [
+                "Raptor",
+                "Baryonyx"
+            ],
+            "strategy": [
+                "Diesen Dungen, schließt man am besten gar nicht ab, da mir die informationen für unsere Explorer Seite noch fehlen :D."
+            ],
+            "creatures": [
+                "Araneo",
+                "Onyc",
+                "Piranha"
+            ],
+            "resources": [
+                "Kristall",
+                "Metall",
+                "Obsidian"
+            ],
+            "artifacts": [
+                {
+                    "name": "Artefakt des Rudels",
+                    "iconUrl": "https://static.wikia.nocookie.net/arksurvivalevolved_gamepedia/images/c/c6/Artifact_of_the_Massive.png/revision/latest?cb=20200518132920"
+                }
+            ]
+        },
+{
+            "id": "lower_south",
+            "name": "Höhle des Südens",
+            "lat": 80.2,
+            "lon": 53.5,
+            "icon": "https://i.postimg.cc/T3rPcXVQ/Cave-Entrance-Icon.webp",
+            "difficulty": "Leicht",
+            "recommendedlevel": "30",
+            "images": [
+                "https://i.postimg.cc/Fsfddxfy/Bild-2024-06-30-171335914.png",
+                "https://ark.wiki.gg/images/thumb/CaveSwamp.jpg/1120px-CaveSwamp.jpg?e55b90"
+            ],
+            "description": "Diese Höhle ist relativ einfach zu navigieren und beherbergt hauptsächlich schwächere Kreaturen. Sie ist ein guter Ausgangspunkt für neue Abenteurer.",
+            "specialinfos": [
+                "In dieser Höhle befindet sich im Eingangsbereich meist ein Dung-Beetle, der ohne Probleme gezähmt werden kann. Ab und an, muss man einen Arthropluera töten, der ebenfalls im Höhlen Start sitzt. Ein Ziehmlich guter Bonus, um schnell an einen Mistkäfer zu kommen, um eine Dünger Produktion zu starten."
+            ],
+            "equipment": [
+                "Fackel",
+                "Spitzhacke"
+            ],
+            "tames": [
+                "Raptor",
+                "Baryonyx"
+            ],
+            "strategy": [
+                "Diesen Dungen, schließt man am besten gar nicht ab, da mir die informationen für unsere Explorer Seite noch fehlen :D."
+            ],
+            "creatures": [
+                "Araneo",
+                "Onyc",
+                "Piranha"
+            ],
+            "resources": [
+                "Kristall",
+                "Metall",
+                "Obsidian"
+            ],
+            "artifacts": [
+                {
+                    "name": "Artefakt des Rudels",
+                    "iconUrl": "https://static.wikia.nocookie.net/arksurvivalevolved_gamepedia/images/c/c6/Artifact_of_the_Massive.png/revision/latest?cb=20200518132920"
+                }
+            ]
+        },
+{
+            "id": "lower_south",
+            "name": "Höhle des Südens",
+            "lat": 80.2,
+            "lon": 53.5,
+            "icon": "https://i.postimg.cc/T3rPcXVQ/Cave-Entrance-Icon.webp",
+            "difficulty": "Leicht",
+            "recommendedlevel": "30",
+            "images": [
+                "https://i.postimg.cc/Fsfddxfy/Bild-2024-06-30-171335914.png",
+                "https://ark.wiki.gg/images/thumb/CaveSwamp.jpg/1120px-CaveSwamp.jpg?e55b90"
+            ],
+            "description": "Diese Höhle ist relativ einfach zu navigieren und beherbergt hauptsächlich schwächere Kreaturen. Sie ist ein guter Ausgangspunkt für neue Abenteurer.",
+            "specialinfos": [
+                "In dieser Höhle befindet sich im Eingangsbereich meist ein Dung-Beetle, der ohne Probleme gezähmt werden kann. Ab und an, muss man einen Arthropluera töten, der ebenfalls im Höhlen Start sitzt. Ein Ziehmlich guter Bonus, um schnell an einen Mistkäfer zu kommen, um eine Dünger Produktion zu starten."
+            ],
+            "equipment": [
+                "Fackel",
+                "Spitzhacke"
+            ],
+            "tames": [
+                "Raptor",
+                "Baryonyx"
+            ],
+            "strategy": [
+                "Diesen Dungen, schließt man am besten gar nicht ab, da mir die informationen für unsere Explorer Seite noch fehlen :D."
+            ],
+            "creatures": [
+                "Araneo",
+                "Onyc",
+                "Piranha"
+            ],
+            "resources": [
+                "Kristall",
+                "Metall",
+                "Obsidian"
+            ],
+            "artifacts": [
+                {
+                    "name": "Artefakt des Rudels",
+                    "iconUrl": "https://static.wikia.nocookie.net/arksurvivalevolved_gamepedia/images/c/c6/Artifact_of_the_Massive.png/revision/latest?cb=20200518132920"
+                }
+            ]
+        },
+{
+            "id": "lower_south",
+            "name": "Höhle des Südens",
+            "lat": 80.2,
+            "lon": 53.5,
+            "icon": "https://i.postimg.cc/T3rPcXVQ/Cave-Entrance-Icon.webp",
+            "difficulty": "Leicht",
+            "recommendedlevel": "30",
+            "images": [
+                "https://i.postimg.cc/Fsfddxfy/Bild-2024-06-30-171335914.png",
+                "https://ark.wiki.gg/images/thumb/CaveSwamp.jpg/1120px-CaveSwamp.jpg?e55b90"
+            ],
+            "description": "Diese Höhle ist relativ einfach zu navigieren und beherbergt hauptsächlich schwächere Kreaturen. Sie ist ein guter Ausgangspunkt für neue Abenteurer.",
+            "specialinfos": [
+                "In dieser Höhle befindet sich im Eingangsbereich meist ein Dung-Beetle, der ohne Probleme gezähmt werden kann. Ab und an, muss man einen Arthropluera töten, der ebenfalls im Höhlen Start sitzt. Ein Ziehmlich guter Bonus, um schnell an einen Mistkäfer zu kommen, um eine Dünger Produktion zu starten."
+            ],
+            "equipment": [
+                "Fackel",
+                "Spitzhacke"
+            ],
+            "tames": [
+                "Raptor",
+                "Baryonyx"
+            ],
+            "strategy": [
+                "Diesen Dungen, schließt man am besten gar nicht ab, da mir die informationen für unsere Explorer Seite noch fehlen :D."
+            ],
+            "creatures": [
+                "Araneo",
+                "Onyc",
+                "Piranha"
+            ],
+            "resources": [
+                "Kristall",
+                "Metall",
+                "Obsidian"
+            ],
+            "artifacts": [
+                {
+                    "name": "Artefakt des Rudels",
+                    "iconUrl": "https://static.wikia.nocookie.net/arksurvivalevolved_gamepedia/images/c/c6/Artifact_of_the_Massive.png/revision/latest?cb=20200518132920"
+                }
+            ]
+        },
+{
+            "id": "lower_south",
+            "name": "Höhle des Südens",
+            "lat": 80.2,
+            "lon": 53.5,
+            "icon": "https://i.postimg.cc/T3rPcXVQ/Cave-Entrance-Icon.webp",
+            "difficulty": "Leicht",
+            "recommendedlevel": "30",
+            "images": [
+                "https://i.postimg.cc/Fsfddxfy/Bild-2024-06-30-171335914.png",
+                "https://ark.wiki.gg/images/thumb/CaveSwamp.jpg/1120px-CaveSwamp.jpg?e55b90"
+            ],
+            "description": "Diese Höhle ist relativ einfach zu navigieren und beherbergt hauptsächlich schwächere Kreaturen. Sie ist ein guter Ausgangspunkt für neue Abenteurer.",
+            "specialinfos": [
+                "In dieser Höhle befindet sich im Eingangsbereich meist ein Dung-Beetle, der ohne Probleme gezähmt werden kann. Ab und an, muss man einen Arthropluera töten, der ebenfalls im Höhlen Start sitzt. Ein Ziehmlich guter Bonus, um schnell an einen Mistkäfer zu kommen, um eine Dünger Produktion zu starten."
+            ],
+            "equipment": [
+                "Fackel",
+                "Spitzhacke"
+            ],
+            "tames": [
+                "Raptor",
+                "Baryonyx"
+            ],
+            "strategy": [
+                "Diesen Dungen, schließt man am besten gar nicht ab, da mir die informationen für unsere Explorer Seite noch fehlen :D."
+            ],
+            "creatures": [
+                "Araneo",
+                "Onyc",
+                "Piranha"
+            ],
+            "resources": [
+                "Kristall",
+                "Metall",
+                "Obsidian"
+            ],
+            "artifacts": [
+                {
+                    "name": "Artefakt des Rudels",
+                    "iconUrl": "https://static.wikia.nocookie.net/arksurvivalevolved_gamepedia/images/c/c6/Artifact_of_the_Massive.png/revision/latest?cb=20200518132920"
+                }
+            ]
+        },
+{
+            "id": "lower_south",
+            "name": "Höhle des Südens",
+            "lat": 80.2,
+            "lon": 53.5,
+            "icon": "https://i.postimg.cc/T3rPcXVQ/Cave-Entrance-Icon.webp",
+            "difficulty": "Leicht",
+            "recommendedlevel": "30",
+            "images": [
+                "https://i.postimg.cc/Fsfddxfy/Bild-2024-06-30-171335914.png",
+                "https://ark.wiki.gg/images/thumb/CaveSwamp.jpg/1120px-CaveSwamp.jpg?e55b90"
+            ],
+            "description": "Diese Höhle ist relativ einfach zu navigieren und beherbergt hauptsächlich schwächere Kreaturen. Sie ist ein guter Ausgangspunkt für neue Abenteurer.",
+            "specialinfos": [
+                "In dieser Höhle befindet sich im Eingangsbereich meist ein Dung-Beetle, der ohne Probleme gezähmt werden kann. Ab und an, muss man einen Arthropluera töten, der ebenfalls im Höhlen Start sitzt. Ein Ziehmlich guter Bonus, um schnell an einen Mistkäfer zu kommen, um eine Dünger Produktion zu starten."
+            ],
+            "equipment": [
+                "Fackel",
+                "Spitzhacke"
+            ],
+            "tames": [
+                "Raptor",
+                "Baryonyx"
+            ],
+            "strategy": [
+                "Diesen Dungen, schließt man am besten gar nicht ab, da mir die informationen für unsere Explorer Seite noch fehlen :D."
+            ],
+            "creatures": [
+                "Araneo",
+                "Onyc",
+                "Piranha"
+            ],
+            "resources": [
+                "Kristall",
+                "Metall",
+                "Obsidian"
+            ],
+            "artifacts": [
+                {
+                    "name": "Artefakt des Rudels",
+                    "iconUrl": "https://static.wikia.nocookie.net/arksurvivalevolved_gamepedia/images/c/c6/Artifact_of_the_Massive.png/revision/latest?cb=20200518132920"
+                }
+            ]
         }
     ]
 }
