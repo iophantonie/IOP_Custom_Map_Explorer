@@ -5,11 +5,16 @@
   },
   "Ressourcen": {
     "Crystal": { "iconUrl": "https://ark-unity.com/images/icons/Crystal_Icon.webp" },
+    "Kristall": { "iconUrl": "https://ark-unity.com/images/icons/Crystal_Icon.webp" },
     "Metal": { "iconUrl": "https://ark-unity.com/images/icons/MetalOre_Icon.webp" },
+    "Metall": { "iconUrl": "https://ark-unity.com/images/icons/MetalOre_Icon.webp" },
     "Obsidian": { "iconUrl": "https://ark.wiki.gg/images/Obsidian.png?9b1459" },
     "Oil": { "iconUrl": "https://ark-unity.com/images/icons/OilFuel_Icon.webp" },
+    "Öl": { "iconUrl": "https://ark-unity.com/images/icons/OilFuel_Icon.webp" },
     "Rich Metal": { "iconUrl": "https://ark-unity.com/images/icons/MetalOre_Icon.webp" },
-    "Silica Pearls": { "iconUrl": "https://ark-unity.com/images/icons/Pearl_Icon.webp" }
+    "Reichhaltiges Metall": { "iconUrl": "https://ark-unity.com/images/icons/MetalOre_Icon.webp" },
+    "Silica Pearls": { "iconUrl": "https://ark-unity.com/images/icons/Pearl_Icon.webp" },
+    "Silizium Perlen": { "iconUrl": "https://ark-unity.com/images/icons/Pearl_Icon.webp" }
   },
   "Kreaturen": {
     "Raptor": { "iconUrl": "https://ark-unity.com/images/icons/Empty_RaptorHead_Icon.webp" },
