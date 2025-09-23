@@ -22,7 +22,9 @@
   "Aberration": {
     "Karkinos": "Alpha Karkinos",
     "Basilisk": "Alpha Basilisk",
-    "Surface Reaper King": "Alpha Surface Reaper King"
+    "Surface Reaper King": "Alpha Surface Reaper King",
+    "Aberrant Raptor": "Alpha Raptor",
+    "Aberrant Carnotaurus": "Alpha Carnotaurus"
   },
   "Astraeos": {
     "Mosasaurus": "Astral Mosa",
@@ -34,6 +36,10 @@
     "Direwolf": "Astral Direwolf",
     "Megalodon": "Astral Megalodon",
     "Raptor": "Astral Raptor",
-    "Rex": "Astral Rex"
+    "Rex": "Astral Rex",
+    "Fire Wyvern": "Alpha Fire Wyvern",
+    "Rex": "Alpha Rex",
+    "Raptor": "Alpha Raptor",
+    "Carnotaurus": "Alpha Carnotaurus"
   }
 }
