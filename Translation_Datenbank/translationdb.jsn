@@ -1,1 +1,35 @@
-test
+{
+    "Ressourcen": {
+        "Crystal": "Kristall",
+        "Metal": "Metall",
+        "Obsidian": "Obsidian",
+        "Oil": "Öl",
+        "Rich Metal": "Reichhaltiges Rohmetall",
+        "Silica Pearls": "Silizium Perlen",
+        "Wood Coal": "Holzkohle",
+        "Cactus with few berries": "Kaktus mit wenigen Beeren",
+        "Sulfur": "Schwefel",
+        "Silk": "Seide",
+        "Black Pearls": "Schwarze Perlen",
+        "Element Ore": "Element Erz",
+        "Gem Element": "Roter Edelstein",
+        "Mushrooms": "Pilze",
+        "Bones": "Knochen",
+        "Gem Light": "Grüner Edelstein",
+        "Gem Bio": "Blauer Edelstein",
+        "Cactus": "Kakteen",
+        "City Prop": "Laternen & Bänke",
+        "Citronal": "Zitronen",
+        "Longrass": "Mais",
+        "Rare Mushrooms": "Seltene Pilze",
+        "Savoroot": "Kartoffeln",
+        "Rare Flowers": "Seltene Blumen",
+        "Rockaroot": "Karotten",
+        "Sandpile": "Sand",
+        "Clay": "Lehm",
+        "Dino Corpse": "Kreaturen Leichen",
+        "Oil Meat": "Organisches Öl"
+    },
+    "Items": {},
+    "Kreaturen": {}
+}
