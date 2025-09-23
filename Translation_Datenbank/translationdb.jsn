@@ -31,5 +31,13 @@
         "Oil Meat": "Organisches Öl"
     },
     "Items": {},
-    "Kreaturen": {}
+    "Kreaturen": {},
+    "InfoBadges": {
+        "Kartenart": "Kartenart",
+        "Bosse": "Bosse",
+        "Besonderheiten": "Besonderheit/en",
+        "Höhlen": "Höhlen",
+        "Artefakte": "Artefakte",
+        "Öffentliche Farmen & Fallen": "Öffentliche Farmen & Fallen"
+    }
 }
