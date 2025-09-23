@@ -1,0 +1,20 @@
+{
+  "Sehr häufig": {
+    "color": "rgba(0, 255, 0, 0.5)"
+  },
+  "Häufig": {
+    "color": "rgba(173, 255, 47, 0.5)"
+  },
+  "Gelegentlich": {
+    "color": "rgba(255, 255, 0, 0.5)"
+  },
+  "Selten": {
+    "color": "rgba(255, 165, 0, 0.5)"
+  },
+  "Sehr selten": {
+    "color": "rgba(255, 69, 0, 0.5)"
+  },
+  "Extrem selten": {
+    "color": "rgba(255, 0, 0, 0.5)"
+  }
+}
