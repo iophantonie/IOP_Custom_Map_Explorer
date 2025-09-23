@@ -101,7 +101,7 @@
     "displayName": "Ragnarok",
     "alphaVariantKey": "Default",
     "activated": true,
-    "mapImageUrl": "https://ark-unity.com/cdn-cgi/image/format=auto,width=3840/images/maps/Ragnarok.webp",
+    "mapImageUrl": "https://github.com/iophantonie/iophantonie-IOP_Custom_Map_Explorer.github.io/blob/main/Ragnarok/Ragnarok_MapImage.png?raw=true",
     "creatureDataUrl": "https://raw.githubusercontent.com/iophantonie/IOP_Custom_Map_Explorer/main/Ragnarok/ragnarok_dinospawns_iop.jsn",
     "resourceDataUrl": "https://raw.githubusercontent.com/iophantonie/IOP_Custom_Map_Explorer/main/Ragnarok/ragnarok_resources_iop.jsn",
     "publicSpotsDataUrl": "https://raw.githubusercontent.com/iophantonie/IOP_Custom_Map_Explorer/main/Ragnarok/ragnarok_publicspots_iop.jsn",
