@@ -1,0 +1,17 @@
+{
+  "green": {
+    "borderColor": "#22c55e",
+    "bgColor": "rgba(34, 197, 94, 0.2)",
+    "textColor": "#86efac"
+  },
+  "blue": {
+    "borderColor": "#3b82f6",
+    "bgColor": "rgba(59, 130, 246, 0.2)",
+    "textColor": "#93c5fd"
+  },
+  "yellow": {
+    "borderColor": "#eab308",
+    "bgColor": "rgba(234, 179, 8, 0.2)",
+    "textColor": "#fde047"
+  }
+}
