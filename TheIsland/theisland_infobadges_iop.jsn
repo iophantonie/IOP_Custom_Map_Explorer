@@ -2,9 +2,9 @@
     "infoBadges": {
         "Kartenart": "Vanilla Karte",
         "Bosse": [
-            "Broodmother",
+            "Brutmutter",
             "Megapithecus",
-            "Dragon",
+            "Drache",
             "Overseer"
         ],
         "Besonderheiten": [
@@ -18,16 +18,16 @@
             "10"
         ],
         "Artefakte": [
+            "Gewaltigen",
             "Jäger",
-            "Meute",
-            "Massiv",
-            "Verstand",
-            "Schlau",
-            "Himmelsfürst",
-            "Verschlinger",
-            "Brutal",
-            "Immunität",
-            "Stärke"
+            "Immunen",
+            "Stärke",
+            "Himmelsherr",
+            "Fresser",
+            "Rudel",
+            "List",
+            "Brutalen",
+            "Schlauen"
         ]
     },
     "specialInfo": {
