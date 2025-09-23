@@ -22,7 +22,7 @@
                 }
             ],
             "shortDescription": "Öffentlicher Teleporter",
-            "longDescription": "Eine ausführliche Beschreibung, die im Pop-up-Fenster angezeigt wird. Hier können Sie auch <strong>HTML-Tags</strong> verwenden, um den Text zu formatieren."
+            "longDescription": "Eine Öffentliche Harzfarm, bei der sich jeder Spieler an 8 Harzsammlern bedienen kann, es befindet sich ebenfalls ein kleiner Tek Teleporter dort."
         },
         {
             "id": "public_teleporter_1",
@@ -42,7 +42,7 @@
                 }
             ],
             "shortDescription": "Öffentlicher Teleporter",
-            "longDescription": "Hier folgt die detaillierte Beschreibung für den zweiten Ort, ebenfalls mit möglicher HTML-Formatierung."
+            "longDescription": "Am Grünen Obelisken befindet sich ein kleiner Tek Teleporter, der von jedem Spieler genutzt werden kann, der den kleinen Tek Teleporter freigeschaltet hat."
         },
         {
             "id": "public_teleporter_2",
@@ -62,7 +62,7 @@
                 }
             ],
             "shortDescription": "Öffentlicher Teleporter",
-            "longDescription": "Hier folgt die detaillierte Beschreibung für den zweiten Ort, ebenfalls mit möglicher HTML-Formatierung."
+            "longDescription": "Am Roten Obelisken befindet sich ein kleiner Tek Teleporter, der von jedem Spieler genutzt werden kann, der den kleinen Tek Teleporter freigeschaltet hat."
         },
         {
             "id": "public_teleporter_3",
@@ -82,7 +82,7 @@
                 }
             ],
             "shortDescription": "Öffentlicher Teleporter",
-            "longDescription": "Hier folgt die detaillierte Beschreibung für den zweiten Ort, ebenfalls mit möglicher HTML-Formatierung."
+            "longDescription": "Am Blauen Obelisken befindet sich ein kleiner Tek Teleporter, der von jedem Spieler genutzt werden kann, der den kleinen Tek Teleporter freigeschaltet hat."
         }
     ]
 }
