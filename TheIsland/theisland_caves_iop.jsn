@@ -1,7 +1,7 @@
 {
     "caveSpots": [
         {
-            "id": "lava_cave",
+            "id": "1",
             "name": "Lava Cave",
             "lat": 74,
             "lon": 92,
@@ -45,7 +45,7 @@
             ]
         },
 {
-            "id": "lower_south",
+            "id": "2",
             "name": "Lower South Cave",
             "lat": 85,
             "lon": 54,
@@ -89,7 +89,7 @@
             ]
         },
 {
-            "id": "Swamp_Cave",
+            "id": "3",
             "name": "Swamp Cave",
             "lat": 65,
             "lon": 35,
@@ -133,7 +133,7 @@
             ]
         },
 {
-            "id": "lower_south",
+            "id": "4",
             "name": "Höhle des Südens",
             "lat": 80.2,
             "lon": 53.5,
@@ -177,7 +177,7 @@
             ]
         },
 {
-            "id": "lower_south",
+            "id": "5",
             "name": "Höhle des Südens",
             "lat": 80.2,
             "lon": 53.5,
@@ -221,7 +221,7 @@
             ]
         },
 {
-            "id": "lower_south",
+            "id": "6",
             "name": "Höhle des Südens",
             "lat": 80.2,
             "lon": 53.5,
@@ -265,7 +265,7 @@
             ]
         },
 {
-            "id": "lower_south",
+            "id": "7",
             "name": "Höhle des Südens",
             "lat": 80.2,
             "lon": 53.5,
@@ -309,7 +309,7 @@
             ]
         },
 {
-            "id": "lower_south",
+            "id": "8",
             "name": "Höhle des Südens",
             "lat": 80.2,
             "lon": 53.5,
@@ -353,7 +353,7 @@
             ]
         },
 {
-            "id": "lower_south",
+            "id": "9",
             "name": "Höhle des Südens",
             "lat": 80.2,
             "lon": 53.5,
@@ -397,7 +397,7 @@
             ]
         },
 {
-            "id": "lower_south",
+            "id": "10",
             "name": "Höhle des Südens",
             "lat": 80.2,
             "lon": 53.5,
