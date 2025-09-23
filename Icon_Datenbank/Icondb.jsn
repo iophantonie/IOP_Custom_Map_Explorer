@@ -3,37 +3,72 @@
 {
 "name": "Kristall",
 "color": "#ADD8E6",
-"iconUrl": "https://www.google.com/search?q=https://ark-unity.com/images/icons/Crystal_Icon.webp"
+"iconUrl": "https://ark-unity.com/images/icons/Crystal_Icon.webp"
 },
 {
 "name": "Metall",
 "color": "#b87333",
-"iconUrl": "https://www.google.com/search?q=https://ark-unity.com/images/icons/MetalOre_Icon.webp"
+"iconUrl": "https://ark-unity.com/images/icons/MetalOre_Icon.webp"
 },
 {
 "name": "Obsidian",
 "color": "#333333",
-"iconUrl": "https://www.google.com/search?q=https://ark.wiki.gg/images/Obsidian.png%3F9b1459"
+"iconUrl": "https://ark.wiki.gg/images/Obsidian.png?9b1459"
+},
+{
+"name": "Öl",
+"color": "#663399",
+"iconUrl": "https://ark-unity.com/images/icons/OilFuel_Icon.webp"
+},
+{
+"name": "Reichhaltiges Rohmetall",
+"color": "#DAA520",
+"iconUrl": "https://ark-unity.com/images/icons/MetalOre_Icon.webp"
+},
+{
+"name": "Silizium Perlen",
+"color": "#F5F5DC",
+"iconUrl": "https://ark-unity.com/images/icons/Pearl_Icon.webp"
 }
 ],
 "itemIcons": [
 {
 "name": "Fackel",
-"iconUrl": "https://www.google.com/search?q=https://ark-unity.com/images/icons/Torch_Icon.webp"
+"iconUrl": "https://ark-unity.com/images/icons/Torch_Icon.webp"
 },
 {
 "name": "Spitzhacke",
-"iconUrl": "https://www.google.com/search?q=https://ark-unity.com/images/icons/MetalPick_Icon.webp"
+"iconUrl": "https://ark-unity.com/images/icons/MetalPick_Icon.webp"
 }
 ],
 "creatureIcons": [
 {
 "name": "Raptor",
-"iconUrl": "https://www.google.com/search?q=https://ark-unity.com/images/icons/Empty_RaptorHead_Icon.webp"
+"iconUrl": "https://ark-unity.com/images/icons/Empty_RaptorHead_Icon.webp"
 },
 {
 "name": "Baryonyx",
-"iconUrl": "https://www.google.com/search?q=https://ark-unity.com/images/icons/Empty_BaryonyxHead_Icon.webp"
+"iconUrl": "https://ark-unity.com/images/icons/Empty_BaryonyxHead_Icon.webp"
+},
+{
+"name": "Araneo",
+"iconUrl": "https://ark-unity.com/images/icons/Empty_SpiderMinionHead_Icon.webp"
+},
+{
+"name": "Onyc",
+"iconUrl": "https://ark-unity.com/images/icons/Empty_BatHead_Icon.webp"
+},
+{
+"name": "Piranha",
+"iconUrl": "https://ark-unity.com/images/icons/Empty_PiranhaHead_Icon.webp"
+},
+{
+"name": "Sarcosuchus",
+"iconUrl": "https://ark-unity.com/images/icons/Empty_SarcoHead_Icon.webp"
+},
+{
+"name": "Titanoboa",
+"iconUrl": "https://ark-unity.com/images/icons/Empty_TitanBoaHead_Icon.webp"
 }
 ]
 }
