@@ -22,7 +22,7 @@
                 }
             ],
             "shortDescription": "Öffentlicher Teleporter",
-            "longDescription": "Eine Öffentliche Harzfarm, bei der sich jeder Spieler an 8 Harzsammlern bedienen kann, es befindet sich ebenfalls ein kleiner Tek Teleporter dort."
+            "longDescription": "Eine Öffentliche Harzfarm, bei der sich jeder Spieler an 8 Harzsammlern bedienen kann. Es befindet sich ebenfalls ein kleiner Tek Teleporter dort, der von jedem Spieler genutzt werden kann, der den kleinen Tek Teleporter freigeschaltet hat."
         },
         {
             "id": "public_teleporter_1",
