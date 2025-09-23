@@ -1,13 +1,13 @@
 {
     "caveSpots": [
         {
-            "id": "lower_south",
-            "name": "Höhle des Südens",
-            "lat": 80.2,
-            "lon": 53.5,
-            "icon": "https://i.postimg.cc/T3rPcXVQ/Cave-Entrance-Icon.webp",
-            "difficulty": "Leicht",
-            "recommendedlevel": "30",
+            "id": "lava_cave",
+            "name": "Lava Cave",
+            "lat": 74,
+            "lon": 92,
+            "icon": "https://i.postimg.cc/Fsfddxfy/Bild-2024-06-30-171335914.png",
+            "difficulty": "Mittel",
+            "recommendedlevel": "45",
             "images": [
                 "https://i.postimg.cc/Fsfddxfy/Bild-2024-06-30-171335914.png",
                 "https://ark.wiki.gg/images/thumb/CaveSwamp.jpg/1120px-CaveSwamp.jpg?e55b90"
@@ -39,17 +39,17 @@
             ],
             "artifacts": [
                 {
-                    "name": "Artefakt des Rudels",
-                    "iconUrl": "https://static.wikia.nocookie.net/arksurvivalevolved_gamepedia/images/c/c6/Artifact_of_the_Massive.png/revision/latest?cb=20200518132920"
+                    "name": "Artefakt des Gewaltigen",
+                    "iconUrl": "https://ark-unity.com/images/icons/Artifact3_Icon.webp"
                 }
             ]
         },
 {
             "id": "lower_south",
-            "name": "Höhle des Südens",
-            "lat": 80.2,
-            "lon": 53.5,
-            "icon": "https://i.postimg.cc/T3rPcXVQ/Cave-Entrance-Icon.webp",
+            "name": "Lower South Cave",
+            "lat": 85,
+            "lon": 54,
+            "icon": "https://i.postimg.cc/1tWM08Mp/Bild-2024-06-30-171919385.png",
             "difficulty": "Leicht",
             "recommendedlevel": "30",
             "images": [
@@ -83,19 +83,19 @@
             ],
             "artifacts": [
                 {
-                    "name": "Artefakt des Rudels",
-                    "iconUrl": "https://static.wikia.nocookie.net/arksurvivalevolved_gamepedia/images/c/c6/Artifact_of_the_Massive.png/revision/latest?cb=20200518132920"
+                    "name": "Artefakt des Jägers",
+                    "iconUrl": "https://static.wikia.nocookie.net/arksurvivalevolved_gamepedia/images/2/2f/Artifact_of_the_Hunter.png/revision/latest/scale-to-width-down/228?cb=20200518132859"
                 }
             ]
         },
 {
-            "id": "lower_south",
-            "name": "Höhle des Südens",
-            "lat": 80.2,
-            "lon": 53.5,
-            "icon": "https://i.postimg.cc/T3rPcXVQ/Cave-Entrance-Icon.webp",
-            "difficulty": "Leicht",
-            "recommendedlevel": "30",
+            "id": "Swamp_Cave",
+            "name": "Swamp Cave",
+            "lat": 65,
+            "lon": 35,
+            "icon": "https://i.postimg.cc/cHG4DrS6/Bild-2024-06-30-175803492.png",
+            "difficulty": "Schwer",
+            "recommendedlevel": "70",
             "images": [
                 "https://i.postimg.cc/Fsfddxfy/Bild-2024-06-30-171335914.png",
                 "https://ark.wiki.gg/images/thumb/CaveSwamp.jpg/1120px-CaveSwamp.jpg?e55b90"
@@ -127,8 +127,8 @@
             ],
             "artifacts": [
                 {
-                    "name": "Artefakt des Rudels",
-                    "iconUrl": "https://static.wikia.nocookie.net/arksurvivalevolved_gamepedia/images/c/c6/Artifact_of_the_Massive.png/revision/latest?cb=20200518132920"
+                    "name": "Artefakt des Immunen",
+                    "iconUrl": "https://static.wikia.nocookie.net/arksurvivalevolved_gamepedia/images/2/23/Artifact_of_the_Immune.png/revision/latest?cb=20200518132911"
                 }
             ]
         },
