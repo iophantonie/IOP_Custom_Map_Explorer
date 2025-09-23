@@ -1,0 +1,39 @@
+{
+  "Default": {
+    "Rex": "Alpha Rex",
+    "Raptor": "Alpha Raptor",
+    "Carnotaurus": "Alpha Carnotaurus",
+    "Megalodon": "Alpha Megalodon",
+    "Mosasaurus": "Alpha Mosasaurus",
+    "Tusoteuthis": "Alpha Tusoteuthis",
+    "Deathworm": "Alpha Deathworm",
+    "Fire Wyvern": "Alpha Fire Wyvern",
+    "Leedsichthys": "Alpha Leedsichthys"
+  },
+  "Svartalfheim": {
+    "Rex": "Berserker Rex",
+    "Raptor": "Berserker Raptor",
+    "Carnotaurus": "Berserker Carnotaurus",
+    "Megalodon": "Berserker Megalodon",
+    "Mosasaurus": "Berserker Mosasaurus",
+    "Tusoteuthis": "Berserker Tusoteuthis",
+    "Leedsichthys": "Berserker Leedsichthys"
+  },
+  "Aberration": {
+    "Karkinos": "Alpha Karkinos",
+    "Basilisk": "Alpha Basilisk",
+    "Surface Reaper King": "Alpha Surface Reaper King"
+  },
+  "Astraeos": {
+    "Mosasaurus": "Astral Mosa",
+    "Tusoteuthis": "Astral Tusoteuthis",
+    "Argentavis": "Astral Argentavis",
+    "Carnotaurus": "Astral Carnotaurus",
+    "Deinosuchus": "Astral Deinosuchus",
+    "Mammoth": "Astral Mammoth",
+    "Direwolf": "Astral Direwolf",
+    "Megalodon": "Astral Megalodon",
+    "Raptor": "Astral Raptor",
+    "Rex": "Astral Rex"
+  }
+}
