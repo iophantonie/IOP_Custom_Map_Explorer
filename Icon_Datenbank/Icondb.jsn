@@ -1,0 +1,39 @@
+{
+"resourceIcons": [
+{
+"name": "Kristall",
+"color": "#ADD8E6",
+"iconUrl": "https://www.google.com/search?q=https://ark-unity.com/images/icons/Crystal_Icon.webp"
+},
+{
+"name": "Metall",
+"color": "#b87333",
+"iconUrl": "https://www.google.com/search?q=https://ark-unity.com/images/icons/MetalOre_Icon.webp"
+},
+{
+"name": "Obsidian",
+"color": "#333333",
+"iconUrl": "https://www.google.com/search?q=https://ark.wiki.gg/images/Obsidian.png%3F9b1459"
+}
+],
+"itemIcons": [
+{
+"name": "Fackel",
+"iconUrl": "https://www.google.com/search?q=https://ark-unity.com/images/icons/Torch_Icon.webp"
+},
+{
+"name": "Spitzhacke",
+"iconUrl": "https://www.google.com/search?q=https://ark-unity.com/images/icons/MetalPick_Icon.webp"
+}
+],
+"creatureIcons": [
+{
+"name": "Raptor",
+"iconUrl": "https://www.google.com/search?q=https://ark-unity.com/images/icons/Empty_RaptorHead_Icon.webp"
+},
+{
+"name": "Baryonyx",
+"iconUrl": "https://www.google.com/search?q=https://ark-unity.com/images/icons/Empty_BaryonyxHead_Icon.webp"
+}
+]
+}
