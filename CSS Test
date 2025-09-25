@@ -1,0 +1,85 @@
+/* Allgemeine Schriftart und Farben */
+body {
+    font-family: 'Acme', sans-serif;
+}
+
+/* --- START: Navigationsmenü & Hover Animation --- */
+
+/* Basis-Styling für Menüpunkte (<a> und <button>) */
+.wsite-menu-default .wsite-menu-item-wrap a, 
+.wsite-menu-default .wsite-menu-item-wrap .wsite-menu-item, 
+.wsite-menu-default .wsite-menu-item-wrap button {
+    color: #ffffff; /* Weisse Schriftfarbe */
+    background: none;
+    border: none;
+    cursor: pointer;
+    text-decoration: none;
+}
+
+/* Hover-Farbe für Menüpunkte */
+.wsite-menu-default .wsite-menu-item-wrap:hover a, 
+.wsite-menu-default .wsite-menu-item-wrap:hover .wsite-menu-item, 
+.wsite-menu-default .wsite-menu-item-wrap:hover button {
+    color: #ff4c41; /* Rote Schriftfarbe beim Hover */
+}
+
+/* Farbe für den aktiven Menüpunkt */
+.wsite-menu-default .wsite-menu-item-wrap.active a, 
+.wsite-menu-default .wsite-menu-item-wrap.active .wsite-menu-item {
+    color: #ff4c41;
+}
+
+/* Hover-Animation: Unterstreichung */
+.wsite-menu-item-wrap {
+    position: relative;
+    padding-bottom: 5px; /* Platz für die Linie schaffen */
+}
+
+.wsite-menu-item-wrap::after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 0;
+    height: 2px;
+    background-color: #ff4c41;
+    transition: width 0.3s ease-in-out;
+}
+
+/* Animation auslösen bei Hover oder wenn der Punkt aktiv ist */
+.wsite-menu-item-wrap:hover::after,
+.wsite-menu-item-wrap.active::after {
+    width: 100%;
+}
+
+/* --- Dropdown Styling --- */
+.wsite-menu-wrap {
+    background-color: #111111; /* Dunkler Hintergrund für Dropdowns */
+}
+
+.wsite-menu .wsite-menu-item-wrap a {
+     color: #ffffff;
+}
+
+.wsite-menu .wsite-menu-item-wrap:hover a {
+     color: #ff4c41;
+}
+
+/* Deaktiviert die Hover-Animation für Elemente im Dropdown-Menü */
+.wsite-menu .wsite-menu-item-wrap::after {
+    display: none; 
+}
+        
+/* --- Button Style --- */
+.wsite-button-inner {
+    background: linear-gradient(to bottom, #ff4c41 0%, #d80000 100%);
+    color: #ffffff !important;
+    border-radius: 20px;
+    padding: 10px 20px; /* Beispiel für Padding, passe es bei Bedarf an */
+    display: inline-block;
+}
+
+.wsite-button:hover .wsite-button-inner {
+    background: linear-gradient(to bottom, #d80000 0%, #ff4c41 100%);
+}
