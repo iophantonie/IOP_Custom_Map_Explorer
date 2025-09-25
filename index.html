@@ -1,1 +1,2523 @@
-asssss
+<!DOCTYPE html>
+<html lang="de">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ark: Ascended Explorer Karte</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Acme&display=swap" rel="stylesheet">
+    <style>
+        body {
+            font-family: 'Acme', sans-serif;
+            background-image: url('https://i.postimg.cc/cJZNn6hx/ce504d7b512d006900399dead32eccd3.jpg');
+            background-size: cover;
+            background-position: center;
+            background-attachment: fixed;
+            background-repeat: no-repeat;
+            background-color: #111111; /* Fallback color */
+            color: #f5f3e6;
+            min-height: 100vh;
+        }
+        .main-container {
+            display: grid;
+            grid-template-columns: 1fr;
+            gap: 1.5rem;
+        }
+        @media (min-width: 1280px) { /* Changed breakpoint for 3 columns */
+            .main-container {
+                grid-template-columns: 300px 1fr 300px;
+            }
+        }
+        .sidebar {
+            background-color: rgba(34, 34, 34, 0.9);
+            padding: 1.5rem;
+            border-radius: 0.5rem;
+            border: 1px solid #444;
+            height: fit-content;
+            position: sticky;
+            top: 1rem;
+        }
+        .map-container {
+            position: relative;
+            width: 100%;
+            margin: auto;
+            border-radius: 0.5rem;
+            overflow: hidden;
+            box-shadow: 0 0 20px rgba(0, 0, 0, 0.9);
+            border: 3px solid rgba(216, 141, 10, 0.9);
+            aspect-ratio: 1 / 1;
+            transition: box-shadow 0.3s ease-in-out;
+        }
+        .map-container.iframe-active {
+            box-shadow: 0 0 30px rgba(245, 158, 11, 0.9);
+        }
+        .control-panel.iframe-active {
+            box-shadow: 0 0 30px rgba(245, 158, 11, 0.9);
+            transition: box-shadow 0.3s ease-in-out;
+        }
+        #live-map-toggle-panel.iframe-active {
+            box-shadow: 0 0 30px rgba(245, 158, 11, 0.9);
+            transition: box-shadow 0.3s ease-in-out;
+        }
+        #map-iframe {
+            display: block;
+            width: 100%;
+            height: 100%;
+        }
+        #map-canvas, #spawn-canvas, #resource-canvas, #spots-canvas, #click-canvas, #obelisk-canvas, #region-canvas, #cave-spots-canvas {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+        }
+        #click-canvas {
+            cursor: grab;
+            pointer-events: auto;
+        }
+        .control-panel {
+            background-color: rgba(34, 34, 34, 0.9);
+            padding: 1.5rem;
+            border-radius: 0.5rem;
+            box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06);
+            margin-bottom: 1.5rem;
+        }
+        select, input[type="text"] {
+            background-color: #333333;
+            color: #e2e8f0;
+            border: 1px solid #ef4444;
+        }
+        select:disabled, input:disabled {
+            background-color: #444;
+            color: #777;
+            cursor: not-allowed;
+        }
+        .sidebar-list-item {
+            background-color: #333;
+            padding: 0.5rem 0.75rem;
+            border-radius: 0.375rem;
+            margin-bottom: 0.5rem;
+            margin-left: 0.25rem;
+            margin-right: 0.25rem;
+            font-size: 0.8rem; /* Schriftgröße verkleinert */
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+        .sidebar-list-item.highlight {
+            background-color: #5a3d1a;
+            border: 1px solid #fcd34d;
+            transform: scale(1.03);
+            box-shadow: 0 0 12px rgba(252, 211, 77, 0.75);
+        }
+        .toggle-dot {
+            transition: transform 0.2s ease-in-out;
+        }
+        input:checked ~ .toggle-dot {
+            transform: translateX(100%);
+        }
+        input:checked ~ .toggle-bg {
+            background-color: #f59e0b;
+        }
+        /* Custom scrollbar for slider */
+        .scrollbar-hide::-webkit-scrollbar { display: none; }
+        .scrollbar-hide { -ms-overflow-style: none; scrollbar-width: none; }
+        
+        /* Spot Sliders */
+        .public-spot-card.highlight, .cave-spot-card.highlight {
+            transform: scale(1.05);
+            box-shadow: 0 0 15px #f59e0b;
+            border-color: #f59e0b; /* amber-500 */
+        }
+        .public-spot-card .relative img, .cave-spot-card .relative img {
+            transition: transform 0.3s ease;
+        }
+        .public-spot-card:hover .relative img, .cave-spot-card:hover .relative img {
+            transform: scale(1.1);
+        }
+
+        /* Modal Styles */
+        #spot-modal-content, #cave-spot-modal-content {
+            max-height: 90vh;
+            overflow-y: auto;
+            box-shadow: 0 0 25px rgba(255, 75, 62, 0.7);
+        }
+        .text-fire-red {
+            color: rgb(255, 75, 62);
+        }
+        .footer-link:hover {
+            filter: brightness(1.2);
+        }
+        .info-badge-category {
+            color: #fcd34d; /* gold-yellow */
+            border: 1px solid #fcd34d;
+            border-radius: 0.375rem; /* rounded-md */
+            padding: 2px 8px;
+            font-weight: bold;
+            margin-right: 8px;
+            background-color: rgba(252, 211, 77, 0.1); /* slight glow */
+            white-space: nowrap;
+        }
+        .special-info-category {
+            color: #38bdf8; /* sky-500 */
+            border: 1px solid #38bdf8;
+            border-radius: 0.375rem; /* rounded-md */
+            padding: 2px 8px;
+            font-weight: bold;
+            margin-right: 8px;
+            background-color: rgba(56, 189, 248, 0.1); /* slight glow */
+            white-space: nowrap;
+        }
+        /* Cave Modal Tab Styles */
+        .cave-tab {
+            padding: 8px 16px;
+            cursor: pointer;
+            border: none;
+            background-color: transparent;
+            color: #a0aec0; /* gray-500 */
+            border-bottom: 3px solid transparent;
+            transition: all 0.2s ease-in-out;
+            white-space: nowrap;
+        }
+        .cave-tab:hover {
+            color: #f5f3e6;
+        }
+        .cave-tab.active {
+            color: #f59e0b; /* amber-500 */
+            border-bottom-color: #f59e0b;
+            font-weight: bold;
+        }
+        #cave-tab-pagination button:disabled {
+            opacity: 0.4;
+            cursor: not-allowed;
+        }
+        /* Map List Styles */
+        .map-list-item {
+            padding: 0.5rem 1rem;
+            background-color: #333;
+            border: 1px solid #444;
+            border-radius: 0.375rem;
+            cursor: pointer;
+            transition: all 0.2s ease-in-out;
+            text-align: center;
+            font-weight: bold;
+        }
+        .map-list-item:hover {
+            background-color: #444;
+            border-color: rgb(255, 75, 62); /* fire-red */
+        }
+        .map-list-item.active {
+            background-color: rgba(239, 68, 68, 0.2);
+            border-color: rgb(255, 75, 62);
+            color: #fca5a5;
+            box-shadow: 0 0 25px rgba(255, 75, 62, 0.7);
+        }
+        /* Collapsible Section Styles */
+        .collapsible-content {
+            overflow: hidden;
+            transition: max-height 0.3s ease-in-out;
+            max-height: 1000px; /* Default open state */
+        }
+        .collapsible-content.collapsed {
+            max-height: 0;
+        }
+        .collapsible-arrow {
+            transition: transform 0.3s ease-in-out;
+        }
+        .collapsible-arrow.collapsed {
+            transform: rotate(-90deg);
+        }
+        .info-badge {
+            font-size: 0.65rem;
+            font-weight: bold;
+            padding: 2px 8px;
+            border-radius: 9999px;
+            border-width: 1px;
+        }
+    </style>
+</head>
+<body class="p-2 md:p-4">
+    <a href="https://infinityofphoenix-asa.com" target="_blank" rel="noopener noreferrer" class="absolute top-4 left-4 md:top-8 md:left-8 z-10">
+        <img src="https://i.postimg.cc/901x4tth/logo-1.png" alt="Infinity of Phoenix Logo" class="h-[3.3rem] md:h-[4.4rem]">
+    </a>
+
+    <header class="text-center mb-8 mx-auto">
+        <h1 class="text-3xl md:text-4xl font-bold bg-clip-text text-transparent bg-gradient-to-r from-red-500 to-yellow-500">Infinity of Phoenix - Explorer Karte</h1>
+        <p id="map-name" class="text-lg text-fire-red mt-2">The Island</p>
+    </header>
+
+    <div class="main-container px-2 md:px-4">
+        <aside class="sidebar">
+            <div id="map-selection-panel" class="mb-4">
+                <div id="map-list-header" class="flex justify-between items-center cursor-pointer">
+                    <h2 class="text-xl font-bold text-fire-red">Karte auswählen</h2>
+                    <svg id="map-list-arrow" class="collapsible-arrow w-5 h-5 text-white" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="3" stroke="currentColor">
+                        <path stroke-linecap="round" stroke-linejoin="round" d="M19.5 8.25l-7.5 7.5-7.5-7.5" />
+                    </svg>
+                </div>
+                <div id="map-list-content" class="collapsible-content mt-3">
+                    <ul id="map-list" class="space-y-4">
+                        <!-- Map list items will be injected here -->
+                    </ul>
+                </div>
+            </div>
+            <hr class="border-gray-600 my-4">
+            <div id="live-map-toggle-panel" class="p-4 border border-amber-500 rounded-lg">
+                <label for="iframe-toggle" class="flex items-center justify-between cursor-pointer">
+                    <span class="text-amber-400 flex items-center whitespace-nowrap">IOP Live Maps<img src="https://cdn.discordapp.com/emojis/1330641601357287539.webp?size=160&animated=true" alt="Live" class="inline-block h-5 w-5 ml-2"></span>
+                    <div class="relative">
+                        <input type="checkbox" id="iframe-toggle" class="sr-only">
+                        <div class="toggle-bg block bg-gray-600 w-14 h-8 rounded-full"></div>
+                        <div class="toggle-dot absolute left-1 top-1 bg-white w-6 h-6 rounded-full transition-transform"></div>
+                    </div>
+                </label>
+            </div>
+            <hr class="border-gray-600 my-4">
+            <div id="coords-display" class="flex flex-row text-base bg-black bg-opacity-70 p-2 rounded-md space-x-4 w-full justify-center">
+                <div id="lat-display" class="text-white">Lat: <span class="font-bold text-amber-300">0.00</span></div>
+                <div id="lon-display" class="text-white">Lon: <span class="font-bold text-amber-300">0.00</span></div>
+            </div>
+            <hr class="border-gray-600 my-4">
+            <div>
+                <div id="region-spawns-header" class="flex justify-between items-center cursor-pointer">
+                    <h2 class="text-xl font-bold text-fire-red">Spawns in der Zone</h2>
+                    <svg id="region-spawns-arrow" class="collapsible-arrow w-5 h-5 text-white" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="3" stroke="currentColor">
+                        <path stroke-linecap="round" stroke-linejoin="round" d="M19.5 8.25l-7.5 7.5-7.5-7.5" />
+                    </svg>
+                </div>
+                <div id="highlight-preview" class="mt-4 hidden"></div>
+                <div id="region-info-content" class="collapsible-content">
+                    <div id="region-info" class="mt-4">
+                        <p class="text-gray-400">Klicke auf eine Spawn-Zone auf der Karte.</p>
+                    </div>
+                </div>
+            </div>
+        </aside>
+
+        <main class="min-w-0">
+            <div class="control-panel">
+                <!-- General Info Panel -->
+                <div id="general-info-panel" class="mb-6"></div>
+                
+                <!-- Info Badge Section -->
+                <div id="info-badge-panel"></div>
+                <hr id="info-badge-hr" class="border-gray-700 my-6" style="display: none;">
+
+                 <!-- Kreaturen Section -->
+                 <h3 class="text-lg font-bold text-fire-red mb-3">Kreaturen</h3>
+                 <label for="creature-search" class="block mb-2 text-sm font-medium text-red-200">Suche nach einer Kreatur:</label>
+                 <input type="text" id="creature-search" class="w-full p-2.5 rounded-lg placeholder-gray-400 text-white focus:ring-2 focus:ring-orange-600 focus:border-orange-600 transition mb-4" placeholder="z.B. Raptor...">
+                 <label for="creature-select" class="block mb-2 text-sm font-medium text-red-200">Oder wähle aus der Liste:</label>
+                 <select id="creature-select" class="w-full p-2.5 rounded-lg focus:ring-2 focus:ring-orange-600 focus:border-orange-600 transition">
+                     <option selected value="">-- Bitte auswählen --</option>
+                 </select>
+                 <div id="loading-indicator" style="display: none;">Lade Daten...</div>
+ 
+                 <hr class="border-gray-700 my-6">
+
+                <!-- Legende Section -->
+                <div class="text-center">
+                    <h3 class="text-md font-semibold mb-3">Kreaturen Spawn Legende (Spawn-Wahrscheinlichkeit)</h3>
+                    <div id="legend" class="flex flex-wrap items-center justify-center"></div>
+                </div>
+            </div>
+
+            <div class="map-container">
+                <img id="map-image" src="" alt="Explorer Karte" class="hidden">
+                <iframe id="map-iframe" src="" title="Map Iframe" frameborder="0" style="display: none;"></iframe>
+                
+                <canvas id="map-canvas" style="pointer-events: none;"></canvas>
+                <canvas id="region-canvas" style="pointer-events: none;"></canvas>
+                <canvas id="spawn-canvas"></canvas>
+                <canvas id="resource-canvas"></canvas>
+                <canvas id="obelisk-canvas"></canvas>
+                <canvas id="cave-spots-canvas"></canvas>
+                <canvas id="spots-canvas"></canvas>
+                <canvas id="click-canvas"></canvas>
+            </div>
+
+            <div class="control-panel mt-4">
+                <div id="public-spots-panel" class="relative" style="display: none;">
+                        <div class="absolute top-0 right-0">
+                            <label for="spots-toggle" class="flex items-center cursor-pointer">
+                                <span id="spots-toggle-label" class="mr-3 text-sm text-white">Verstecken</span>
+                                <div class="relative">
+                                    <input type="checkbox" id="spots-toggle" class="sr-only">
+                                    <div class="toggle-bg block bg-gray-600 w-14 h-8 rounded-full"></div>
+                                    <div class="toggle-dot absolute left-1 top-1 bg-white w-6 h-6 rounded-full transition-transform"></div>
+                                </div>
+                            </label>
+                        </div>
+                    <h3 class="text-lg font-bold text-fire-red mb-3">Öffentliche Orte</h3>
+                    <div id="public-spots-container" class="relative flex justify-center">
+                        <div id="public-spots-slider" class="flex justify-start overflow-x-auto snap-x snap-mandatory scroll-smooth scrollbar-hide gap-4 p-6 -m-2">
+                            <!-- Public Spot Cards will be injected here -->
+                        </div>
+                        <button id="slider-prev" class="absolute left-0 top-1/2 -translate-y-1/2 bg-gray-800/50 hover:bg-gray-800 p-3 rounded-full z-10 text-amber-400 transition-all duration-300 border border-amber-400 hover:shadow-[0_0_15px_rgba(245,158,11,0.7)]"><svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="3"><path stroke-linecap="round" stroke-linejoin="round" d="M15 19l-7-7 7-7" /></svg></button>
+                        <button id="slider-next" class="absolute right-0 top-1/2 -translate-y-1/2 bg-gray-800/50 hover:bg-gray-800 p-3 rounded-full z-10 text-amber-400 transition-all duration-300 border border-amber-400 hover:shadow-[0_0_15px_rgba(245,158,11,0.7)]"><svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="3"><path stroke-linecap="round" stroke-linejoin="round" d="M9 5l7 7-7 7" /></svg></button>
+                    </div>
+                </div>
+
+                <!-- Cave Spots Section -->
+                <div id="cave-spots-panel" class="relative mt-8" style="display: none;">
+                    <hr class="border-gray-700 my-6">
+                    <div class="absolute top-6 right-0">
+                       <label for="cave-spots-toggle" class="flex items-center cursor-pointer">
+                            <span id="cave-spots-toggle-label" class="mr-3 text-sm text-white">Verstecken</span>
+                            <div class="relative">
+                                <input type="checkbox" id="cave-spots-toggle" class="sr-only">
+                                <div class="toggle-bg block bg-gray-600 w-14 h-8 rounded-full"></div>
+                                <div class="toggle-dot absolute left-1 top-1 bg-white w-6 h-6 rounded-full transition-transform"></div>
+                            </div>
+                        </label>
+                    </div>
+                    <h3 class="text-lg font-bold text-fire-red mb-3">Höhlen</h3>
+                        <div id="cave-spots-container" class="relative flex justify-center">
+                        <div id="cave-spots-slider" class="flex justify-start overflow-x-auto snap-x snap-mandatory scroll-smooth scrollbar-hide gap-4 p-8 -m-2">
+                            <!-- Cave Spot Cards will be injected here -->
+                        </div>
+                        <button id="cave-slider-prev" class="absolute left-0 top-1/2 -translate-y-1/2 bg-gray-800/50 hover:bg-gray-800 p-3 rounded-full z-10 text-amber-400 transition-all duration-300 border border-amber-400 hover:shadow-[0_0_15px_rgba(245,158,11,0.7)]"><svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="3"><path stroke-linecap="round" stroke-linejoin="round" d="M15 19l-7-7 7-7" /></svg></button>
+                        <button id="cave-slider-next" class="absolute right-0 top-1/2 -translate-y-1/2 bg-gray-800/50 hover:bg-gray-800 p-3 rounded-full z-10 text-amber-400 transition-all duration-300 border border-amber-400 hover:shadow-[0_0_15px_rgba(245,158,11,0.7)]"><svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="3"><path stroke-linecap="round" stroke-linejoin="round" d="M9 5l7 7-7 7" /></svg></button>
+                    </div>
+                </div>
+            </div>
+        </main>
+        
+        <aside class="sidebar">
+            <!-- Ressourcen Section -->
+            <div class="relative">
+                <h3 class="text-lg font-bold text-fire-red mb-3">Ressourcen Fundorte</h3>
+                <div class="absolute top-0 right-0">
+                    <label class="flex items-center text-white text-sm cursor-pointer">
+                        <span class="mr-2">Alle</span>
+                        <input type="checkbox" id="select-all-resources" class="w-4 h-4 mr-2">
+                    </label>
+                </div>
+                <p class="mb-4 text-sm font-medium text-red-200">Hake die Kästchen an, um die Fundorte anzuzeigen.</p>
+                <div id="resource-controls" class="grid grid-cols-1 gap-4"></div>
+            </div>
+
+            <hr class="border-gray-700 my-6">
+
+            <!-- Obelisken Section -->
+            <div id="obelisk-section" style="display: none;">
+                <div class="relative">
+                    <h3 class="text-lg font-bold text-fire-red mb-3">Obelisken</h3>
+                    <div class="absolute top-0 right-0">
+                        <label class="flex items-center text-white text-sm cursor-pointer">
+                            <span class="mr-2">Alle</span>
+                            <input type="checkbox" id="select-all-obelisks" class="w-4 h-4 mr-2">
+                        </label>
+                    </div>
+                    <p class="mb-4 text-sm font-medium text-red-200">Hake die Kästchen an, um die Obelisken anzuzeigen.</p>
+                    <div id="obelisk-controls" class="grid grid-cols-1 gap-4"></div>
+                </div>
+                <hr class="border-gray-700 my-6">
+            </div>
+            
+            <!-- Regionen Section -->
+            <div id="region-section" style="display: none;">
+                <div class="relative">
+                    <h3 class="text-lg font-bold text-fire-red mb-3">Regionen</h3>
+                    <div class="absolute top-0 right-0">
+                        <label class="flex items-center text-white text-sm cursor-pointer">
+                            <span class="mr-2">Alle</span>
+                            <input type="checkbox" id="select-all-regions" class="w-4 h-4 mr-2">
+                        </label>
+                    </div>
+                    <p class="mb-4 text-sm font-medium text-red-200">Hake die Kästchen an, um die Regionen anzuzeigen.</p>
+                    <div id="region-controls" class="grid grid-cols-1 gap-4"></div>
+                </div>
+                <hr class="border-gray-700 my-6">
+            </div>
+        </aside>
+    </div>
+
+    <footer class="text-center p-4 mt-8 text-gray-400 text-2xl flex justify-center items-center bg-transparent px-2 md:px-4">
+        <span>&copy;2025&nbsp;&nbsp;</span>
+        <a href="https://infinityofphoenix-asa.com" target="_blank" rel="noopener noreferrer" class="text-orange-500 footer-link inline-flex items-center">
+            <img src="https://i.postimg.cc/901x4tth/logo-1.png" alt="Logo" class="h-[1.2rem] mr-1.5">
+            <span>Infinity of Phoenix</span>
+        </a>
+        <span>&nbsp;-&nbsp;Alle Rechte Vorbehalten.</span>
+    </footer>
+    
+    <div id="spot-modal" class="fixed inset-0 bg-black bg-opacity-80 z-50 hidden items-center justify-center p-4">
+        <div class="relative w-full max-w-6xl">
+            <button id="spot-modal-close" class="absolute top-[-16px] right-[-16px] text-white bg-[rgb(255,75,62)] hover:bg-red-500 rounded-lg h-9 w-9 flex items-center justify-center transition-all shadow-lg border-2 border-white/20 hover:scale-110 z-10">
+                <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="3">
+                    <path stroke-linecap="round" stroke-linejoin="round" d="M6 18L18 6M6 6l12 12" />
+                </svg>
+            </button>
+            <div id="spot-modal-content" class="bg-[#222222] border-[3px] border-red-500 rounded-lg">
+                <div id="spot-modal-body" class="p-6"></div>
+            </div>
+        </div>
+    </div>
+
+    <div id="cave-spot-modal" class="fixed inset-0 bg-black bg-opacity-80 z-50 hidden items-center justify-center p-4">
+       <div class="relative w-full max-w-6xl">
+            <button id="cave-spot-modal-close" class="absolute top-[-16px] right-[-16px] text-white bg-[rgb(255,75,62)] hover:bg-red-500 rounded-lg h-9 w-9 flex items-center justify-center transition-all shadow-lg border-2 border-white/20 hover:scale-110 z-10">
+                <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="3">
+                    <path stroke-linecap="round" stroke-linejoin="round" d="M6 18L18 6M6 6l12 12" />
+                </svg>
+            </button>
+            <div id="cave-spot-modal-content" class="bg-[#222222] border-[3px] border-red-500 rounded-lg">
+                 <!-- Modal content will be injected here -->
+            </div>
+        </div>
+    </div>
+
+    <script>
+        // -- SETUP --
+        let allCreatureData = {}; 
+        let allResourceData = {};
+        let allPublicSpotsData = {};
+        let allCaveSpotsData = {};
+        let allInfoBadgeData = {};
+        let allObeliskData = {};
+        let allRegionData = {};
+        let mapConfigs = {};
+        let currentMapConfig = {};
+        let highlightedSpotId = null;
+        let hoveredSpotId = null;
+        let highlightedCaveSpotId = null;
+        let hoveredCaveSpotId = null;
+        let highlightedObeliskId = null;
+        let hoveredObeliskId = null;
+        let obeliskIcons = {};
+        let spotIcons = {};
+        let caveSpotIcons = {};
+        let regionImages = {};
+        let resourceTranslations = {};
+        let creatureTranslations = {};
+        let infoBadgeTranslations = {};
+        let alphaVariantConfigs = {};
+        let globalItemDatabase = {};
+        let spawnZoneBlocklistData = {};
+        let spawnSharingConfig = {};
+        let spawnRarityConfig = {};
+        let difficultyConfig = {};
+        let badgeConfig = {};
+
+        // -- ZOOM & PAN SETUP --
+        let scale = 1;
+        let panOffset = { x: 0, y: 0 };
+        let isPanning = false;
+        let panStart = { x: 0, y: 0 };
+        const maxScale = 8;
+        const minScale = 1;
+        let mapCanvas, mapCtx;
+        let currentMapKey = 'TheIsland';
+
+
+        // -- KOORDINATENSYSTEM-KONFIGURATION --
+        const MAP_LAT_MIN = 0; const MAP_LAT_MAX = 100;
+        const MAP_LON_MIN = 0; const MAP_LON_MAX = 100;
+        const MAP_LAT_RANGE = MAP_LAT_MAX - MAP_LAT_MIN;
+        const MAP_LON_RANGE = MAP_LON_MAX - MAP_LON_MIN;
+        
+        const SPOT_LAT_MIN = 0; const SPOT_LAT_MAX = 100;
+        const SPOT_LON_MIN = 0; const SPOT_LON_MAX = 100;
+        const SPOT_LAT_RANGE = SPOT_LAT_MAX - SPOT_LAT_MIN;
+        const SPOT_LON_RANGE = SPOT_LON_MAX - SPOT_LON_MIN;
+
+        const resourceConfig = {
+            'Metal': { color: '#b87333' }, 'Crystal': { color: '#ADD8E6' },
+            'Obsidian': { color: '#333333' }, 'Oil': { color: '#663399' },
+            'Rich Metal': { color: '#DAA520' }, 'Silica Pearls': { color: '#F5F5DC' }
+        };
+
+        const obeliskConfig = {
+            'Grüner Obelisk': { color: '#22c55e' }, // green-500
+            'Blauer Obelisk': { color: '#3b82f6' }, // blue-500
+            'Roter Obelisk': { color: '#ef4444' }   // red-500
+        };
+        
+        let mapNameDisplay, creatureSelect, creatureSearch, mapImage, legendContainer,
+            loadingIndicator, regionInfoContainer, resourceControls, iframeToggle, mapIframe,
+            mapContainer, liveMapTogglePanel, publicSpotsSlider, spotsToggle, spotsToggleLabel,
+            coordsDisplay, generalInfoPanel, caveSpotsCanvas, caveSpotsSlider,
+            caveSpotsToggle, caveSpotsToggleLabel, spawnCanvas, resourceCanvas, obeliskCanvas,
+            spotsCanvas, clickCanvas, regionCanvas, spawnCtx, resourceCtx, obeliskCtx, spotsCtx, caveSpotsCtx, clickCtx, regionCtx;
+        
+        let cavePattern = null;
+
+        // -- FUNKTIONEN --
+
+        function getIconUrl(itemName) {
+            const trimmedItem = itemName.trim();
+            const dbEntry = globalItemDatabase[trimmedItem];
+            if (dbEntry && dbEntry.iconUrl) {
+                return dbEntry.iconUrl;
+            }
+            return 'https://placehold.co/32x32/333/FFF?text=?'; 
+        }
+
+        function populateMapList() {
+            const mapList = document.getElementById('map-list');
+            mapList.innerHTML = '';
+            for (const key in mapConfigs) {
+                const map = mapConfigs[key];
+                if (map.activated) {
+                    const li = document.createElement('li');
+                    li.className = 'map-list-item';
+                    li.textContent = map.displayName;
+                    li.dataset.mapKey = key;
+
+                    li.addEventListener('click', () => {
+                        loadMapData(key);
+                    });
+                    mapList.appendChild(li);
+                }
+            }
+        }
+
+        function populateDropdown() {
+            const placeholder = creatureSelect.querySelector('option[value=""]');
+            creatureSelect.innerHTML = ''; 
+            if (placeholder) {
+                creatureSelect.appendChild(placeholder);
+            }
+            const creatureNames = Object.keys(allCreatureData);
+            const translatedNames = creatureNames.map(name => ({
+                english: name,
+                german: creatureTranslations[name.trim()] || name.trim()
+            }));
+
+            translatedNames.sort((a, b) => a.german.localeCompare(b.german));
+
+            translatedNames.forEach(creature => {
+                const option = document.createElement('option');
+                option.value = creature.english;
+                option.textContent = creature.german;
+                creatureSelect.appendChild(option);
+            });
+        }
+
+        function populateInfoBadges() {
+            const container = document.getElementById('info-badge-panel');
+            const hr = document.getElementById('info-badge-hr');
+            container.innerHTML = '';
+            let finalHtml = '';
+
+            const badges = allInfoBadgeData.infoBadges;
+            const specialInfo = allInfoBadgeData.specialInfo;
+
+            if (badges && Object.keys(badges).length > 0) {
+                let badgesHtml = '<h3 class="text-lg font-bold text-fire-red mb-4">Karteninformationen</h3>';
+                const order = ["Kartenart", "Bosse", "Besonderheiten", "Höhlen", "Artefakte", "Öffentliche Farmen & Fallen"];
+
+                badgesHtml += '<div class="grid grid-cols-1 lg:grid-cols-2 gap-x-6 gap-y-3">';
+                order.forEach(key => {
+                    if (badges[key] && infoBadgeTranslations[key]) {
+                        const value = badges[key];
+                        const displayValue = Array.isArray(value) ? value.join(', ') : value;
+                        badgesHtml += `<div class="flex items-center text-sm">`;
+                        badgesHtml += `<span class="info-badge-category flex-shrink-0">${infoBadgeTranslations[key]}</span>`;
+                        badgesHtml += `<span class="text-white leading-tight">${displayValue}</span>`;
+                        badgesHtml += `</div>`;
+                    }
+                });
+                badgesHtml += '</div>';
+                finalHtml += badgesHtml;
+            }
+
+            const hasSpecialInfo = specialInfo && (
+                (specialInfo.Kategorie && Array.isArray(specialInfo.Liste) && specialInfo.Liste.length > 0) ||
+                (Array.isArray(specialInfo.OnEachMap_Liste) && specialInfo.OnEachMap_Liste.length > 0)
+            );
+
+            if (finalHtml && hasSpecialInfo) {
+                finalHtml += '<hr class="border-gray-700 my-6">';
+            }
+
+            if (specialInfo && specialInfo.Kategorie && Array.isArray(specialInfo.Liste) && specialInfo.Liste.length > 0) {
+                if (specialInfo.Kategorie === 'S-Kreaturen:') {
+                    let specialInfoHtml = `<div class="text-center">`; 
+                    specialInfoHtml += `<h3 class="text-lg font-bold text-sky-500 mb-4">S-Kreaturen Vorkommen</h3>`; 
+                    specialInfoHtml += `<div class="flex items-center justify-center flex-wrap gap-2">`; 
+                    
+                    specialInfo.Liste.forEach(kreatur => {
+                        specialInfoHtml += `<span class="special-info-category">${kreatur}</span>`;
+                    });
+
+                    specialInfoHtml += `</div></div>`;
+                    finalHtml += specialInfoHtml;
+                } else {
+                    const listText = specialInfo.Liste.join(', ');
+                    let specialInfoHtml = `<div>`;
+                    specialInfoHtml += `<div class="flex items-center text-sm">`;
+                    specialInfoHtml += `<span class="special-info-category flex-shrink-0">${specialInfo.Kategorie}</span>`;
+                    specialInfoHtml += `<span class="text-white leading-tight">${listText}</span>`;
+                    specialInfoHtml += `</div></div>`;
+                    finalHtml += specialInfoHtml;
+                }
+            }
+            
+            if (specialInfo && Array.isArray(specialInfo.OnEachMap_Liste) && specialInfo.OnEachMap_Liste.length > 0) {
+                const isFirstSpecialInfo = !(specialInfo.Kategorie && Array.isArray(specialInfo.Liste) && specialInfo.Liste.length > 0);
+                const marginTopClass = isFirstSpecialInfo ? '' : 'mt-6';
+                let onEachMapHtml = `<div class="${marginTopClass} text-center">`;
+                onEachMapHtml += `<h4 class="text-md font-bold text-gray-300 mb-3">Auf jeder Karte:</h4>`;
+                onEachMapHtml += `<div class="flex justify-center flex-wrap gap-2">`;
+                specialInfo.OnEachMap_Liste.forEach(kreatur => {
+                    onEachMapHtml += `<span class="inline-block text-cyan-400 border border-cyan-400 rounded-md py-1 px-2 text-sm font-bold bg-cyan-400/10 whitespace-nowrap">${kreatur}</span>`;
+                });
+                onEachMapHtml += `</div></div>`;
+                finalHtml += onEachMapHtml;
+            }
+
+            if (finalHtml) {
+                container.innerHTML = finalHtml;
+                container.style.display = 'block';
+                hr.style.display = 'block';
+            } else {
+                container.style.display = 'none';
+                hr.style.display = 'none';
+            }
+        }
+        
+        function populateGeneralInfo() {
+            generalInfoPanel.innerHTML = '';
+            const info = allInfoBadgeData.generalInfo;
+
+            if (info && Array.isArray(info) && info.length > 0) {
+                const infoContainer = document.createElement('div');
+                infoContainer.className = 'text-center p-3 border border-amber-400 rounded-lg transition-shadow duration-300 hover:shadow-[0_0_15px_rgba(245,158,11,0.7)]';
+                info.forEach(text => {
+                    const p = document.createElement('p');
+                    p.className = 'text-base text-gray-300';
+                    p.textContent = text;
+                    infoContainer.appendChild(p);
+                });
+                generalInfoPanel.appendChild(infoContainer);
+            }
+        }
+
+        function updateSelectAllRegionsState() {
+            const selectAllCheckbox = document.getElementById('select-all-regions');
+            const regionCheckboxes = document.querySelectorAll('#region-controls input[type="checkbox"]');
+            if (!selectAllCheckbox || regionCheckboxes.length === 0) return;
+            const allChecked = ![...regionCheckboxes].some(cb => !cb.checked);
+            selectAllCheckbox.checked = allChecked;
+        }
+
+        function populateRegionControls() {
+            const controlsContainer = document.getElementById('region-controls');
+            const sectionContainer = document.getElementById('region-section');
+            controlsContainer.innerHTML = '';
+
+            if (!allRegionData.regions || allRegionData.regions.length === 0) {
+                sectionContainer.style.display = 'none';
+                return;
+            }
+            sectionContainer.style.display = 'block';
+
+            allRegionData.regions.forEach(region => {
+                const label = document.createElement('label');
+                label.className = 'flex items-center text-white cursor-pointer';
+
+                const checkbox = document.createElement('input');
+                checkbox.type = 'checkbox';
+                checkbox.name = region.id;
+                checkbox.className = 'w-4 h-4 mr-2';
+                checkbox.addEventListener('change', () => {
+                    drawRegions();
+                    updateSelectAllRegionsState();
+                });
+
+                const colorBox = document.createElement('div');
+                colorBox.className = 'w-4 h-4 mr-2 rounded-sm';
+                colorBox.style.backgroundColor = region.color || '#FFFFFF';
+
+                const span = document.createElement('span');
+                span.textContent = region.name;
+
+                label.appendChild(checkbox);
+                label.appendChild(colorBox);
+                label.appendChild(span);
+                controlsContainer.appendChild(label);
+            });
+            updateSelectAllRegionsState();
+        }
+        
+        async function preloadRegionImages() {
+            regionImages = {}; // Reset images for new map
+            if (!allRegionData.regions) return;
+            const promises = allRegionData.regions.map(region => {
+                return new Promise((resolve) => {
+                    if (!region.imageUrl) return resolve();
+                    const img = new Image();
+                    img.src = region.imageUrl;
+                    img.onload = () => {
+                        regionImages[region.id] = img;
+                        resolve();
+                    };
+                    img.onerror = () => resolve();
+                });
+            });
+            await Promise.all(promises);
+        }
+
+        function drawRegions() {
+            const width = regionCanvas.width;
+            const height = regionCanvas.height;
+            regionCtx.clearRect(0, 0, width, height);
+            const checkboxes = document.querySelectorAll('#region-controls input[type="checkbox"]:checked');
+            if (checkboxes.length === 0) return;
+
+            regionCtx.save();
+            regionCtx.translate(panOffset.x, panOffset.y);
+            regionCtx.scale(scale, scale);
+
+            checkboxes.forEach(checkbox => {
+                const regionId = checkbox.name;
+                const regionData = allRegionData.regions.find(r => r.id === regionId);
+                const img = regionImages[regionId];
+
+                if (img && regionData && img.complete) {
+                    regionCtx.save();
+                    regionCtx.shadowColor = regionData.color || 'transparent';
+                    regionCtx.shadowBlur = 20;
+                    // Drawing twice to make shadow stronger, simulating two CSS drop-shadows
+                    regionCtx.drawImage(img, 0, 0, width, height);
+                    regionCtx.drawImage(img, 0, 0, width, height);
+                    regionCtx.restore();
+                }
+            });
+
+            regionCtx.restore();
+        }
+        
+        function updateSelectAllObelisksState() {
+            const selectAllCheckbox = document.getElementById('select-all-obelisks');
+            const obeliskCheckboxes = document.querySelectorAll('#obelisk-controls input[type="checkbox"]');
+            if (!selectAllCheckbox || obeliskCheckboxes.length === 0) return;
+            const allChecked = ![...obeliskCheckboxes].some(cb => !cb.checked);
+            selectAllCheckbox.checked = allChecked;
+        }
+
+        function populateObeliskControls() {
+            const controlsContainer = document.getElementById('obelisk-controls');
+            const sectionContainer = document.getElementById('obelisk-section');
+            controlsContainer.innerHTML = '';
+
+            if (!allObeliskData.obelisks || allObeliskData.obelisks.length === 0) {
+                sectionContainer.style.display = 'none';
+                return;
+            }
+            sectionContainer.style.display = 'block';
+
+            allObeliskData.obelisks.forEach(obelisk => {
+                const label = document.createElement('label');
+                label.className = 'flex items-center text-white cursor-pointer';
+
+                const checkbox = document.createElement('input');
+                checkbox.type = 'checkbox';
+                checkbox.name = obelisk.name;
+                checkbox.className = 'w-4 h-4 mr-2';
+                checkbox.addEventListener('change', () => {
+                    drawObelisks();
+                    updateSelectAllObelisksState();
+                });
+
+                const colorCircle = document.createElement('div');
+                colorCircle.className = 'w-4 h-4 mr-2 rounded-full';
+                colorCircle.style.backgroundColor = obeliskConfig[obelisk.name]?.color || '#FFFFFF';
+
+                const span = document.createElement('span');
+                span.textContent = obelisk.name;
+
+                label.appendChild(checkbox);
+                label.appendChild(colorCircle);
+                label.appendChild(span);
+                controlsContainer.appendChild(label);
+            });
+            updateSelectAllObelisksState();
+        }
+
+
+        function createCavePattern() {
+            const patternCanvas = document.createElement('canvas');
+            const pCtx = patternCanvas.getContext('2d');
+            const size = 10;
+            patternCanvas.width = size; patternCanvas.height = size;
+            pCtx.strokeStyle = 'rgba(255, 255, 255, 0.7)';
+            pCtx.lineWidth = 1;
+            pCtx.beginPath();
+            pCtx.moveTo(0, size); pCtx.lineTo(size, 0); pCtx.stroke();
+            cavePattern = spawnCtx.createPattern(patternCanvas, 'repeat');
+        }
+        
+        function populatePublicSpotsSlider() {
+            const slider = document.getElementById('public-spots-slider');
+            const panel = document.getElementById('public-spots-panel');
+            slider.innerHTML = '';
+            
+            if (!allPublicSpotsData.publicSpots || allPublicSpotsData.publicSpots.length === 0) {
+                panel.style.display = 'none';
+                return;
+            }
+            panel.style.display = 'block';
+
+            allPublicSpotsData.publicSpots.forEach(spot => {
+                const card = document.createElement('div');
+                card.id = `spot-card-${spot.id}`;
+                card.className = 'public-spot-card snap-start flex-shrink-0 w-80 bg-[#222222] rounded-lg p-4 flex flex-col items-center text-center cursor-pointer border border-gray-700 hover:border-amber-500 transition-all duration-300';
+                
+                let badgesHtml = '';
+                if (spot.infoBadges && spot.infoBadges.length > 0) {
+                    badgesHtml = '<div class="absolute top-1.5 left-1.5 flex flex-col items-start gap-1">';
+                    spot.infoBadges.slice(0, 2).forEach(badge => { // Show max 2 badges on card
+                        const config = badgeConfig[badge.type.toLowerCase()] || { borderColor: '#a0aec0', bgColor: 'rgba(160, 174, 192, 0.2)', textColor: '#e2e8f0' };
+                        badgesHtml += `<span class="info-badge" style="border-color: ${config.borderColor}; background-color: ${config.bgColor}; color: ${config.textColor};">${badge.text}</span>`;
+                    });
+                    badgesHtml += '</div>';
+                }
+                
+                card.innerHTML = `
+                    <div class="relative w-full h-72 mb-3 overflow-hidden rounded-md">
+                        <img src="${(spot.images && spot.images[0]) || 'https://placehold.co/200x200/111/FFF?text=Icon'}" alt="${spot.name}" class="w-full h-full object-cover">
+                        ${badgesHtml}
+                        <button class="info-button absolute top-1.5 right-1.5 bg-gray-900/60 text-white p-1 rounded-full hover:bg-amber-500 transition-colors focus:outline-none" title="Weitere Infos">
+                            <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" viewBox="0 0 20 20" fill="currentColor"><path fill-rule="evenodd" d="M18 10a8 8 0 11-16 0 8 8 0 0116 0zm-7-4a1 1 0 11-2 0 1 1 0 012 0zM9 9a1 1 0 000 2v3a1 1 0 001 1h1a1 1 0 100-2v-3a1 1 0 00-1-1H9z" clip-rule="evenodd" /></svg>
+                        </button>
+                    </div>
+                    <div>
+                        <h4 class="font-bold text-amber-400 truncate w-full">${spot.name}</h4>
+                        <p class="text-xs text-gray-400 mt-2 h-8 overflow-hidden">${spot.shortDescription || ''}</p>
+                        <p class="text-sm text-gray-300 mt-1">Lat: ${spot.lat.toFixed(2).replace('.',',')} / Lon: ${spot.lon.toFixed(2).replace('.',',')}</p>
+                    </div>
+                `;
+
+                card.addEventListener('click', () => {
+                    if (highlightedSpotId === spot.id) {
+                        clearHighlights();
+                    } else {
+                        highlightSpotCard(spot.id);
+                        highlightSpotMarker(spot.id);
+                    }
+                });
+
+                const infoButton = card.querySelector('.info-button');
+                infoButton.addEventListener('click', (e) => {
+                    e.stopPropagation();
+                    openPublicSpotModal(spot.id);
+                });
+                slider.appendChild(card);
+            });
+        }
+        
+        function openPublicSpotModal(spotId) {
+            const spot = allPublicSpotsData.publicSpots.find(s => s.id === spotId);
+            if (!spot) return;
+
+            const modalBody = document.getElementById('spot-modal-body');
+
+            let imageSliderHtml = '';
+            if(spot.images && spot.images.length > 0) {
+                const slides = spot.images.map((imgSrc, index) => `
+                    <div class="spot-image-slide ${index === 0 ? '' : 'hidden'} w-full h-full flex items-center justify-center p-6">
+                        <img src="${imgSrc}" class="max-w-full max-h-full object-contain rounded-md border-2 border-red-500 shadow-[0_0_15px_rgba(255,75,62,0.7)] transition-transform duration-300 hover:scale-105">
+                    </div>
+                `).join('');
+                const arrows = spot.images.length > 1 ? `
+                    <button class="spot-image-prev absolute left-2 top-1/2 -translate-y-1/2 bg-gray-800/50 p-2 rounded-full text-red-500 hover:bg-gray-700 border border-red-500 hover:shadow-[0_0_15px_rgba(255,75,62,0.7)] transition-all">&lt;</button>
+                    <button class="spot-image-next absolute right-2 top-1/2 -translate-y-1/2 bg-gray-800/50 p-2 rounded-full text-red-500 hover:bg-gray-700 border border-red-500 hover:shadow-[0_0_15px_rgba(255,75,62,0.7)] transition-all">&gt;</button>
+                ` : '';
+                imageSliderHtml = `<div class="relative overflow-hidden rounded-md mb-4 h-96">${slides}${arrows}</div>`;
+            }
+
+            modalBody.innerHTML = `
+                <h2 class="text-2xl font-bold text-amber-400 mb-4">${spot.name}</h2>
+                ${imageSliderHtml}
+                <p class="text-gray-300 whitespace-pre-wrap">${spot.longDescription || 'Keine Beschreibung verfügbar.'}</p>
+                <p class="text-sm text-gray-400 mt-4">Lat: ${spot.lat.toFixed(2).replace('.',',')} / Lon: ${spot.lon.toFixed(2).replace('.',',')}</p>
+            `;
+            const modal = document.getElementById('spot-modal');
+            modal.classList.remove('hidden');
+            modal.classList.add('flex');
+
+            // Add event listeners for the new slider
+            if(spot.images && spot.images.length > 1) {
+                let currentSlide = 0;
+                const slides = modalBody.querySelectorAll('.spot-image-slide');
+                const nextBtn = modalBody.querySelector('.spot-image-next');
+                const prevBtn = modalBody.querySelector('.spot-image-prev');
+
+                const showSlide = (index) => {
+                    slides.forEach((slide, i) => {
+                        slide.classList.toggle('hidden', i !== index);
+                    });
+                };
+
+                nextBtn.addEventListener('click', () => {
+                    currentSlide = (currentSlide + 1) % slides.length;
+                    showSlide(currentSlide);
+                });
+                prevBtn.addEventListener('click', () => {
+                    currentSlide = (currentSlide - 1 + slides.length) % slides.length;
+                    showSlide(currentSlide);
+                });
+            }
+        }
+
+        function closeSpotModal() {
+            const modal = document.getElementById('spot-modal');
+            modal.classList.add('hidden');
+            modal.classList.remove('flex');
+        }
+
+        function handleSearch() {
+            const searchTerm = creatureSearch.value.toLowerCase().trim();
+            const options = creatureSelect.options;
+            let bestMatch = null;
+            for (let i = 0; i < options.length; i++) {
+                const option = options[i];
+                if (option.value === "") {
+                    option.style.display = "";
+                    continue;
+                }
+                const optionText = option.textContent.toLowerCase();
+                if (optionText.includes(searchTerm)) {
+                    option.style.display = "";
+                    if (!bestMatch) bestMatch = option;
+                } else {
+                    option.style.display = "none";
+                }
+            }
+            if (bestMatch) creatureSelect.value = bestMatch.value;
+            else creatureSelect.value = "";
+            drawSpawns();
+        }
+        
+        async function preloadObeliskIcons() {
+            obeliskIcons = {}; // Reset icons
+            if (!allObeliskData.obelisks) return;
+            const promises = allObeliskData.obelisks.map(obelisk => {
+                return new Promise((resolve) => {
+                    if (!obelisk.icon) return resolve();
+                    const img = new Image();
+                    img.src = obelisk.icon;
+                    img.onload = () => {
+                        obeliskIcons[obelisk.name] = img;
+                        resolve();
+                    };
+                    img.onerror = () => resolve(); // Resolve even on error so it doesn't block loading
+                });
+            });
+            await Promise.all(promises);
+        }
+
+        async function preloadSpotIcons() {
+            spotIcons = {}; // Reset icons for new map
+            if (!allPublicSpotsData.publicSpots) return;
+            const promises = allPublicSpotsData.publicSpots.map(spot => {
+                return new Promise((resolve) => {
+                    if (!spot.icon) return resolve();
+                    const img = new Image();
+                    img.src = spot.icon;
+                    img.onload = () => {
+                        spotIcons[spot.id] = img;
+                        resolve();
+                    };
+                    img.onerror = () => resolve();
+                });
+            });
+            await Promise.all(promises);
+        }
+        
+        async function preloadCaveSpotIcons() {
+            caveSpotIcons = {}; // Reset icons
+            if (!allCaveSpotsData.caveSpots) return;
+            const promises = allCaveSpotsData.caveSpots.map(spot => {
+                return new Promise((resolve) => {
+                    if (!spot.icon) return resolve();
+                    const img = new Image();
+                    img.src = spot.icon;
+                    img.onload = () => {
+                        caveSpotIcons[spot.id] = img;
+                        resolve();
+                    };
+                    img.onerror = () => resolve();
+                });
+            });
+            await Promise.all(promises);
+        }
+
+        function drawPublicSpots() {
+            const width = spotsCanvas.width;
+            const height = spotsCanvas.height;
+            spotsCtx.clearRect(0, 0, width, height);
+
+            if (!spotsToggle.checked || !allPublicSpotsData.publicSpots) {
+                return;
+            }
+            
+            spotsCtx.save();
+            spotsCtx.translate(panOffset.x, panOffset.y);
+            spotsCtx.scale(scale, scale);
+
+            allPublicSpotsData.publicSpots.forEach(spot => {
+                const x = ((spot.lon - SPOT_LON_MIN) / SPOT_LON_RANGE) * width;
+                const y = ((spot.lat - SPOT_LAT_MIN) / SPOT_LAT_RANGE) * height;
+                spot.screenX = x * scale + panOffset.x;
+                spot.screenY = y * scale + panOffset.y;
+                spot.screenRadius = 16 * scale;
+
+                const isHighlighted = spot.id === highlightedSpotId;
+                const isHovered = spot.id === hoveredSpotId;
+                const markerScale = (isHighlighted || isHovered) ? 1.5 : 1.0;
+                const size = 32 * markerScale;
+                
+                spotsCtx.shadowColor = 'transparent';
+                spotsCtx.shadowBlur = 0;
+                if (isHighlighted) {
+                    spotsCtx.shadowColor = '#f59e0b';
+                    spotsCtx.shadowBlur = 15;
+                }
+
+                const icon = spotIcons[spot.id];
+                if (icon) {
+                    spotsCtx.drawImage(icon, x - size / 2, y - size, size, size);
+                } else {
+                    const radius = 8 * markerScale;
+                    spotsCtx.beginPath();
+                    spotsCtx.arc(x, y - radius, radius, 0, 2 * Math.PI, false);
+                    spotsCtx.fillStyle = '#f59e0b';
+                    spotsCtx.fill();
+                    spotsCtx.strokeStyle = '#fff';
+                    spotsCtx.lineWidth = 2;
+                    spotsCtx.stroke();
+                }
+            });
+            spotsCtx.restore();
+        }
+
+        function drawCaveSpots() {
+            const width = caveSpotsCanvas.width;
+            const height = caveSpotsCanvas.height;
+            caveSpotsCtx.clearRect(0, 0, width, height);
+
+            if (!caveSpotsToggle.checked || !allCaveSpotsData.caveSpots) {
+                return;
+            }
+            
+            caveSpotsCtx.save();
+            caveSpotsCtx.translate(panOffset.x, panOffset.y);
+            caveSpotsCtx.scale(scale, scale);
+
+            allCaveSpotsData.caveSpots.forEach(spot => {
+                const x = ((spot.lon - SPOT_LON_MIN) / SPOT_LON_RANGE) * width;
+                const y = ((spot.lat - SPOT_LAT_MIN) / SPOT_LAT_RANGE) * height;
+                spot.screenX = x * scale + panOffset.x;
+                spot.screenY = y * scale + panOffset.y;
+                spot.screenRadius = 16 * scale;
+
+                const isHighlighted = spot.id === highlightedCaveSpotId;
+                const isHovered = spot.id === hoveredCaveSpotId;
+                const markerScale = (isHighlighted || isHovered) ? 1.5 : 1.0;
+                const size = 32 * markerScale;
+                
+                if (isHighlighted) {
+                    caveSpotsCtx.shadowColor = '#f59e0b';
+                    caveSpotsCtx.shadowBlur = 15;
+                } else {
+                    caveSpotsCtx.shadowColor = 'transparent';
+                    caveSpotsCtx.shadowBlur = 0;
+                }
+
+                const icon = caveSpotIcons[spot.id];
+                if (icon) {
+                    caveSpotsCtx.drawImage(icon, x - size / 2, y - size, size, size);
+                } else {
+                    const radius = 8 * markerScale;
+                    caveSpotsCtx.beginPath();
+                    caveSpotsCtx.arc(x, y - radius, radius, 0, 2 * Math.PI, false);
+                    caveSpotsCtx.fillStyle = '#f59e0b';
+                    caveSpotsCtx.fill();
+                    caveSpotsCtx.strokeStyle = '#fff';
+                    caveSpotsCtx.lineWidth = 2;
+                    caveSpotsCtx.stroke();
+                }
+            });
+            caveSpotsCtx.restore();
+        }
+
+        function drawObelisks() {
+            const width = obeliskCanvas.width;
+            const height = obeliskCanvas.height;
+            obeliskCtx.clearRect(0, 0, width, height);
+
+            const checkboxes = document.querySelectorAll('#obelisk-controls input[type="checkbox"]:checked');
+            if (checkboxes.length === 0 || !allObeliskData.obelisks) return;
+
+            obeliskCtx.save();
+            obeliskCtx.translate(panOffset.x, panOffset.y);
+            obeliskCtx.scale(scale, scale);
+
+            const checkedNames = Array.from(checkboxes).map(cb => cb.name);
+
+            allObeliskData.obelisks.forEach(obelisk => {
+                if (checkedNames.includes(obelisk.name)) {
+                    const x = ((obelisk.lon - SPOT_LON_MIN) / SPOT_LON_RANGE) * width;
+                    const y = ((obelisk.lat - SPOT_LAT_MIN) / SPOT_LAT_RANGE) * height;
+                    const icon = obeliskIcons[obelisk.name];
+                    
+                    const isHighlighted = obelisk.name === highlightedObeliskId;
+                    const isHovered = obelisk.name === hoveredObeliskId;
+                    
+                    const baseScale = 0.15;
+                    const hoverScale = 1.5;
+                    const finalScale = (isHighlighted || isHovered) ? baseScale * hoverScale : baseScale;
+
+                    obeliskCtx.save();
+                    if (isHighlighted || isHovered) {
+                        obeliskCtx.shadowColor = obeliskConfig[obelisk.name]?.color || '#FFFFFF';
+                        obeliskCtx.shadowBlur = 20;
+                    }
+
+                    if (icon && icon.complete) {
+                        const dWidth = icon.width * finalScale;
+                        const dHeight = icon.height * finalScale;
+                        obelisk.screenX = x * scale + panOffset.x;
+                        obelisk.screenY = (y - dHeight/2) * scale + panOffset.y;
+                        obelisk.screenRadius = (dWidth + dHeight) / 4 * scale;
+                        obeliskCtx.drawImage(icon, x - dWidth / 2, y - dHeight, dWidth, dHeight);
+                    } else {
+                        const radius = 10 * ((isHighlighted || isHovered) ? 1.5 : 1.0);
+                        obelisk.screenX = x * scale + panOffset.x;
+                        obelisk.screenY = (y-radius) * scale + panOffset.y;
+                        obelisk.screenRadius = radius * scale;
+                        obeliskCtx.beginPath();
+                        obeliskCtx.arc(x, y - radius, radius, 0, 2 * Math.PI, false);
+                        obeliskCtx.fillStyle = obeliskConfig[obelisk.name]?.color || '#FFFFFF';
+                        obeliskCtx.fill();
+                        obeliskCtx.strokeStyle = 'rgba(255, 255, 255, 0.9)';
+                        obeliskCtx.lineWidth = 2;
+                        obeliskCtx.stroke();
+                    }
+                    obeliskCtx.restore();
+                }
+            });
+            obeliskCtx.restore();
+        }
+        
+        function clearHighlights() {
+            highlightedSpotId = null;
+            highlightedObeliskId = null;
+            highlightedCaveSpotId = null;
+            document.querySelectorAll('.public-spot-card, .cave-spot-card').forEach(c => c.classList.remove('highlight'));
+            clickCtx.clearRect(0, 0, clickCanvas.width, clickCanvas.height);
+            redrawAll();
+        }
+
+        function highlightSpotMarker(spotId) {
+            highlightedSpotId = spotId;
+            highlightedObeliskId = null;
+            highlightedCaveSpotId = null;
+            redrawAll();
+        }
+
+        function highlightCaveSpotMarker(spotId) {
+            highlightedCaveSpotId = spotId;
+            highlightedSpotId = null;
+            highlightedObeliskId = null;
+            redrawAll();
+        }
+
+        function highlightSpotCard(spotId) {
+            document.querySelectorAll('.public-spot-card, .cave-spot-card').forEach(c => c.classList.remove('highlight'));
+            const card = document.getElementById(`spot-card-${spotId}`);
+            if (card) {
+                card.classList.add('highlight');
+                card.scrollIntoView({ behavior: 'smooth', block: 'nearest', inline: 'center' });
+            }
+        }
+
+        function highlightCaveSpotCard(spotId) {
+            document.querySelectorAll('.public-spot-card, .cave-spot-card').forEach(c => c.classList.remove('highlight'));
+            const card = document.getElementById(`cave-spot-card-${spotId}`);
+            if (card) {
+                card.classList.add('highlight');
+                card.scrollIntoView({ behavior: 'smooth', block: 'nearest', inline: 'center' });
+            }
+        }
+        
+        function handleMapClick(event) {
+            const { x, y } = getMapCoordsFromEvent(event);
+            const clickRadius = 16; 
+
+            // Check for obelisk click first
+            if (allObeliskData.obelisks) {
+                const checkedObeliskNames = Array.from(document.querySelectorAll('#obelisk-controls input:checked')).map(cb => cb.name);
+                const visibleObelisks = allObeliskData.obelisks.filter(o => checkedObeliskNames.includes(o.name));
+                
+                const clickedObelisk = [...visibleObelisks].reverse().find(obelisk => {
+                    const baseIconWidth = obeliskIcons[obelisk.name] ? obeliskIcons[obelisk.name].width * 0.15 : 20;
+                    const baseIconHeight = obeliskIcons[obelisk.name] ? obeliskIcons[obelisk.name].height * 0.15 : 20;
+                    const obeliskX = ((obelisk.lon - SPOT_LON_MIN) / SPOT_LON_RANGE) * mapCanvas.width;
+                    const obeliskY = ((obelisk.lat - SPOT_LAT_MIN) / SPOT_LAT_RANGE) * mapCanvas.height;
+                    return x > obeliskX - baseIconWidth/2 && x < obeliskX + baseIconWidth/2 && y > obeliskY - baseIconHeight && y < obeliskY;
+                });
+
+                if (clickedObelisk) {
+                    if (highlightedObeliskId === clickedObelisk.name) {
+                        clearHighlights();
+                    } else {
+                        highlightedObeliskId = clickedObelisk.name;
+                        highlightedSpotId = null;
+                        highlightedCaveSpotId = null;
+                        document.querySelectorAll('.public-spot-card, .cave-spot-card').forEach(c => c.classList.remove('highlight'));
+                        redrawAll();
+                    }
+                    return; 
+                }
+            }
+
+            // Check for spot click
+            if (spotsToggle.checked && allPublicSpotsData.publicSpots) {
+                const clickedSpot = [...allPublicSpotsData.publicSpots].reverse().find(spot => {
+                    const spotX = ((spot.lon - SPOT_LON_MIN) / SPOT_LON_RANGE) * mapCanvas.width;
+                    const spotY = ((spot.lat - SPOT_LAT_MIN) / SPOT_LAT_RANGE) * mapCanvas.height;
+                    const distance = Math.sqrt(Math.pow(x - spotX, 2) + Math.pow(y - (spotY - 16), 2));
+                    return distance < clickRadius;
+                });
+                if (clickedSpot) {
+                    if (highlightedSpotId === clickedSpot.id) {
+                        clearHighlights();
+                    } else {
+                        highlightSpotCard(clickedSpot.id);
+                        highlightSpotMarker(clickedSpot.id);
+                    }
+                    return;
+                }
+            }
+
+            // Check for cave spot click
+            if (caveSpotsToggle.checked && allCaveSpotsData.caveSpots) {
+                const clickedCaveSpot = [...allCaveSpotsData.caveSpots].reverse().find(spot => {
+                    const spotX = ((spot.lon - SPOT_LON_MIN) / SPOT_LON_RANGE) * mapCanvas.width;
+                    const spotY = ((spot.lat - SPOT_LAT_MIN) / SPOT_LAT_RANGE) * mapCanvas.height;
+                    const distance = Math.sqrt(Math.pow(x - spotX, 2) + Math.pow(y - (spotY - 16), 2));
+                    return distance < clickRadius;
+                });
+                if (clickedCaveSpot) {
+                    if (highlightedCaveSpotId === clickedCaveSpot.id) {
+                        clearHighlights();
+                    } else {
+                        highlightCaveSpotCard(clickedCaveSpot.id);
+                        highlightCaveSpotMarker(clickedCaveSpot.id);
+                    }
+                    return;
+                }
+            }
+            
+            const selectedCreature = creatureSelect.value;
+            if (!selectedCreature) {
+                clearHighlights();
+                return;
+            }
+
+            const lat = MAP_LAT_MIN + (y / mapCanvas.height) * MAP_LAT_RANGE;
+            const lon = MAP_LON_MIN + (x / mapCanvas.width) * MAP_LON_RANGE;
+
+            const spawnAreas = allCreatureData[selectedCreature];
+            if (!spawnAreas) {
+                 clearHighlights();
+                 return;
+            }
+
+            const blocklist = spawnZoneBlocklistData[currentMapKey] || [];
+            const clickedZones = spawnAreas.filter(area => {
+                const isInBounds = lat >= area.min.lat && lat <= area.max.lat && 
+                                 lon >= area.min.lon && lon <= area.max.lon;
+                const isBlocked = blocklist.includes(area.id);
+                return isInBounds && !isBlocked;
+            });
+            
+            if (clickedZones.length > 0) {
+                const smallestClickedZone = clickedZones.reduce((smallest, current) => {
+                    const smallestArea = (smallest.max.lat - smallest.min.lat) * (smallest.max.lon - smallest.min.lon);
+                    const currentArea = (current.max.lat - current.min.lat) * (current.max.lon - current.min.lon);
+                    return currentArea < smallestArea ? current : smallest;
+                });
+                displaySpawnInfoForSharedZone(smallestClickedZone);
+            } else {
+                clearHighlights();
+            }
+        }
+        
+        function updateSelectAllState() {
+            const selectAllCheckbox = document.getElementById('select-all-resources');
+            const resourceCheckboxes = document.querySelectorAll('#resource-controls input[type="checkbox"]');
+            if (!selectAllCheckbox || resourceCheckboxes.length === 0) return;
+            const allChecked = ![...resourceCheckboxes].some(cb => !cb.checked);
+            selectAllCheckbox.checked = allChecked;
+        }
+
+        function populateResourceControls() {
+            resourceControls.innerHTML = '';
+            if (!allResourceData || Object.keys(allResourceData).length === 0) {
+                 document.getElementById('select-all-resources').parentElement.parentElement.style.display = 'none';
+                return;
+            };
+             document.getElementById('select-all-resources').parentElement.parentElement.style.display = 'block';
+            
+            const sortedResources = Object.keys(allResourceData).sort((a, b) => {
+                const nameA = (resourceTranslations[a.trim()] || a.trim()).toLowerCase();
+                const nameB = (resourceTranslations[b.trim()] || b.trim()).toLowerCase();
+                return nameA.localeCompare(nameB);
+            });
+
+            sortedResources.forEach(resourceName => {
+                const label = document.createElement('label');
+                label.className = 'flex items-center text-white cursor-pointer';
+                const checkbox = document.createElement('input');
+                checkbox.type = 'checkbox';
+                checkbox.name = resourceName;
+                checkbox.className = 'w-4 h-4 mr-2';
+                checkbox.addEventListener('change', () => {
+                    drawResources();
+                    updateSelectAllState();
+                });
+                const colorBox = document.createElement('div');
+                colorBox.className = 'w-4 h-4 mr-2 rounded-sm';
+                colorBox.style.backgroundColor = resourceConfig[resourceName]?.color || '#FFFFFF';
+                const span = document.createElement('span');
+                
+                const englishResourceName = resourceName.trim();
+                let germanResourceName = '';
+
+                // ROBUSTE, CASE-INSENSITIVE SUCHE
+                const matchingKey = Object.keys(resourceTranslations).find(key => key.toLowerCase() === englishResourceName.toLowerCase());
+                if (matchingKey) {
+                    germanResourceName = resourceTranslations[matchingKey];
+                }
+                
+                span.textContent = germanResourceName || englishResourceName;
+
+                label.appendChild(checkbox);
+                label.appendChild(colorBox);
+                label.appendChild(span);
+                resourceControls.appendChild(label);
+            });
+            updateSelectAllState();
+        }
+
+        function populateCaveSpotsSlider() {
+            const slider = document.getElementById('cave-spots-slider');
+            const panel = document.getElementById('cave-spots-panel');
+            slider.innerHTML = '';
+
+            if (!allCaveSpotsData.caveSpots || allCaveSpotsData.caveSpots.length === 0) {
+                panel.style.display = 'none';
+                return;
+            }
+            panel.style.display = 'block';
+
+            allCaveSpotsData.caveSpots.forEach(spot => {
+                const card = document.createElement('div');
+                card.id = `cave-spot-card-${spot.id}`;
+                card.className = 'cave-spot-card snap-start flex-shrink-0 w-80 bg-[#222222] rounded-lg p-4 flex flex-col items-center text-center cursor-pointer border border-gray-700 hover:border-amber-500 transition-all duration-300';
+                
+                let difficultyBadgeHtml = '';
+                if (spot.difficulty) {
+                    const diffConfig = difficultyConfig[spot.difficulty] || { borderColor: '#a0aec0', bgColor: 'rgba(160, 174, 192, 0.2)', textColor: '#e2e8f0' };
+                    difficultyBadgeHtml = `
+                        <div class="absolute top-1.5 left-1.5 text-xs font-bold p-1 px-2 rounded-md" style="border: 1px solid ${diffConfig.borderColor}; background-color: ${diffConfig.bgColor}; color: ${diffConfig.textColor};">
+                            ${spot.difficulty}
+                        </div>`;
+                }
+
+                let artifactHtml = '';
+                if (spot.artifacts && spot.artifacts.length > 0) {
+                        const artifactName = spot.artifacts[0]?.name || 'Unbekannt';
+                        if(artifactName && artifactName.trim() !== '') {
+                            artifactHtml = `<div class="mt-2 py-1 px-2 border border-red-500 rounded-md text-red-400 text-sm w-full">
+                                ${artifactName}
+                            </div>`;
+                        }
+                }
+
+                let artifactIconsHtml = '';
+                if(spot.artifacts) {
+                    spot.artifacts.forEach(artifact => {
+                        const iconUrl = artifact.iconUrl;
+                        if(iconUrl) {
+                            artifactIconsHtml += `<img src="${iconUrl}" class="w-16 h-16 object-contain">`;
+                        }
+                    });
+                }
+
+
+                card.innerHTML = `
+                    <div class="relative w-full h-72 mb-3 overflow-hidden rounded-md">
+                        <img src="${(spot.images && spot.images[0]) || 'https://placehold.co/200x200/111/FFF?text=Icon'}" alt="${spot.name}" class="w-full h-full object-cover">
+                        ${difficultyBadgeHtml}
+                        <button class="info-button absolute top-1.5 right-1.5 bg-gray-900/60 text-white p-1 rounded-full hover:bg-amber-500 transition-colors focus:outline-none" title="Weitere Infos">
+                            <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" viewBox="0 0 20 20" fill="currentColor"><path fill-rule="evenodd" d="M18 10a8 8 0 11-16 0 8 8 0 0116 0zm-7-4a1 1 0 11-2 0 1 1 0 012 0zM9 9a1 1 0 000 2v3a1 1 0 001 1h1a1 1 0 100-2v-3a1 1 0 00-1-1H9z" clip-rule="evenodd" /></svg>
+                        </button>
+                        <div class="absolute bottom-1.5 right-1.5 flex space-x-2">
+                            ${artifactIconsHtml}
+                        </div>
+                    </div>
+                    <div class="flex flex-col items-center justify-center w-full">
+                        <h4 class="font-bold text-amber-400 text-xl">${spot.name}</h4>
+                        <hr class="w-full border-gray-600 my-1">
+                        ${artifactHtml}
+                        ${spot.recommendedlevel ? `<p class="text-sm text-gray-400 mt-2">Empfohlenes Level: ${spot.recommendedlevel}</p>` : ''}
+                        <p class="text-sm text-gray-300 ${!spot.recommendedlevel ? 'mt-2' : ''}">Lat: ${spot.lat.toFixed(2).replace('.',',')} / Lon: ${spot.lon.toFixed(2).replace('.',',')}</p>
+                    </div>
+                `;
+
+                card.addEventListener('click', () => {
+                       if (highlightedCaveSpotId === spot.id) {
+                            clearHighlights();
+                        } else {
+                            highlightCaveSpotCard(spot.id);
+                            highlightCaveSpotMarker(spot.id);
+                        }
+                });
+                
+                const infoButton = card.querySelector('.info-button');
+                infoButton.addEventListener('click', (e) => {
+                    e.stopPropagation();
+                    openCaveSpotModal(spot.id);
+                });
+                slider.appendChild(card);
+            });
+        }
+
+        function closeCaveSpotModal() {
+            const modal = document.getElementById('cave-spot-modal');
+            modal.classList.add('hidden');
+            modal.classList.remove('flex');
+        }
+
+        function openCaveSpotModal(spotId) {
+            const spot = allCaveSpotsData.caveSpots.find(s => s.id === spotId);
+            if (!spot) return;
+
+            const modalContent = document.getElementById('cave-spot-modal-content');
+            
+            const tabData = {
+                equipment: { title: 'Empfohlene Ausrüstung', items: spot.equipment || [] },
+                tames: { title: 'Empfohlene Reittiere', items: spot.tames || [] },
+                strategy: { title: 'Empfohlene Strategie', items: spot.strategy || [] },
+                resources: { title: 'Höhlen Ressourcen', items: spot.resources || [] },
+                creatures: { title: 'Höhlen Gegner', items: spot.creatures || [] }
+            };
+
+            let artifactHtml = '';
+            if (spot.artifacts && spot.artifacts.length > 0) {
+                 const artifactItems = spot.artifacts.map(artifact => {
+                        const name = artifact.name;
+                        const icon = artifact.iconUrl;
+                        if(name && icon) {
+                            return `<div class="flex items-center justify-end"><span class="mr-2">${name}</span><img src="${icon}" class="w-6 h-6 object-contain"></div>`;
+                        }
+                        return '';
+                 }).join('');
+                 if (artifactItems) {
+                        artifactHtml = `<div class="py-1 px-2 border border-red-500 rounded-md text-red-400 text-lg">
+                            ${artifactItems}
+                        </div>`;
+                 }
+            }
+
+
+              let specialInfosHtml = '';
+            if (spot.specialinfos && spot.specialinfos.length > 0) {
+                specialInfosHtml = `
+                <div class="mt-6 p-4 border border-amber-400 rounded-lg" style="box-shadow: 0 0 15px rgba(245, 158, 11, 0.5);">
+                    <h3 class="text-xl font-semibold text-amber-400 mb-2">Besondere Informationen</h3>
+                    ${spot.specialinfos.map(info => `<p class="text-gray-300 whitespace-pre-wrap mb-2">${info}</p>`).join('')}
+                </div>`;
+            }
+
+            let imageSliderHtml = '';
+            if(spot.images && spot.images.length > 0) {
+                const slides = spot.images.map((imgSrc, index) => `
+                    <div class="cave-image-slide ${index === 0 ? '' : 'hidden'} w-full h-full flex items-center justify-center p-4">
+                        <img src="${imgSrc}" class="max-w-full max-h-full object-contain rounded-md border-2 border-red-500 shadow-[0_0_15px_rgba(255,75,62,0.7)] transition-transform duration-300 hover:scale-105">
+                    </div>
+                `).join('');
+                const arrows = spot.images.length > 1 ? `
+                    <button class="cave-image-prev absolute left-2 top-1/2 -translate-y-1/2 bg-gray-800/50 p-2 rounded-full text-red-500 hover:bg-gray-700 border border-red-500 hover:shadow-[0_0_15px_rgba(255,75,62,0.7)] transition-all">&lt;</button>
+                    <button class="cave-image-next absolute right-2 top-1/2 -translate-y-1/2 bg-gray-800/50 p-2 rounded-full text-red-500 hover:bg-gray-700 border border-red-500 hover:shadow-[0_0_15px_rgba(255,75,62,0.7)] transition-all">&gt;</button>
+                ` : '';
+                imageSliderHtml = `<div class="relative overflow-hidden rounded-md mb-4 h-96">${slides}${arrows}</div>`;
+            }
+
+
+            modalContent.innerHTML = `
+                <div class="p-6">
+                     ${imageSliderHtml}
+                    <div class="flex justify-between items-start mb-2">
+                        <div>
+                            <h2 class="text-3xl font-bold text-amber-400 mb-2">${spot.name}</h2>
+                             <p class="text-gray-400">Lat: ${spot.lat.toFixed(2).replace('.',',')} / Lon: ${spot.lon.toFixed(2).replace('.',',')} | Schwierigkeit: ${spot.difficulty} | Empf. Level: ${spot.recommendedlevel || 'N/A'}</p>
+                        </div>
+                        <div class="text-right">
+                           ${artifactHtml}
+                        </div>
+                    </div>
+                     <hr class="border-gray-700 my-4">
+                    
+                    <div id="cave-tabs-container">
+                        <div class="flex border-b border-gray-700 mb-4 overflow-x-auto scrollbar-hide">
+                            <button data-tab="equipment" class="cave-tab active">Empfohlene Ausrüstung</button>
+                            <button data-tab="tames" class="cave-tab">Empfohlene Reittiere</button>
+                            <button data-tab="strategy" class="cave-tab">Empfohlene Strategie</button>
+                            <button data-tab="resources" class="cave-tab">Höhlen Ressourcen</button>
+                            <button data-tab="creatures" class="cave-tab">Höhlen Gegner</button>
+                        </div>
+                        <div id="cave-tab-content" class="min-h-[160px] text-gray-300"></div>
+                    </div>
+
+                    <hr class="border-gray-700 my-4">
+                    <div class="mt-6">
+                        <h3 class="text-xl font-semibold text-white mb-2">Beschreibung</h3>
+                        <p class="text-gray-300 whitespace-pre-wrap">${spot.description}</p>
+                    </div>
+                    ${specialInfosHtml}
+                </div>
+            `;
+
+            const modal = document.getElementById('cave-spot-modal');
+            modal.classList.remove('hidden');
+            modal.classList.add('flex');
+            
+            // --- TAB & PAGINATION LOGIC ---
+            const tabsContainer = modalContent.querySelector('#cave-tabs-container');
+            let activeTab = 'equipment';
+
+            const renderTabContent = () => {
+                const contentEl = tabsContainer.querySelector('#cave-tab-content');
+                const data = tabData[activeTab];
+
+                if (!data || data.items.length === 0) {
+                    contentEl.innerHTML = `<div class="flex items-center justify-center h-full pt-10"><p class="text-gray-500">Keine Einträge für diese Kategorie vorhanden.</p></div>`;
+                    return;
+                }
+                
+                let contentHtml = `<h3 class="text-xl font-semibold text-fire-red mb-2">${data.title}</h3>`;
+
+                if (activeTab === 'strategy') {
+                    // Render strategy as simple text paragraphs
+                    contentHtml += `<div class="space-y-2 text-base text-gray-300">`;
+                    contentHtml += data.items.map(paragraph => `<p>${paragraph}</p>`).join('');
+                    contentHtml += `</div>`;
+                } else {
+                    // Render other tabs as lists with icons
+                    contentHtml += `<ul class="space-y-1 list-none p-0">`;
+                    contentHtml += data.items.map(item => {
+                        const englishName = item.trim();
+                        let displayName = englishName;
+                        let iconLookupName = englishName;
+
+                        if (activeTab === 'resources') {
+                             const matchingKey = Object.keys(resourceTranslations).find(key => key.toLowerCase() === englishName.toLowerCase());
+                             if(matchingKey) displayName = resourceTranslations[matchingKey];
+                        } else if (activeTab === 'creatures' || activeTab === 'tames') {
+                             const matchingKey = Object.keys(creatureTranslations).find(key => key.toLowerCase() === englishName.toLowerCase());
+                             if(matchingKey) displayName = creatureTranslations[matchingKey];
+                        }
+                        
+                        const iconUrl = getIconUrl(iconLookupName);
+                        return `<li class="flex items-center text-base"><img src="${iconUrl}" class="w-5 h-5 mr-2 object-contain"/>${displayName}</li>`;
+                    }).join('');
+                    contentHtml += `</ul>`;
+                }
+                contentEl.innerHTML = contentHtml;
+            };
+
+            const tabButtons = tabsContainer.querySelectorAll('.cave-tab');
+            tabButtons.forEach(button => {
+                button.addEventListener('click', () => {
+                    tabButtons.forEach(btn => btn.classList.remove('active'));
+                    button.classList.add('active');
+                    activeTab = button.dataset.tab;
+                    renderTabContent();
+                });
+            });
+
+            renderTabContent();
+            // --- END OF TAB LOGIC ---
+
+
+            // Add event listeners for the image slider
+            if(spot.images && spot.images.length > 1) {
+                let currentSlide = 0;
+                const slides = modalContent.querySelectorAll('.cave-image-slide');
+                const nextBtn = modalContent.querySelector('.cave-image-next');
+                const prevBtn = modalContent.querySelector('.cave-image-prev');
+
+                const showSlide = (index) => {
+                    slides.forEach((slide, i) => {
+                        slide.classList.toggle('hidden', i !== index);
+                    });
+                };
+
+                nextBtn.addEventListener('click', () => {
+                    currentSlide = (currentSlide + 1) % slides.length;
+                    showSlide(currentSlide);
+                });
+                prevBtn.addEventListener('click', () => {
+                    currentSlide = (currentSlide - 1 + slides.length) % slides.length;
+                    showSlide(currentSlide);
+                });
+            }
+        }
+
+
+        function drawResources() {
+            const width = resourceCanvas.width;
+            const height = resourceCanvas.height;
+            resourceCtx.clearRect(0, 0, width, height);
+            const checkboxes = document.querySelectorAll('#resource-controls input[type="checkbox"]:checked');
+            
+            if (checkboxes.length === 0) return;
+
+            resourceCtx.save();
+            resourceCtx.translate(panOffset.x, panOffset.y);
+            resourceCtx.scale(scale, scale);
+            
+            checkboxes.forEach(checkbox => {
+                const resourceName = checkbox.name;
+                if (allResourceData[resourceName]) {
+                    allResourceData[resourceName].forEach(node => {
+                        const x = ((node.lon - MAP_LON_MIN) / MAP_LON_RANGE) * width;
+                        const y = ((node.lat - MAP_LAT_MIN) / MAP_LAT_RANGE) * height;
+                        const radius = 2 + (node.size * 0.5);
+                        resourceCtx.beginPath();
+                        resourceCtx.arc(x, y, radius, 0, 2 * Math.PI, false);
+                        resourceCtx.fillStyle = resourceConfig[resourceName]?.color || '#FFFFFF';
+                        resourceCtx.fill();
+                        resourceCtx.strokeStyle = 'rgba(255, 255, 255, 0.6)';
+                        resourceCtx.lineWidth = 1;
+                        resourceCtx.stroke();
+                    });
+                }
+            });
+            resourceCtx.restore();
+        }
+
+        function getSpawnRarityColor(area) {
+            const chance = typeof area.chance === 'number' ? area.chance : 0.5;
+            const weight = typeof area.weight === 'number' ? area.weight : 1;
+            const score = chance * weight;
+
+            if (score > 0.3) return spawnRarityConfig['Extrem selten'].color;
+            if (score > 0.15) return spawnRarityConfig['Sehr selten'].color;
+            if (score > 0.07) return spawnRarityConfig['Selten'].color;
+            if (score > 0.03) return spawnRarityConfig['Gelegentlich'].color;
+            if (score > 0.01) return spawnRarityConfig['Häufig'].color;
+            return spawnRarityConfig['Sehr häufig'].color;
+        }
+
+        function generateLegend() {
+            legendContainer.innerHTML = '';
+            for (const key in spawnRarityConfig) {
+                const item = spawnRarityConfig[key];
+                const legendItem = document.createElement('div');
+                legendItem.className = 'flex items-center mr-4 mb-2 text-sm';
+                legendItem.innerHTML = `<div class="w-4 h-4 mr-2 rounded-sm border border-white/20" style="background-color: ${item.color};"></div><span>${key}</span>`;
+                legendContainer.appendChild(legendItem);
+            }
+             const caveLegendItem = document.createElement('div');
+            caveLegendItem.className = 'flex items-center mr-4 mb-2 text-sm';
+            const caveColorBox = document.createElement('div');
+            caveColorBox.className = 'w-4 h-4 mr-2 rounded-sm border border-white/20';
+            const tempCanvas = document.createElement('canvas');
+            tempCanvas.width = 16; tempCanvas.height = 16;
+            const tempCtx = tempCanvas.getContext('2d');
+            if (cavePattern) {
+                tempCtx.fillStyle = cavePattern;
+                tempCtx.fillRect(0,0,16,16);
+            }
+            caveColorBox.style.backgroundImage = `url(${tempCanvas.toDataURL()})`;
+            caveLegendItem.appendChild(caveColorBox);
+            const caveText = document.createElement('span');
+            caveText.textContent = 'Höhlenspawn';
+            caveLegendItem.appendChild(caveText);
+            legendContainer.appendChild(caveLegendItem);
+        }
+        
+        function drawSpawns() {
+            const width = spawnCanvas.width;
+            const height = spawnCanvas.height;
+            spawnCtx.clearRect(0, 0, width, height);
+
+            const selectedCreature = creatureSelect.value;
+            if (!selectedCreature) {
+                clickCanvas.style.cursor = 'grab';
+                return;
+            }
+            clickCanvas.style.cursor = 'pointer';
+
+            spawnCtx.save();
+            spawnCtx.translate(panOffset.x, panOffset.y);
+            spawnCtx.scale(scale, scale);
+            
+            const spawnAreas = allCreatureData[selectedCreature];
+            if (!spawnAreas || spawnAreas.length === 0) {
+                spawnCtx.restore();
+                return;
+            }
+            
+            spawnAreas.forEach(area => {
+                const blocklist = spawnZoneBlocklistData[currentMapKey] || [];
+                if (blocklist.includes(area.id)) {
+                    return; 
+                }
+                const x = ((area.min.lon - MAP_LON_MIN) / MAP_LON_RANGE) * width;
+                const y = ((area.min.lat - MAP_LAT_MIN) / MAP_LAT_RANGE) * height;
+                const w = ((area.max.lon - area.min.lon) / MAP_LON_RANGE) * width;
+                const h = ((area.max.lat - area.min.lat) / MAP_LAT_RANGE) * height;
+
+                spawnCtx.fillStyle = getSpawnRarityColor(area);
+                spawnCtx.fillRect(x, y, w, h);
+
+                if (area.isCave) {
+                    spawnCtx.fillStyle = cavePattern;
+                    spawnCtx.fillRect(x, y, w, h);
+                }
+            });
+            spawnCtx.restore();
+        }
+
+        function displaySpawnInfoForSharedZone(clickedZone) {
+            const selectedCreature = creatureSelect.value.trim();
+            const creaturesInThisZone = [];
+            const zoneId = clickedZone.id;
+
+            // Finde alle Kreaturen, die eine Zone mit den EXAKT gleichen Koordinaten haben
+            for (const creatureName in allCreatureData) {
+                const spawnAreas = allCreatureData[creatureName];
+                const matchingArea = spawnAreas.find(area => area.id === zoneId);
+
+                if (matchingArea) {
+                    creaturesInThisZone.push({
+                        name: creatureName.trim(),
+                        weight: matchingArea.weight || 0
+                    });
+                }
+            }
+
+            if (creaturesInThisZone.length === 0) {
+                regionInfoContainer.innerHTML = '<p class="text-gray-400">Keine Kreaturen-Informationen für diese spezifische Zone gefunden.</p>';
+                updateHighlightPreview();
+                return;
+            }
+
+            const totalWeightInZone = creaturesInThisZone.reduce((sum, spawn) => sum + spawn.weight, 0);
+
+            const lat = (clickedZone.min.lat + clickedZone.max.lat) / 2;
+            const lon = (clickedZone.min.lon + clickedZone.max.lon) / 2;
+
+            let html = `<p class="text-xs text-gray-400 mb-2 break-all">Zone-ID: ${zoneId}</p>`;
+            html += `<p class="text-gray-300 mb-2 text-sm">Zone bei ca. Lat: ${lat.toFixed(1)}, Lon: ${lon.toFixed(1)}</p>`;
+            html += `<h3 class="text-lg font-bold text-fire-red mt-4 mb-2">Kreaturen in dieser Zone</h3>`;
+
+            const sortedCreatures = creaturesInThisZone.sort((a, b) => {
+                if (a.name === selectedCreature) return -1;
+                if (b.name === selectedCreature) return 1;
+                return b.weight - a.weight;
+            });
+
+            sortedCreatures.forEach(spawn => {
+                const percentage = totalWeightInZone > 0 ? ((spawn.weight / totalWeightInZone) * 100).toFixed(1) : "0.0";
+                const isSelected = spawn.name === selectedCreature;
+                const highlightClass = isSelected ? 'highlight' : '';
+                const percentageColor = isSelected ? 'text-amber-300' : 'text-red-300';
+                const germanName = creatureTranslations[spawn.name.trim()] || spawn.name.trim();
+                html += `<div class="sidebar-list-item ${highlightClass}"><span>${germanName}</span><span class="font-bold ${percentageColor}">${percentage}%</span></div>`;
+            });
+            
+            regionInfoContainer.innerHTML = html;
+            updateHighlightPreview();
+
+            // Hebe die geklickte Zone auf der Karte hervor
+            clickCtx.clearRect(0, 0, clickCanvas.width, clickCanvas.height);
+            clickCtx.save();
+            clickCtx.translate(panOffset.x, panOffset.y);
+            clickCtx.scale(scale, scale);
+            const areaX = ((clickedZone.min.lon - MAP_LON_MIN) / MAP_LON_RANGE) * clickCanvas.width;
+            const areaY = ((clickedZone.min.lat - MAP_LAT_MIN) / MAP_LAT_RANGE) * clickCanvas.height;
+            const areaWidth = ((clickedZone.max.lon - clickedZone.min.lon) / MAP_LON_RANGE) * clickCanvas.width;
+            const areaHeight = ((clickedZone.max.lat - clickedZone.min.lat) / MAP_LAT_RANGE) * clickCanvas.height;
+            clickCtx.strokeStyle = '#fcd34d'; // yellow-400
+            clickCtx.lineWidth = 3 / scale;
+            clickCtx.strokeRect(areaX, areaY, areaWidth, areaHeight);
+            clickCtx.restore();
+        }
+
+
+        function updateHighlightPreview() {
+            const previewContainer = document.getElementById('highlight-preview');
+            const contentContainer = document.getElementById('region-info-content');
+            previewContainer.innerHTML = '';
+            previewContainer.classList.add('hidden');
+
+            if (contentContainer.classList.contains('collapsed')) {
+                const highlightedItem = document.querySelector('#region-info .sidebar-list-item.highlight');
+                if (highlightedItem) {
+                    previewContainer.appendChild(highlightedItem.cloneNode(true));
+                    previewContainer.classList.remove('hidden');
+                }
+            }
+        }
+
+        function resetUI() {
+            creatureSearch.value = '';
+            creatureSelect.innerHTML = '<option selected value="">-- Bitte auswählen --</option>';
+            resourceControls.innerHTML = '';
+            document.getElementById('obelisk-controls').innerHTML = '';
+            document.getElementById('region-controls').innerHTML = '';
+            publicSpotsSlider.innerHTML = '';
+            caveSpotsSlider.innerHTML = '';
+            document.getElementById('info-badge-panel').innerHTML = '';
+            generalInfoPanel.innerHTML = '';
+            regionInfoContainer.innerHTML = '<p class="text-gray-400">Klicke auf eine Spawn-Zone, um Details anzuzeigen.</p>';
+            spotsToggle.checked = false;
+            spotsToggleLabel.textContent = 'Verstecken';
+            caveSpotsToggle.checked = false;
+            caveSpotsToggleLabel.textContent = 'Verstecken';
+            [mapCtx, spawnCtx, resourceCtx, spotsCtx, clickCtx, obeliskCtx, caveSpotsCtx, regionCtx].forEach(ctx => {
+                if(ctx) ctx.clearRect(0, 0, ctx.canvas.width, ctx.canvas.height)
+            });
+        }
+
+        async function fetchData(url, type) {
+            if (!url || url.trim() === '') return null;
+            try {
+                const response = await fetch(url, { cache: 'no-cache' });
+                if (!response.ok) {
+                    console.warn(`HTTP-Fehler ${response.status} beim Laden von ${url}`);
+                    return null;
+                }
+                let text = await response.text();
+                if (text.trim() === '') {
+                    console.warn(`Leere Antwort empfangen von ${url}`);
+                    return null; // Handle empty files gracefully
+                }
+                 // KORREKTUR: Entfernt ein potenzielles unsichtbares Zeichen (BOM), das das Parsen stört.
+                if (text.charCodeAt(0) === 0xFEFF) {
+                    text = text.slice(1);
+                }
+                return JSON.parse(text); // Parse the cleaned text
+            } catch (e) {
+                console.error(`Fehler beim Laden oder Parsen der ${type}-JSON von ${url}:`, e);
+                return null;
+            }
+        }
+        
+        
+        // NEUE FUNKTION: Datenanreicherung
+        function enrichCreatureData(data) {
+            const enrichedData = JSON.parse(JSON.stringify(data)); 
+
+            // Add a unique ID to each spawn area
+            for (const creatureName in enrichedData) {
+                enrichedData[creatureName].forEach(area => {
+                    area.id = `lat${area.min.lat.toFixed(2)}-${area.max.lat.toFixed(2)}_lon${area.min.lon.toFixed(2)}-${area.max.lon.toFixed(2)}`;
+                });
+            }
+
+            // Handle 50/50 shared spawns
+            for (const mainCreature in spawnSharingConfig) {
+                if (enrichedData[mainCreature]) {
+                    const sharedCreatures = spawnSharingConfig[mainCreature];
+                    const totalShares = sharedCreatures.length + 1;
+
+                    enrichedData[mainCreature].forEach(area => {
+                        area.weight /= totalShares;
+                    });
+
+                    sharedCreatures.forEach(sharedCreature => {
+                        if (!enrichedData[sharedCreature]) {
+                            enrichedData[sharedCreature] = [];
+                        }
+                        const sharedSpawns = JSON.parse(JSON.stringify(enrichedData[mainCreature]));
+                        enrichedData[sharedCreature].push(...sharedSpawns);
+                    });
+                }
+            }
+
+            // Handle Alpha/Variant spawns (5% chance)
+            const alphaVariantKey = currentMapConfig.alphaVariantKey || 'Default';
+            const activeAlphaConfig = alphaVariantConfigs[alphaVariantKey] || alphaVariantConfigs['Default'];
+
+            if (activeAlphaConfig && Object.keys(activeAlphaConfig).length > 0) {
+                for (const normalCreature in activeAlphaConfig) {
+                    // KORREKTUR: Case-insensitive UND getrimmte Suche für maximale Robustheit
+                    const matchingEnrichedKey = Object.keys(enrichedData).find(key => key.trim().toLowerCase() === normalCreature.trim().toLowerCase());
+                    
+                    if (matchingEnrichedKey) {
+                        const alphaCreature = activeAlphaConfig[normalCreature];
+                        if (!enrichedData[alphaCreature]) {
+                            enrichedData[alphaCreature] = [];
+                        }
+                        
+                        const newAlphaSpawns = [];
+                        // Verwende den korrekt geschriebenen Schlüssel aus den Spawn-Daten
+                        enrichedData[matchingEnrichedKey].forEach(area => {
+                            const alphaArea = JSON.parse(JSON.stringify(area));
+                            alphaArea.weight = area.weight * 0.05; 
+                            newAlphaSpawns.push(alphaArea);
+                            area.weight *= 0.95;
+                        });
+
+                        enrichedData[alphaCreature].push(...newAlphaSpawns);
+                    }
+                }
+            }
+
+            return enrichedData;
+        }
+
+
+        async function loadMapData(mapKey) {
+            currentMapKey = mapKey; // Set the global key
+            const liveMapWasActive = iframeToggle ? iframeToggle.checked : false;
+            currentMapConfig = mapConfigs[mapKey];
+            if (!currentMapConfig) return;
+
+            document.querySelectorAll('#map-list .map-list-item').forEach(item => {
+                item.classList.toggle('active', item.dataset.mapKey === mapKey);
+            });
+
+            loadingIndicator.textContent = 'Lade Daten...';
+            loadingIndicator.style.display = 'block';
+            resetUI();
+            mapNameDisplay.textContent = currentMapConfig.displayName;
+            mapImage.src = currentMapConfig.mapImageUrl; // Start loading image
+            
+            mapImage.onload = async () => {
+                try {
+                    const [creatureJson, resourceJson, spotsJson, infoBadgeJson, obeliskJson, regionJson, caveSpotsJson] = await Promise.all([
+                        fetchData(currentMapConfig.creatureDataUrl, 'Kreaturen'),
+                        fetchData(currentMapConfig.resourceDataUrl, 'Ressourcen'),
+                        fetchData(currentMapConfig.publicSpotsDataUrl, 'Orte'),
+                        fetchData(currentMapConfig.infoBadgeUrl, 'Info Badges'),
+                        fetchData(currentMapConfig.obeliskDataUrl, 'Obelisken'),
+                        fetchData(currentMapConfig.regionDataUrl, 'Regionen'),
+                        fetchData(currentMapConfig.caveSpotsDataUrl, 'Höhlen'),
+                    ]);
+
+                    let rawCreatureData = creatureJson?.dinoSpawns || {};
+                    allCreatureData = enrichCreatureData(rawCreatureData);
+
+                    allResourceData = resourceJson?.resources || {};
+                    allPublicSpotsData = spotsJson || { publicSpots: [] };
+                    allInfoBadgeData = infoBadgeJson || { infoBadges: {} };
+                    allObeliskData = obeliskJson || { obelisks: [] };
+                    allRegionData = regionJson || { regions: [] };
+                    allCaveSpotsData = caveSpotsJson || { caveSpots: [] };
+                    
+                    populateGeneralInfo();
+                    populateInfoBadges();
+                    populateDropdown();
+                    populateResourceControls();
+                    populateObeliskControls();
+                    populateRegionControls();
+                    populatePublicSpotsSlider();
+                    populateCaveSpotsSlider();
+                    await Promise.all([preloadSpotIcons(), preloadObeliskIcons(), preloadCaveSpotIcons(), preloadRegionImages()]);
+                    
+                    iframeToggle.checked = liveMapWasActive;
+                    mapIframe.src = currentMapConfig.iframeUrl || 'about:blank';
+                    toggleLiveMapView(liveMapWasActive);
+
+                    handleResize(); // This will resize canvases and trigger the first draw
+                    loadingIndicator.style.display = 'none';
+                } catch (error) {
+                    console.error("Daten konnten nicht geladen werden:", error);
+                    loadingIndicator.textContent = `Ein kritischer Fehler ist aufgetreten: ${error.message}`;
+                }
+            };
+            
+            mapImage.onerror = () => {
+                loadingIndicator.textContent = 'Fehler: Kartenbild konnte nicht geladen werden.';
+            };
+        }
+        
+        function toggleLiveMapView(isChecked) {
+            const canvases = [mapCanvas, spawnCanvas, resourceCanvas, spotsCanvas, clickCanvas, obeliskCanvas, caveSpotsCanvas, regionCanvas];
+            const resourceCheckboxes = document.querySelectorAll('#resource-controls input[type="checkbox"]');
+            const resourceLabels = document.querySelectorAll('#resource-controls label');
+            const obeliskCheckboxes = document.querySelectorAll('#obelisk-controls input[type="checkbox"]');
+            const obeliskLabels = document.querySelectorAll('#obelisk-controls label');
+            const regionCheckboxes = document.querySelectorAll('#region-controls input[type="checkbox"]');
+            const regionLabels = document.querySelectorAll('#region-controls label');
+            const selectAllResourcesCheckbox = document.getElementById('select-all-resources');
+            const selectAllResourcesLabel = selectAllResourcesCheckbox.parentElement;
+            const selectAllObelisksCheckbox = document.getElementById('select-all-obelisks');
+            const selectAllObelisksLabel = selectAllObelisksCheckbox.parentElement;
+            const selectAllRegionsCheckbox = document.getElementById('select-all-regions');
+            const selectAllRegionsLabel = selectAllRegionsCheckbox.parentElement;
+
+            if (isChecked) {
+                mapContainer.classList.add('iframe-active');
+                liveMapTogglePanel.classList.add('iframe-active');
+                mapIframe.style.display = 'block';
+                canvases.forEach(canvas => canvas.style.display = 'none');
+                coordsDisplay.style.display = 'none';
+
+                // Reset and disable controls
+                creatureSearch.value = '';
+                creatureSearch.disabled = true;
+                creatureSelect.value = '';
+                creatureSelect.disabled = true;
+                
+                resourceCheckboxes.forEach(checkbox => { checkbox.checked = false; checkbox.disabled = true; });
+                resourceLabels.forEach(label => label.classList.add('opacity-50', 'cursor-not-allowed'));
+                selectAllResourcesCheckbox.disabled = true;
+                selectAllResourcesLabel.classList.add('opacity-50', 'cursor-not-allowed');
+
+                obeliskCheckboxes.forEach(checkbox => { checkbox.checked = false; checkbox.disabled = true; });
+                obeliskLabels.forEach(label => label.classList.add('opacity-50', 'cursor-not-allowed'));
+                selectAllObelisksCheckbox.disabled = true;
+                selectAllObelisksLabel.classList.add('opacity-50', 'cursor-not-allowed');
+                
+                regionCheckboxes.forEach(checkbox => { checkbox.checked = false; checkbox.disabled = true; });
+                regionLabels.forEach(label => label.classList.add('opacity-50', 'cursor-not-allowed'));
+                selectAllRegionsCheckbox.disabled = true;
+                selectAllRegionsLabel.classList.add('opacity-50', 'cursor-not-allowed');
+
+                spotsToggle.checked = false;
+                spotsToggle.disabled = true;
+                spotsToggleLabel.textContent = 'Verstecken';
+                spotsToggle.parentElement.classList.add('opacity-50', 'cursor-not-allowed');
+
+                caveSpotsToggle.checked = false;
+                caveSpotsToggle.disabled = true;
+                caveSpotsToggleLabel.textContent = 'Verstecken';
+                caveSpotsToggle.parentElement.classList.add('opacity-50', 'cursor-not-allowed');
+
+            } else {
+                mapContainer.classList.remove('iframe-active');
+                liveMapTogglePanel.classList.remove('iframe-active');
+                mapIframe.style.display = 'none';
+                canvases.forEach(canvas => canvas.style.display = 'block');
+                coordsDisplay.style.display = 'flex';
+
+                // Enable controls
+                creatureSearch.disabled = false;
+                creatureSelect.disabled = false;
+                resourceCheckboxes.forEach(checkbox => checkbox.disabled = false);
+                resourceLabels.forEach(label => label.classList.remove('opacity-50', 'cursor-not-allowed'));
+                selectAllResourcesCheckbox.disabled = false;
+                selectAllResourcesLabel.classList.remove('opacity-50', 'cursor-not-allowed');
+
+                obeliskCheckboxes.forEach(checkbox => checkbox.disabled = false);
+                obeliskLabels.forEach(label => label.classList.remove('opacity-50', 'cursor-not-allowed'));
+                selectAllObelisksCheckbox.disabled = false;
+                selectAllObelisksLabel.classList.remove('opacity-50', 'cursor-not-allowed');
+
+                regionCheckboxes.forEach(checkbox => checkbox.disabled = false);
+                regionLabels.forEach(label => label.classList.remove('opacity-50', 'cursor-not-allowed'));
+                selectAllRegionsCheckbox.disabled = false;
+                selectAllRegionsLabel.classList.remove('opacity-50', 'cursor-not-allowed');
+
+                spotsToggle.disabled = false;
+                spotsToggle.parentElement.classList.remove('opacity-50', 'cursor-not-allowed');
+                
+                caveSpotsToggle.disabled = false;
+                caveSpotsToggle.parentElement.classList.remove('opacity-50', 'cursor-not-allowed');
+            }
+            redrawAll();
+        }
+
+        async function handleResize() {
+            const allCanvases = [mapCanvas, spawnCanvas, resourceCanvas, spotsCanvas, clickCanvas, obeliskCanvas, caveSpotsCanvas, regionCanvas];
+            allCanvases.forEach(canvas => {
+                if(mapContainer.clientWidth > 0) {
+                    canvas.width = mapContainer.clientWidth;
+                    canvas.height = mapContainer.clientHeight;
+                }
+            });
+            scale = 1;
+            panOffset = { x: 0, y: 0 };
+            redrawAll();
+            clickCtx.clearRect(0,0,clickCanvas.width, clickCanvas.height);
+        }
+
+        async function initializeApp() {
+            const mapConfigsUrl = 'https://raw.githubusercontent.com/iophantonie/iophantonie-IOP_Custom_Map_Explorer.github.io/main/MapConfigs/MapConfigs.jsn';
+            const translationsUrl = 'https://raw.githubusercontent.com/iophantonie/iophantonie-IOP_Custom_Map_Explorer.github.io/main/Translation_Datenbank/translationdb.jsn';
+            const alphaListUrl = 'https://raw.githubusercontent.com/iophantonie/iophantonie-IOP_Custom_Map_Explorer.github.io/main/Alpha_Listen_Datenbank/alphalistdb.jsn';
+            const itemDbUrl = 'https://raw.githubusercontent.com/iophantonie/iophantonie-IOP_Custom_Map_Explorer.github.io/refs/heads/main/Icon_Datenbank/Icondb.jsn';
+            const blocklistUrl = 'https://raw.githubusercontent.com/iophantonie/iophantonie-IOP_Custom_Map_Explorer.github.io/refs/heads/main/Blocked_Zones_Datenbank/blockedzonesdb.jsn';
+            const spawnSharingUrl = 'https://raw.githubusercontent.com/iophantonie/iophantonie-IOP_Custom_Map_Explorer.github.io/refs/heads/main/SpawnSharingConfig/spawnsharing.jsn';
+            const spawnRarityUrl = 'https://raw.githubusercontent.com/iophantonie/iophantonie-IOP_Custom_Map_Explorer.github.io/refs/heads/main/Spawn_Rarity_Configs/SpawnRarityConfig.jsn';
+            const difficultyConfigUrl = 'https://raw.githubusercontent.com/iophantonie/iophantonie-IOP_Custom_Map_Explorer.github.io/refs/heads/main/StructureConfigs/DifficultlyConfigCaveCards/difficultlydb.jsn';
+            const badgeConfigUrl = 'https://raw.githubusercontent.com/iophantonie/iophantonie-IOP_Custom_Map_Explorer.github.io/refs/heads/main/StructureConfigs/PublicSpotBadgesConfig/PSInfobadgedb.jsn';
+
+
+            const [configsData, translationsData, alphaListsData, itemDbData, blocklistData, spawnSharingData, spawnRarityData, difficultyConfigData, badgeConfigData] = await Promise.all([
+                fetchData(mapConfigsUrl, 'Map Configs'),
+                fetchData(translationsUrl, 'Translations'),
+                fetchData(alphaListUrl, 'Alpha Lists'),
+                fetchData(itemDbUrl, 'Item DB'),
+                fetchData(blocklistUrl, 'Spawn Zone Blocklist'),
+                fetchData(spawnSharingUrl, 'Spawn Sharing Config'),
+                fetchData(spawnRarityUrl, 'Spawn Rarity Config'),
+                fetchData(difficultyConfigUrl, 'Difficulty Config'),
+                fetchData(badgeConfigUrl, 'Badge Config')
+            ]);
+            
+            mapConfigs = configsData || {};
+            if (translationsData) {
+                resourceTranslations = translationsData.Ressourcen || {};
+                creatureTranslations = translationsData.Kreaturen || {};
+                infoBadgeTranslations = translationsData.InfoBadges || {};
+            }
+            alphaVariantConfigs = alphaListsData || {};
+            spawnZoneBlocklistData = blocklistData || {};
+            spawnSharingConfig = spawnSharingData || {};
+            spawnRarityConfig = spawnRarityData || {};
+            difficultyConfig = difficultyConfigData || {};
+            badgeConfig = badgeConfigData || {};
+            
+            if (itemDbData) {
+                globalItemDatabase = {
+                    ...itemDbData.Items,
+                    ...itemDbData.Ressourcen,
+                    ...itemDbData.Kreaturen
+                };
+            }
+            
+            populateMapList();
+            createCavePattern();
+            generateLegend();
+            await loadMapData('TheIsland');
+        }
+        
+        function redrawAll() {
+            requestAnimationFrame(() => {
+                drawMapImage();
+                drawRegions();
+                drawResources();
+                drawSpawns();
+                drawPublicSpots();
+                drawCaveSpots();
+                drawObelisks();
+            });
+        }
+        
+        function drawMapImage() {
+            mapCtx.clearRect(0, 0, mapCanvas.width, mapCanvas.height);
+            mapCtx.save();
+            mapCtx.translate(panOffset.x, panOffset.y);
+            mapCtx.scale(scale, scale);
+            if (mapImage.complete && mapImage.naturalHeight !== 0) {
+              mapCtx.drawImage(mapImage, 0, 0, mapCanvas.width, mapCanvas.height);
+            }
+            mapCtx.restore();
+        }
+        
+        function getMousePos(canvas, evt) {
+            const rect = canvas.getBoundingClientRect();
+            return {
+                x: evt.clientX - rect.left,
+                y: evt.clientY - rect.top
+            };
+        }
+
+        function getMapCoordsFromEvent(e) {
+             const { x, y } = getMousePos(clickCanvas, e);
+             return {
+                x: (x - panOffset.x) / scale,
+                y: (y - panOffset.y) / scale
+            };
+        }
+        
+        function handleZoom(e) {
+            e.preventDefault();
+            const { x, y } = getMousePos(clickCanvas, e);
+            const zoom = e.deltaY < 0 ? 1.1 : 0.9;
+            const newScale = Math.max(minScale, Math.min(maxScale, scale * zoom));
+        
+            const worldX = (x - panOffset.x) / scale;
+            const worldY = (y - panOffset.y) / scale;
+        
+            panOffset.x = x - worldX * newScale;
+            panOffset.y = y - worldY * newScale;
+            scale = newScale;
+
+            panOffset.x = Math.min(0, Math.max(mapCanvas.width * (1 - scale), panOffset.x));
+            panOffset.y = Math.min(0, Math.max(mapCanvas.height * (1 - scale), panOffset.y));
+            
+            clickCtx.clearRect(0, 0, clickCanvas.width, clickCanvas.height);
+            redrawAll();
+        }
+
+        function startPan(e) {
+            isPanning = true;
+            panStart.x = e.clientX - panOffset.x;
+            panStart.y = e.clientY - panOffset.y;
+            clickCanvas.style.cursor = 'grabbing';
+        }
+
+        function pan(e) {
+            if (!isPanning) return;
+            e.preventDefault();
+            const newX = e.clientX - panStart.x;
+            const newY = e.clientY - panStart.y;
+            panOffset.x = Math.min(0, Math.max(mapCanvas.width * (1 - scale), newX));
+            panOffset.y = Math.min(0, Math.max(mapCanvas.height * (1 - scale), newY));
+            redrawAll();
+        }
+
+        function endPan() {
+            isPanning = false;
+            clickCanvas.style.cursor = 'grab';
+        }
+
+
+        // -- EVENT LISTENERS --
+        document.addEventListener('DOMContentLoaded', () => {
+            // Assign DOM elements to variables
+            mapNameDisplay = document.getElementById('map-name');
+            creatureSelect = document.getElementById('creature-select');
+            creatureSearch = document.getElementById('creature-search');
+            mapImage = document.getElementById('map-image');
+            legendContainer = document.getElementById('legend');
+            loadingIndicator = document.getElementById('loading-indicator');
+            regionInfoContainer = document.getElementById('region-info');
+            resourceControls = document.getElementById('resource-controls');
+            iframeToggle = document.getElementById('iframe-toggle');
+            mapIframe = document.getElementById('map-iframe');
+            mapContainer = document.querySelector('.map-container');
+            liveMapTogglePanel = document.getElementById('live-map-toggle-panel');
+            publicSpotsSlider = document.getElementById('public-spots-slider');
+            spotsToggle = document.getElementById('spots-toggle');
+            spotsToggleLabel = document.getElementById('spots-toggle-label');
+            coordsDisplay = document.getElementById('coords-display');
+            generalInfoPanel = document.getElementById('general-info-panel');
+            caveSpotsCanvas = document.getElementById('cave-spots-canvas');
+            caveSpotsSlider = document.getElementById('cave-spots-slider');
+            caveSpotsToggle = document.getElementById('cave-spots-toggle');
+            caveSpotsToggleLabel = document.getElementById('cave-spots-toggle-label');
+            spawnCanvas = document.getElementById('spawn-canvas');
+            resourceCanvas = document.getElementById('resource-canvas');
+            obeliskCanvas = document.getElementById('obelisk-canvas');
+            spotsCanvas = document.getElementById('spots-canvas');
+            clickCanvas = document.getElementById('click-canvas');
+            mapCanvas = document.getElementById('map-canvas');
+
+            spawnCtx = spawnCanvas.getContext('2d');
+            resourceCtx = resourceCanvas.getContext('2d');
+            obeliskCtx = obeliskCanvas.getContext('2d');
+            spotsCtx = spotsCanvas.getContext('2d');
+            caveSpotsCtx = caveSpotsCanvas.getContext('2d');
+            clickCtx = clickCanvas.getContext('2d');
+            mapCtx = mapCanvas.getContext('2d');
+            regionCanvas = document.getElementById('region-canvas');
+            regionCtx = regionCanvas.getContext('2d');
+
+            // Collapsible section elements
+            const mapListHeader = document.getElementById('map-list-header');
+            const mapListContent = document.getElementById('map-list-content');
+            const mapListArrow = document.getElementById('map-list-arrow');
+            const regionSpawnsHeader = document.getElementById('region-spawns-header');
+            const regionInfoContent = document.getElementById('region-info-content');
+            const regionSpawnsArrow = document.getElementById('region-spawns-arrow');
+
+            // Attach event listeners
+            mapListHeader.addEventListener('click', () => {
+                mapListContent.classList.toggle('collapsed');
+                mapListArrow.classList.toggle('collapsed');
+            });
+
+            regionSpawnsHeader.addEventListener('click', () => {
+                regionInfoContent.classList.toggle('collapsed');
+                regionSpawnsArrow.classList.toggle('collapsed');
+                updateHighlightPreview();
+            });
+
+            creatureSelect.addEventListener('change', () => {
+                clickCtx.clearRect(0,0,clickCanvas.width,clickCanvas.height);
+                regionInfoContainer.innerHTML = '<p class="text-gray-400">Klicke auf eine Spawn-Zone auf der Karte.</p>';
+                redrawAll();
+            });
+            creatureSearch.addEventListener('input', handleSearch);
+            
+            iframeToggle.addEventListener('change', () => {
+                toggleLiveMapView(iframeToggle.checked);
+            });
+
+            spotsToggle.addEventListener('change', () => {
+                if (spotsToggle.checked) {
+                    spotsToggleLabel.textContent = 'Anzeigen';
+                } else {
+                    spotsToggleLabel.textContent = 'Verstecken';
+                    clearHighlights();
+                }
+                redrawAll();
+            });
+
+            caveSpotsToggle.addEventListener('change', () => {
+                if (caveSpotsToggle.checked) {
+                    spotsToggleLabel.textContent = 'Anzeigen';
+                } else {
+                    spotsToggleLabel.textContent = 'Verstecken';
+                    clearHighlights(); // This will also clear cave highlights
+                }
+                redrawAll();
+            });
+
+            const selectAllResources = document.getElementById('select-all-resources');
+            if (selectAllResources) {
+                selectAllResources.addEventListener('change', (e) => {
+                    const isChecked = e.target.checked;
+                    document.querySelectorAll('#resource-controls input[type="checkbox"]').forEach(cb => cb.checked = isChecked);
+                    redrawAll();
+                });
+            }
+
+            const selectAllObelisks = document.getElementById('select-all-obelisks');
+            if(selectAllObelisks) {
+                selectAllObelisks.addEventListener('change', (e) => {
+                    const isChecked = e.target.checked;
+                    document.querySelectorAll('#obelisk-controls input[type="checkbox"]').forEach(cb => cb.checked = isChecked);
+                    redrawAll();
+                });
+            }
+            
+            const selectAllRegions = document.getElementById('select-all-regions');
+            if(selectAllRegions) {
+                selectAllRegions.addEventListener('change', (e) => {
+                    const isChecked = e.target.checked;
+                    document.querySelectorAll('#region-controls input[type="checkbox"]').forEach(cb => cb.checked = isChecked);
+                    redrawAll();
+                });
+            }
+
+            const sliderPrev = document.getElementById('slider-prev');
+            if(sliderPrev) {
+                sliderPrev.addEventListener('click', () => {
+                    publicSpotsSlider.scrollBy({ left: -266, behavior: 'smooth' });
+                });
+            }
+            
+            const sliderNext = document.getElementById('slider-next');
+            if(sliderNext) {
+                sliderNext.addEventListener('click', () => {
+                    publicSpotsSlider.scrollBy({ left: 266, behavior: 'smooth' });
+                });
+            }
+
+            document.getElementById('spot-modal-close').addEventListener('click', closeSpotModal);
+            
+            const caveSliderPrev = document.getElementById('cave-slider-prev');
+            if(caveSliderPrev) {
+                caveSliderPrev.addEventListener('click', () => {
+                    caveSpotsSlider.scrollBy({ left: -266, behavior: 'smooth' });
+                });
+            }
+
+            const caveSliderNext = document.getElementById('cave-slider-next');
+            if(caveSliderNext) {
+                caveSliderNext.addEventListener('click', () => {
+                    caveSpotsSlider.scrollBy({ left: 266, behavior: 'smooth' });
+                });
+            }
+
+            document.getElementById('cave-spot-modal-close').addEventListener('click', closeCaveSpotModal);
+
+            clickCanvas.addEventListener('click', handleMapClick);
+            clickCanvas.addEventListener('wheel', handleZoom, { passive: false });
+            clickCanvas.addEventListener('mousedown', startPan);
+            clickCanvas.addEventListener('mousemove', (e) => {
+                if (isPanning) {
+                    pan(e);
+                    return;
+                }
+                const { x, y } = getMapCoordsFromEvent(e);
+                const clickRadius = 16;
+                const lat = MAP_LAT_MIN + (y / mapCanvas.height) * MAP_LAT_RANGE;
+                const lon = MAP_LON_MIN + (x / mapCanvas.width) * MAP_LON_RANGE;
+                const coordsEl = document.getElementById('coords-display');
+
+                coordsEl.querySelector('#lat-display').innerHTML = `Lat: <span class="font-bold text-amber-300">${lat.toFixed(2)}</span>`;
+                coordsEl.querySelector('#lon-display').innerHTML = `Lon: <span class="font-bold text-amber-300">${lon.toFixed(2)}</span>`;
+
+                let currentlyHoveredSpot = null;
+                if (spotsToggle.checked && allPublicSpotsData.publicSpots) {
+                    currentlyHoveredSpot = [...allPublicSpotsData.publicSpots].reverse().find(spot => {
+                         const spotX = ((spot.lon - SPOT_LON_MIN) / SPOT_LON_RANGE) * mapCanvas.width;
+                        const spotY = ((spot.lat - SPOT_LAT_MIN) / SPOT_LAT_RANGE) * mapCanvas.height;
+                        const distance = Math.sqrt(Math.pow(x - spotX, 2) + Math.pow(y - (spotY - 16), 2));
+                        return distance < clickRadius;
+                    })?.id || null;
+                }
+                if (hoveredSpotId !== currentlyHoveredSpot) {
+                    hoveredSpotId = currentlyHoveredSpot;
+                    redrawAll();
+                }
+
+                let currentlyHoveredObelisk = null;
+                if (allObeliskData.obelisks) {
+                    const checkedObeliskNames = Array.from(document.querySelectorAll('#obelisk-controls input:checked')).map(cb => cb.name);
+                    const visibleObelisks = allObeliskData.obelisks.filter(o => checkedObeliskNames.includes(o.name));
+                    
+                    currentlyHoveredObelisk = [...visibleObelisks].reverse().find(obelisk => {
+                        const baseIconWidth = obeliskIcons[obelisk.name] ? obeliskIcons[obelisk.name].width * 0.15 : 20;
+                        const baseIconHeight = obeliskIcons[obelisk.name] ? obeliskIcons[obelisk.name].height * 0.15 : 20;
+                        const obeliskX = ((obelisk.lon - SPOT_LON_MIN) / SPOT_LON_RANGE) * mapCanvas.width;
+                        const obeliskY = ((obelisk.lat - SPOT_LAT_MIN) / SPOT_LAT_RANGE) * mapCanvas.height;
+                        return x > obeliskX - baseIconWidth/2 && x < obeliskX + baseIconWidth/2 && y > obeliskY - baseIconHeight && y < obeliskY;
+                    })?.name || null;
+                }
+                if (hoveredObeliskId !== currentlyHoveredObelisk) {
+                    hoveredObeliskId = currentlyHoveredObelisk;
+                    redrawAll();
+                }
+
+                let currentlyHoveredCaveSpot = null;
+                if (caveSpotsToggle.checked && allCaveSpotsData.caveSpots) {
+                    currentlyHoveredCaveSpot = [...allCaveSpotsData.caveSpots].reverse().find(spot => {
+                        const spotX = ((spot.lon - SPOT_LON_MIN) / SPOT_LON_RANGE) * mapCanvas.width;
+                        const spotY = ((spot.lat - SPOT_LAT_MIN) / SPOT_LAT_RANGE) * mapCanvas.height;
+                        const distance = Math.sqrt(Math.pow(x - spotX, 2) + Math.pow(y - (spotY - 16), 2));
+                        return distance < clickRadius;
+                    })?.id || null;
+                }
+                if (hoveredCaveSpotId !== currentlyHoveredCaveSpot) {
+                    hoveredCaveSpotId = currentlyHoveredCaveSpot;
+                    redrawAll();
+                }
+
+            });
+            clickCanvas.addEventListener('mouseup', endPan);
+            clickCanvas.addEventListener('mouseleave', () => {
+                 endPan();
+                 const coordsEl = document.getElementById('coords-display');
+                 
+                 coordsEl.querySelector('#lat-display').innerHTML = `Lat: <span class="font-bold text-amber-300">0.00</span>`;
+                 coordsEl.querySelector('#lon-display').innerHTML = `Lon: <span class="font-bold text-amber-300">0.00</span>`;
+
+                 if (hoveredSpotId !== null || hoveredObeliskId !== null || hoveredCaveSpotId !== null) {
+                      hoveredSpotId = null;
+                      hoveredObeliskId = null;
+                      hoveredCaveSpotId = null;
+                      redrawAll();
+                 }
+            });
+
+            window.addEventListener('resize', handleResize);
+            
+            initializeApp();
+        });
+    </script>
+    <script>
+        document.addEventListener('contextmenu', event => event.preventDefault());
+    </script>
+    </body>
+</html>
+
