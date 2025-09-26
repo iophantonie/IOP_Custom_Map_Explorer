@@ -1,7 +1,27 @@
 {
   "Items": {
     "Fackel": { "iconUrl": "https://ark-unity.com/images/icons/Torch_Icon.webp" },
-    "Spitzhacke": { "iconUrl": "https://ark-unity.com/images/icons/MetalPick_Icon.webp" }
+    "Scharfschützengewehr": { "iconUrl": "https://ark-unity.com/images/icons/Torch_Icon.webp" },
+    "Einfache Pistole": { "iconUrl": "https://ark-unity.com/images/icons/Torch_Icon.webp" },
+    "Pumpgun": { "iconUrl": "https://ark-unity.com/images/icons/Torch_Icon.webp" },
+    "Schrotflinte": { "iconUrl": "https://ark-unity.com/images/icons/Torch_Icon.webp" },
+    "Revolver": { "iconUrl": "https://ark-unity.com/images/icons/Torch_Icon.webp" },
+    "Sturmgewehr": { "iconUrl": "https://ark-unity.com/images/icons/Torch_Icon.webp" },
+    "Pike": { "iconUrl": "https://ark-unity.com/images/icons/Torch_Icon.webp" },
+    "Schwert": { "iconUrl": "https://ark-unity.com/images/icons/Torch_Icon.webp" },
+    "Spitzhacke": { "iconUrl": "https://ark-unity.com/images/icons/Torch_Icon.webp" },
+    "Axt": { "iconUrl": "https://ark-unity.com/images/icons/MetalPick_Icon.webp" },
+    "Sichel": { "iconUrl": "https://ark-unity.com/images/icons/MetalPick_Icon.webp" },
+    "Kletterpickel": { "iconUrl": "https://ark-unity.com/images/icons/MetalPick_Icon.webp" },
+    "Bogen": { "iconUrl": "https://ark-unity.com/images/icons/MetalPick_Icon.webp" },
+    "Compoundbogen": { "iconUrl": "https://ark-unity.com/images/icons/MetalPick_Icon.webp" },
+    "Armbrust": { "iconUrl": "https://ark-unity.com/images/icons/MetalPick_Icon.webp" },
+    "Kettensäge": { "iconUrl": "https://ark-unity.com/images/icons/MetalPick_Icon.webp" },
+    "Flammenwerfer": { "iconUrl": "https://ark-unity.com/images/icons/MetalPick_Icon.webp" },
+    "Elektroschocker": { "iconUrl": "https://ark-unity.com/images/icons/MetalPick_Icon.webp" },
+    "Holzschild": { "iconUrl": "https://ark-unity.com/images/icons/MetalPick_Icon.webp" },
+    "S.W.A.T Schild": { "iconUrl": "https://ark-unity.com/images/icons/MetalPick_Icon.webp" },
+    "Flinte": { "iconUrl": "https://ark-unity.com/images/icons/MetalPick_Icon.webp" }
   },
   "Ressourcen": {
     "Crystal": { "iconUrl": "https://ark-unity.com/images/icons/Crystal_Icon.webp" },
