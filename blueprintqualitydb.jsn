@@ -1,0 +1,20 @@
+{
+  "Grün": {
+    "borderColor": "#22c55e"
+  },
+  "Blau": {
+    "borderColor": "#3b82f6"
+  },
+  "Lila": {
+    "borderColor": "#8b5cf6"
+  },
+  "Gelb": {
+    "borderColor": "#eab308"
+  },
+  "Hellblau": {
+    "borderColor": "#06b6d4"
+  },
+  "White": {
+    "borderColor": "#FFFFFF"
+  }
+}
