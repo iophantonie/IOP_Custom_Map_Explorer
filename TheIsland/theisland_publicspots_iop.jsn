@@ -1,6 +1,46 @@
 {
     "publicSpots": [
         {
+            "id": "1",
+            "name": "Miniboss: Beelzebufo King",
+            "lat": 61,
+            "lon": 49.5,
+            "icon": "https://images.emojiterra.com/twitter/512px/1f480.png",
+            "images": [
+                "https://i.postimg.cc/xTv4jhTV/Bild-2024-05-16-133412340.png",
+                "https://i.postimg.cc/xTv4jhTV/Bild-2024-05-16-133412340.png",
+                "https://i.postimg.cc/xTv4jhTV/Bild-2024-05-16-133412340.png"
+            ],
+            "infoBadges": [
+                {
+                    "text": "Miniboss",
+                    "type": "white"
+                }
+            ],
+            "shortDescription": "Öffentlicher Teleporter",
+            "longDescription": "Eine Öffentliche Harzfarm, bei der sich jeder Spieler an 8 Harzsammlern bedienen kann. Es befindet sich ebenfalls ein kleiner Tek Teleporter dort, der von jedem Spieler genutzt werden kann, der den kleinen Tek Teleporter freigeschaltet hat."
+        },
+        {
+            "id": "2",
+            "name": "Miniboss: Rhinobeast",
+            "lat": 61,
+            "lon": 49.5,
+            "icon": "https://images.emojiterra.com/twitter/512px/1f480.png",
+            "images": [
+                "https://i.postimg.cc/xTv4jhTV/Bild-2024-05-16-133412340.png",
+                "https://i.postimg.cc/xTv4jhTV/Bild-2024-05-16-133412340.png",
+                "https://i.postimg.cc/xTv4jhTV/Bild-2024-05-16-133412340.png"
+            ],
+            "infoBadges": [
+                {
+                    "text": "Miniboss",
+                    "type": "white"
+                }
+            ],
+            "shortDescription": "Öffentlicher Teleporter",
+            "longDescription": "Eine Öffentliche Harzfarm, bei der sich jeder Spieler an 8 Harzsammlern bedienen kann. Es befindet sich ebenfalls ein kleiner Tek Teleporter dort, der von jedem Spieler genutzt werden kann, der den kleinen Tek Teleporter freigeschaltet hat."
+        },
+        {
             "id": "3",
             "name": "Öffentliche Harzfarm",
             "lat": 61,
