@@ -14,7 +14,7 @@
             "infoBadges": [
                 {
                     "text": "Miniboss",
-                    "type": "white"
+                    "type": "red"
                 }
             ],
             "shortDescription": "IOP Miniboss",
@@ -34,7 +34,7 @@
             "infoBadges": [
                 {
                     "text": "Miniboss",
-                    "type": "white"
+                    "type": "red"
                 }
             ],
             "shortDescription": "IOP Miniboss",
