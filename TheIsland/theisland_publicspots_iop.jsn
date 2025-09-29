@@ -2,7 +2,7 @@
     "publicSpots": [
         {
             "id": "1",
-            "name": "Miniboss: Beelzebufo King",
+            "name": "Beelzebufo King",
             "lat": 61,
             "lon": 49.5,
             "icon": "https://images.emojiterra.com/twitter/512px/1f480.png",
@@ -17,12 +17,12 @@
                     "type": "white"
                 }
             ],
-            "shortDescription": "Öffentlicher Teleporter",
+            "shortDescription": "IOP Miniboss",
             "longDescription": "Eine Öffentliche Harzfarm, bei der sich jeder Spieler an 8 Harzsammlern bedienen kann. Es befindet sich ebenfalls ein kleiner Tek Teleporter dort, der von jedem Spieler genutzt werden kann, der den kleinen Tek Teleporter freigeschaltet hat."
         },
         {
             "id": "2",
-            "name": "Miniboss: Rhinobeast",
+            "name": "Rhinobeast",
             "lat": 61,
             "lon": 49.5,
             "icon": "https://images.emojiterra.com/twitter/512px/1f480.png",
@@ -37,7 +37,7 @@
                     "type": "white"
                 }
             ],
-            "shortDescription": "Öffentlicher Teleporter",
+            "shortDescription": "IOP Miniboss",
             "longDescription": "Eine Öffentliche Harzfarm, bei der sich jeder Spieler an 8 Harzsammlern bedienen kann. Es befindet sich ebenfalls ein kleiner Tek Teleporter dort, der von jedem Spieler genutzt werden kann, der den kleinen Tek Teleporter freigeschaltet hat."
         },
         {
