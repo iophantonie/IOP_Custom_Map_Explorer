@@ -1,7 +1,7 @@
 {
     "publicSpots": [
         {
-            "id": "public_sapfarm",
+            "id": "3",
             "name": "Öffentliche Harzfarm",
             "lat": 61,
             "lon": 49.5,
@@ -25,7 +25,7 @@
             "longDescription": "Eine Öffentliche Harzfarm, bei der sich jeder Spieler an 8 Harzsammlern bedienen kann. Es befindet sich ebenfalls ein kleiner Tek Teleporter dort, der von jedem Spieler genutzt werden kann, der den kleinen Tek Teleporter freigeschaltet hat."
         },
         {
-            "id": "public_teleporter_1",
+            "id": "4",
             "name": "Grüner Obelisk",
             "lat": 59.5,
             "lon": 77.5,
@@ -45,7 +45,7 @@
             "longDescription": "Am Grünen Obelisken befindet sich ein kleiner Tek Teleporter, der von jedem Spieler genutzt werden kann, der den kleinen Tek Teleporter freigeschaltet hat."
         },
         {
-            "id": "public_teleporter_2",
+            "id": "5",
             "name": "Roter Obelisk",
             "lat": 85.5,
             "lon": 13,
@@ -65,7 +65,7 @@
             "longDescription": "Am Roten Obelisken befindet sich ein kleiner Tek Teleporter, der von jedem Spieler genutzt werden kann, der den kleinen Tek Teleporter freigeschaltet hat."
         },
         {
-            "id": "public_teleporter_3",
+            "id": "6",
             "name": "Blauer Obelisk",
             "lat": 22,
             "lon": 21,
