@@ -49,6 +49,8 @@
     "Gem Green": { "iconUrl": "https://wikily.gg/cdn-cgi/image/width=64,format=auto/https://r2.wikily.gg/images/ark/icons/Gem_Icon.webp" },
     "Mushrooms": { "iconUrl": "https://wikily.gg/cdn-cgi/image/width=64,format=auto/https://r2.wikily.gg/images/ark/icons/BlueMushroom.webp" },
     "Polymer": { "iconUrl": "https://wikily.gg/cdn-cgi/image/width=64,format=auto/https://r2.wikily.gg/images/ark/icons/OrganicPolymer_Icon.webp" },
+    "Bones": { "iconUrl": "https://wikily.gg/cdn-cgi/image/width=64,format=auto/https://r2.wikily.gg/images/ark/icons/BoneJerboaCostume_Icon.webp" },
+    "Element Ore": { "iconUrl": "https://wikily.gg/cdn-cgi/image/width=64,format=auto/https://r2.wikily.gg/images/ark/icons/Element_Icon.webp" },
     "Silk": { "iconUrl": "https://wikily.gg/cdn-cgi/image/width=64,format=auto/https://r2.wikily.gg/images/ark/icons/Silk_Icon.webp" },
     "Silizium Perlen": { "iconUrl": "https://ark-unity.com/images/icons/Pearl_Icon.webp" }
   },
