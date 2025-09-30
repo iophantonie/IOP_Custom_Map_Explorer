@@ -1,85 +1,235 @@
 {
-  "Items": {
-    "Fackel": { "iconUrl": "https://raw.githubusercontent.com/iophantonie/iophantonie-IOP_Custom_Map_Explorer.github.io/refs/heads/main/Images/Tools/Torch_Icon.avif" },
-    "Scharfschützengewehr": { "iconUrl": "https://github.com/iophantonie/iophantonie-IOP_Custom_Map_Explorer.github.io/blob/main/Images/Weapons/Fabricated_Sniper_Rifle.webp?raw=true" },
-    "Einfache Pistole": { "iconUrl": "https://github.com/iophantonie/iophantonie-IOP_Custom_Map_Explorer.github.io/blob/main/Images/Weapons/Simple_Pistol.webp?raw=true" },
-    "Pumpgun": { "iconUrl": "https://github.com/iophantonie/iophantonie-IOP_Custom_Map_Explorer.github.io/blob/main/Images/Weapons/Pump-Action_Shotgun.webp?raw=true" },
-    "Schrotflinte": { "iconUrl": "https://github.com/iophantonie/iophantonie-IOP_Custom_Map_Explorer.github.io/blob/main/Images/Weapons/Shotgun.webp?raw=true" },
-    "Hergestellte Pistole": { "iconUrl": "https://github.com/iophantonie/iophantonie-IOP_Custom_Map_Explorer.github.io/blob/main/Images/Weapons/Fabricated_Pistol.webp?raw=true" },
-    "Sturmgewehr": { "iconUrl": "https://github.com/iophantonie/iophantonie-IOP_Custom_Map_Explorer.github.io/blob/main/Images/Weapons/Assault_Rifle.webp?raw=true" },
-    "Pike": { "iconUrl": "https://github.com/iophantonie/iophantonie-IOP_Custom_Map_Explorer.github.io/blob/main/Images/Weapons/Pike.webp?raw=true" },
-    "Schwert": { "iconUrl": "https://github.com/iophantonie/iophantonie-IOP_Custom_Map_Explorer.github.io/blob/main/Images/Weapons/Sword.webp?raw=true" },
-    "Stein Spitzhacke": { "iconUrl": "https://github.com/iophantonie/iophantonie-IOP_Custom_Map_Explorer.github.io/blob/main/Images/Tools/Stone_Pick.webp?raw=true" },
-    "Metall Spitzhacke": { "iconUrl": "https://github.com/iophantonie/iophantonie-IOP_Custom_Map_Explorer.github.io/blob/main/Images/Tools/Metal_Pick.webp?raw=true" },
-    "Stein Axt": { "iconUrl": "https://github.com/iophantonie/iophantonie-IOP_Custom_Map_Explorer.github.io/blob/main/Images/Tools/Stone_Hatchet.webp?raw=true" },
-    "Metall Axt": { "iconUrl": "https://github.com/iophantonie/iophantonie-IOP_Custom_Map_Explorer.github.io/blob/main/Images/Tools/Metal_Hatchet.webp?raw=true" },
-    "Metall Sichel": { "iconUrl": "https://github.com/iophantonie/iophantonie-IOP_Custom_Map_Explorer.github.io/blob/main/Images/Tools/Metal_Sickle.webp?raw=true" },
-    "Kletterpickel": { "iconUrl": "https://github.com/iophantonie/iophantonie-IOP_Custom_Map_Explorer.github.io/blob/main/Images/Tools/Climbing_Pick_29.webp?raw=true" },
-    "Bogen": { "iconUrl": "https://github.com/iophantonie/iophantonie-IOP_Custom_Map_Explorer.github.io/blob/main/Images/Weapons/Bow.webp?raw=true" },
-    "Compoundbogen": { "iconUrl": "https://github.com/iophantonie/iophantonie-IOP_Custom_Map_Explorer.github.io/blob/main/Images/Weapons/Compound_Bow.webp?raw=true" },
-    "Armbrust": { "iconUrl": "https://github.com/iophantonie/iophantonie-IOP_Custom_Map_Explorer.github.io/blob/main/Images/Weapons/Crossbow.webp?raw=true" },
-    "Kettensäge": { "iconUrl": "https://github.com/iophantonie/iophantonie-IOP_Custom_Map_Explorer.github.io/blob/main/Images/Weapons/Chainsaw_Icon.webp?raw=true" },
-    "Flammenwerfer": { "iconUrl": "https://github.com/iophantonie/iophantonie-IOP_Custom_Map_Explorer.github.io/blob/main/Images/Weapons/Flamethrower_29.webp?raw=true" },
-    "Elektroschocker": { "iconUrl": "https://github.com/iophantonie/iophantonie-IOP_Custom_Map_Explorer.github.io/blob/main/Images/Weapons/ElectricProd_Icon.webp?raw=true" },
-    "Holzschild": { "iconUrl": "https://github.com/iophantonie/iophantonie-IOP_Custom_Map_Explorer.github.io/blob/main/Images/Weapons/Wooden_Shield.webp?raw=true" },
-    "S.W.A.T Schild": { "iconUrl": "https://github.com/iophantonie/iophantonie-IOP_Custom_Map_Explorer.github.io/blob/main/Images/Weapons/Riot_Shield.webp?raw=true"},
-    "Flinte": { "iconUrl": "https://github.com/iophantonie/iophantonie-IOP_Custom_Map_Explorer.github.io/blob/main/Images/Weapons/Longneck_Rifle.webp?raw=true" }
-  },
-  "Ressourcen": {
-    "Crystal": { "iconUrl": "https://ark-unity.com/images/icons/Crystal_Icon.webp" },
-    "Kristall": { "iconUrl": "https://ark-unity.com/images/icons/Crystal_Icon.webp" },
-    "Metal": { "iconUrl": "https://ark-unity.com/images/icons/MetalOre_Icon.webp" },
-    "Metall": { "iconUrl": "https://ark-unity.com/images/icons/MetalOre_Icon.webp" },
-    "Obsidian": { "iconUrl": "https://ark.wiki.gg/images/Obsidian.png?9b1459" },
-    "Oil": { "iconUrl": "https://ark-unity.com/images/icons/OilFuel_Icon.webp" },
-    "Öl": { "iconUrl": "https://ark-unity.com/images/icons/OilFuel_Icon.webp" },
-    "Rich Metal": { "iconUrl": "https://ark-unity.com/images/icons/MetalOre_Icon.webp" },
-    "Reichhaltiges Metall": { "iconUrl": "https://ark-unity.com/images/icons/MetalOre_Icon.webp" },
-    "Silica Pearls": { "iconUrl": "https://ark-unity.com/images/icons/Pearl_Icon.webp" },
-    "Charcoal": { "iconUrl": "https://wikily.gg/cdn-cgi/image/width=64,format=auto/https://r2.wikily.gg/images/ark/icons/Charcoal_Icon.webp" },
-    "Wood Coal": { "iconUrl": "https://wikily.gg/cdn-cgi/image/width=64,format=auto/https://r2.wikily.gg/images/ark/icons/Charcoal_Icon.webp" },
-    "Coal": { "iconUrl": "https://wikily.gg/cdn-cgi/image/width=64,format=auto/https://r2.wikily.gg/images/ark/icons/Charcoal_Icon.webp" },
-    "Cactus with few berries": { "iconUrl": "https://wikily.gg/cdn-cgi/image/width=64,format=auto/https://r2.wikily.gg/images/ark/icons/CactusSap_Icon.webp" },
-    "Cactus": { "iconUrl": "https://wikily.gg/cdn-cgi/image/width=64,format=auto/https://r2.wikily.gg/images/ark/icons/CactusSap_Icon.webp" },
-    "Sulfur": { "iconUrl": "https://wikily.gg/cdn-cgi/image/width=64,format=auto/https://r2.wikily.gg/images/ark/icons/Sulfur_Icon.webp" },
-    "Schwefel": { "iconUrl": "https://wikily.gg/cdn-cgi/image/width=64,format=auto/https://r2.wikily.gg/images/ark/icons/Sulfur_Icon.webp" },
-    "Black Pearls": { "iconUrl": "https://wikily.gg/cdn-cgi/image/width=64,format=auto/https://r2.wikily.gg/images/ark/icons/BlackPearl_Icon.webp" },
-    "Gem Bio": { "iconUrl": "https://wikily.gg/cdn-cgi/image/width=64,format=auto/https://r2.wikily.gg/images/ark/icons/Gem2_Icon.webp" },
-    "Gem Element": { "iconUrl": "https://wikily.gg/cdn-cgi/image/width=64,format=auto/https://r2.wikily.gg/images/ark/icons/Gem3_Icon.webp" },
-    "Gem Light": { "iconUrl": "https://wikily.gg/cdn-cgi/image/width=64,format=auto/https://r2.wikily.gg/images/ark/icons/Gem_Icon.webp" },
-    "Mushrooms": { "iconUrl": "https://wikily.gg/cdn-cgi/image/width=64,format=auto/https://r2.wikily.gg/images/ark/icons/BlueMushroom.webp" },
-    "Polymer": { "iconUrl": "https://wikily.gg/cdn-cgi/image/width=64,format=auto/https://r2.wikily.gg/images/ark/icons/OrganicPolymer_Icon.webp" },
-    "Bones": { "iconUrl": "https://wikily.gg/cdn-cgi/image/width=64,format=auto/https://r2.wikily.gg/images/ark/icons/BoneJerboaCostume_Icon.webp" },
-    "Element Ore": { "iconUrl": "https://wikily.gg/cdn-cgi/image/width=64,format=auto/https://r2.wikily.gg/images/ark/icons/Element_Icon.webp" },
-    "Silk": { "iconUrl": "https://wikily.gg/cdn-cgi/image/width=64,format=auto/https://r2.wikily.gg/images/ark/icons/Silk_Icon.webp" },
-    "City Prop": { "iconUrl": "https://wikily.gg/cdn-cgi/image/width=64,format=auto/https://r2.wikily.gg/images/ark/icons/Electronic_Icon.webp" },
-    "Oil Meat": { "iconUrl": "https://wikily.gg/cdn-cgi/image/width=64,format=auto/https://r2.wikily.gg/images/ark/icons/SquidOil_Icon.webp" },
-    "Clay": { "iconUrl": "https://wikily.gg/cdn-cgi/image/width=64,format=auto/https://r2.wikily.gg/images/ark/icons/Clay_Icon.webp" },
-    "Citronal": { "iconUrl": "https://wikily.gg/cdn-cgi/image/width=64,format=auto/https://r2.wikily.gg/images/ark/icons/Citronal_Icon.webp" },
-    "Dino Corpse": { "iconUrl": "https://wikily.gg/cdn-cgi/image/width=64,format=auto/https://r2.wikily.gg/images/ark/icons/RW_Dino_Groups.webp" },
-    "Savoroot": { "iconUrl": "https://wikily.gg/cdn-cgi/image/width=64,format=auto/https://r2.wikily.gg/images/ark/icons/Savroot_Icon.webp" },
-    "Rare Mushrooms": { "iconUrl": "https://wikily.gg/cdn-cgi/image/width=64,format=auto/https://r2.wikily.gg/images/ark/icons/RareMushroom_Icon.webp" },
-    "Rare Flowers": { "iconUrl": "https://wikily.gg/cdn-cgi/image/width=64,format=auto/https://r2.wikily.gg/images/ark/icons/RareFlower_Icon.webp" },
-    "Sandpile": { "iconUrl": "https://wikily.gg/cdn-cgi/image/width=64,format=auto/https://r2.wikily.gg/images/ark/icons/Sand_Icon.webp" },
-    "Sand": { "iconUrl": "https://wikily.gg/cdn-cgi/image/width=64,format=auto/https://r2.wikily.gg/images/ark/icons/Sand_Icon.webp" },
-    "Rockarrot": { "iconUrl": "https://wikily.gg/cdn-cgi/image/width=64,format=auto/https://r2.wikily.gg/images/ark/icons/Rockarrot_Icon.webp" },
-    "Longrass": { "iconUrl": "https://wikily.gg/cdn-cgi/image/width=64,format=auto/https://r2.wikily.gg/images/ark/icons/Longrass_Icon.webp" },
-    "Carrots": { "iconUrl": "https://wikily.gg/cdn-cgi/image/width=64,format=auto/https://r2.wikily.gg/images/ark/icons/Rockarrot_Icon.webp" },
-    "Lemon": { "iconUrl": "https://wikily.gg/cdn-cgi/image/width=64,format=auto/https://r2.wikily.gg/images/ark/icons/Citronal_Icon.webp" },
-    "Potatoes": { "iconUrl": "https://wikily.gg/cdn-cgi/image/width=64,format=auto/https://r2.wikily.gg/images/ark/icons/Savroot_Icon.webp" },
-    "Mithril": { "iconUrl": "https://wikily.gg/cdn-cgi/image/width=64,format=auto/https://r2.wikily.gg/images/ark/icons/Mithril.webp" },
-    "Silizium Perlen": { "iconUrl": "https://ark-unity.com/images/icons/Pearl_Icon.webp" }
-  },
-  "Kreaturen": {
-    "Raptor": { "iconUrl": "https://ark-unity.com/images/icons/Empty_RaptorHead_Icon.webp" },
-    "Baryonyx": { "iconUrl": "https://ark-unity.com/images/icons/Empty_BaryonyxHead_Icon.webp" },
-    "Araneo": { "iconUrl": "https://ark-unity.com/images/icons/Empty_SpiderMinionHead_Icon.webp" },
-    "Onyc": { "iconUrl": "https://ark-unity.com/images/icons/Empty_BatHead_Icon.webp" },
-    "Piranha": { "iconUrl": "https://ark-unity.com/images/icons/Empty_PiranhaHead_Icon.webp" },
-    "Sarcosuchus": { "iconUrl": "https://ark-unity.com/images/icons/Empty_SarcoHead_Icon.webp" },
-    "Titanoboa": { "iconUrl": "https://ark-unity.com/images/icons/Empty_TitanBoaHead_Icon.webp" }
-  },
-  "notes": {
-    "Explorer Note Icon": { "iconUrl": "https://wikily.gg/cdn-cgi/image/width=64,format=auto/https://r2.wikily.gg/images/ark/icons/NoteIcon.webp" },
-  }
+    "Items": {
+        "Fackel": {
+            "iconUrl": "https://raw.githubusercontent.com/iophantonie/iophantonie-IOP_Custom_Map_Explorer.github.io/refs/heads/main/Images/Tools/Torch_Icon.avif"
+        },
+        "Scharfschützengewehr": {
+            "iconUrl": "https://github.com/iophantonie/iophantonie-IOP_Custom_Map_Explorer.github.io/blob/main/Images/Weapons/Fabricated_Sniper_Rifle.webp?raw=true"
+        },
+        "Einfache Pistole": {
+            "iconUrl": "https://github.com/iophantonie/iophantonie-IOP_Custom_Map_Explorer.github.io/blob/main/Images/Weapons/Simple_Pistol.webp?raw=true"
+        },
+        "Pumpgun": {
+            "iconUrl": "https://github.com/iophantonie/iophantonie-IOP_Custom_Map_Explorer.github.io/blob/main/Images/Weapons/Pump-Action_Shotgun.webp?raw=true"
+        },
+        "Schrotflinte": {
+            "iconUrl": "https://github.com/iophantonie/iophantonie-IOP_Custom_Map_Explorer.github.io/blob/main/Images/Weapons/Shotgun.webp?raw=true"
+        },
+        "Hergestellte Pistole": {
+            "iconUrl": "https://github.com/iophantonie/iophantonie-IOP_Custom_Map_Explorer.github.io/blob/main/Images/Weapons/Fabricated_Pistol.webp?raw=true"
+        },
+        "Sturmgewehr": {
+            "iconUrl": "https://github.com/iophantonie/iophantonie-IOP_Custom_Map_Explorer.github.io/blob/main/Images/Weapons/Assault_Rifle.webp?raw=true"
+        },
+        "Pike": {
+            "iconUrl": "https://github.com/iophantonie/iophantonie-IOP_Custom_Map_Explorer.github.io/blob/main/Images/Weapons/Pike.webp?raw=true"
+        },
+        "Schwert": {
+            "iconUrl": "https://github.com/iophantonie/iophantonie-IOP_Custom_Map_Explorer.github.io/blob/main/Images/Weapons/Sword.webp?raw=true"
+        },
+        "Stein Spitzhacke": {
+            "iconUrl": "https://github.com/iophantonie/iophantonie-IOP_Custom_Map_Explorer.github.io/blob/main/Images/Tools/Stone_Pick.webp?raw=true"
+        },
+        "Metall Spitzhacke": {
+            "iconUrl": "https://github.com/iophantonie/iophantonie-IOP_Custom_Map_Explorer.github.io/blob/main/Images/Tools/Metal_Pick.webp?raw=true"
+        },
+        "Stein Axt": {
+            "iconUrl": "https://github.com/iophantonie/iophantonie-IOP_Custom_Map_Explorer.github.io/blob/main/Images/Tools/Stone_Hatchet.webp?raw=true"
+        },
+        "Metall Axt": {
+            "iconUrl": "https://github.com/iophantonie/iophantonie-IOP_Custom_Map_Explorer.github.io/blob/main/Images/Tools/Metal_Hatchet.webp?raw=true"
+        },
+        "Metall Sichel": {
+            "iconUrl": "https://github.com/iophantonie/iophantonie-IOP_Custom_Map_Explorer.github.io/blob/main/Images/Tools/Metal_Sickle.webp?raw=true"
+        },
+        "Kletterpickel": {
+            "iconUrl": "https://github.com/iophantonie/iophantonie-IOP_Custom_Map_Explorer.github.io/blob/main/Images/Tools/Climbing_Pick_29.webp?raw=true"
+        },
+        "Bogen": {
+            "iconUrl": "https://github.com/iophantonie/iophantonie-IOP_Custom_Map_Explorer.github.io/blob/main/Images/Weapons/Bow.webp?raw=true"
+        },
+        "Compoundbogen": {
+            "iconUrl": "https://github.com/iophantonie/iophantonie-IOP_Custom_Map_Explorer.github.io/blob/main/Images/Weapons/Compound_Bow.webp?raw=true"
+        },
+        "Armbrust": {
+            "iconUrl": "https://github.com/iophantonie/iophantonie-IOP_Custom_Map_Explorer.github.io/blob/main/Images/Weapons/Crossbow.webp?raw=true"
+        },
+        "Kettensäge": {
+            "iconUrl": "https://github.com/iophantonie/iophantonie-IOP_Custom_Map_Explorer.github.io/blob/main/Images/Weapons/Chainsaw_Icon.webp?raw=true"
+        },
+        "Flammenwerfer": {
+            "iconUrl": "https://github.com/iophantonie/iophantonie-IOP_Custom_Map_Explorer.github.io/blob/main/Images/Weapons/Flamethrower_29.webp?raw=true"
+        },
+        "Elektroschocker": {
+            "iconUrl": "https://github.com/iophantonie/iophantonie-IOP_Custom_Map_Explorer.github.io/blob/main/Images/Weapons/ElectricProd_Icon.webp?raw=true"
+        },
+        "Holzschild": {
+            "iconUrl": "https://github.com/iophantonie/iophantonie-IOP_Custom_Map_Explorer.github.io/blob/main/Images/Weapons/Wooden_Shield.webp?raw=true"
+        },
+        "S.W.A.T Schild": {
+            "iconUrl": "https://github.com/iophantonie/iophantonie-IOP_Custom_Map_Explorer.github.io/blob/main/Images/Weapons/Riot_Shield.webp?raw=true"
+        },
+        "Flinte": {
+            "iconUrl": "https://github.com/iophantonie/iophantonie-IOP_Custom_Map_Explorer.github.io/blob/main/Images/Weapons/Longneck_Rifle.webp?raw=true"
+        }
+    },
+    "Ressourcen": {
+        "Crystal": {
+            "iconUrl": "https://ark-unity.com/images/icons/Crystal_Icon.webp"
+        },
+        "Kristall": {
+            "iconUrl": "https://ark-unity.com/images/icons/Crystal_Icon.webp"
+        },
+        "Metal": {
+            "iconUrl": "https://ark-unity.com/images/icons/MetalOre_Icon.webp"
+        },
+        "Metall": {
+            "iconUrl": "https://ark-unity.com/images/icons/MetalOre_Icon.webp"
+        },
+        "Obsidian": {
+            "iconUrl": "https://ark.wiki.gg/images/Obsidian.png?9b1459"
+        },
+        "Oil": {
+            "iconUrl": "https://ark-unity.com/images/icons/OilFuel_Icon.webp"
+        },
+        "Öl": {
+            "iconUrl": "https://ark-unity.com/images/icons/OilFuel_Icon.webp"
+        },
+        "Rich Metal": {
+            "iconUrl": "https://ark-unity.com/images/icons/MetalOre_Icon.webp"
+        },
+        "Reichhaltiges Metall": {
+            "iconUrl": "https://ark-unity.com/images/icons/MetalOre_Icon.webp"
+        },
+        "Silica Pearls": {
+            "iconUrl": "https://ark-unity.com/images/icons/Pearl_Icon.webp"
+        },
+        "Charcoal": {
+            "iconUrl": "https://wikily.gg/cdn-cgi/image/width=64,format=auto/https://r2.wikily.gg/images/ark/icons/Charcoal_Icon.webp"
+        },
+        "Wood Coal": {
+            "iconUrl": "https://wikily.gg/cdn-cgi/image/width=64,format=auto/https://r2.wikily.gg/images/ark/icons/Charcoal_Icon.webp"
+        },
+        "Coal": {
+            "iconUrl": "https://wikily.gg/cdn-cgi/image/width=64,format=auto/https://r2.wikily.gg/images/ark/icons/Charcoal_Icon.webp"
+        },
+        "Cactus with few berries": {
+            "iconUrl": "https://wikily.gg/cdn-cgi/image/width=64,format=auto/https://r2.wikily.gg/images/ark/icons/CactusSap_Icon.webp"
+        },
+        "Cactus": {
+            "iconUrl": "https://wikily.gg/cdn-cgi/image/width=64,format=auto/https://r2.wikily.gg/images/ark/icons/CactusSap_Icon.webp"
+        },
+        "Sulfur": {
+            "iconUrl": "https://wikily.gg/cdn-cgi/image/width=64,format=auto/https://r2.wikily.gg/images/ark/icons/Sulfur_Icon.webp"
+        },
+        "Schwefel": {
+            "iconUrl": "https://wikily.gg/cdn-cgi/image/width=64,format=auto/https://r2.wikily.gg/images/ark/icons/Sulfur_Icon.webp"
+        },
+        "Black Pearls": {
+            "iconUrl": "https://wikily.gg/cdn-cgi/image/width=64,format=auto/https://r2.wikily.gg/images/ark/icons/BlackPearl_Icon.webp"
+        },
+        "Gem Bio": {
+            "iconUrl": "https://wikily.gg/cdn-cgi/image/width=64,format=auto/https://r2.wikily.gg/images/ark/icons/Gem2_Icon.webp"
+        },
+        "Gem Element": {
+            "iconUrl": "https://wikily.gg/cdn-cgi/image/width=64,format=auto/https://r2.wikily.gg/images/ark/icons/Gem3_Icon.webp"
+        },
+        "Gem Light": {
+            "iconUrl": "https://wikily.gg/cdn-cgi/image/width=64,format=auto/https://r2.wikily.gg/images/ark/icons/Gem_Icon.webp"
+        },
+        "Mushrooms": {
+            "iconUrl": "https://wikily.gg/cdn-cgi/image/width=64,format=auto/https://r2.wikily.gg/images/ark/icons/BlueMushroom.webp"
+        },
+        "Polymer": {
+            "iconUrl": "https://wikily.gg/cdn-cgi/image/width=64,format=auto/https://r2.wikily.gg/images/ark/icons/OrganicPolymer_Icon.webp"
+        },
+        "Bones": {
+            "iconUrl": "https://wikily.gg/cdn-cgi/image/width=64,format=auto/https://r2.wikily.gg/images/ark/icons/BoneJerboaCostume_Icon.webp"
+        },
+        "Element Ore": {
+            "iconUrl": "https://wikily.gg/cdn-cgi/image/width=64,format=auto/https://r2.wikily.gg/images/ark/icons/Element_Icon.webp"
+        },
+        "Silk": {
+            "iconUrl": "https://wikily.gg/cdn-cgi/image/width=64,format=auto/https://r2.wikily.gg/images/ark/icons/Silk_Icon.webp"
+        },
+        "City Prop": {
+            "iconUrl": "https://wikily.gg/cdn-cgi/image/width=64,format=auto/https://r2.wikily.gg/images/ark/icons/Electronic_Icon.webp"
+        },
+        "Oil Meat": {
+            "iconUrl": "https://wikily.gg/cdn-cgi/image/width=64,format=auto/https://r2.wikily.gg/images/ark/icons/SquidOil_Icon.webp"
+        },
+        "Clay": {
+            "iconUrl": "https://wikily.gg/cdn-cgi/image/width=64,format=auto/https://r2.wikily.gg/images/ark/icons/Clay_Icon.webp"
+        },
+        "Citronal": {
+            "iconUrl": "https://wikily.gg/cdn-cgi/image/width=64,format=auto/https://r2.wikily.gg/images/ark/icons/Citronal_Icon.webp"
+        },
+        "Dino Corpse": {
+            "iconUrl": "https://wikily.gg/cdn-cgi/image/width=64,format=auto/https://r2.wikily.gg/images/ark/icons/RW_Dino_Groups.webp"
+        },
+        "Savoroot": {
+            "iconUrl": "https://wikily.gg/cdn-cgi/image/width=64,format=auto/https://r2.wikily.gg/images/ark/icons/Savroot_Icon.webp"
+        },
+        "Rare Mushrooms": {
+            "iconUrl": "https://wikily.gg/cdn-cgi/image/width=64,format=auto/https://r2.wikily.gg/images/ark/icons/RareMushroom_Icon.webp"
+        },
+        "Rare Flowers": {
+            "iconUrl": "https://wikily.gg/cdn-cgi/image/width=64,format=auto/https://r2.wikily.gg/images/ark/icons/RareFlower_Icon.webp"
+        },
+        "Sandpile": {
+            "iconUrl": "https://wikily.gg/cdn-cgi/image/width=64,format=auto/https://r2.wikily.gg/images/ark/icons/Sand_Icon.webp"
+        },
+        "Sand": {
+            "iconUrl": "https://wikily.gg/cdn-cgi/image/width=64,format=auto/https://r2.wikily.gg/images/ark/icons/Sand_Icon.webp"
+        },
+        "Rockarrot": {
+            "iconUrl": "https://wikily.gg/cdn-cgi/image/width=64,format=auto/https://r2.wikily.gg/images/ark/icons/Rockarrot_Icon.webp"
+        },
+        "Longrass": {
+            "iconUrl": "https://wikily.gg/cdn-cgi/image/width=64,format=auto/https://r2.wikily.gg/images/ark/icons/Longrass_Icon.webp"
+        },
+        "Carrots": {
+            "iconUrl": "https://wikily.gg/cdn-cgi/image/width=64,format=auto/https://r2.wikily.gg/images/ark/icons/Rockarrot_Icon.webp"
+        },
+        "Lemon": {
+            "iconUrl": "https://wikily.gg/cdn-cgi/image/width=64,format=auto/https://r2.wikily.gg/images/ark/icons/Citronal_Icon.webp"
+        },
+        "Potatoes": {
+            "iconUrl": "https://wikily.gg/cdn-cgi/image/width=64,format=auto/https://r2.wikily.gg/images/ark/icons/Savroot_Icon.webp"
+        },
+        "Mithril": {
+            "iconUrl": "https://wikily.gg/cdn-cgi/image/width=64,format=auto/https://r2.wikily.gg/images/ark/icons/Mithril.webp"
+        },
+        "Silizium Perlen": {
+            "iconUrl": "https://ark-unity.com/images/icons/Pearl_Icon.webp"
+        }
+    },
+    "Kreaturen": {
+        "Raptor": {
+            "iconUrl": "https://ark-unity.com/images/icons/Empty_RaptorHead_Icon.webp"
+        },
+        "Baryonyx": {
+            "iconUrl": "https://ark-unity.com/images/icons/Empty_BaryonyxHead_Icon.webp"
+        },
+        "Araneo": {
+            "iconUrl": "https://ark-unity.com/images/icons/Empty_SpiderMinionHead_Icon.webp"
+        },
+        "Onyc": {
+            "iconUrl": "https://ark-unity.com/images/icons/Empty_BatHead_Icon.webp"
+        },
+        "Piranha": {
+            "iconUrl": "https://ark-unity.com/images/icons/Empty_PiranhaHead_Icon.webp"
+        },
+        "Sarcosuchus": {
+            "iconUrl": "https://ark-unity.com/images/icons/Empty_SarcoHead_Icon.webp"
+        },
+        "Titanoboa": {
+            "iconUrl": "https://ark-unity.com/images/icons/Empty_TitanBoaHead_Icon.webp"
+        }
+    },
+    "notes": {
+        "Explorer Note Icon": {
+            "iconUrl": "https://wikily.gg/cdn-cgi/image/width=64,format=auto/https://r2.wikily.gg/images/ark/icons/NoteIcon.webp"
+        }
+    }
 }
