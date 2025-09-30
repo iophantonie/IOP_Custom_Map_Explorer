@@ -54,11 +54,13 @@
             "infoBadges": [
                 {
                     "text": "Teleporter",
-                    "type": "blue"
+                    "type": "teleporter",
+                    "color": "blue"
                 },
                 {
-                    "text": "Öffi Farm",
-                    "type": "yellow"
+                    "text": "Farm",
+                    "type": "Farm",
+                    "color": "orange"
                 }
             ],
             "shortDescription": "Öffentlicher Teleporter",
@@ -78,7 +80,8 @@
             "infoBadges": [
                 {
                     "text": "Teleporter",
-                    "type": "blue"
+                    "type": "teleporter",
+                    "color": "blue"
                 }
             ],
             "shortDescription": "Öffentlicher Teleporter",
@@ -98,7 +101,8 @@
             "infoBadges": [
                 {
                     "text": "Teleporter",
-                    "type": "blue"
+                    "type": "teleporter",
+                    "color": "blue"
                 }
             ],
             "shortDescription": "Öffentlicher Teleporter",
@@ -118,7 +122,8 @@
             "infoBadges": [
                 {
                     "text": "Teleporter",
-                    "type": "blue"
+                    "type": "teleporter",
+                    "color": "blue"
                 }
             ],
             "shortDescription": "Öffentlicher Teleporter",
