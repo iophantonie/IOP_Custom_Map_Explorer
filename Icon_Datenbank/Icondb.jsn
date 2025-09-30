@@ -37,6 +37,8 @@
     "Reichhaltiges Metall": { "iconUrl": "https://ark-unity.com/images/icons/MetalOre_Icon.webp" },
     "Silica Pearls": { "iconUrl": "https://ark-unity.com/images/icons/Pearl_Icon.webp" },
     "Charcoal": { "iconUrl": "https://wikily.gg/cdn-cgi/image/width=64,format=auto/https://r2.wikily.gg/images/ark/icons/Charcoal_Icon.webp" },
+    "Wood Coal": { "iconUrl": "https://wikily.gg/cdn-cgi/image/width=64,format=auto/https://r2.wikily.gg/images/ark/icons/Charcoal_Icon.webp" },
+    "Coal": { "iconUrl": "https://wikily.gg/cdn-cgi/image/width=64,format=auto/https://r2.wikily.gg/images/ark/icons/Charcoal_Icon.webp" },
     "Silizium Perlen": { "iconUrl": "https://ark-unity.com/images/icons/Pearl_Icon.webp" }
   },
   "Kreaturen": {
