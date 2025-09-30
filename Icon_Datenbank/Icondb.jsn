@@ -42,6 +42,7 @@
     "Cactus with few berries": { "iconUrl": "https://wikily.gg/cdn-cgi/image/width=64,format=auto/https://r2.wikily.gg/images/ark/icons/CactusSap_Icon.webp" },
     "Cactus": { "iconUrl": "https://wikily.gg/cdn-cgi/image/width=64,format=auto/https://r2.wikily.gg/images/ark/icons/CactusSap_Icon.webp" },
     "Sulfur": { "iconUrl": "https://wikily.gg/cdn-cgi/image/width=64,format=auto/https://r2.wikily.gg/images/ark/icons/Sulfur_Icon.webp" },
+    "Schwefel": { "iconUrl": "https://wikily.gg/cdn-cgi/image/width=64,format=auto/https://r2.wikily.gg/images/ark/icons/Sulfur_Icon.webp" },
     "Silk": { "iconUrl": "https://wikily.gg/cdn-cgi/image/width=64,format=auto/https://r2.wikily.gg/images/ark/icons/Silk_Icon.webp" },
     "Silizium Perlen": { "iconUrl": "https://ark-unity.com/images/icons/Pearl_Icon.webp" }
   },
