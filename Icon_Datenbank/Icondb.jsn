@@ -52,6 +52,17 @@
     "Bones": { "iconUrl": "https://wikily.gg/cdn-cgi/image/width=64,format=auto/https://r2.wikily.gg/images/ark/icons/BoneJerboaCostume_Icon.webp" },
     "Element Ore": { "iconUrl": "https://wikily.gg/cdn-cgi/image/width=64,format=auto/https://r2.wikily.gg/images/ark/icons/Element_Icon.webp" },
     "Silk": { "iconUrl": "https://wikily.gg/cdn-cgi/image/width=64,format=auto/https://r2.wikily.gg/images/ark/icons/Silk_Icon.webp" },
+    "City Prop": { "iconUrl": "https://wikily.gg/cdn-cgi/image/width=64,format=auto/https://r2.wikily.gg/images/ark/icons/Electronic_Icon.webp" },
+    "Oil Meat": { "iconUrl": "https://wikily.gg/cdn-cgi/image/width=64,format=auto/https://r2.wikily.gg/images/ark/icons/SquidOil_Icon.webp" },
+    "Clay": { "iconUrl": "https://wikily.gg/cdn-cgi/image/width=64,format=auto/https://r2.wikily.gg/images/ark/icons/Clay_Icon.webp" },
+    "Citronal": { "iconUrl": "https://wikily.gg/cdn-cgi/image/width=64,format=auto/https://r2.wikily.gg/images/ark/icons/Citronal_Icon.webp" },
+    "Dino Corpse": { "iconUrl": "https://wikily.gg/cdn-cgi/image/width=64,format=auto/https://r2.wikily.gg/images/ark/icons/RW_Dino_Groups.webp" },
+    "Savoroot": { "iconUrl": "https://wikily.gg/cdn-cgi/image/width=64,format=auto/https://r2.wikily.gg/images/ark/icons/Savroot_Icon.webp" },
+    "Rare Mushrooms": { "iconUrl": "https://wikily.gg/cdn-cgi/image/width=64,format=auto/https://r2.wikily.gg/images/ark/icons/RareMushroom_Icon.webp" },
+    "Rare Flowers": { "iconUrl": "https://wikily.gg/cdn-cgi/image/width=64,format=auto/https://r2.wikily.gg/images/ark/icons/RareFlower_Icon.webp" },
+    "Sandpile": { "iconUrl": "https://wikily.gg/cdn-cgi/image/width=64,format=auto/https://r2.wikily.gg/images/ark/icons/Sand_Icon.webp" },
+    "Rockarrot": { "iconUrl": "https://wikily.gg/cdn-cgi/image/width=64,format=auto/https://r2.wikily.gg/images/ark/icons/Rockarrot_Icon.webp" },
+    "Longrass": { "iconUrl": "https://wikily.gg/cdn-cgi/image/width=64,format=auto/https://r2.wikily.gg/images/ark/icons/Longrass_Icon.webp" },
     "Silizium Perlen": { "iconUrl": "https://ark-unity.com/images/icons/Pearl_Icon.webp" }
   },
   "Kreaturen": {
