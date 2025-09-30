@@ -235,6 +235,28 @@
             border-radius: 0.375rem; /* rounded-md, angepasst für einheitliches Design */
             border-width: 1px;
         }
+        /* Filter Button Styles */
+        .filter-button {
+            padding: 0.25rem 0.75rem;
+            border: 1px solid #555;
+            border-radius: 0.375rem;
+            background-color: #333;
+            color: #ccc;
+            cursor: pointer;
+            transition: all 0.2s;
+            text-transform: capitalize;
+        }
+        .filter-button:hover {
+            background-color: #444;
+            border-color: #777;
+        }
+        .filter-button.active {
+            background-color: #f59e0b;
+            color: #111;
+            font-weight: bold;
+            border-color: #f59e0b;
+            box-shadow: 0 0 10px #f59e0b;
+        }
     </style>
 </head>
 <body class="p-2 md:p-4">
@@ -346,17 +368,21 @@
 
             <div class="control-panel mt-4">
                 <div id="public-spots-panel" class="relative" style="display: none;">
-                            <div class="absolute top-0 right-0">
-                                <label for="spots-toggle" class="flex items-center cursor-pointer">
-                                    <span id="spots-toggle-label" class="mr-3 text-sm text-white">Verstecken</span>
-                                    <div class="relative">
-                                        <input type="checkbox" id="spots-toggle" class="sr-only">
-                                        <div class="toggle-bg block bg-gray-600 w-14 h-8 rounded-full"></div>
-                                        <div class="toggle-dot absolute left-1 top-1 bg-white w-6 h-6 rounded-full transition-transform"></div>
-                                    </div>
-                                </label>
+                    <div class="absolute top-0 right-0">
+                        <label for="spots-toggle" class="flex items-center cursor-pointer">
+                            <span id="spots-toggle-label" class="mr-3 text-sm text-white">Verstecken</span>
+                            <div class="relative">
+                                <input type="checkbox" id="spots-toggle" class="sr-only">
+                                <div class="toggle-bg block bg-gray-600 w-14 h-8 rounded-full"></div>
+                                <div class="toggle-dot absolute left-1 top-1 bg-white w-6 h-6 rounded-full transition-transform"></div>
                             </div>
+                        </label>
+                    </div>
                     <h3 class="text-lg font-bold text-fire-red mb-3">Öffentliche Orte</h3>
+                    
+                    <!-- NEU: Filter Container -->
+                    <div id="public-spots-filter-container" class="flex flex-wrap gap-2 mb-4"></div>
+
                     <div id="public-spots-container" class="relative flex justify-center">
                         <div id="public-spots-slider" class="flex justify-start overflow-x-auto snap-x snap-mandatory scroll-smooth scrollbar-hide gap-4 p-6 -m-2">
                             <!-- Public Spot Cards will be injected here -->
@@ -380,7 +406,11 @@
                         </label>
                     </div>
                     <h3 class="text-lg font-bold text-fire-red mb-3">Höhlen</h3>
-                        <div id="cave-spots-container" class="relative flex justify-center">
+                    
+                    <!-- NEU: Filter Container für Höhlen -->
+                    <div id="cave-spots-filter-container" class="flex flex-wrap gap-2 mb-4"></div>
+
+                    <div id="cave-spots-container" class="relative flex justify-center">
                         <div id="cave-spots-slider" class="flex justify-start overflow-x-auto snap-x snap-mandatory scroll-smooth scrollbar-hide gap-4 p-8 -m-2">
                             <!-- Cave Spot Cards will be injected here -->
                         </div>
@@ -1055,7 +1085,7 @@
             cavePattern = spawnCtx.createPattern(patternCanvas, 'repeat');
         }
         
-        function populatePublicSpotsSlider() {
+        function populatePublicSpotsSlider(filterType = null) {
             const slider = document.getElementById('public-spots-slider');
             const panel = document.getElementById('public-spots-panel');
             slider.innerHTML = '';
@@ -1066,7 +1096,13 @@
             }
             panel.style.display = 'block';
 
-            allPublicSpotsData.publicSpots.forEach(spot => {
+            const filteredSpots = filterType
+                ? allPublicSpotsData.publicSpots.filter(spot => 
+                    spot.infoBadges && spot.infoBadges.some(badge => (badge.type || '').trim().toLowerCase() === filterType)
+                )
+                : allPublicSpotsData.publicSpots;
+
+            filteredSpots.forEach(spot => {
                 const card = document.createElement('div');
                 card.id = `spot-card-${spot.id}`;
                 card.className = 'public-spot-card snap-start flex-shrink-0 w-80 bg-[#222222] rounded-lg p-4 flex flex-col items-center text-center cursor-pointer border border-gray-700 hover:border-amber-500 transition-all duration-300';
@@ -1085,7 +1121,12 @@
                                 bgColor: 'rgba(239, 68, 68, 0.2)', 
                                 textColor: '#fca5a5' 
                             };
-                        } else if (badgeColor) {
+                        } else if (badgeType === 'farm') {
+                             config = { borderColor: 'orange', bgColor: hexToRgba('orange', 0.2), textColor: 'orange' };
+                        } else if (badgeType === 'falle') {
+                             config = { borderColor: 'purple', bgColor: hexToRgba('purple', 0.2), textColor: 'purple' };
+                        }
+                        else if (badgeColor) {
                             config = { 
                                 borderColor: badgeColor, 
                                 bgColor: hexToRgba(badgeColor, 0.2), 
@@ -1141,6 +1182,54 @@
                     openPublicSpotModal(spot.id);
                 });
                 slider.appendChild(card);
+            });
+        }
+
+        function populateBadgeFilters() {
+            const filterContainer = document.getElementById('public-spots-filter-container');
+            filterContainer.innerHTML = '';
+
+            if (!allPublicSpotsData.publicSpots || allPublicSpotsData.publicSpots.length === 0) {
+                return;
+            }
+
+            const badgeTypes = new Set();
+            allPublicSpotsData.publicSpots.forEach(spot => {
+                if (spot.infoBadges) {
+                    spot.infoBadges.forEach(badge => {
+                        if (badge.type) {
+                            badgeTypes.add(badge.type.trim().toLowerCase());
+                        }
+                    });
+                }
+            });
+
+            if (badgeTypes.size === 0) return;
+
+            // "Alle" Button
+            const allButton = document.createElement('button');
+            allButton.textContent = 'Alle';
+            allButton.className = 'filter-button active';
+            allButton.dataset.filter = 'all';
+            allButton.addEventListener('click', () => {
+                populatePublicSpotsSlider(null);
+                document.querySelectorAll('#public-spots-filter-container .filter-button').forEach(btn => btn.classList.remove('active'));
+                allButton.classList.add('active');
+            });
+            filterContainer.appendChild(allButton);
+
+            // Buttons für jeden Badge-Typ
+            badgeTypes.forEach(type => {
+                const button = document.createElement('button');
+                button.textContent = type;
+                button.className = 'filter-button';
+                button.dataset.filter = type;
+                button.addEventListener('click', () => {
+                    populatePublicSpotsSlider(type);
+                    document.querySelectorAll('#public-spots-filter-container .filter-button').forEach(btn => btn.classList.remove('active'));
+                    button.classList.add('active');
+                });
+                filterContainer.appendChild(button);
             });
         }
         
@@ -1661,7 +1750,7 @@
             updateSelectAllState();
         }
 
-        function populateCaveSpotsSlider() {
+        function populateCaveSpotsSlider(filterArtifact = null) {
             const slider = document.getElementById('cave-spots-slider');
             const panel = document.getElementById('cave-spots-panel');
             slider.innerHTML = '';
@@ -1671,8 +1760,15 @@
                 return;
             }
             panel.style.display = 'block';
+            
+            const filteredSpots = filterArtifact
+                ? allCaveSpotsData.caveSpots.filter(spot => 
+                    spot.artifacts && spot.artifacts.some(artifact => artifact.name === filterArtifact)
+                )
+                : allCaveSpotsData.caveSpots;
 
-            allCaveSpotsData.caveSpots.forEach(spot => {
+
+            filteredSpots.forEach(spot => {
                 const card = document.createElement('div');
                 card.id = `cave-spot-card-${spot.id}`;
                 card.className = 'cave-spot-card snap-start flex-shrink-0 w-80 bg-[#222222] rounded-lg p-4 flex flex-col items-center text-center cursor-pointer border border-gray-700 hover:border-amber-500 transition-all duration-300';
@@ -1752,6 +1848,53 @@
                 slider.appendChild(card);
             });
         }
+
+        function populateArtifactFilters() {
+            const filterContainer = document.getElementById('cave-spots-filter-container');
+            filterContainer.innerHTML = '';
+
+            if (!allCaveSpotsData.caveSpots || allCaveSpotsData.caveSpots.length === 0) {
+                return;
+            }
+
+            const artifactNames = new Set();
+            allCaveSpotsData.caveSpots.forEach(spot => {
+                if (spot.artifacts) {
+                    spot.artifacts.forEach(artifact => {
+                        if (artifact.name) {
+                            artifactNames.add(artifact.name);
+                        }
+                    });
+                }
+            });
+
+            if (artifactNames.size === 0) return;
+
+            // "Alle" Button
+            const allButton = document.createElement('button');
+            allButton.textContent = 'Alle Höhlen';
+            allButton.className = 'filter-button active';
+            allButton.addEventListener('click', () => {
+                populateCaveSpotsSlider(null);
+                document.querySelectorAll('#cave-spots-filter-container .filter-button').forEach(btn => btn.classList.remove('active'));
+                allButton.classList.add('active');
+            });
+            filterContainer.appendChild(allButton);
+
+            // Buttons for each artifact
+            artifactNames.forEach(name => {
+                const button = document.createElement('button');
+                button.textContent = name;
+                button.className = 'filter-button';
+                button.addEventListener('click', () => {
+                    populateCaveSpotsSlider(name);
+                    document.querySelectorAll('#cave-spots-filter-container .filter-button').forEach(btn => btn.classList.remove('active'));
+                    button.classList.add('active');
+                });
+                filterContainer.appendChild(button);
+            });
+        }
+
 
         function closeCaveSpotModal() {
             const modal = document.getElementById('cave-spot-modal');
@@ -2189,7 +2332,9 @@
             resourceControls.innerHTML = '';
             document.getElementById('obelisk-controls').innerHTML = '';
             document.getElementById('region-controls').innerHTML = '';
-            // NEU: Reset für Explorer Notizen Sektion
+            document.getElementById('public-spots-filter-container').innerHTML = ''; // Filter zurücksetzen
+            document.getElementById('cave-spots-filter-container').innerHTML = ''; // Filter zurücksetzen
+            
             const notesToggle = document.getElementById('toggle-all-notes');
             if (notesToggle) notesToggle.checked = false;
 
@@ -2388,9 +2533,11 @@
                     populateObeliskControls();
                     populateRegionControls();
                     populatePlayerSpawnControls();
-                    populateExplorerNotesControls(); // NEU: Steuerung für Notizen befüllen
+                    populateExplorerNotesControls(); 
                     populatePublicSpotsSlider();
+                    populateBadgeFilters(); // Filter nach den Spots erstellen
                     populateCaveSpotsSlider();
+                    populateArtifactFilters(); // Filter für Höhlen erstellen
                     await Promise.all([preloadSpotIcons(), preloadObeliskIcons(), preloadCaveSpotIcons(), preloadRegionImages()]);
                     
                     iframeToggle.checked = liveMapWasActive;
@@ -3002,3 +3149,4 @@
     </script>
     </body>
 </html>
+
