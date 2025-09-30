@@ -78,5 +78,8 @@
     "Piranha": { "iconUrl": "https://ark-unity.com/images/icons/Empty_PiranhaHead_Icon.webp" },
     "Sarcosuchus": { "iconUrl": "https://ark-unity.com/images/icons/Empty_SarcoHead_Icon.webp" },
     "Titanoboa": { "iconUrl": "https://ark-unity.com/images/icons/Empty_TitanBoaHead_Icon.webp" }
+  },
+  "notes": {
+    "Explorer Note Icon": { "iconUrl": "https://wikily.gg/cdn-cgi/image/width=64,format=auto/https://r2.wikily.gg/images/ark/icons/NoteIcon.webp" },
   }
 }
