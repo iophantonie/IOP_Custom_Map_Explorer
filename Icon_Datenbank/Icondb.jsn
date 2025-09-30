@@ -22,7 +22,7 @@
     "Flammenwerfer": { "iconUrl": "https://github.com/iophantonie/iophantonie-IOP_Custom_Map_Explorer.github.io/blob/main/Images/Weapons/Flamethrower_29.webp?raw=true" },
     "Elektroschocker": { "iconUrl": "https://github.com/iophantonie/iophantonie-IOP_Custom_Map_Explorer.github.io/blob/main/Images/Weapons/ElectricProd_Icon.webp?raw=true" },
     "Holzschild": { "iconUrl": "https://github.com/iophantonie/iophantonie-IOP_Custom_Map_Explorer.github.io/blob/main/Images/Weapons/Wooden_Shield.webp?raw=true" },
-    "S.W.A.T Schild": { "iconUrl": "https://github.com/iophantonie/iophantonie-IOP_Custom_Map_Explorer.github.io/blob/main/Images/Weapons/Riot_Shield.webp?raw=true" },
+    "S.W.A.T Schild": { "iconUrl": "https://github.com/iophantonie/iophantonie-IOP_Custom_Map_Explorer.github.io/blob/main/Images/Weapons/Riot_Shield.webp?raw=true"},
     "Flinte": { "iconUrl": "https://github.com/iophantonie/iophantonie-IOP_Custom_Map_Explorer.github.io/blob/main/Images/Weapons/Longneck_Rifle.webp?raw=true" }
   },
   "Ressourcen": {
@@ -43,6 +43,12 @@
     "Cactus": { "iconUrl": "https://wikily.gg/cdn-cgi/image/width=64,format=auto/https://r2.wikily.gg/images/ark/icons/CactusSap_Icon.webp" },
     "Sulfur": { "iconUrl": "https://wikily.gg/cdn-cgi/image/width=64,format=auto/https://r2.wikily.gg/images/ark/icons/Sulfur_Icon.webp" },
     "Schwefel": { "iconUrl": "https://wikily.gg/cdn-cgi/image/width=64,format=auto/https://r2.wikily.gg/images/ark/icons/Sulfur_Icon.webp" },
+    "Black Pearls": { "iconUrl": "https://wikily.gg/cdn-cgi/image/width=64,format=auto/https://r2.wikily.gg/images/ark/icons/BlackPearl_Icon.webp" },
+    "Gem Blue": { "iconUrl": "https://wikily.gg/cdn-cgi/image/width=64,format=auto/https://r2.wikily.gg/images/ark/icons/Gem2_Icon.webp" },
+    "Gem Red": { "iconUrl": "https://wikily.gg/cdn-cgi/image/width=64,format=auto/https://r2.wikily.gg/images/ark/icons/Gem3_Icon.webp" },
+    "Gem Green": { "iconUrl": "https://wikily.gg/cdn-cgi/image/width=64,format=auto/https://r2.wikily.gg/images/ark/icons/Gem_Icon.webp" },
+    "Mushrooms": { "iconUrl": "https://wikily.gg/cdn-cgi/image/width=64,format=auto/https://r2.wikily.gg/images/ark/icons/BlueMushroom.webp" },
+    "Polymer": { "iconUrl": "https://wikily.gg/cdn-cgi/image/width=64,format=auto/https://r2.wikily.gg/images/ark/icons/OrganicPolymer_Icon.webp" },
     "Silk": { "iconUrl": "https://wikily.gg/cdn-cgi/image/width=64,format=auto/https://r2.wikily.gg/images/ark/icons/Silk_Icon.webp" },
     "Silizium Perlen": { "iconUrl": "https://ark-unity.com/images/icons/Pearl_Icon.webp" }
   },
