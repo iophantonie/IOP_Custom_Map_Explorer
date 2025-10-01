@@ -64,7 +64,6 @@
             width: 100%;
             height: 100%;
         }
-        /* Alle Canvas-Elemente werden absolut positioniert, um übereinander zu liegen */
         #map-canvas, #spawn-canvas, #resource-canvas, #spots-canvas, #click-canvas, #obelisk-canvas, #region-canvas, #cave-spots-canvas, #player-spawn-canvas, #notes-canvas {
             position: absolute;
             top: 0;
@@ -100,7 +99,7 @@
             margin-bottom: 0.5rem;
             margin-left: 0.25rem;
             margin-right: 0.25rem;
-            font-size: 0.8rem; /* Schriftgröße verkleinert */
+            font-size: 0.8rem;
             display: flex;
             justify-content: space-between;
             align-items: center;
@@ -120,15 +119,13 @@
         input:checked ~ .toggle-bg {
             background-color: #f59e0b;
         }
-        /* Custom scrollbar for slider */
         .scrollbar-hide::-webkit-scrollbar { display: none; }
         .scrollbar-hide { -ms-overflow-style: none; scrollbar-width: none; }
         
-        /* Spot Sliders */
         .public-spot-card.highlight, .cave-spot-card.highlight {
             transform: scale(1.05);
             box-shadow: 0 0 15px #f59e0b;
-            border-color: #f59e0b; /* amber-500 */
+            border-color: #f59e0b;
         }
         .public-spot-card .relative img, .cave-spot-card .relative img {
             transition: transform 0.3s ease;
@@ -137,7 +134,6 @@
             transform: scale(1.1);
         }
 
-        /* Modal Styles */
         #spot-modal-content, #cave-spot-modal-content {
             max-height: 90vh;
             overflow-y: auto;
@@ -150,32 +146,31 @@
             filter: brightness(1.2);
         }
         .info-badge-category {
-            color: #fcd34d; /* gold-yellow */
+            color: #fcd34d;
             border: 1px solid #fcd34d;
-            border-radius: 0.375rem; /* rounded-md */
+            border-radius: 0.375rem;
             padding: 2px 8px;
             font-weight: bold;
             margin-right: 8px;
-            background-color: rgba(252, 211, 77, 0.1); /* slight glow */
+            background-color: rgba(252, 211, 77, 0.1);
             white-space: nowrap;
         }
         .special-info-category {
-            color: #38bdf8; /* sky-500 */
+            color: #38bdf8;
             border: 1px solid #38bdf8;
-            border-radius: 0.375rem; /* rounded-md */
+            border-radius: 0.375rem;
             padding: 2px 8px;
             font-weight: bold;
             margin-right: 8px;
-            background-color: rgba(56, 189, 248, 0.1); /* slight glow */
+            background-color: rgba(56, 189, 248, 0.1);
             white-space: nowrap;
         }
-        /* Cave Modal Tab Styles */
         .cave-tab {
             padding: 8px 16px;
             cursor: pointer;
             border: none;
             background-color: transparent;
-            color: #a0aec0; /* gray-500 */
+            color: #a0aec0;
             border-bottom: 3px solid transparent;
             transition: all 0.2s ease-in-out;
             white-space: nowrap;
@@ -184,7 +179,7 @@
             color: #f5f3e6;
         }
         .cave-tab.active {
-            color: #f59e0b; /* amber-500 */
+            color: #f59e0b;
             border-bottom-color: #f59e0b;
             font-weight: bold;
         }
@@ -192,7 +187,6 @@
             opacity: 0.4;
             cursor: not-allowed;
         }
-        /* Map List Styles */
         .map-list-item {
             padding: 0.5rem 1rem;
             background-color: #333;
@@ -205,7 +199,7 @@
         }
         .map-list-item:hover {
             background-color: #444;
-            border-color: rgb(255, 75, 62); /* fire-red */
+            border-color: rgb(255, 75, 62);
         }
         .map-list-item.active {
             background-color: rgba(239, 68, 68, 0.2);
@@ -213,11 +207,10 @@
             color: #fca5a5;
             box-shadow: 0 0 25px rgba(255, 75, 62, 0.7);
         }
-        /* Collapsible Section Styles */
         .collapsible-content {
             overflow: hidden;
             transition: max-height 0.3s ease-in-out;
-            max-height: 1000px; /* Default open state */
+            max-height: 1000px;
         }
         .collapsible-content.collapsed {
             max-height: 0;
@@ -232,12 +225,11 @@
             font-size: 0.65rem;
             font-weight: bold;
             padding: 2px 8px;
-            border-radius: 0.375rem; /* rounded-md, angepasst für einheitliches Design */
+            border-radius: 0.375rem;
             border-width: 1px;
         }
-        /* Filter Button Styles */
         .filter-button {
-            padding: 0.25rem 0.75rem;
+            padding: 0.15rem 0.6rem;
             border: 1px solid #555;
             border-radius: 0.375rem;
             background-color: #333;
@@ -245,6 +237,7 @@
             cursor: pointer;
             transition: all 0.2s;
             text-transform: capitalize;
+            font-size: 0.8rem;
         }
         .filter-button:hover {
             background-color: #444;
@@ -284,7 +277,6 @@
                 </div>
                 <div id="map-list-content" class="collapsible-content mt-3">
                     <ul id="map-list" class="space-y-4">
-                        <!-- Map list items will be injected here -->
                     </ul>
                 </div>
             </div>
@@ -323,14 +315,11 @@
 
         <main class="min-w-0">
             <div class="control-panel">
-                <!-- General Info Panel -->
                 <div id="general-info-panel" class="mb-6"></div>
                 
-                <!-- Info Badge Section -->
                 <div id="info-badge-panel"></div>
                 <hr id="info-badge-hr" class="border-gray-700 my-6" style="display: none;">
 
-                  <!-- Kreaturen Section -->
                   <h3 class="text-lg font-bold text-fire-red mb-3">Kreaturen</h3>
                   <label for="creature-search" class="block mb-2 text-sm font-medium text-red-200">Suche nach einer Kreatur:</label>
                   <input type="text" id="creature-search" class="w-full p-2.5 rounded-lg placeholder-gray-400 text-white focus:ring-2 focus:ring-orange-600 focus:border-orange-600 transition mb-4" placeholder="z.B. Raptor...">
@@ -342,7 +331,6 @@
  
                   <hr class="border-gray-700 my-6">
 
-                <!-- Legende Section -->
                 <div class="text-center">
                     <h3 class="text-md font-semibold mb-3">Kreaturen Spawn Legende (Spawn-Wahrscheinlichkeit)</h3>
                     <div id="legend" class="flex flex-wrap items-center justify-center"></div>
@@ -361,7 +349,6 @@
                 <canvas id="cave-spots-canvas"></canvas>
                 <canvas id="spots-canvas"></canvas>
                 <canvas id="player-spawn-canvas"></canvas>
-                <!-- NEU: Canvas für Explorer Notizen -->
                 <canvas id="notes-canvas"></canvas>
                 <canvas id="click-canvas"></canvas>
             </div>
@@ -380,19 +367,16 @@
                     </div>
                     <h3 class="text-lg font-bold text-fire-red mb-3">Öffentliche Orte</h3>
                     
-                    <!-- NEU: Filter Container -->
                     <div id="public-spots-filter-container" class="flex flex-wrap gap-2 mb-4"></div>
 
                     <div id="public-spots-container" class="relative flex justify-center">
                         <div id="public-spots-slider" class="flex justify-start overflow-x-auto snap-x snap-mandatory scroll-smooth scrollbar-hide gap-4 p-6 -m-2">
-                            <!-- Public Spot Cards will be injected here -->
                         </div>
                         <button id="slider-prev" class="absolute left-0 top-1/2 -translate-y-1/2 bg-gray-800/50 hover:bg-gray-800 p-3 rounded-full z-10 text-amber-400 transition-all duration-300 border border-amber-400 hover:shadow-[0_0_15px_rgba(245,158,11,0.7)]"><svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="3"><path stroke-linecap="round" stroke-linejoin="round" d="M15 19l-7-7 7-7" /></svg></button>
                         <button id="slider-next" class="absolute right-0 top-1/2 -translate-y-1/2 bg-gray-800/50 hover:bg-gray-800 p-3 rounded-full z-10 text-amber-400 transition-all duration-300 border border-amber-400 hover:shadow-[0_0_15px_rgba(245,158,11,0.7)]"><svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="3"><path stroke-linecap="round" stroke-linejoin="round" d="M9 5l7 7-7 7" /></svg></button>
                     </div>
                 </div>
 
-                <!-- Cave Spots Section -->
                 <div id="cave-spots-panel" class="relative mt-8" style="display: none;">
                     <hr class="border-gray-700 my-6">
                     <div class="absolute top-6 right-0">
@@ -407,12 +391,10 @@
                     </div>
                     <h3 class="text-lg font-bold text-fire-red mb-3">Höhlen</h3>
                     
-                    <!-- NEU: Filter Container für Höhlen -->
                     <div id="cave-spots-filter-container" class="flex flex-wrap gap-2 mb-4"></div>
 
                     <div id="cave-spots-container" class="relative flex justify-center">
                         <div id="cave-spots-slider" class="flex justify-start overflow-x-auto snap-x snap-mandatory scroll-smooth scrollbar-hide gap-4 p-8 -m-2">
-                            <!-- Cave Spot Cards will be injected here -->
                         </div>
                         <button id="cave-slider-prev" class="absolute left-0 top-1/2 -translate-y-1/2 bg-gray-800/50 hover:bg-gray-800 p-3 rounded-full z-10 text-amber-400 transition-all duration-300 border border-amber-400 hover:shadow-[0_0_15px_rgba(245,158,11,0.7)]"><svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="3"><path stroke-linecap="round" stroke-linejoin="round" d="M15 19l-7-7 7-7" /></svg></button>
                         <button id="cave-slider-next" class="absolute right-0 top-1/2 -translate-y-1/2 bg-gray-800/50 hover:bg-gray-800 p-3 rounded-full z-10 text-amber-400 transition-all duration-300 border border-amber-400 hover:shadow-[0_0_15px_rgba(245,158,11,0.7)]"><svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="3"><path stroke-linecap="round" stroke-linejoin="round" d="M9 5l7 7-7 7" /></svg></button>
@@ -422,7 +404,6 @@
         </main>
         
         <aside class="sidebar">
-            <!-- Ressourcen Section -->
             <div id="resources-section">
                 <div id="resources-header" class="flex justify-between items-center cursor-pointer mb-3">
                     <h3 class="text-lg font-bold text-fire-red">Ressourcen Fundorte</h3>
@@ -446,7 +427,6 @@
 
             <hr class="border-gray-700 my-6">
 
-            <!-- Obelisken Section -->
             <div id="obelisk-section" style="display: none;">
                 <div id="obelisks-header" class="flex justify-between items-center cursor-pointer mb-3">
                     <h3 class="text-lg font-bold text-fire-red">Obelisken</h3>
@@ -469,7 +449,6 @@
                 <hr class="border-gray-700 my-6">
             </div>
             
-            <!-- Regionen Section -->
             <div id="region-section" style="display: none;">
                  <div id="regions-header" class="flex justify-between items-center cursor-pointer mb-3">
                     <h3 class="text-lg font-bold text-fire-red">Regionen</h3>
@@ -491,7 +470,6 @@
                 </div>
                 <hr class="border-gray-700 my-6">
             </div>
-             <!-- Spieler-Spawns Section -->
              <div id="player-spawn-section" style="display: none;">
                 <div id="player-spawns-header" class="flex justify-between items-center cursor-pointer mb-3">
                     <h3 class="text-lg font-bold text-fire-red">Spieler-Spawns</h3>
@@ -510,7 +488,6 @@
                 </div>
                 <hr class="border-gray-700 my-6">
             </div>
-             <!-- NEU: Explorer Notizen Section -->
             <div id="notes-section" style="display: none;">
                 <div id="notes-header" class="flex justify-between items-center cursor-pointer mb-3">
                     <h3 class="text-lg font-bold text-fire-red">Explorer Notizen</h3>
@@ -562,13 +539,11 @@
                 </svg>
             </button>
             <div id="cave-spot-modal-content" class="bg-[#222222] border-[3px] border-red-500 rounded-lg">
-                  <!-- Modal content will be injected here -->
             </div>
         </div>
     </div>
 
     <script>
-        // -- SETUP --
         let allCreatureData = {}; 
         let allResourceData = {};
         let allPublicSpotsData = {};
@@ -590,7 +565,9 @@
         let obeliskIcons = {};
         let spotIcons = {};
         let caveSpotIcons = {};
+        let resourceIcons = {};
         let regionImages = {};
+        let noteIcon = null;
         let resourceTranslations = {};
         let creatureTranslations = {};
         let infoBadgeTranslations = {};
@@ -602,8 +579,12 @@
         let difficultyConfig = {};
         let badgeConfig = {};
         let blueprintQualityConfig = {};
+        let pulseAnimationId = null;
+        let notePulseAnimationId = null;
+        let tooltipTarget = null;
+        let dynamicEffectsAnimationId = null;
+        let infoButtonRect = null;
 
-        // -- ZOOM & PAN SETUP --
         let scale = 1;
         let panOffset = { x: 0, y: 0 };
         let isPanning = false;
@@ -614,7 +595,6 @@
         let currentMapKey = 'TheIsland';
 
 
-        // -- KOORDINATENSYSTEM-KONFIGURATION --
         const MAP_LAT_MIN = 0; const MAP_LAT_MAX = 100;
         const MAP_LON_MIN = 0; const MAP_LON_MAX = 100;
         const MAP_LAT_RANGE = MAP_LAT_MAX - MAP_LAT_MIN;
@@ -632,9 +612,9 @@
         };
 
         const obeliskConfig = {
-            'Grüner Obelisk': { color: '#22c55e' }, // green-500
-            'Blauer Obelisk': { color: '#3b82f6' }, // blue-500
-            'Roter Obelisk': { color: '#ef4444' }   // red-500
+            'Grüner Obelisk': { color: '#22c55e' },
+            'Blauer Obelisk': { color: '#3b82f6' },
+            'Roter Obelisk': { color: '#ef4444' }
         };
         
         const spawnGroupColors = ['#34D399', '#60A5FA', '#FBBF24', '#F87171', '#A78BFA', '#6EE7B7', '#93C5FD', '#FCD34D', '#FCA5A5', '#C4B5FD'];
@@ -646,30 +626,25 @@
             caveSpotsToggle, caveSpotsToggleLabel, spawnCanvas, resourceCanvas, obeliskCanvas,
             spotsCanvas, clickCanvas, regionCanvas, spawnCtx, resourceCtx, obeliskCtx, spotsCtx, caveSpotsCtx, clickCtx, regionCtx,
             playerSpawnCanvas, playerSpawnCtx,
-            notesCanvas, notesCtx; // NEU: Canvas und Context für Notizen
+            notesCanvas, notesCtx;
         
         let cavePattern = null;
 
-        // -- FUNKTIONEN --
+        
 
-        // NEUE HELFERFUNKTION: Konvertiert Hex-Farben oder Farbnamen in RGBA
         function hexToRgba(color, alpha) {
-            // Temporäres Element erstellen, um die Farbe vom Browser berechnen zu lassen
             const tempDiv = document.createElement("div");
             tempDiv.style.color = color;
             document.body.appendChild(tempDiv);
             
-            // Berechnete Farbe im rgb()-Format auslesen
             const computedColor = window.getComputedStyle(tempDiv).color;
             document.body.removeChild(tempDiv);
             
-            // RGB-Werte extrahieren
             const rgb = computedColor.match(/\d+/g);
             if (rgb) {
                 return `rgba(${rgb[0]}, ${rgb[1]}, ${rgb[2]}, ${alpha})`;
             }
             
-            // Fallback, falls die Farbe nicht erkannt wurde
             return `rgba(128, 128, 128, ${alpha})`;
         }
 
@@ -871,20 +846,18 @@
             updateSelectAllRegionsState();
         }
         
-        // NEU: Funktion zur Steuerung der Explorer Notizen Anzeige
         function populateExplorerNotesControls() {
             const sectionContainer = document.getElementById('notes-section');
             const controlsWrapper = document.getElementById('notes-controls-wrapper');
             const noDataMessage = document.getElementById('notes-no-data');
             const toggleCheckbox = document.getElementById('toggle-all-notes');
 
-            sectionContainer.style.display = 'block'; // Die Sektion wird jetzt immer angezeigt
+            sectionContainer.style.display = 'block';
 
             if (!allExplorerNotesData || allExplorerNotesData.length === 0) {
-                controlsWrapper.style.display = 'none';   // Verstecke die Checkbox
-                noDataMessage.style.display = 'block';    // Zeige die "Keine Daten"-Nachricht
+                controlsWrapper.style.display = 'none';
+                noDataMessage.style.display = 'block';
             } else {
-                // Wenn Daten vorhanden sind:
                 controlsWrapper.style.display = 'block';
                 noDataMessage.style.display = 'none';
                 if(toggleCheckbox) toggleCheckbox.checked = false;
@@ -898,9 +871,9 @@
             const toggleCheckbox = document.getElementById('toggle-all-player-spawns');
 
             if (!allPlayerSpawnData.spawnPoints || allPlayerSpawnData.spawnPoints.length === 0) {
-                sectionContainer.style.display = 'block'; // Always show the section header
-                controlsWrapper.style.display = 'none';   // Hide the controls
-                noDataMessage.style.display = 'block';    // Show the message area
+                sectionContainer.style.display = 'block';
+                controlsWrapper.style.display = 'none';
+                noDataMessage.style.display = 'block';
                 
                 if (allPlayerSpawnData.error) {
                     noDataMessage.textContent = allPlayerSpawnData.error;
@@ -912,7 +885,6 @@
                 return;
             }
 
-            // If we have data:
             sectionContainer.style.display = 'block';
             controlsWrapper.style.display = 'block';
             noDataMessage.style.display = 'none';
@@ -921,7 +893,7 @@
         }
         
         async function preloadRegionImages() {
-            regionImages = {}; // Reset images for new map
+            regionImages = {};
             if (!allRegionData.regions) return;
             const promises = allRegionData.regions.map(region => {
                 return new Promise((resolve) => {
@@ -938,8 +910,7 @@
             await Promise.all(promises);
         }
         
-        // KORRIGIERTE Zeichenfunktion für Explorer Notizen
-        function drawExplorerNotes() {
+        function drawExplorerNotes(pulseScale = 1.0) {
             const width = notesCanvas.width;
             const height = notesCanvas.height;
             notesCtx.clearRect(0, 0, width, height);
@@ -955,13 +926,21 @@
                 const x = ((note.lon - MAP_LON_MIN) / MAP_LON_RANGE) * width;
                 const y = ((note.lat - MAP_LAT_MIN) / MAP_LAT_RANGE) * height;
 
-                notesCtx.beginPath();
-                notesCtx.arc(x, y, 5 / scale, 0, 2 * Math.PI, false); // Radius wie Spieler-Spawns
-                notesCtx.fillStyle = '#ef4444'; // Rote Füllung
-                notesCtx.fill();
-                notesCtx.strokeStyle = 'white'; // Weißer Rand
-                notesCtx.lineWidth = 1.5 / scale; // Etwas dickerer Rand für Sichtbarkeit
-                notesCtx.stroke();
+                if (noteIcon && noteIcon.complete) {
+                    const baseSize = 24 / scale;
+                    const size = baseSize * pulseScale;
+                    notesCtx.drawImage(noteIcon, x - size / 2, y - size / 2, size, size);
+                } else {
+                    const baseRadius = 5 / scale;
+                    const radius = baseRadius * pulseScale;
+                    notesCtx.beginPath();
+                    notesCtx.arc(x, y, radius, 0, 2 * Math.PI, false);
+                    notesCtx.fillStyle = '#ef4444';
+                    notesCtx.fill();
+                    notesCtx.strokeStyle = 'white';
+                    notesCtx.lineWidth = 1.5 / scale;
+                    notesCtx.stroke();
+                }
             });
 
             notesCtx.restore();
@@ -987,7 +966,7 @@
                     regionCtx.save();
                     regionCtx.shadowColor = regionData.color || 'transparent';
                     regionCtx.shadowBlur = 20;
-                    // Drawing twice to make shadow stronger, simulating two CSS drop-shadows
+                    
                     regionCtx.drawImage(img, 0, 0, width, height);
                     regionCtx.drawImage(img, 0, 0, width, height);
                     regionCtx.restore();
@@ -1015,7 +994,7 @@
                     const x = ((loc.lon - MAP_LON_MIN) / MAP_LON_RANGE) * width;
                     const y = ((loc.lat - MAP_LAT_MIN) / MAP_LAT_RANGE) * height;
                     playerSpawnCtx.beginPath();
-                    playerSpawnCtx.arc(x, y, 5 / scale, 0, 2 * Math.PI, false); // Radius vergrößert
+                    playerSpawnCtx.arc(x, y, 5 / scale, 0, 2 * Math.PI, false);
                     playerSpawnCtx.fill();
                     playerSpawnCtx.strokeStyle = 'rgba(255, 255, 255, 0.9)';
                     playerSpawnCtx.lineWidth = 1 / scale;
@@ -1110,7 +1089,7 @@
                 let badgesHtml = '';
                 if (spot.infoBadges && spot.infoBadges.length > 0) {
                     badgesHtml = '<div class="absolute top-1.5 left-1.5 flex flex-col items-start gap-1">';
-                    spot.infoBadges.slice(0, 2).forEach(badge => { // Show max 2 badges on card
+                    spot.infoBadges.slice(0, 2).forEach(badge => {
                         let config;
                         const badgeType = (badge.type || '').trim().toLowerCase();
                         const badgeColor = badge.color || badge.Color;
@@ -1156,14 +1135,12 @@
                 `;
 
                 card.addEventListener('click', () => {
-                    // Wenn derselbe Spot erneut geklickt wird, Highlights entfernen und Zoom zurücksetzen
                     if (highlightedSpotId === spot.id) {
                         clearHighlights();
                         scale = 1;
                         panOffset = { x: 0, y: 0 };
                         redrawAll();
                     } else {
-                        // Sicherstellen, dass die Spot-Ebene sichtbar ist
                         if (!spotsToggle.checked) {
                             spotsToggle.checked = true;
                             spotsToggleLabel.textContent = 'Anzeigen';
@@ -1171,7 +1148,6 @@
                         
                         highlightSpotCard(spot.id);
                         highlightSpotMarker(spot.id);
-                        zoomToSpot(spot.lat, spot.lon);
                     }
                 });
 
@@ -1206,7 +1182,6 @@
 
             if (badgeTypes.size === 0) return;
 
-            // "Alle" Button
             const allButton = document.createElement('button');
             allButton.textContent = 'Alle';
             allButton.className = 'filter-button active';
@@ -1218,7 +1193,6 @@
             });
             filterContainer.appendChild(allButton);
 
-            // Buttons für jeden Badge-Typ
             badgeTypes.forEach(type => {
                 const button = document.createElement('button');
                 button.textContent = type;
@@ -1263,7 +1237,6 @@
             modal.classList.remove('hidden');
             modal.classList.add('flex');
 
-            // Add event listeners for the new slider
             if(spot.images && spot.images.length > 1) {
                 let currentSlide = 0;
                 const slides = modalBody.querySelectorAll('.spot-image-slide');
@@ -1317,7 +1290,7 @@
         }
         
         async function preloadObeliskIcons() {
-            obeliskIcons = {}; // Reset icons
+            obeliskIcons = {};
             if (!allObeliskData.obelisks) return;
             const promises = allObeliskData.obelisks.map(obelisk => {
                 return new Promise((resolve) => {
@@ -1328,14 +1301,14 @@
                         obeliskIcons[obelisk.name] = img;
                         resolve();
                     };
-                    img.onerror = () => resolve(); // Resolve even on error so it doesn't block loading
+                    img.onerror = () => resolve();
                 });
             });
             await Promise.all(promises);
         }
 
         async function preloadSpotIcons() {
-            spotIcons = {}; // Reset icons for new map
+            spotIcons = {};
             if (!allPublicSpotsData.publicSpots) return;
             const promises = allPublicSpotsData.publicSpots.map(spot => {
                 return new Promise((resolve) => {
@@ -1353,7 +1326,7 @@
         }
         
         async function preloadCaveSpotIcons() {
-            caveSpotIcons = {}; // Reset icons
+            caveSpotIcons = {};
             if (!allCaveSpotsData.caveSpots) return;
             const promises = allCaveSpotsData.caveSpots.map(spot => {
                 return new Promise((resolve) => {
@@ -1370,7 +1343,42 @@
             await Promise.all(promises);
         }
 
-        function drawPublicSpots() {
+        async function preloadResourceIcons() {
+            resourceIcons = {};
+            if (!allResourceData) return;
+            const promises = Object.keys(allResourceData).map(resourceName => {
+                return new Promise((resolve) => {
+                    const iconUrl = getIconUrl(resourceName);
+                    if (!iconUrl || iconUrl.includes('placehold.co')) return resolve();
+                    const img = new Image();
+                    img.src = iconUrl;
+                    img.onload = () => {
+                        resourceIcons[resourceName] = img;
+                        resolve();
+                    };
+                    img.onerror = () => resolve();
+                });
+            });
+            await Promise.all(promises);
+        }
+
+        async function preloadNoteIcon() {
+            noteIcon = null;
+            const iconUrl = getIconUrl('Explorer Note Icon');
+            if (!iconUrl || iconUrl.includes('placehold.co')) return;
+
+            return new Promise((resolve) => {
+                const img = new Image();
+                img.src = iconUrl;
+                img.onload = () => {
+                    noteIcon = img;
+                    resolve();
+                };
+                img.onerror = () => resolve();
+            });
+        }
+
+        function drawPublicSpots(highlightPulseScale = 1.5) {
             const width = spotsCanvas.width;
             const height = spotsCanvas.height;
             spotsCtx.clearRect(0, 0, width, height);
@@ -1392,7 +1400,13 @@
 
                 const isHighlighted = spot.id === highlightedSpotId;
                 const isHovered = spot.id === hoveredSpotId;
-                const markerScale = (isHighlighted || isHovered) ? 1.5 : 1.0;
+                let markerScale = 1.0;
+                if (isHovered && !isHighlighted) {
+                    markerScale = 1.5;
+                }
+                if (isHighlighted) {
+                    markerScale = highlightPulseScale;
+                }
                 const size = 32 * markerScale;
                 
                 spotsCtx.shadowColor = 'transparent';
@@ -1419,7 +1433,7 @@
             spotsCtx.restore();
         }
 
-        function drawCaveSpots() {
+        function drawCaveSpots(highlightPulseScale = 1.5) {
             const width = caveSpotsCanvas.width;
             const height = caveSpotsCanvas.height;
             caveSpotsCtx.clearRect(0, 0, width, height);
@@ -1441,7 +1455,13 @@
 
                 const isHighlighted = spot.id === highlightedCaveSpotId;
                 const isHovered = spot.id === hoveredCaveSpotId;
-                const markerScale = (isHighlighted || isHovered) ? 1.5 : 1.0;
+                let markerScale = 1.0;
+                if (isHovered && !isHighlighted) {
+                    markerScale = 1.5;
+                }
+                if (isHighlighted) {
+                    markerScale = highlightPulseScale;
+                }
                 const size = 32 * markerScale;
                 
                 if (isHighlighted) {
@@ -1529,10 +1549,13 @@
         }
         
         function clearHighlights() {
+            stopPulseAnimation();
+            stopDynamicEffectsLoop();
             highlightedSpotId = null;
             highlightedObeliskId = null;
             highlightedCaveSpotId = null;
             highlightedZone = null;
+            tooltipTarget = null;
             document.querySelectorAll('.public-spot-card, .cave-spot-card').forEach(c => c.classList.remove('highlight'));
             regionInfoContainer.innerHTML = '<p class="text-gray-400">Klicke auf eine Spawn-Zone auf der Karte.</p>';
             updateHighlightPreview(null);
@@ -1544,8 +1567,11 @@
             highlightedObeliskId = null;
             highlightedCaveSpotId = null;
             highlightedZone = null;
+            tooltipTarget = allPublicSpotsData.publicSpots.find(s => s.id === spotId) || null;
             updateHighlightPreview(null);
             redrawAll();
+            startPulseAnimation();
+            startDynamicEffectsLoop();
         }
 
         function highlightCaveSpotMarker(spotId) {
@@ -1553,8 +1579,11 @@
             highlightedSpotId = null;
             highlightedObeliskId = null;
             highlightedZone = null;
+            tooltipTarget = allCaveSpotsData.caveSpots.find(s => s.id === spotId) || null;
             updateHighlightPreview(null);
             redrawAll();
+            startPulseAnimation();
+            startDynamicEffectsLoop();
         }
 
         function highlightSpotCard(spotId) {
@@ -1576,10 +1605,27 @@
         }
         
         function handleMapClick(event) {
+            const canvasX = event.offsetX;
+            const canvasY = event.offsetY;
+
+            if (infoButtonRect &&
+                canvasX >= infoButtonRect.x && canvasX <= infoButtonRect.x + infoButtonRect.width &&
+                canvasY >= infoButtonRect.y && canvasY <= infoButtonRect.y + infoButtonRect.height
+            ) {
+                const target = tooltipTarget;
+                if (target) {
+                    if (target.hasOwnProperty('infoBadges')) { // Public Spot
+                        highlightSpotCard(target.id);
+                    } else if (target.hasOwnProperty('artifacts')) { // Cave Spot
+                        highlightCaveSpotCard(target.id);
+                    }
+                }
+                return; 
+            }
+
             const { x, y } = getMapCoordsFromEvent(event);
             const clickRadius = 16; 
 
-            // Check for obelisk click first
             if (allObeliskData.obelisks) {
                 const checkedObeliskNames = Array.from(document.querySelectorAll('#obelisk-controls input:checked')).map(cb => cb.name);
                 const visibleObelisks = allObeliskData.obelisks.filter(o => checkedObeliskNames.includes(o.name));
@@ -1593,18 +1639,19 @@
                 });
 
                 if (clickedObelisk) {
-                    if (highlightedObeliskId === clickedObelisk.name) {
+                    if (tooltipTarget && tooltipTarget.name === clickedObelisk.name) {
                         clearHighlights();
                     } else {
                         clearHighlights();
                         highlightedObeliskId = clickedObelisk.name;
+                        tooltipTarget = clickedObelisk;
+                        startDynamicEffectsLoop();
                         redrawAll();
                     }
                     return; 
                 }
             }
 
-            // Check for spot click
             if (spotsToggle.checked && allPublicSpotsData.publicSpots) {
                 const clickedSpot = [...allPublicSpotsData.publicSpots].reverse().find(spot => {
                     const spotX = ((spot.lon - SPOT_LON_MIN) / SPOT_LON_RANGE) * mapCanvas.width;
@@ -1613,18 +1660,16 @@
                     return distance < clickRadius;
                 });
                 if (clickedSpot) {
-                    if (highlightedSpotId === clickedSpot.id) {
+                    if (tooltipTarget && tooltipTarget.id === clickedSpot.id) {
                         clearHighlights();
                     } else {
                         clearHighlights();
-                        highlightSpotCard(clickedSpot.id);
                         highlightSpotMarker(clickedSpot.id);
                     }
                     return;
                 }
             }
 
-            // Check for cave spot click
             if (caveSpotsToggle.checked && allCaveSpotsData.caveSpots) {
                 const clickedCaveSpot = [...allCaveSpotsData.caveSpots].reverse().find(spot => {
                     const spotX = ((spot.lon - SPOT_LON_MIN) / SPOT_LON_RANGE) * mapCanvas.width;
@@ -1633,17 +1678,109 @@
                     return distance < clickRadius;
                 });
                 if (clickedCaveSpot) {
-                    if (highlightedCaveSpotId === clickedCaveSpot.id) {
+                    if (tooltipTarget && tooltipTarget.id === clickedCaveSpot.id) {
                         clearHighlights();
                     } else {
                         clearHighlights();
-                        highlightCaveSpotCard(clickedCaveSpot.id);
                         highlightCaveSpotMarker(clickedCaveSpot.id);
                     }
                     return;
                 }
             }
             
+            if (document.getElementById('toggle-all-notes').checked && allExplorerNotesData) {
+                const clickedNote = [...allExplorerNotesData].reverse().find(note => {
+                    const noteX = ((note.lon - MAP_LON_MIN) / MAP_LON_RANGE) * mapCanvas.width;
+                    const noteY = ((note.lat - MAP_LAT_MIN) / MAP_LAT_RANGE) * mapCanvas.height;
+                    const clickSize = 24; 
+                    return x > noteX - clickSize / 2 && x < noteX + clickSize / 2 && y > noteY - clickSize / 2 && y < noteY + clickSize / 2;
+                });
+
+                if (clickedNote) {
+                    const noteWithInfo = {...clickedNote, type: 'Explorer Note'};
+                    if (tooltipTarget && tooltipTarget.lat === noteWithInfo.lat && tooltipTarget.lon === noteWithInfo.lon) {
+                        clearHighlights();
+                    } else {
+                        clearHighlights();
+                        tooltipTarget = noteWithInfo;
+                        startDynamicEffectsLoop();
+                    }
+                    return;
+                }
+            }
+
+            if (document.getElementById('toggle-all-player-spawns').checked && allPlayerSpawnData.spawnPoints) {
+                let clickedSpawn = null;
+                for (let i = allPlayerSpawnData.spawnPoints.length - 1; i >= 0; i--) {
+                    const region = allPlayerSpawnData.spawnPoints[i];
+                    for (let j = region.locations.length - 1; j >= 0; j--) {
+                        const loc = region.locations[j];
+                        const spawnX = ((loc.lon - MAP_LON_MIN) / MAP_LON_RANGE) * mapCanvas.width;
+                        const spawnY = ((loc.lat - MAP_LAT_MIN) / MAP_LAT_RANGE) * mapCanvas.height;
+                        const distance = Math.sqrt(Math.pow(x - spawnX, 2) + Math.pow(y - spawnY, 2));
+                        if (distance < 5) {
+                            clickedSpawn = {...loc, type: 'Player Spawn', regionName: region.regionName};
+                            break;
+                        }
+                    }
+                    if (clickedSpawn) break;
+                }
+                
+                if (clickedSpawn) {
+                    if (tooltipTarget && tooltipTarget.lat === clickedSpawn.lat && tooltipTarget.lon === clickedSpawn.lon) {
+                        clearHighlights();
+                    } else {
+                        clearHighlights();
+                        tooltipTarget = clickedSpawn;
+                        startDynamicEffectsLoop();
+                    }
+                    return;
+                }
+            }
+
+            const checkedResources = document.querySelectorAll('#resource-controls input[type="checkbox"]:checked');
+            if (checkedResources.length > 0) {
+                let clickedResource = null;
+                const resourceNames = Array.from(checkedResources).map(cb => cb.name).reverse();
+                
+                for (const resourceName of resourceNames) {
+                    if (allResourceData[resourceName]) {
+                        const nodes = allResourceData[resourceName];
+                        for (let i = nodes.length - 1; i >= 0; i--) {
+                            const node = nodes[i];
+                            const resX = ((node.lon - MAP_LON_MIN) / MAP_LON_RANGE) * mapCanvas.width;
+                            const resY = ((node.lat - MAP_LAT_MIN) / MAP_LAT_RANGE) * mapCanvas.height;
+                            
+                            const icon = resourceIcons[resourceName];
+                            let clickRadiusValue;
+                            if (icon && icon.complete) {
+                                clickRadiusValue = (12 + (node.size * 2)) / 2;
+                            } else {
+                                clickRadiusValue = (2 + (node.size * 0.5));
+                            }
+                            const distance = Math.sqrt(Math.pow(x - resX, 2) + Math.pow(y - resY, 2));
+
+                            if (distance < clickRadiusValue) {
+                                clickedResource = {...node, type: 'Resource', name: resourceName};
+                                break;
+                            }
+                        }
+                    }
+                    if (clickedResource) break;
+                }
+
+                if (clickedResource) {
+                    if (tooltipTarget && tooltipTarget.lat === clickedResource.lat && tooltipTarget.lon === clickedResource.lon) {
+                        clearHighlights();
+                    } else {
+                        clearHighlights();
+                        tooltipTarget = clickedResource;
+                        startDynamicEffectsLoop();
+                    }
+                    return;
+                }
+            }
+
             const selectedCreature = creatureSelect.value;
             if (!selectedCreature) {
                 clearHighlights();
@@ -1717,13 +1854,12 @@
                 let iconElement;
                 const iconUrl = getIconUrl(resourceName);
 
-                if (iconUrl && !iconUrl.includes('placehold.co')) { // Check if a real icon exists
+                if (iconUrl && !iconUrl.includes('placehold.co')) {
                     iconElement = document.createElement('img');
                     iconElement.src = iconUrl;
                     iconElement.alt = resourceName;
                     iconElement.className = 'w-4 h-4 mr-2 object-contain';
                 } else {
-                    // Fallback to colored square
                     iconElement = document.createElement('div');
                     iconElement.className = 'w-4 h-4 mr-2 rounded-sm';
                     iconElement.style.backgroundColor = resourceConfig[resourceName]?.color || '#FFFFFF';
@@ -1734,7 +1870,6 @@
                 const englishResourceName = resourceName.trim();
                 let germanResourceName = '';
 
-                // ROBUSTE, CASE-INSENSITIVE SUCHE
                 const matchingKey = Object.keys(resourceTranslations).find(key => key.toLowerCase() === englishResourceName.toLowerCase());
                 if (matchingKey) {
                     germanResourceName = resourceTranslations[matchingKey];
@@ -1836,7 +1971,6 @@
                         }
                         highlightCaveSpotCard(spot.id);
                         highlightCaveSpotMarker(spot.id);
-                        zoomToSpot(spot.lat, spot.lon);
                     }
                 });
                 
@@ -1870,7 +2004,6 @@
 
             if (artifactNames.size === 0) return;
 
-            // "Alle" Button
             const allButton = document.createElement('button');
             allButton.textContent = 'Alle Höhlen';
             allButton.className = 'filter-button active';
@@ -1881,7 +2014,6 @@
             });
             filterContainer.appendChild(allButton);
 
-            // Buttons for each artifact
             artifactNames.forEach(name => {
                 const button = document.createElement('button');
                 button.textContent = name;
@@ -1998,7 +2130,6 @@
             modal.classList.remove('hidden');
             modal.classList.add('flex');
             
-            // --- TAB & PAGINATION LOGIC ---
             const tabsContainer = modalContent.querySelector('#cave-tabs-container');
             let activeTab = 'equipment';
 
@@ -2014,14 +2145,13 @@
                 let contentHtml = `<h3 class="text-xl font-semibold text-fire-red mb-2">${data.title}</h3>`;
 
                 if (activeTab === 'strategy') {
-                    // Render strategy as simple text paragraphs
                     contentHtml += `<div class="space-y-2 text-base text-gray-300">`;
                     contentHtml += data.items.map(paragraph => `<p>${paragraph}</p>`).join('');
                     contentHtml += `</div>`;
                 } else if (activeTab === 'blueprints') {
                     const blueprintItemsHtml = data.items.map(item => {
                         const qualityKey = Object.keys(blueprintQualityConfig).find(key => key.toLowerCase() === item.quality.toLowerCase());
-                        const qualityConfig = blueprintQualityConfig[qualityKey] || { borderColor: '#a0aec0' }; // Fallback to grey
+                        const qualityConfig = blueprintQualityConfig[qualityKey] || { borderColor: '#a0aec0' };
                         const qualityColor = qualityConfig.borderColor;
                         const iconUrl = getIconUrl(item.name.trim());
                         
@@ -2045,7 +2175,6 @@
                         </div>
                     `;
                 } else {
-                    // Render other tabs as lists with icons
                     contentHtml += `<ul class="space-y-1 list-none p-0">`;
                     contentHtml += data.items.map(item => {
                         const englishName = item.trim();
@@ -2067,13 +2196,12 @@
                 }
                 contentEl.innerHTML = contentHtml;
                 
-                // Add event listeners for the blueprint slider if it exists
                 const blueprintSlider = contentEl.querySelector('#blueprint-slider');
                 if (blueprintSlider) {
                     const prevBtn = contentEl.querySelector('#blueprint-slider-prev');
                     const nextBtn = contentEl.querySelector('#blueprint-slider-next');
                     if (prevBtn && nextBtn) {
-                        prevBtn.addEventListener('click', () => { blueprintSlider.scrollBy({ left: -128, behavior: 'smooth' }); }); // 128 = w-28 (112px) + gap-4 (16px)
+                        prevBtn.addEventListener('click', () => { blueprintSlider.scrollBy({ left: -128, behavior: 'smooth' }); });
                         nextBtn.addEventListener('click', () => { blueprintSlider.scrollBy({ left: 128, behavior: 'smooth' }); });
                     }
                 }
@@ -2090,10 +2218,8 @@
             });
 
             renderTabContent();
-            // --- END OF TAB LOGIC ---
+            
 
-
-            // Add event listeners for the image slider
             if(spot.images && spot.images.length > 1) {
                 let currentSlide = 0;
                 const slides = modalContent.querySelectorAll('.cave-image-slide');
@@ -2133,17 +2259,25 @@
             checkboxes.forEach(checkbox => {
                 const resourceName = checkbox.name;
                 if (allResourceData[resourceName]) {
+                    const icon = resourceIcons[resourceName];
+                    
                     allResourceData[resourceName].forEach(node => {
                         const x = ((node.lon - MAP_LON_MIN) / MAP_LON_RANGE) * width;
                         const y = ((node.lat - MAP_LAT_MIN) / MAP_LAT_RANGE) * height;
-                        const radius = 2 + (node.size * 0.5);
-                        resourceCtx.beginPath();
-                        resourceCtx.arc(x, y, radius, 0, 2 * Math.PI, false);
-                        resourceCtx.fillStyle = resourceConfig[resourceName]?.color || '#FFFFFF';
-                        resourceCtx.fill();
-                        resourceCtx.strokeStyle = 'rgba(255, 255, 255, 0.6)';
-                        resourceCtx.lineWidth = 1;
-                        resourceCtx.stroke();
+
+                        if (icon && icon.complete) {
+                            const dynamicIconSize = (12 + (node.size * 2)) / scale;
+                            resourceCtx.drawImage(icon, x - dynamicIconSize / 2, y - dynamicIconSize / 2, dynamicIconSize, dynamicIconSize);
+                        } else {
+                            const radius = (2 + (node.size * 0.5)) / scale;
+                            resourceCtx.beginPath();
+                            resourceCtx.arc(x, y, radius, 0, 2 * Math.PI, false);
+                            resourceCtx.fillStyle = resourceConfig[resourceName]?.color || '#FFFFFF';
+                            resourceCtx.fill();
+                            resourceCtx.strokeStyle = 'rgba(255, 255, 255, 0.6)';
+                            resourceCtx.lineWidth = 1 / scale;
+                            resourceCtx.stroke();
+                        }
                     });
                 }
             });
@@ -2237,7 +2371,6 @@
         function updateHighlightPreview(zone = null) {
             const previewContainer = document.getElementById('highlight-preview');
             const regionContent = document.getElementById('region-info-content');
-            clickCtx.clearRect(0, 0, clickCanvas.width, clickCanvas.height);
             
             if (zone && !regionContent.classList.contains('collapsed')) {
                  previewContainer.innerHTML = `
@@ -2248,22 +2381,6 @@
                         </p>
                     </div>`;
                 previewContainer.style.display = 'block';
-
-                clickCtx.save();
-                clickCtx.translate(panOffset.x, panOffset.y);
-                clickCtx.scale(scale, scale);
-
-                const x = ((zone.min.lon - MAP_LON_MIN) / MAP_LON_RANGE) * clickCanvas.width;
-                const y = ((zone.min.lat - MAP_LAT_MIN) / MAP_LAT_RANGE) * clickCanvas.height;
-                const w = ((zone.max.lon - zone.min.lon) / MAP_LON_RANGE) * clickCanvas.width;
-                const h = ((zone.max.lat - zone.min.lat) / MAP_LAT_RANGE) * clickCanvas.height;
-                
-                clickCtx.strokeStyle = '#f59e0b'; // amber-500
-                clickCtx.lineWidth = 3 / scale;
-                clickCtx.shadowColor = '#f59e0b';
-                clickCtx.shadowBlur = 15;
-                clickCtx.strokeRect(x, y, w, h);
-                clickCtx.restore();
             } else {
                 previewContainer.style.display = 'none';
                 previewContainer.innerHTML = '';
@@ -2276,7 +2393,6 @@
             const creaturesInThisZone = [];
             const zoneId = clickedZone.id;
 
-            // Finde alle Kreaturen, die eine Zone mit der EXAKT gleichen ID haben
             for (const creatureName in allCreatureData) {
                 const spawnAreas = allCreatureData[creatureName];
                 const matchingArea = spawnAreas.find(area => area.id === zoneId);
@@ -2323,6 +2439,7 @@
 
                 regionInfoContainer.innerHTML = infoHtml;
                 updateHighlightPreview(clickedZone);
+                startDynamicEffectsLoop();
             }
         }
 
@@ -2332,8 +2449,8 @@
             resourceControls.innerHTML = '';
             document.getElementById('obelisk-controls').innerHTML = '';
             document.getElementById('region-controls').innerHTML = '';
-            document.getElementById('public-spots-filter-container').innerHTML = ''; // Filter zurücksetzen
-            document.getElementById('cave-spots-filter-container').innerHTML = ''; // Filter zurücksetzen
+            document.getElementById('public-spots-filter-container').innerHTML = '';
+            document.getElementById('cave-spots-filter-container').innerHTML = '';
             
             const notesToggle = document.getElementById('toggle-all-notes');
             if (notesToggle) notesToggle.checked = false;
@@ -2366,7 +2483,6 @@
                     return null;
                 }
                 
-                // KORREKTUR: Entfernt BOM und ersetzt unsichtbare Leerzeichen (non-breaking space), die JSON.parse stören können.
                 const cleanedText = text.replace(/^\uFEFF/, '').replace(/\u00A0/g, ' ');
 
                 return JSON.parse(cleanedText);
@@ -2377,18 +2493,15 @@
         }
         
         
-        // NEUE FUNKTION: Datenanreicherung
         function enrichCreatureData(data) {
             const enrichedData = JSON.parse(JSON.stringify(data)); 
 
-            // Add a unique ID to each spawn area
             for (const creatureName in enrichedData) {
                 enrichedData[creatureName].forEach(area => {
                     area.id = `lat${area.min.lat.toFixed(2)}-${area.max.lat.toFixed(2)}_lon${area.min.lon.toFixed(2)}-${area.max.lon.toFixed(2)}`;
                 });
             }
 
-            // Handle 50/50 shared spawns
             for (const mainCreature in spawnSharingConfig) {
                 if (enrichedData[mainCreature]) {
                     const sharedCreatures = spawnSharingConfig[mainCreature];
@@ -2408,13 +2521,11 @@
                 }
             }
 
-            // Handle Alpha/Variant spawns (5% chance)
             const alphaVariantKey = currentMapConfig.alphaVariantKey || 'Default';
             const activeAlphaConfig = alphaVariantConfigs[alphaVariantKey] || alphaVariantConfigs['Default'];
 
             if (activeAlphaConfig && Object.keys(activeAlphaConfig).length > 0) {
                 for (const normalCreature in activeAlphaConfig) {
-                    // KORREKTUR: Case-insensitive UND getrimmte Suche für maximale Robustheit
                     const matchingEnrichedKey = Object.keys(enrichedData).find(key => key.trim().toLowerCase() === normalCreature.trim().toLowerCase());
                     
                     if (matchingEnrichedKey) {
@@ -2424,7 +2535,6 @@
                         }
                         
                         const newAlphaSpawns = [];
-                        // Verwende den korrekt geschriebenen Schlüssel aus den Spawn-Daten
                         enrichedData[matchingEnrichedKey].forEach(area => {
                             const alphaArea = JSON.parse(JSON.stringify(area));
                             alphaArea.weight = area.weight * 0.05; 
@@ -2442,7 +2552,7 @@
 
 
         async function loadMapData(mapKey) {
-            currentMapKey = mapKey; // Set the global key
+            currentMapKey = mapKey;
             const liveMapWasActive = iframeToggle ? iframeToggle.checked : false;
             currentMapConfig = mapConfigs[mapKey];
             if (!currentMapConfig) return;
@@ -2455,11 +2565,10 @@
             loadingIndicator.style.display = 'block';
             resetUI();
             mapNameDisplay.textContent = currentMapConfig.displayName;
-            mapImage.src = currentMapConfig.mapImageUrl; // Start loading image
+            mapImage.src = currentMapConfig.mapImageUrl;
             
             mapImage.onload = async () => {
                 try {
-                    // NEU: notesDataUrl wird hier mit abgerufen
                     const [creatureJson, resourceJson, spotsJson, infoBadgeJson, obeliskJson, regionJson, caveSpotsJson, playerSpawnJson, notesJson] = await Promise.all([
                         fetchData(currentMapConfig.creatureDataUrl, 'Kreaturen'),
                         fetchData(currentMapConfig.resourceDataUrl, 'Ressourcen'),
@@ -2481,255 +2590,588 @@
                     allObeliskData = obeliskJson || { obelisks: [] };
                     allRegionData = regionJson || { regions: [] };
                     allCaveSpotsData = caveSpotsJson || { caveSpots: [] };
+                    allPlayerSpawnData = playerSpawnJson || { spawnPoints: [] };
+                    allExplorerNotesData = notesJson || [];
                     
-                    // KORRIGIERTE LOGIK: Verarbeitet alle drei möglichen JSON-Strukturen für Notizen
-                    if (Array.isArray(notesJson)) {
-                        allExplorerNotesData = notesJson; // Fall 1: [{}, {}]
-                    } else if (notesJson && Array.isArray(notesJson.notes)) {
-                        allExplorerNotesData = notesJson.notes; // Fall 2: { "notes": [{}, {}] }
-                    } else if (notesJson && typeof notesJson.notes === 'object' && notesJson.notes !== null) {
-                        allExplorerNotesData = Object.values(notesJson.notes); // Fall 3: { "notes": { "id1": {}, "id2": {} } }
-                    } else {
-                        allExplorerNotesData = []; // Fallback
-                    }
                     
-                    // Verbesserter Check für Spieler-Spawn-Daten, der das Format des Benutzers erkennt und transformiert
-                    if (playerSpawnJson === null) {
-                        allPlayerSpawnData = { 
-                            spawnPoints: [], 
-                            error: 'Datei konnte nicht geladen werden. Prüfe die URL in der Konfiguration.' 
-                        };
-                    } else if (playerSpawnJson && Array.isArray(playerSpawnJson.spawnPoints)) {
-                        // Überprüfen, ob es sich um ein Array von Arrays handelt (Benutzerformat)
-                        if (playerSpawnJson.spawnPoints.length > 0 && Array.isArray(playerSpawnJson.spawnPoints[0])) {
-                            // Transformiere das Benutzerformat in das erwartete Format
-                            const transformedData = playerSpawnJson.spawnPoints.map((locations, index) => ({
-                                regionName: `Zone ${index + 1}`,
-                                locations: locations,
-                                color: spawnGroupColors[index % spawnGroupColors.length]
-                            }));
-                            allPlayerSpawnData = { spawnPoints: transformedData };
-                        } else {
-                            // Annahme, dass es das bereits korrekte Format ist
-                            playerSpawnJson.spawnPoints.forEach((region, index) => {
-                                if (!region.color) {
-                                    region.color = spawnGroupColors[index % spawnGroupColors.length];
-                                }
-                            });
-                            allPlayerSpawnData = playerSpawnJson;
-                        }
-                    } else {
-                        allPlayerSpawnData = { 
-                            spawnPoints: [],
-                            error: 'Datei hat ein ungültiges Format. Erwartet: { "spawnPoints": [...] }'
-                        };
-                        console.warn('Spieler-Spawn-Daten geladen, aber im falschen Format.', playerSpawnJson);
-                    }
-                    
-                    populateGeneralInfo();
-                    populateInfoBadges();
                     populateDropdown();
+                    populateInfoBadges();
+                    populateGeneralInfo();
                     populateResourceControls();
                     populateObeliskControls();
                     populateRegionControls();
-                    populatePlayerSpawnControls();
-                    populateExplorerNotesControls(); 
                     populatePublicSpotsSlider();
-                    populateBadgeFilters(); // Filter nach den Spots erstellen
+                    populateBadgeFilters();
                     populateCaveSpotsSlider();
-                    populateArtifactFilters(); // Filter für Höhlen erstellen
-                    await Promise.all([preloadSpotIcons(), preloadObeliskIcons(), preloadCaveSpotIcons(), preloadRegionImages()]);
+                    populateArtifactFilters();
+                    populatePlayerSpawnControls();
+                    populateExplorerNotesControls();
+                    await Promise.all([preloadSpotIcons(), preloadObeliskIcons(), preloadCaveSpotIcons(), preloadRegionImages(), preloadResourceIcons(), preloadNoteIcon()]);
                     
                     iframeToggle.checked = liveMapWasActive;
                     mapIframe.src = currentMapConfig.iframeUrl || 'about:blank';
-                    toggleLiveMapView(liveMapWasActive);
-
-                    handleResize(); // This will resize canvases and trigger the first draw
+                    
+                    scale = 1;
+                    panOffset = { x: 0, y: 0 };
+                    
+                    resizeCanvases();
+                    redrawAll();
+                } catch (e) {
+                    console.error("Fehler beim Laden der Kartendaten:", e);
+                } finally {
                     loadingIndicator.style.display = 'none';
-                } catch (error) {
-                    console.error("Daten konnten nicht geladen werden:", error);
-                    loadingIndicator.textContent = `Ein kritischer Fehler ist aufgetreten: ${error.message}`;
                 }
-            };
-            
-            mapImage.onerror = () => {
-                loadingIndicator.textContent = 'Fehler: Kartenbild konnte nicht geladen werden.';
             };
         }
         
-        function toggleLiveMapView(isChecked) {
-            // NEU: notesCanvas zur Liste hinzugefügt
-            const canvases = [mapCanvas, spawnCanvas, resourceCanvas, spotsCanvas, clickCanvas, obeliskCanvas, caveSpotsCanvas, regionCanvas, playerSpawnCanvas, notesCanvas];
-            const resourceCheckboxes = document.querySelectorAll('#resource-controls input[type="checkbox"]');
-            const resourceLabels = document.querySelectorAll('#resource-controls label');
-            const obeliskCheckboxes = document.querySelectorAll('#obelisk-controls input[type="checkbox"]');
-            const obeliskLabels = document.querySelectorAll('#obelisk-controls label');
-            const regionCheckboxes = document.querySelectorAll('#region-controls input[type="checkbox"]');
-            const regionLabels = document.querySelectorAll('#region-controls label');
-            const playerSpawnToggle = document.getElementById('toggle-all-player-spawns');
-            const playerSpawnLabel = playerSpawnToggle ? playerSpawnToggle.parentElement : null;
-            // NEU: Elemente für Explorer Notizen
-            const notesToggle = document.getElementById('toggle-all-notes');
-            const notesLabel = notesToggle ? notesToggle.parentElement : null;
-            const selectAllResourcesCheckbox = document.getElementById('select-all-resources');
-            const selectAllResourcesLabel = selectAllResourcesCheckbox.parentElement;
-            const selectAllObelisksCheckbox = document.getElementById('select-all-obelisks');
-            const selectAllObelisksLabel = selectAllObelisksCheckbox.parentElement;
-            const selectAllRegionsCheckbox = document.getElementById('select-all-regions');
-            const selectAllRegionsLabel = selectAllRegionsCheckbox.parentElement;
+        function getMapCoordsFromEvent(e) {
+            const rect = clickCanvas.getBoundingClientRect();
+            const x = e.clientX - rect.left;
+            const y = e.clientY - rect.top;
+            const mapX = (x - panOffset.x) / scale;
+            const mapY = (y - panOffset.y) / scale;
+            return { x: mapX, y: mapY };
+        }
+        
+        function getCanvasCoordsFromEvent(e) {
+             const rect = clickCanvas.getBoundingClientRect();
+             const x = e.clientX - rect.left;
+             const y = e.clientY - rect.top;
+             return {x, y};
+        }
+
+        function handleZoom(e) {
+            if (iframeToggle.checked) return;
+            e.preventDefault();
+
+            const rect = clickCanvas.getBoundingClientRect();
+            const mouseX = e.clientX - rect.left;
+            const mouseY = e.clientY - rect.top;
             
-            if (isChecked) {
-                mapContainer.classList.add('iframe-active');
-                liveMapTogglePanel.classList.add('iframe-active');
-                mapIframe.style.display = 'block';
-                canvases.forEach(canvas => canvas.style.display = 'none');
-                coordsDisplay.style.display = 'none';
+            const zoom = 1.1;
+            const wheel = e.deltaY < 0 ? 1 : -1;
+            const zoomFactor = Math.pow(zoom, wheel);
+            
+            const newScale = Math.max(minScale, Math.min(maxScale, scale * zoomFactor));
+            if (newScale === scale) return;
 
-                // Reset and disable controls
-                creatureSearch.value = '';
-                creatureSearch.disabled = true;
-                creatureSelect.value = '';
-                creatureSelect.disabled = true;
-                
-                resourceCheckboxes.forEach(checkbox => { checkbox.checked = false; checkbox.disabled = true; });
-                resourceLabels.forEach(label => label.classList.add('opacity-50', 'cursor-not-allowed'));
-                selectAllResourcesCheckbox.disabled = true;
-                selectAllResourcesLabel.classList.add('opacity-50', 'cursor-not-allowed');
+            const mouseMapX = (mouseX - panOffset.x) / scale;
+            const mouseMapY = (mouseY - panOffset.y) / scale;
 
-                obeliskCheckboxes.forEach(checkbox => { checkbox.checked = false; checkbox.disabled = true; });
-                obeliskLabels.forEach(label => label.classList.add('opacity-50', 'cursor-not-allowed'));
-                selectAllObelisksCheckbox.disabled = true;
-                selectAllObelisksLabel.classList.add('opacity-50', 'cursor-not-allowed');
-                
-                regionCheckboxes.forEach(checkbox => { checkbox.checked = false; checkbox.disabled = true; });
-                regionLabels.forEach(label => label.classList.add('opacity-50', 'cursor-not-allowed'));
-                selectAllRegionsCheckbox.disabled = true;
-                selectAllRegionsLabel.classList.add('opacity-50', 'cursor-not-allowed');
-                
-                if (playerSpawnToggle) {
-                    playerSpawnToggle.checked = false;
-                    playerSpawnToggle.disabled = true;
-                }
-                if (playerSpawnLabel) {
-                    playerSpawnLabel.classList.add('opacity-50', 'cursor-not-allowed');
-                }
-                // NEU: Deaktivierung für Explorer Notizen
-                if (notesToggle) {
-                    notesToggle.checked = false;
-                    notesToggle.disabled = true;
-                }
-                if (notesLabel) {
-                    notesLabel.classList.add('opacity-50', 'cursor-not-allowed');
-                }
+            panOffset.x = mouseX - mouseMapX * newScale;
+            panOffset.y = mouseY - mouseMapY * newScale;
+            
+            scale = newScale;
 
-                spotsToggle.checked = false;
-                spotsToggle.disabled = true;
-                spotsToggleLabel.textContent = 'Verstecken';
-                spotsToggle.parentElement.classList.add('opacity-50', 'cursor-not-allowed');
-
-                caveSpotsToggle.checked = false;
-                caveSpotsToggle.disabled = true;
-                caveSpotsToggleLabel.textContent = 'Verstecken';
-                caveSpotsToggle.parentElement.classList.add('opacity-50', 'cursor-not-allowed');
-
-            } else {
-                mapContainer.classList.remove('iframe-active');
-                liveMapTogglePanel.classList.remove('iframe-active');
-                mapIframe.style.display = 'none';
-                canvases.forEach(canvas => canvas.style.display = 'block');
-                coordsDisplay.style.display = 'flex';
-
-                // Enable controls
-                creatureSearch.disabled = false;
-                creatureSelect.disabled = false;
-                resourceCheckboxes.forEach(checkbox => checkbox.disabled = false);
-                resourceLabels.forEach(label => label.classList.remove('opacity-50', 'cursor-not-allowed'));
-                selectAllResourcesCheckbox.disabled = false;
-                selectAllResourcesLabel.classList.remove('opacity-50', 'cursor-not-allowed');
-
-                obeliskCheckboxes.forEach(checkbox => checkbox.disabled = false);
-                obeliskLabels.forEach(label => label.classList.remove('opacity-50', 'cursor-not-allowed'));
-                selectAllObelisksCheckbox.disabled = false;
-                selectAllObelisksLabel.classList.remove('opacity-50', 'cursor-not-allowed');
-
-                regionCheckboxes.forEach(checkbox => checkbox.disabled = false);
-                regionLabels.forEach(label => label.classList.remove('opacity-50', 'cursor-not-allowed'));
-                selectAllRegionsCheckbox.disabled = false;
-                selectAllRegionsLabel.classList.remove('opacity-50', 'cursor-not-allowed');
-
-                if (playerSpawnToggle) {
-                    playerSpawnToggle.disabled = false;
-                }
-                if (playerSpawnLabel) {
-                    playerSpawnLabel.classList.remove('opacity-50', 'cursor-not-allowed');
-                }
-                // NEU: Aktivierung für Explorer Notizen
-                if (notesToggle) {
-                    notesToggle.disabled = false;
-                }
-                if (notesLabel) {
-                    notesLabel.classList.remove('opacity-50', 'cursor-not-allowed');
-                }
-
-                spotsToggle.disabled = false;
-                spotsToggle.parentElement.classList.remove('opacity-50', 'cursor-not-allowed');
-                
-                caveSpotsToggle.disabled = false;
-                caveSpotsToggle.parentElement.classList.remove('opacity-50', 'cursor-not-allowed');
-            }
+            panOffset.x = Math.min(0, Math.max(mapCanvas.width * (1 - scale), panOffset.x));
+            panOffset.y = Math.min(0, Math.max(mapCanvas.height * (1 - scale), panOffset.y));
+            
             redrawAll();
         }
 
-        async function handleResize() {
-            const containerWidth = mapContainer.clientWidth;
-            const containerHeight = mapContainer.clientHeight;
-            // Use the smaller dimension to create a square drawing area that always fits
-            const size = Math.min(containerWidth, containerHeight);
+        function startPan(e) {
+            if (e.button !== 0 || iframeToggle.checked) return;
+            isPanning = true;
+            panStart.x = e.clientX - panOffset.x;
+            panStart.y = e.clientY - panOffset.y;
+            clickCanvas.style.cursor = 'grabbing';
+        }
 
-             // NEU: notesCanvas zur Liste hinzugefügt
-            const allCanvases = [mapCanvas, spawnCanvas, resourceCanvas, spotsCanvas, clickCanvas, obeliskCanvas, caveSpotsCanvas, regionCanvas, playerSpawnCanvas, notesCanvas];
-            
-            allCanvases.forEach(canvas => {
-                if (size > 0) {
-                    // Set the canvas rendering resolution to be a square
-                    canvas.width = size;
-                    canvas.height = size;
+        function pan(e) {
+            if (!isPanning) return;
+            e.preventDefault();
+            const newX = e.clientX - panStart.x;
+            const newY = e.clientY - panStart.y;
+            panOffset.x = Math.min(0, Math.max(mapCanvas.width * (1 - scale), newX));
+            panOffset.y = Math.min(0, Math.max(mapCanvas.height * (1 - scale), newY));
+            redrawAll();
+        }
 
-                    // Set the canvas element's size and position to center it within the container
-                    canvas.style.width = `${size}px`;
-                    canvas.style.height = `${size}px`;
-                    canvas.style.left = `${(containerWidth - size) / 2}px`;
-                    canvas.style.top = `${(containerHeight - size) / 2}px`;
+        function endPan() {
+            isPanning = false;
+            clickCanvas.style.cursor = 'grab';
+        }
+
+        function pulseAnimationLoop() {
+            if (!highlightedSpotId && !highlightedCaveSpotId) {
+                stopPulseAnimation();
+                redrawAll();
+                return;
+            }
+            const pulseFactor = (Math.sin(Date.now() / 250) + 1) / 2;
+            const dynamicScale = 1.5 + (pulseFactor * 0.4);
+
+            if (highlightedSpotId) {
+                drawPublicSpots(dynamicScale);
+            }
+            if (highlightedCaveSpotId) {
+                drawCaveSpots(dynamicScale);
+            }
+
+            pulseAnimationId = requestAnimationFrame(pulseAnimationLoop);
+        }
+
+        function startPulseAnimation() {
+            if (pulseAnimationId === null) {
+                pulseAnimationId = requestAnimationFrame(pulseAnimationLoop);
+            }
+        }
+
+        function stopPulseAnimation() {
+            if (pulseAnimationId !== null) {
+                cancelAnimationFrame(pulseAnimationId);
+                pulseAnimationId = null;
+            }
+        }
+        
+        function dynamicEffectsLoop() {
+            if (!highlightedZone && !tooltipTarget) {
+                stopDynamicEffectsLoop();
+                return;
+            }
+
+            clickCtx.clearRect(0, 0, clickCanvas.width, clickCanvas.height);
+
+            // 1. Draw pulsing zone highlight
+            if (highlightedZone) {
+                const pulseFactor = (Math.sin(Date.now() / 300) + 1) / 2;
+                const dynamicScale = 1.0 + (pulseFactor * 0.015);
+                const dynamicAlpha = 0.15 + (pulseFactor * 0.2);
+                
+                clickCtx.save();
+                clickCtx.translate(panOffset.x, panOffset.y);
+                clickCtx.scale(scale, scale);
+
+                const zone = highlightedZone;
+                const w = ((zone.max.lon - zone.min.lon) / MAP_LON_RANGE) * clickCanvas.width;
+                const h = ((zone.max.lat - zone.min.lat) / MAP_LAT_RANGE) * clickCanvas.height;
+                const centerX = ((zone.min.lon - MAP_LON_MIN) / MAP_LON_RANGE) * clickCanvas.width + w / 2;
+                const centerY = ((zone.min.lat - MAP_LAT_MIN) / MAP_LAT_RANGE) * clickCanvas.height + h / 2;
+                
+                const scaledW = w * dynamicScale;
+                const scaledH = h * dynamicScale;
+                const scaledX = centerX - scaledW / 2;
+                const scaledY = centerY - scaledH / 2;
+
+                clickCtx.fillStyle = `rgba(245, 158, 11, ${dynamicAlpha})`;
+                clickCtx.fillRect(scaledX, scaledY, scaledW, scaledH);
+
+                clickCtx.strokeStyle = '#f59e0b';
+                clickCtx.lineWidth = 2 / scale;
+                clickCtx.strokeRect(scaledX, scaledY, scaledW, scaledH);
+
+                clickCtx.restore();
+            }
+
+            // 2. Draw map tooltip for spots/obelisks
+            if (tooltipTarget) {
+                const target = tooltipTarget;
+                let text = `Lat: ${target.lat.toFixed(2).replace('.',',')}, Lon: ${target.lon.toFixed(2).replace('.',',')}`;
+                
+                const screenX = ((target.lon - SPOT_LON_MIN) / SPOT_LON_RANGE) * clickCanvas.width * scale + panOffset.x;
+                let screenY = ((target.lat - SPOT_LAT_MIN) / SPOT_LAT_RANGE) * clickCanvas.height * scale + panOffset.y;
+
+                let iconTopY;
+                let showInfoButton = false;
+
+                if (target.type === 'Explorer Note') {
+                    const maxPulsatingSize = 24 * 1.1 * scale;
+                    iconTopY = screenY - maxPulsatingSize / 2;
+                } else if (target.type === 'Player Spawn') {
+                    const iconHeight = 10 * scale; 
+                    iconTopY = screenY - iconHeight / 2;
+                } else if (target.type === 'Resource') {
+                    const icon = resourceIcons[target.name];
+                    let iconSize;
+                    if (icon && icon.complete) { iconSize = (12 + (target.size * 2)) * scale; } 
+                    else { iconSize = (2 + (target.size * 0.5)) * 2 * scale; }
+                    iconTopY = screenY - iconSize / 2;
+                } else if (target.hasOwnProperty('infoBadges') || target.hasOwnProperty('artifacts')) { // Public or Cave spot
+                    showInfoButton = true;
+                    const maxPulsatingHeight = 32 * 1.9 * scale;
+                    iconTopY = screenY - maxPulsatingHeight;
+                } else if (obeliskConfig[target.name]) { // Obelisk
+                    const icon = obeliskIcons[target.name];
+                    let maxHoverHeight;
+                    if (icon) {
+                        const baseIconHeight = icon.height * 0.15; 
+                        maxHoverHeight = baseIconHeight * 1.5 * scale;
+                    } else {
+                        const maxRadius = 10 * 1.5;
+                        maxHoverHeight = 2 * maxRadius * scale;
+                    }
+                    iconTopY = screenY - maxHoverHeight;
+                } else {
+                    iconTopY = screenY - (32 * 1.9 * scale);
                 }
+                
+                const ctx = clickCtx;
+                ctx.save();
+                
+                ctx.font = 'bold 14px Acme';
+                const textMetrics = ctx.measureText(text);
+                const boxPadding = 8;
+                const boxWidth = textMetrics.width + boxPadding * 2;
+                const boxHeight = 20 + boxPadding;
+                
+                let boxX = screenX - boxWidth / 2;
+                const boxY = iconTopY - boxHeight - 12;
+
+                if (showInfoButton) {
+                    boxX -= 18;
+                }
+
+                ctx.fillStyle = 'rgba(34, 34, 34, 0.95)';
+                ctx.strokeStyle = '#f59e0b';
+                ctx.lineWidth = 2;
+                ctx.beginPath();
+                if (ctx.roundRect) {
+                    ctx.roundRect(boxX, boxY, boxWidth, boxHeight, 5);
+                } else {
+                    ctx.rect(boxX, boxY, boxWidth, boxHeight);
+                }
+                ctx.fill();
+                ctx.stroke();
+
+                ctx.fillStyle = '#f5f3e6';
+                ctx.textAlign = 'center';
+                ctx.textBaseline = 'middle';
+                ctx.fillText(text, boxX + boxWidth / 2, boxY + boxHeight / 2);
+
+                if (showInfoButton) {
+                    const infoButtonRadius = 12;
+                    const infoButtonX = boxX + boxWidth + infoButtonRadius + 6;
+                    const infoButtonY = boxY + boxHeight / 2;
+
+                    ctx.beginPath();
+                    ctx.arc(infoButtonX, infoButtonY, infoButtonRadius, 0, 2 * Math.PI);
+                    ctx.fillStyle = '#f5f3e6';
+                    ctx.fill();
+                    ctx.strokeStyle = '#111';
+                    ctx.lineWidth = 2;
+                    ctx.stroke();
+
+                    ctx.font = 'bold 16px Acme';
+                    ctx.fillStyle = '#111';
+                    ctx.fillText('i', infoButtonX, infoButtonY + 1);
+
+                    infoButtonRect = {
+                        x: infoButtonX - infoButtonRadius,
+                        y: infoButtonY - infoButtonRadius,
+                        width: infoButtonRadius * 2,
+                        height: infoButtonRadius * 2
+                    };
+                } else {
+                    infoButtonRect = null;
+                }
+
+                ctx.restore();
+            }
+
+            dynamicEffectsAnimationId = requestAnimationFrame(dynamicEffectsLoop);
+        }
+
+        function startDynamicEffectsLoop() {
+            if (dynamicEffectsAnimationId === null) {
+                dynamicEffectsAnimationId = requestAnimationFrame(dynamicEffectsLoop);
+            }
+        }
+
+        function stopDynamicEffectsLoop() {
+            if (dynamicEffectsAnimationId !== null) {
+                cancelAnimationFrame(dynamicEffectsAnimationId);
+                dynamicEffectsAnimationId = null;
+                infoButtonRect = null;
+                clickCtx.clearRect(0, 0, clickCanvas.width, clickCanvas.height);
+            }
+        }
+
+        function notePulseAnimationLoop() {
+            if (!document.getElementById('toggle-all-notes').checked) {
+                stopNotePulseAnimation();
+                return;
+            }
+            const pulseFactor = (Math.sin(Date.now() / 400) + 1) / 2;
+            const dynamicScale = 0.9 + (pulseFactor * 0.2); 
+
+            drawExplorerNotes(dynamicScale);
+
+            notePulseAnimationId = requestAnimationFrame(notePulseAnimationLoop);
+        }
+
+        function startNotePulseAnimation() {
+            if (notePulseAnimationId === null) {
+                notePulseAnimationId = requestAnimationFrame(notePulseAnimationLoop);
+            }
+        }
+
+        function stopNotePulseAnimation() {
+            if (notePulseAnimationId !== null) {
+                cancelAnimationFrame(notePulseAnimationId);
+                notePulseAnimationId = null;
+                drawExplorerNotes(); 
+            }
+        }
+
+        function zoomToSpot(lat, lon, zoomLevel = 4) {
+            if (iframeToggle.checked) return;
+
+            const targetScale = Math.min(maxScale, Math.max(minScale, zoomLevel));
+            
+            const targetX = ((lon - MAP_LON_MIN) / MAP_LON_RANGE) * mapCanvas.width;
+            const targetY = ((lat - MAP_LAT_MIN) / MAP_LAT_RANGE) * mapCanvas.height;
+
+            panOffset.x = mapCanvas.width / 2 - targetX * targetScale;
+            panOffset.y = mapCanvas.height / 2 - targetY * targetScale;
+            scale = targetScale;
+            
+            panOffset.x = Math.min(0, Math.max(mapCanvas.width * (1 - scale), panOffset.x));
+            panOffset.y = Math.min(0, Math.max(mapCanvas.height * (1 - scale), panOffset.y));
+            
+            redrawAll();
+        }
+
+        function setupEventListeners() {
+            creatureSelect.addEventListener('change', () => {
+                clickCtx.clearRect(0,0,clickCanvas.width,clickCanvas.height);
+                clearHighlights();
+                redrawAll();
+            });
+            creatureSearch.addEventListener('input', handleSearch);
+            
+            iframeToggle.addEventListener('change', () => {
+                const isActive = iframeToggle.checked;
+                mapIframe.style.display = isActive ? 'block' : 'none';
+                mapContainer.classList.toggle('iframe-active', isActive);
+                
+                const controlPanel = document.querySelector('.control-panel');
+                if (controlPanel) controlPanel.classList.toggle('iframe-active', isActive);
+                
+                liveMapTogglePanel.classList.toggle('iframe-active', isActive);
+            });
+
+            document.getElementById('select-all-resources').addEventListener('change', (e) => {
+                document.querySelectorAll('#resource-controls input[type="checkbox"]').forEach(cb => {
+                    cb.checked = e.target.checked;
+                });
+                drawResources();
             });
             
-            scale = 1;
-            panOffset = { x: 0, y: 0 };
-            redrawAll();
-            clickCtx.clearRect(0,0,clickCanvas.width, clickCanvas.height);
+            const selectAllObelisks = document.getElementById('select-all-obelisks');
+            if(selectAllObelisks) {
+                selectAllObelisks.addEventListener('change', (e) => {
+                    document.querySelectorAll('#obelisk-controls input[type="checkbox"]').forEach(cb => {
+                        cb.checked = e.target.checked;
+                    });
+                    drawObelisks();
+                });
+            }
+
+            const selectAllRegions = document.getElementById('select-all-regions');
+            if (selectAllRegions) {
+                selectAllRegions.addEventListener('change', (e) => {
+                    document.querySelectorAll('#region-controls input[type="checkbox"]').forEach(cb => {
+                        cb.checked = e.target.checked;
+                    });
+                    drawRegions();
+                });
+            }
+
+            const toggleAllPlayerSpawns = document.getElementById('toggle-all-player-spawns');
+            if(toggleAllPlayerSpawns) {
+                toggleAllPlayerSpawns.addEventListener('change', drawPlayerSpawns);
+            }
+            
+            const toggleAllNotes = document.getElementById('toggle-all-notes');
+            if(toggleAllNotes) {
+                toggleAllNotes.addEventListener('change', () => {
+                    if (toggleAllNotes.checked) {
+                        startNotePulseAnimation();
+                    } else {
+                        stopNotePulseAnimation();
+                    }
+                });
+            }
+
+            const sliderPrev = document.getElementById('slider-prev');
+            if(sliderPrev) {
+                sliderPrev.addEventListener('click', () => {
+                    publicSpotsSlider.scrollBy({ left: -336, behavior: 'smooth' });
+                });
+            }
+            const sliderNext = document.getElementById('slider-next');
+            if(sliderNext) {
+                sliderNext.addEventListener('click', () => {
+                    publicSpotsSlider.scrollBy({ left: 336, behavior: 'smooth' });
+                });
+            }
+
+            spotsToggle.addEventListener('change', () => {
+                if (spotsToggle.checked) {
+                    spotsToggleLabel.textContent = 'Anzeigen';
+                    redrawAll();
+                } else {
+                    spotsToggleLabel.textContent = 'Verstecken';
+                    clearHighlights();
+                }
+            });
+
+            const caveSliderPrev = document.getElementById('cave-slider-prev');
+            if(caveSliderPrev) {
+                caveSliderPrev.addEventListener('click', () => {
+                    caveSpotsSlider.scrollBy({ left: -336, behavior: 'smooth' });
+                });
+            }
+            const caveSliderNext = document.getElementById('cave-slider-next');
+            if(caveSliderNext) {
+                caveSliderNext.addEventListener('click', () => {
+                    caveSpotsSlider.scrollBy({ left: 336, behavior: 'smooth' });
+                });
+            }
+
+            caveSpotsToggle.addEventListener('change', () => {
+                if (caveSpotsToggle.checked) {
+                    caveSpotsToggleLabel.textContent = 'Anzeigen';
+                    redrawAll();
+                } else {
+                    caveSpotsToggleLabel.textContent = 'Verstecken';
+                    clearHighlights();
+                }
+            });
+
+            document.getElementById('spot-modal-close').addEventListener('click', closeSpotModal);
+            document.getElementById('cave-spot-modal-close').addEventListener('click', closeCaveSpotModal);
+
+            clickCanvas.addEventListener('click', handleMapClick);
+            clickCanvas.addEventListener('wheel', handleZoom, { passive: false });
+            clickCanvas.addEventListener('mousedown', startPan);
+            clickCanvas.addEventListener('mousemove', (e) => {
+                pan(e);
+                const rect = clickCanvas.getBoundingClientRect();
+                const x = e.clientX - rect.left;
+                const y = e.clientY - rect.top;
+                
+                const lat = MAP_LAT_MIN + (((y - panOffset.y) / scale) / mapCanvas.height) * MAP_LAT_RANGE;
+                const lon = MAP_LON_MIN + (((x - panOffset.x) / scale) / mapCanvas.width) * MAP_LON_RANGE;
+                
+                document.querySelector('#lat-display span').textContent = lat.toFixed(2).replace('.',',');
+                document.querySelector('#lon-display span').textContent = lon.toFixed(2).replace('.',',');
+            });
+            clickCanvas.addEventListener('mouseup', endPan);
+            clickCanvas.addEventListener('mouseleave', endPan);
+            window.addEventListener('resize', () => {
+                resizeCanvases();
+                redrawAll();
+            });
+
+            const mapListHeader = document.getElementById('map-list-header');
+            const mapListContent = document.getElementById('map-list-content');
+            const mapListArrow = document.getElementById('map-list-arrow');
+            
+            const regionSpawnsHeader = document.getElementById('region-spawns-header');
+            const regionInfoContent = document.getElementById('region-info-content');
+            const regionSpawnsArrow = document.getElementById('region-spawns-arrow');
+
+            
+            mapListHeader.addEventListener('click', () => {
+                mapListContent.classList.toggle('collapsed');
+                mapListArrow.classList.toggle('collapsed');
+            });
+
+            regionSpawnsHeader.addEventListener('click', () => {
+                regionInfoContent.classList.toggle('collapsed');
+                regionSpawnsArrow.classList.toggle('collapsed');
+                if (!regionInfoContent.classList.contains('collapsed')) {
+                    updateHighlightPreview(highlightedZone);
+                    if(highlightedZone) startDynamicEffectsLoop();
+                } else {
+                    stopDynamicEffectsLoop();
+                }
+            });
+
+            
+            const rightSidebarSections = [
+                { headerId: 'resources-header', contentId: 'resources-content', arrowId: 'resources-arrow' },
+                { headerId: 'obelisks-header', contentId: 'obelisks-content', arrowId: 'obelisks-arrow' },
+                { headerId: 'regions-header', contentId: 'regions-content', arrowId: 'regions-arrow' },
+                { headerId: 'player-spawns-header', contentId: 'player-spawns-content', arrowId: 'player-spawns-arrow' },
+                { headerId: 'notes-header', contentId: 'notes-content', arrowId: 'notes-arrow' }
+            ];
+
+            rightSidebarSections.forEach(section => {
+                const header = document.getElementById(section.headerId);
+                const content = document.getElementById(section.contentId);
+                const arrow = document.getElementById(section.arrowId);
+                if (header && content && arrow) {
+                    header.addEventListener('click', () => {
+                        content.classList.toggle('collapsed');
+                        arrow.classList.toggle('collapsed');
+                    });
+                }
+            });
+        }
+        
+        function resizeCanvases() {
+            const container = document.querySelector('.map-container');
+            const w = container.clientWidth;
+            const h = container.clientHeight;
+            [mapCanvas, spawnCanvas, resourceCanvas, spotsCanvas, clickCanvas, obeliskCanvas, regionCanvas, caveSpotsCanvas, playerSpawnCanvas, notesCanvas].forEach(c => {
+                if (c) {
+                    c.width = w;
+                    c.height = h;
+                }
+            });
+        }
+
+        function redrawAll() {
+            requestAnimationFrame(() => {
+                drawMapImage();
+                drawRegions();
+                drawResources();
+                drawSpawns();
+                if (pulseAnimationId === null) {
+                    drawPublicSpots();
+                    drawCaveSpots();
+                }
+                drawObelisks();
+                drawPlayerSpawns();
+                if (notePulseAnimationId === null) {
+                    drawExplorerNotes();
+                }
+            });
+        }
+        
+        function drawMapImage() {
+            if (!mapCtx) return;
+            mapCtx.clearRect(0, 0, mapCanvas.width, mapCanvas.height);
+            mapCtx.save();
+            mapCtx.translate(panOffset.x, panOffset.y);
+            mapCtx.scale(scale, scale);
+            mapCtx.drawImage(mapImage, 0, 0, mapCanvas.width, mapCanvas.height);
+            mapCtx.restore();
         }
 
         async function initializeApp() {
             const mapConfigsUrl = 'https://raw.githubusercontent.com/iophantonie/iophantonie-IOP_Custom_Map_Explorer.github.io/main/MapConfigs/MapConfigs.jsn';
             const translationsUrl = 'https://raw.githubusercontent.com/iophantonie/iophantonie-IOP_Custom_Map_Explorer.github.io/main/Translation_Datenbank/translationdb.jsn';
-            const alphaListUrl = 'https://raw.githubusercontent.com/iophantonie/iophantonie-IOP_Custom_Map_Explorer.github.io/main/Alpha_Listen_Datenbank/alphalistdb.jsn';
-            const itemDbUrl = 'https://raw.githubusercontent.com/iophantonie/iophantonie-IOP_Custom_Map_Explorer.github.io/refs/heads/main/Icon_Datenbank/Icondb.jsn';
-            const blocklistUrl = 'https://raw.githubusercontent.com/iophantonie/iophantonie-IOP_Custom_Map_Explorer.github.io/refs/heads/main/Blocked_Zones_Datenbank/blockedzonesdb.jsn';
-            const spawnSharingUrl = 'https://raw.githubusercontent.com/iophantonie/iophantonie-IOP_Custom_Map_Explorer.github.io/refs/heads/main/SpawnSharingConfig/spawnsharing.jsn';
-            const spawnRarityUrl = 'https://raw.githubusercontent.com/iophantonie/iophantonie-IOP_Custom_Map_Explorer.github.io/refs/heads/main/Spawn_Rarity_Configs/SpawnRarityConfig.jsn';
-            const difficultyConfigUrl = 'https://raw.githubusercontent.com/iophantonie/iophantonie-IOP_Custom_Map_Explorer.github.io/refs/heads/main/StructureConfigs/DifficultlyConfigCaveCards/difficultlydb.jsn';
-            const badgeConfigUrl = 'https://raw.githubusercontent.com/iophantonie/iophantonie-IOP_Custom_Map_Explorer.github.io/refs/heads/main/StructureConfigs/PublicSpotBadgesConfig/PSInfobadgedb.jsn';
+            const itemDbUrl = 'https://raw.githubusercontent.com/iophantonie/iophantonie-IOP_Custom_Map_Explorer.github.io/main/Icon_Datenbank/Icondb.jsn';
+            const alphaListsUrl = 'https://raw.githubusercontent.com/iophantonie/iophantonie-IOP_Custom_Map_Explorer.github.io/main/AlphaVarianten/AlphaLists.jsn';
+            const blocklistUrl = 'https://raw.githubusercontent.com/iophantonie/iophantonie-IOP_Custom_Map_Explorer.github.io/main/SpawnZoneBlocklist/SpawnZoneBlocklist.jsn';
+            const spawnSharingUrl = 'https://raw.githubusercontent.com/iophantonie/iophantonie-IOP_Custom_Map_Explorer.github.io/main/SpawnSharing/SpawnSharing.jsn';
+            const spawnRarityUrl = 'https://raw.githubusercontent.com/iophantonie/iophantonie-IOP_Custom_Map_Explorer.github.io/main/SpawnRarity/SpawnRarity.jsn';
+            const difficultyConfigUrl = 'https://raw.githubusercontent.com/iophantonie/iophantonie-IOP_Custom_Map_Explorer.github.io/main/DifficultyDatenbank/difficultydb.jsn';
+            const badgeConfigUrl = 'https://raw.githubusercontent.com/iophantonie/iophantonie-IOP_Custom_Map_Explorer.github.io/main/BadgeDatenbank/badgedb.jsn';
             const blueprintQualityConfigUrl = 'https://raw.githubusercontent.com/iophantonie/iophantonie-IOP_Custom_Map_Explorer.github.io/refs/heads/main/BluePrintQualityDatenbank/blueprintqualitydb.jsn';
 
 
             const [configsData, translationsData, alphaListsData, itemDbData, blocklistData, spawnSharingData, spawnRarityData, difficultyConfigData, badgeConfigData, blueprintQualityConfigData] = await Promise.all([
                 fetchData(mapConfigsUrl, 'Map Configs'),
-                fetchData(translationsUrl, 'Translations'),
-                fetchData(alphaListUrl, 'Alpha Lists'),
+                fetchData(translationsUrl, 'Übersetzungen'),
+                fetchData(alphaListsUrl, 'Alpha Listen'),
                 fetchData(itemDbUrl, 'Item DB'),
-                fetchData(blocklistUrl, 'Spawn Zone Blocklist'),
-                fetchData(spawnSharingUrl, 'Spawn Sharing Config'),
-                fetchData(spawnRarityUrl, 'Spawn Rarity Config'),
+                fetchData(blocklistUrl, 'Blocklist'),
+                fetchData(spawnSharingUrl, 'Spawn Sharing'),
+                fetchData(spawnRarityUrl, 'Spawn Rarity'),
                 fetchData(difficultyConfigUrl, 'Difficulty Config'),
                 fetchData(badgeConfigUrl, 'Badge Config'),
                 fetchData(blueprintQualityConfigUrl, 'Blueprint Quality Config')
@@ -2753,128 +3195,18 @@
                 globalItemDatabase = {
                     ...itemDbData.Items,
                     ...itemDbData.Ressourcen,
-                    ...itemDbData.Kreaturen
+                    ...itemDbData.Kreaturen,
+                    ...(itemDbData.notes || {})
                 };
             }
             
             populateMapList();
             createCavePattern();
             generateLegend();
-            await loadMapData('TheIsland');
-        }
-        
-        function redrawAll() {
-            requestAnimationFrame(() => {
-                drawMapImage();
-                drawRegions();
-                drawResources();
-                drawSpawns();
-                drawPublicSpots();
-                drawCaveSpots();
-                drawObelisks();
-                drawPlayerSpawns();
-                drawExplorerNotes(); // NEU: Explorer Notizen zeichnen
-            });
-        }
-        
-        function drawMapImage() {
-            mapCtx.clearRect(0, 0, mapCanvas.width, mapCanvas.height);
-            mapCtx.save();
-            mapCtx.translate(panOffset.x, panOffset.y);
-            mapCtx.scale(scale, scale);
-            if (mapImage.complete && mapImage.naturalHeight !== 0) {
-              mapCtx.drawImage(mapImage, 0, 0, mapCanvas.width, mapCanvas.height);
-            }
-            mapCtx.restore();
-        }
-        
-        function getMousePos(canvas, evt) {
-            const rect = canvas.getBoundingClientRect();
-            return {
-                x: evt.clientX - rect.left,
-                y: evt.clientY - rect.top
-            };
+            await loadMapData(currentMapKey);
         }
 
-        function getMapCoordsFromEvent(e) {
-             const { x, y } = getMousePos(clickCanvas, e);
-             return {
-                x: (x - panOffset.x) / scale,
-                y: (y - panOffset.y) / scale
-            };
-        }
-        
-        function handleZoom(e) {
-            e.preventDefault();
-            const { x, y } = getMousePos(clickCanvas, e);
-            const zoom = e.deltaY < 0 ? 1.1 : 0.9;
-            const newScale = Math.max(minScale, Math.min(maxScale, scale * zoom));
-        
-            const worldX = (x - panOffset.x) / scale;
-            const worldY = (y - panOffset.y) / scale;
-        
-            panOffset.x = x - worldX * newScale;
-            panOffset.y = y - worldY * newScale;
-            scale = newScale;
-
-            panOffset.x = Math.min(0, Math.max(mapCanvas.width * (1 - scale), panOffset.x));
-            panOffset.y = Math.min(0, Math.max(mapCanvas.height * (1 - scale), panOffset.y));
-            
-            clickCtx.clearRect(0, 0, clickCanvas.width, clickCanvas.height);
-            redrawAll();
-        }
-
-        function startPan(e) {
-            isPanning = true;
-            panStart.x = e.clientX - panOffset.x;
-            panStart.y = e.clientY - panOffset.y;
-            clickCanvas.style.cursor = 'grabbing';
-        }
-
-        function pan(e) {
-            if (!isPanning) return;
-            e.preventDefault();
-            const newX = e.clientX - panStart.x;
-            const newY = e.clientY - panStart.y;
-            panOffset.x = Math.min(0, Math.max(mapCanvas.width * (1 - scale), newX));
-            panOffset.y = Math.min(0, Math.max(mapCanvas.height * (1 - scale), newY));
-            redrawAll();
-        }
-
-        function endPan() {
-            isPanning = false;
-            clickCanvas.style.cursor = 'grab';
-        }
-
-        // NEUE FUNKTION: Zoomt und zentriert die Karte auf einen bestimmten Punkt
-        function zoomToSpot(lat, lon, zoomLevel = 4) {
-            if (iframeToggle.checked) return; // Nicht zoomen, wenn die Live-Karte aktiv ist
-
-            const width = mapCanvas.width;
-            const height = mapCanvas.height;
-            
-            // Neue Skalierung setzen
-            scale = Math.max(minScale, Math.min(maxScale, zoomLevel));
-            
-            // Lat/Lon in Weltkoordinaten umrechnen (unabhängig von aktuellem Zoom/Pan)
-            const worldX = ((lon - SPOT_LON_MIN) / SPOT_LON_RANGE) * width;
-            const worldY = ((lat - SPOT_LAT_MIN) / SPOT_LAT_RANGE) * height;
-
-            // Pan-Offset berechnen, um den Spot zu zentrieren
-            panOffset.x = (width / 2) - (worldX * scale);
-            panOffset.y = (height / 2) - (worldY * scale);
-
-            // Pan-Offset begrenzen, damit die Karte im Anzeigebereich bleibt
-            panOffset.x = Math.min(0, Math.max(width * (1 - scale), panOffset.x));
-            panOffset.y = Math.min(0, Math.max(height * (1 - scale), panOffset.y));
-
-            redrawAll();
-        }
-
-
-        // -- EVENT LISTENERS --
         document.addEventListener('DOMContentLoaded', () => {
-            // Assign DOM elements to variables
             mapNameDisplay = document.getElementById('map-name');
             creatureSelect = document.getElementById('creature-select');
             creatureSearch = document.getElementById('creature-search');
@@ -2892,261 +3224,34 @@
             spotsToggleLabel = document.getElementById('spots-toggle-label');
             coordsDisplay = document.getElementById('coords-display');
             generalInfoPanel = document.getElementById('general-info-panel');
-            caveSpotsCanvas = document.getElementById('cave-spots-canvas');
             caveSpotsSlider = document.getElementById('cave-spots-slider');
             caveSpotsToggle = document.getElementById('cave-spots-toggle');
             caveSpotsToggleLabel = document.getElementById('cave-spots-toggle-label');
-            spawnCanvas = document.getElementById('spawn-canvas');
-            resourceCanvas = document.getElementById('resource-canvas');
-            obeliskCanvas = document.getElementById('obelisk-canvas');
-            spotsCanvas = document.getElementById('spots-canvas');
-            clickCanvas = document.getElementById('click-canvas');
-            mapCanvas = document.getElementById('map-canvas');
-            playerSpawnCanvas = document.getElementById('player-spawn-canvas');
-            notesCanvas = document.getElementById('notes-canvas'); // NEU
 
-            spawnCtx = spawnCanvas.getContext('2d');
-            resourceCtx = resourceCanvas.getContext('2d');
-            obeliskCtx = obeliskCanvas.getContext('2d');
-            spotsCtx = spotsCanvas.getContext('2d');
-            caveSpotsCtx = caveSpotsCanvas.getContext('2d');
-            clickCtx = clickCanvas.getContext('2d');
+            mapCanvas = document.getElementById('map-canvas');
             mapCtx = mapCanvas.getContext('2d');
+            spawnCanvas = document.getElementById('spawn-canvas');
+            spawnCtx = spawnCanvas.getContext('2d');
+            resourceCanvas = document.getElementById('resource-canvas');
+            resourceCtx = resourceCanvas.getContext('2d');
+            spotsCanvas = document.getElementById('spots-canvas');
+            spotsCtx = spotsCanvas.getContext('2d');
+            clickCanvas = document.getElementById('click-canvas');
+            clickCtx = clickCanvas.getContext('2d');
+            obeliskCanvas = document.getElementById('obelisk-canvas');
+            obeliskCtx = obeliskCanvas.getContext('2d');
             regionCanvas = document.getElementById('region-canvas');
             regionCtx = regionCanvas.getContext('2d');
+            caveSpotsCanvas = document.getElementById('cave-spots-canvas');
+            caveSpotsCtx = caveSpotsCanvas.getContext('2d');
+            playerSpawnCanvas = document.getElementById('player-spawn-canvas');
             playerSpawnCtx = playerSpawnCanvas.getContext('2d');
-            notesCtx = notesCanvas.getContext('2d'); // NEU
-
-            // Collapsible section elements
-            const mapListHeader = document.getElementById('map-list-header');
-            const mapListContent = document.getElementById('map-list-content');
-            const mapListArrow = document.getElementById('map-list-arrow');
-            const regionSpawnsHeader = document.getElementById('region-spawns-header');
-            const regionInfoContent = document.getElementById('region-info-content');
-            const regionSpawnsArrow = document.getElementById('region-spawns-arrow');
-
-            // Attach event listeners
-            mapListHeader.addEventListener('click', () => {
-                mapListContent.classList.toggle('collapsed');
-                mapListArrow.classList.toggle('collapsed');
-            });
-
-            regionSpawnsHeader.addEventListener('click', () => {
-                regionInfoContent.classList.toggle('collapsed');
-                regionSpawnsArrow.classList.toggle('collapsed');
-                updateHighlightPreview(highlightedZone);
-            });
-
-            // Right Sidebar Collapsibles
-            const rightSidebarSections = [
-                { headerId: 'resources-header', contentId: 'resources-content', arrowId: 'resources-arrow' },
-                { headerId: 'obelisks-header', contentId: 'obelisks-content', arrowId: 'obelisks-arrow' },
-                { headerId: 'regions-header', contentId: 'regions-content', arrowId: 'regions-arrow' },
-                { headerId: 'player-spawns-header', contentId: 'player-spawns-content', arrowId: 'player-spawns-arrow' },
-                { headerId: 'notes-header', contentId: 'notes-content', arrowId: 'notes-arrow' } // NEU
-            ];
-
-            rightSidebarSections.forEach(section => {
-                const header = document.getElementById(section.headerId);
-                const content = document.getElementById(section.contentId);
-                const arrow = document.getElementById(section.arrowId);
-                if (header && content && arrow) {
-                    header.addEventListener('click', () => {
-                        content.classList.toggle('collapsed');
-                        arrow.classList.toggle('collapsed');
-                    });
-                }
-            });
-
-            creatureSelect.addEventListener('change', () => {
-                clickCtx.clearRect(0,0,clickCanvas.width,clickCanvas.height);
-                regionInfoContainer.innerHTML = '<p class="text-gray-400">Klicke auf eine Spawn-Zone auf der Karte.</p>';
-                redrawAll();
-            });
-            creatureSearch.addEventListener('input', handleSearch);
+            notesCanvas = document.getElementById('notes-canvas');
+            notesCtx = notesCanvas.getContext('2d');
             
-            iframeToggle.addEventListener('change', () => {
-                toggleLiveMapView(iframeToggle.checked);
-            });
-
-            spotsToggle.addEventListener('change', () => {
-                if (spotsToggle.checked) {
-                    spotsToggleLabel.textContent = 'Anzeigen';
-                } else {
-                    spotsToggleLabel.textContent = 'Verstecken';
-                    clearHighlights();
-                }
-                redrawAll();
-            });
-
-            caveSpotsToggle.addEventListener('change', () => {
-                if (caveSpotsToggle.checked) {
-                    caveSpotsToggleLabel.textContent = 'Anzeigen';
-                } else {
-                    caveSpotsToggleLabel.textContent = 'Verstecken';
-                    clearHighlights();
-                }
-                redrawAll();
-            });
-
-            const selectAllResources = document.getElementById('select-all-resources');
-            if (selectAllResources) {
-                selectAllResources.addEventListener('change', (e) => {
-                    const isChecked = e.target.checked;
-                    document.querySelectorAll('#resource-controls input[type="checkbox"]').forEach(cb => cb.checked = isChecked);
-                    redrawAll();
-                });
-            }
-
-            const selectAllObelisks = document.getElementById('select-all-obelisks');
-            if(selectAllObelisks) {
-                selectAllObelisks.addEventListener('change', (e) => {
-                    const isChecked = e.target.checked;
-                    document.querySelectorAll('#obelisk-controls input[type="checkbox"]').forEach(cb => cb.checked = isChecked);
-                    redrawAll();
-                });
-            }
-            
-            const selectAllRegions = document.getElementById('select-all-regions');
-            if(selectAllRegions) {
-                selectAllRegions.addEventListener('change', (e) => {
-                    const isChecked = e.target.checked;
-                    document.querySelectorAll('#region-controls input[type="checkbox"]').forEach(cb => cb.checked = isChecked);
-                    redrawAll();
-                });
-            }
-
-            const toggleAllPlayerSpawns = document.getElementById('toggle-all-player-spawns');
-            if(toggleAllPlayerSpawns) {
-                toggleAllPlayerSpawns.addEventListener('change', drawPlayerSpawns);
-            }
-            
-            // NEU: Event Listener für Explorer Notizen
-            const toggleAllNotes = document.getElementById('toggle-all-notes');
-            if(toggleAllNotes) {
-                toggleAllNotes.addEventListener('change', drawExplorerNotes);
-            }
-
-            const sliderPrev = document.getElementById('slider-prev');
-            if(sliderPrev) {
-                sliderPrev.addEventListener('click', () => {
-                    publicSpotsSlider.scrollBy({ left: -266, behavior: 'smooth' });
-                });
-            }
-            
-            const sliderNext = document.getElementById('slider-next');
-            if(sliderNext) {
-                sliderNext.addEventListener('click', () => {
-                    publicSpotsSlider.scrollBy({ left: 266, behavior: 'smooth' });
-                });
-            }
-
-            document.getElementById('spot-modal-close').addEventListener('click', closeSpotModal);
-            
-            const caveSliderPrev = document.getElementById('cave-slider-prev');
-            if(caveSliderPrev) {
-                caveSliderPrev.addEventListener('click', () => {
-                    caveSpotsSlider.scrollBy({ left: -266, behavior: 'smooth' });
-                });
-            }
-
-            const caveSliderNext = document.getElementById('cave-slider-next');
-            if(caveSliderNext) {
-                caveSliderNext.addEventListener('click', () => {
-                    caveSpotsSlider.scrollBy({ left: 266, behavior: 'smooth' });
-                });
-            }
-
-            document.getElementById('cave-spot-modal-close').addEventListener('click', closeCaveSpotModal);
-
-            clickCanvas.addEventListener('click', handleMapClick);
-            clickCanvas.addEventListener('wheel', handleZoom, { passive: false });
-            clickCanvas.addEventListener('mousedown', startPan);
-            clickCanvas.addEventListener('mousemove', (e) => {
-                if (isPanning) {
-                    pan(e);
-                    return;
-                }
-                const { x, y } = getMapCoordsFromEvent(e);
-                const clickRadius = 16;
-                const lat = MAP_LAT_MIN + (y / mapCanvas.height) * MAP_LAT_RANGE;
-                const lon = MAP_LON_MIN + (x / mapCanvas.width) * MAP_LON_RANGE;
-                const coordsEl = document.getElementById('coords-display');
-
-                coordsEl.querySelector('#lat-display').innerHTML = `Lat: <span class="font-bold text-amber-300">${lat.toFixed(2)}</span>`;
-                coordsEl.querySelector('#lon-display').innerHTML = `Lon: <span class="font-bold text-amber-300">${lon.toFixed(2)}</span>`;
-
-                let currentlyHoveredSpot = null;
-                if (spotsToggle.checked && allPublicSpotsData.publicSpots) {
-                    currentlyHoveredSpot = [...allPublicSpotsData.publicSpots].reverse().find(spot => {
-                         const spotX = ((spot.lon - SPOT_LON_MIN) / SPOT_LON_RANGE) * mapCanvas.width;
-                        const spotY = ((spot.lat - SPOT_LAT_MIN) / SPOT_LAT_RANGE) * mapCanvas.height;
-                        const distance = Math.sqrt(Math.pow(x - spotX, 2) + Math.pow(y - (spotY - 16), 2));
-                        return distance < clickRadius;
-                    })?.id || null;
-                }
-                if (hoveredSpotId !== currentlyHoveredSpot) {
-                    hoveredSpotId = currentlyHoveredSpot;
-                    redrawAll();
-                }
-
-                let currentlyHoveredObelisk = null;
-                if (allObeliskData.obelisks) {
-                    const checkedObeliskNames = Array.from(document.querySelectorAll('#obelisk-controls input:checked')).map(cb => cb.name);
-                    const visibleObelisks = allObeliskData.obelisks.filter(o => checkedObeliskNames.includes(o.name));
-                    
-                    currentlyHoveredObelisk = [...visibleObelisks].reverse().find(obelisk => {
-                        const baseIconWidth = obeliskIcons[obelisk.name] ? obeliskIcons[obelisk.name].width * 0.15 : 20;
-                        const baseIconHeight = obeliskIcons[obelisk.name] ? obeliskIcons[obelisk.name].height * 0.15 : 20;
-                        const obeliskX = ((obelisk.lon - SPOT_LON_MIN) / SPOT_LON_RANGE) * mapCanvas.width;
-                        const obeliskY = ((obelisk.lat - SPOT_LAT_MIN) / SPOT_LAT_RANGE) * mapCanvas.height;
-                        return x > obeliskX - baseIconWidth/2 && x < obeliskX + baseIconWidth/2 && y > obeliskY - baseIconHeight && y < obeliskY;
-                    })?.name || null;
-                }
-                if (hoveredObeliskId !== currentlyHoveredObelisk) {
-                    hoveredObeliskId = currentlyHoveredObelisk;
-                    redrawAll();
-                }
-
-                let currentlyHoveredCaveSpot = null;
-                if (caveSpotsToggle.checked && allCaveSpotsData.caveSpots) {
-                    currentlyHoveredCaveSpot = [...allCaveSpotsData.caveSpots].reverse().find(spot => {
-                        const spotX = ((spot.lon - SPOT_LON_MIN) / SPOT_LON_RANGE) * mapCanvas.width;
-                        const spotY = ((spot.lat - SPOT_LAT_MIN) / SPOT_LAT_RANGE) * mapCanvas.height;
-                        const distance = Math.sqrt(Math.pow(x - spotX, 2) + Math.pow(y - (spotY - 16), 2));
-                        return distance < clickRadius;
-                    })?.id || null;
-                }
-                if (hoveredCaveSpotId !== currentlyHoveredCaveSpot) {
-                    hoveredCaveSpotId = currentlyHoveredCaveSpot;
-                    redrawAll();
-                }
-
-            });
-            clickCanvas.addEventListener('mouseup', endPan);
-            clickCanvas.addEventListener('mouseleave', () => {
-                 endPan();
-                 const coordsEl = document.getElementById('coords-display');
-                 
-                 coordsEl.querySelector('#lat-display').innerHTML = `Lat: <span class="font-bold text-amber-300">0.00</span>`;
-                 coordsEl.querySelector('#lon-display').innerHTML = `Lon: <span class="font-bold text-amber-300">0.00</span>`;
-
-                 if (hoveredSpotId !== null || hoveredObeliskId !== null || hoveredCaveSpotId !== null) {
-                       hoveredSpotId = null;
-                       hoveredObeliskId = null;
-                       hoveredCaveSpotId = null;
-                       redrawAll();
-                 }
-            });
-
-            window.addEventListener('resize', handleResize);
-            
+            setupEventListeners();
             initializeApp();
         });
     </script>
-    <script>
-        document.addEventListener('contextmenu', event => event.preventDefault());
-    </script>
-    </body>
+</body>
 </html>
-
