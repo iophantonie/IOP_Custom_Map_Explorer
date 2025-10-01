@@ -5,21 +5,21 @@
       "name": "Roter Obelisk",
       "lat": 84.67,
       "lon": 12.14,
-      "icon": "https://upload.gameserverapp.com/RnVI3ZN7YwjPEbUGGr4nTXBpa4MtnzDmnVCiT1rN.png"
+      "icon": "https://github.com/iophantonie/iophantonie-IOP_Custom_Map_Explorer.github.io/blob/main/Images/Obelisks/Obelisk_Red_Icon.png?raw=true"
     },
     {
       "id": "obelisk_green",
       "name": "Grüner Obelisk",
       "lat": 60.06,
       "lon": 75.82,
-      "icon": "https://upload.gameserverapp.com/vdc0b513lkszRuHkjL5GaCpTjiITZyprMkzRG4qx.png"
+      "icon": "https://github.com/iophantonie/iophantonie-IOP_Custom_Map_Explorer.github.io/blob/main/Images/Obelisks/Obelisk_Green_Icon.png?raw=true"
     },
     {
       "id": "obelisk_blue",
       "name": "Blauer Obelisk",
       "lat": 21.08,
       "lon": 22.08,
-      "icon": "https://upload.gameserverapp.com/co1UXTZIMoociT5NonrGKSV42KM6xl530Mdwdfz4.png"
+      "icon": "https://github.com/iophantonie/iophantonie-IOP_Custom_Map_Explorer.github.io/blob/main/Images/Obelisks/Obelisk_BLue_Icon.png?raw=true"
     }
   ]
 }
