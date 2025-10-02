@@ -1,39 +1,45 @@
 {
   "regions": [
     {
-      "id": "region_ice",
+      "id": "1",
       "name": "Eis Gebiet",
-      "imageUrl": "https://i.postimg.cc/0NK46yPV/Island-Ice-Region.png",
+      "imageUrl": "https://github.com/iophantonie/iophantonie-IOP_Custom_Map_Explorer.github.io/blob/main/TheCenter/Regions/Center_EisGebiet.png?raw=true",
       "color": "#ffffff"
     },
     {
-      "id": "region_redwood",
+      "id": "2",
       "name": "Redwood",
-      "imageUrl": "https://i.postimg.cc/9MKgc3vv/Island-Redwood-Region.png",
+      "imageUrl": "https://github.com/iophantonie/iophantonie-IOP_Custom_Map_Explorer.github.io/blob/main/TheCenter/Regions/Center_RedwoodGebiet.png?raw=true",
       "color": "#cc5d20"
     },
     {
-      "id": "region_swamp",
+      "id": "3",
       "name": "Sumpf",
-      "imageUrl": "https://i.postimg.cc/3xtBK5Gn/Island-Swamp-Region.png",
+      "imageUrl": "https://github.com/iophantonie/iophantonie-IOP_Custom_Map_Explorer.github.io/blob/main/TheCenter/Regions/Center_SwampGebiet.png?raw=true",
       "color": "#37ff00"
     },
     {
-      "id": "region_vulcan",
+      "id": "4",
       "name": "Vulkan",
-      "imageUrl": "https://i.postimg.cc/GhBvn8Qg/Island-Volcan-Region.png",
+      "imageUrl": "https://github.com/iophantonie/iophantonie-IOP_Custom_Map_Explorer.github.io/blob/main/TheCenter/Regions/Center_VulkanGebiet.png?raw=true",
       "color": "#922022"
     },
     {
-      "id": "region_carnivore_Island",
-      "name": "Fleischfresser Insel",
-      "imageUrl": "https://i.postimg.cc/bvK1JzwH/Island-Carnivore-Island-Region.png",
+      "id": "5",
+      "name": "Fliegende Inseln",
+      "imageUrl": "https://github.com/iophantonie/iophantonie-IOP_Custom_Map_Explorer.github.io/blob/main/TheCenter/Regions/Center_FliegendeInseln.png?raw=true",
       "color": "#ff0000"
     },
     {
-      "id": "region_herbivore_Island",
-      "name": "Pflanzenfresser Insel",
-      "imageUrl": "https://i.postimg.cc/J08JNPJs/Island-Herbivore-island-Region.png",
+      "id": "6",
+      "name": "Totenkopf Insel",
+      "imageUrl": "https://github.com/iophantonie/iophantonie-IOP_Custom_Map_Explorer.github.io/blob/main/TheCenter/Regions/Center_SkullIsland.png?raw=true",
+      "color": "#ff0000"
+    },
+    {
+      "id": "7",
+      "name": "Pinguin Eisberg",
+      "imageUrl": "https://github.com/iophantonie/iophantonie-IOP_Custom_Map_Explorer.github.io/blob/main/TheCenter/Regions/Center_Kairuku_Felsen.png?raw=true",
       "color": "#eaff00"
     }
   ]
