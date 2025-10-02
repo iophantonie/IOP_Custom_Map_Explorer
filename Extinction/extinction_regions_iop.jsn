@@ -1,1 +1,58 @@
-
+{
+  "regions": [
+    {
+      "id": "1",
+      "name": "Wüsten Gebiet",
+      "imageUrl": "https://github.com/iophantonie/iophantonie-IOP_Custom_Map_Explorer.github.io/blob/main/Aberration/Regions/AB_GruenesGebiet.png?raw=true",
+      "color": "#ff9f32"
+    },
+    {
+      "id": "2",
+      "name": "Eis Gebiet",
+      "imageUrl": "https://github.com/iophantonie/iophantonie-IOP_Custom_Map_Explorer.github.io/blob/main/Extinction/Regions/EX_Ice.png?raw=true",
+      "color": "#ffffff"
+    },
+    {
+      "id": "3",
+      "name": "Underworld",
+      "imageUrl": "https://github.com/iophantonie/iophantonie-IOP_Custom_Map_Explorer.github.io/blob/main/Extinction/Regions/EX_Underworld.png?raw=true",
+      "color": "#378d34"
+    },
+    {
+      "id": "4",
+      "name": "Ölfelder",
+      "imageUrl": "https://github.com/iophantonie/iophantonie-IOP_Custom_Map_Explorer.github.io/blob/main/Extinction/Regions/EX_Oil.png?raw=true",
+      "color": "#000000"
+    },
+    {
+      "id": "5",
+      "name": "Schwefelfelder",
+      "imageUrl": "https://github.com/iophantonie/iophantonie-IOP_Custom_Map_Explorer.github.io/blob/main/Extinction/Regions/EX_Sulfur.png?raw=true",
+      "color": "#e0c82e"
+    },
+    {
+      "id": "6",
+      "name": "Stadt",
+      "imageUrl": "https://github.com/iophantonie/iophantonie-IOP_Custom_Map_Explorer.github.io/blob/main/Extinction/Regions/EX_City.png?raw=true",
+      "color": "#83a3c8"
+    },
+    {
+      "id": "7",
+      "name": "Gerippe Wasteland",
+      "imageUrl": "https://github.com/iophantonie/iophantonie-IOP_Custom_Map_Explorer.github.io/blob/main/Extinction/Regions/EX_Bones.png?raw=true",
+      "color": "#ff05f7"
+    },
+    {
+      "id": "8",
+      "name": "Implantat Wasteland",
+      "imageUrl": "https://github.com/iophantonie/iophantonie-IOP_Custom_Map_Explorer.github.io/blob/main/Extinction/Regions/EX_Implant.png?raw=true",
+      "color": "#a2469f"
+    },
+    {
+      "id": "9",
+      "name": "King Titan Hort",
+      "imageUrl": "https://github.com/iophantonie/iophantonie-IOP_Custom_Map_Explorer.github.io/blob/main/Extinction/Regions/EX_KingTitan.png?raw=true",
+      "color": "#ff0004"
+    }
+  ]
+}
