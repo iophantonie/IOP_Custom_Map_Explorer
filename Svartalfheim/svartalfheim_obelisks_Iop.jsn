@@ -1,1 +1,25 @@
-
+{
+  "obelisks": [
+    {
+      "id": "obelisk_red",
+      "name": "Roter Obelisk",
+      "lat": 32.1,
+      "lon": 18.6,
+      "icon": "https://github.com/iophantonie/iophantonie-IOP_Custom_Map_Explorer.github.io/blob/main/Images/Obelisks/Obelisk_Red_Icon.png?raw=true"
+    },
+    {
+      "id": "obelisk_green",
+      "name": "Grüner Obelisk",
+      "lat": 76.4,
+      "lon": 51.9,
+      "icon": "https://github.com/iophantonie/iophantonie-IOP_Custom_Map_Explorer.github.io/blob/main/Images/Obelisks/Obelisk_Green_Icon.png?raw=true"
+    },
+    {
+      "id": "obelisk_blue",
+      "name": "Blauer Obelisk",
+      "lat": 7.8,
+      "lon": 41.4,
+      "icon": "https://github.com/iophantonie/iophantonie-IOP_Custom_Map_Explorer.github.io/blob/main/Images/Obelisks/Obelisk_BLue_Icon.png?raw=true"
+    }
+  ]
+}
