@@ -1,1 +1,28 @@
-
+{
+  "regions": [
+    {
+      "id": "1",
+      "name": "Grünes Gebiet [1]",
+      "imageUrl": "https://github.com/iophantonie/iophantonie-IOP_Custom_Map_Explorer.github.io/blob/main/Aberration/Regions/AB_GruenesGebiet.png?raw=true",
+      "color": "#029400"
+    },
+    {
+      "id": "2",
+      "name": "Blaues Gebiet [2]",
+      "imageUrl": "https://github.com/iophantonie/iophantonie-IOP_Custom_Map_Explorer.github.io/blob/main/Aberration/Regions/AB_BlauesGebiet.png?raw=true",
+      "color": "#008de4"
+    },
+    {
+      "id": "3",
+      "name": "Rotes Gebiet [3]",
+      "imageUrl": "https://github.com/iophantonie/iophantonie-IOP_Custom_Map_Explorer.github.io/blob/main/Aberration/Regions/AB_RotesGebiet.png?raw=true",
+      "color": "#df0061"
+    },
+    {
+      "id": "4",
+      "name": "Surface",
+      "imageUrl": "https://github.com/iophantonie/iophantonie-IOP_Custom_Map_Explorer.github.io/blob/main/Aberration/Regions/AB_Surface.png?raw=true",
+      "color": "#ffbe74"
+    }
+  ]
+}
