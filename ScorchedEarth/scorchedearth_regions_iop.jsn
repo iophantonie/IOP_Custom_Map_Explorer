@@ -4,19 +4,19 @@
       "id": "1",
       "name": "Wyvern Schlucht",
       "imageUrl": "https://github.com/iophantonie/iophantonie-IOP_Custom_Map_Explorer.github.io/blob/main/ScorchedEarth/Regions/SE_Wyvernschlucht.png?raw=true",
-      "color": "#ffffff"
+      "color": "#FF0000"
     },
     {
       "id": "2",
       "name": "Jungle",
       "imageUrl": "https://github.com/iophantonie/iophantonie-IOP_Custom_Map_Explorer.github.io/blob/main/ScorchedEarth/Regions/SE_Jungle.png?raw=true",
-      "color": "#cc5d20"
+      "color": "#02B000"
     },
     {
       "id": "3",
       "name": "Kolosseum",
       "imageUrl": "https://github.com/iophantonie/iophantonie-IOP_Custom_Map_Explorer.github.io/blob/main/ScorchedEarth/Regions/SE_Kolosseum.png?raw=true",
-      "color": "#37ff00"
+      "color": "#F9FF00"
     }
   ]
 }
