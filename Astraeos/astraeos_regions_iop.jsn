@@ -1,1 +1,29 @@
+{
+  "regions": [
+    {
+      "id": "1",
+      "name": "Korinthos",
+      "imageUrl": "https://github.com/iophantonie/iophantonie-IOP_Custom_Map_Explorer.github.io/blob/main/Astraeos/Regions/ASTRA_Korinthos.png?raw=true",
+      "color": "#41cf45"
+    },
+    {
+      "id": "2",
+      "name": "Phokintos",
+      "imageUrl": "https://github.com/iophantonie/iophantonie-IOP_Custom_Map_Explorer.github.io/blob/main/Astraeos/Regions/ASTRA_Phokintos.png?raw=true",
+      "color": "#a7814e"
+    },
+    {
+      "id": "3",
+      "name": "Lemnokis",
+      "imageUrl": "https://github.com/iophantonie/iophantonie-IOP_Custom_Map_Explorer.github.io/blob/main/Astraeos/Regions/ASTRA_Lemnokis.png?raw=true",
+      "color": "#6273be"
+    },
+    {
+      "id": "4",
+      "name": "Therokis",
+      "imageUrl": "https://github.com/iophantonie/iophantonie-IOP_Custom_Map_Explorer.github.io/blob/main/Astraeos/Regions/ASTRA_Therokis.png?raw=true",
+      "color": "#ff0105"
+    }
+  ]
+}
 
