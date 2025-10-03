@@ -89,9 +89,9 @@
     "publicSpotsDataUrl": "https://raw.githubusercontent.com/iophantonie/IOP_Custom_Map_Explorer/main/Astraeos/astraeos_publicspots_iop.jsn",
     "infoBadgeUrl": "https://raw.githubusercontent.com/iophantonie/IOP_Custom_Map_Explorer/main/Astraeos/astraeos_infobadges_iop.jsn",
     "obeliskDataUrl": "https://raw.githubusercontent.com/iophantonie/IOP_Custom_Map_Explorer/main/Astraeos/astraeos_obelisks_Iop.jsn",
-    "notesDataUrl": "",
+    "notesDataUrl": "https://raw.githubusercontent.com/iophantonie/IOP_Custom_Map_Explorer/main/Astraeos/astraeos_notes_iop.jsn",
     "regionDataUrl": "https://raw.githubusercontent.com/iophantonie/IOP_Custom_Map_Explorer/main/Astraeos/astraeos_regions_iop.jsn",
-    "playerSpawnDataUrl": "",
+    "playerSpawnDataUrl": "https://raw.githubusercontent.com/iophantonie/IOP_Custom_Map_Explorer/main/Astraeos/astraeos_spawnpoints_iop.jsn",
     "caveSpotsDataUrl": "https://raw.githubusercontent.com/iophantonie/IOP_Custom_Map_Explorer/main/Astraeos/astraeos_caves_iop.jsn",
     "iframeUrl": "https://arkmap.axi92.at/6b719b3d-f04c-47f5-beb6-a5a0b1260e7c"
   },
