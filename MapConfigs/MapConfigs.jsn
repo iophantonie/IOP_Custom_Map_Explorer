@@ -41,9 +41,9 @@
     "publicSpotsDataUrl": "https://raw.githubusercontent.com/iophantonie/IOP_Custom_Map_Explorer/main/ScorchedEarth/scorchedearth_publicspots_iop.jsn",
     "infoBadgeUrl": "https://raw.githubusercontent.com/iophantonie/IOP_Custom_Map_Explorer/main/ScorchedEarth/scorchedearth_infobadges_iop.jsn",
     "obeliskDataUrl": "https://raw.githubusercontent.com/iophantonie/IOP_Custom_Map_Explorer/main/ScorchedEarth/scorchedearth_obelisks_Iop.jsn",
-    "notesDataUrl": "",
+    "notesDataUrl": "https://raw.githubusercontent.com/iophantonie/IOP_Custom_Map_Explorer/main/ScorchedEarth/scorchedearth_notes_iop.jsn",
     "regionDataUrl": "https://raw.githubusercontent.com/iophantonie/IOP_Custom_Map_Explorer/main/ScorchedEarth/scorchedearth_regions_iop.jsn",
-    "playerSpawnDataUrl": "",
+    "playerSpawnDataUrl": "https://raw.githubusercontent.com/iophantonie/IOP_Custom_Map_Explorer/main/ScorchedEarth/scorchedearth_spawnpoints_iop.jsn",
     "caveSpotsDataUrl": "https://raw.githubusercontent.com/iophantonie/IOP_Custom_Map_Explorer/main/ScorchedEarth/scorchedearth_caves_iop.jsn",
     "iframeUrl": "https://arkmap.axi92.at/126c63dd-17c2-4770-8b86-b1c13121e445"
   },
