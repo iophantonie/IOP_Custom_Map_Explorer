@@ -1,1 +1,28 @@
-
+{
+  "regions": [
+    {
+      "id": "1",
+      "name": "Eis Gebiet",
+      "imageUrl": "https://github.com/iophantonie/iophantonie-IOP_Custom_Map_Explorer.github.io/blob/main/Svartalfheim/Regions/SVART_Ice.png?raw=true",
+      "color": "#ffffff"
+    },
+    {
+      "id": "2",
+      "name": "Redwood",
+      "imageUrl": "https://github.com/iophantonie/iophantonie-IOP_Custom_Map_Explorer.github.io/blob/main/Svartalfheim/Regions/SVART_Redwood.png?raw=true",
+      "color": "#de8f45"
+    },
+    {
+      "id": "3",
+      "name": "Vulkan",
+      "imageUrl": "https://github.com/iophantonie/iophantonie-IOP_Custom_Map_Explorer.github.io/blob/main/Svartalfheim/Regions/SVART_Vulkan.png?raw=true",
+      "color": "#ff0000"
+    },
+    {
+      "id": "4",
+      "name": "Dwarven Dörfer",
+      "imageUrl": "https://github.com/iophantonie/iophantonie-IOP_Custom_Map_Explorer.github.io/blob/main/Svartalfheim/Regions/SVART_Dwarven.png?raw=true",
+      "color": "#f8f834"
+    }
+  ]
+}
