@@ -105,9 +105,9 @@
     "publicSpotsDataUrl": "https://raw.githubusercontent.com/iophantonie/IOP_Custom_Map_Explorer/main/Svartalfheim/svartalfheim_publicspots_iop.jsn",
     "infoBadgeUrl": "https://raw.githubusercontent.com/iophantonie/IOP_Custom_Map_Explorer/main/Svartalfheim/svartalfheim_infobadges_iop.jsn",
     "obeliskDataUrl": "https://raw.githubusercontent.com/iophantonie/IOP_Custom_Map_Explorer/main/Svartalfheim/svartalfheim_obelisks_Iop.jsn",
-    "notesDataUrl": "",
+    "notesDataUrl": "https://raw.githubusercontent.com/iophantonie/IOP_Custom_Map_Explorer/main/Svartalfheim/svartalfheim_notes_iop.jsn",
     "regionDataUrl": "https://raw.githubusercontent.com/iophantonie/IOP_Custom_Map_Explorer/main/Svartalfheim/svartalfheim_regions_iop.jsn",
-    "playerSpawnDataUrl": "",
+    "playerSpawnDataUrl": "https://raw.githubusercontent.com/iophantonie/IOP_Custom_Map_Explorer/main/Svartalfheim/svartalfheim_spawnpoints_iop.jsn",
     "caveSpotsDataUrl": "https://raw.githubusercontent.com/iophantonie/IOP_Custom_Map_Explorer/main/Svartalfheim/svartalfheim_caves_iop.jsn",
     "iframeUrl": "https://arkmap.axi92.at/581b1a31-d430-415e-97c5-be02d713d369"
   },
