@@ -1,1 +1,40 @@
-
+{
+  "regions": [
+    {
+      "id": "1",
+      "name": "Wüsten Gebiet",
+      "imageUrl": "https://github.com/iophantonie/iophantonie-IOP_Custom_Map_Explorer.github.io/blob/main/Ragnarok/Regions/RAGNA_Desert.png?raw=true",
+      "color": "#ffd271"
+    },
+    {
+      "id": "2",
+      "name": "Eis Gebiet",
+      "imageUrl": "https://github.com/iophantonie/iophantonie-IOP_Custom_Map_Explorer.github.io/blob/main/Ragnarok/Regions/RAGNA_Ice.png?raw=true",
+      "color": "#ffffff"
+    },
+    {
+      "id": "3",
+      "name": "Redwood",
+      "imageUrl": "https://github.com/iophantonie/iophantonie-IOP_Custom_Map_Explorer.github.io/blob/main/Ragnarok/Regions/RAGNA_Redwood.png?raw=true",
+      "color": "#ff9430"
+    },
+    {
+      "id": "4",
+      "name": "Sumpf",
+      "imageUrl": "https://github.com/iophantonie/iophantonie-IOP_Custom_Map_Explorer.github.io/blob/main/Ragnarok/Regions/RAGNA_Sumpf.png?raw=true",
+      "color": "#09ff00"
+    },
+    {
+      "id": "5",
+      "name": "Vulkan",
+      "imageUrl": "https://github.com/iophantonie/iophantonie-IOP_Custom_Map_Explorer.github.io/blob/main/Ragnarok/Regions/RAGNA_Vulkan.png?raw=true",
+      "color": "#ff0000"
+    },
+    {
+      "id": "6",
+      "name": "Wyvern Schlucht/Bucht",
+      "imageUrl": "https://github.com/iophantonie/iophantonie-IOP_Custom_Map_Explorer.github.io/blob/main/Ragnarok/Regions/RAGNA_Wyvern.png?raw=true",
+      "color": "#ff5e60"
+    }
+  ]
+}
