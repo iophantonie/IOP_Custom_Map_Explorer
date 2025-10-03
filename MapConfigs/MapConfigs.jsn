@@ -25,7 +25,7 @@
     "publicSpotsDataUrl": "https://raw.githubusercontent.com/iophantonie/IOP_Custom_Map_Explorer/main/TheCenter/thecenter_publicspots_iop.jsn",
     "infoBadgeUrl": "https://raw.githubusercontent.com/iophantonie/IOP_Custom_Map_Explorer/main/TheCenter/thecenter_infobadges_iop.jsn",
     "notesDataUrl": "https://raw.githubusercontent.com/iophantonie/iophantonie-IOP_Custom_Map_Explorer.github.io/refs/heads/main/TheCenter/thecenter_notes_iop.jsn",
-    "obeliskDataUrl": "https://raw.githubusercontent.com/iophantonie/IOP_Custom_Map_Explorer/main/TheCenter/thecenter_obelisks_iop.jsn",
+    "obeliskDataUrl": "https://raw.githubusercontent.com/iophantonie/iophantonie-IOP_Custom_Map_Explorer.github.io/refs/heads/main/TheCenter/thecenter_obelisks_Iop.jsn",
     "regionDataUrl": "https://raw.githubusercontent.com/iophantonie/IOP_Custom_Map_Explorer/main/TheCenter/thecenter_regions_iop.jsn",
     "caveSpotsDataUrl": "https://raw.githubusercontent.com/iophantonie/IOP_Custom_Map_Explorer/main/TheCenter/thecenter_caves_iop.jsn",
     "playerSpawnDataUrl": "https://raw.githubusercontent.com/iophantonie/iophantonie-IOP_Custom_Map_Explorer.github.io/refs/heads/main/TheCenter/thecenter_spawnpoints_iop.jsn",
