@@ -73,9 +73,9 @@
     "publicSpotsDataUrl": "https://raw.githubusercontent.com/iophantonie/IOP_Custom_Map_Explorer/main/Extinction/extinction_publicspots_iop.jsn",
     "infoBadgeUrl": "https://raw.githubusercontent.com/iophantonie/IOP_Custom_Map_Explorer/main/Extinction/extinction_infobadges_iop.jsn",
     "obeliskDataUrl": "https://raw.githubusercontent.com/iophantonie/IOP_Custom_Map_Explorer/main/Extinction/extinction_obelisks_Iop.jsn",
-    "notesDataUrl": "",
+    "notesDataUrl": "https://raw.githubusercontent.com/iophantonie/IOP_Custom_Map_Explorer/main/Extinction/extinction_notes_iop.jsn",
     "regionDataUrl": "https://raw.githubusercontent.com/iophantonie/IOP_Custom_Map_Explorer/main/Extinction/extinction_regions_iop.jsn",
-    "playerSpawnDataUrl": "",
+    "playerSpawnDataUrl": "https://raw.githubusercontent.com/iophantonie/IOP_Custom_Map_Explorer/main/Extinction/extinction_spawnpoints_iop.jsn",
     "caveSpotsDataUrl": "https://raw.githubusercontent.com/iophantonie/IOP_Custom_Map_Explorer/main/Extinction/extinction_caves_iop.jsn",
     "iframeUrl": "https://arkmap.axi92.at/f9384885-6f6e-45ac-ae2f-027f87cb0122"
   },
