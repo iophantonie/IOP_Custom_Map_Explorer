@@ -139,7 +139,7 @@
     "obeliskDataUrl": "https://raw.githubusercontent.com/iophantonie/IOP_Custom_Map_Explorer/main/Valguero/valguero_obelisks_iop.jsn",
     "notesDataUrl": "",
     "regionDataUrl": "https://raw.githubusercontent.com/iophantonie/IOP_Custom_Map_Explorer/main/Valguero/valguero_regions_iop.jsn",
-    "playerSpawnDataUrl": "",
+    "playerSpawnDataUrl": "https://raw.githubusercontent.com/iophantonie/IOP_Custom_Map_Explorer/main/Valguero/valguero_spawnpoints_iop.jsn",
     "caveSpotsDataUrl": "https://raw.githubusercontent.com/iophantonie/IOP_Custom_Map_Explorer/main/Valguero/valguero_caves_iop.jsn",
     "iframeUrl": "https://arkmap.axi92.at/c953335b-389f-4e89-a548-52058b243445"
   },
