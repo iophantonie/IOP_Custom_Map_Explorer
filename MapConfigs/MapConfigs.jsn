@@ -130,7 +130,7 @@
   "Valguero": {
     "displayName": "Valguero",
     "alphaVariantKey": "Default",
-    "activated": false,
+    "activated": true,
     "mapImageUrl": "https://ark-unity.com/cdn-cgi/image/format=auto,width=3840/images/maps/Valguero.webp",
     "creatureDataUrl": "https://raw.githubusercontent.com/iophantonie/IOP_Custom_Map_Explorer/main/Valguero/valguero_dinospawns_iop.jsn",
     "resourceDataUrl": "https://raw.githubusercontent.com/iophantonie/IOP_Custom_Map_Explorer/main/Valguero/valguero_resources_iop.jsn",
