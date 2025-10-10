@@ -141,7 +141,7 @@
     "regionDataUrl": "https://raw.githubusercontent.com/iophantonie/IOP_Custom_Map_Explorer/main/Valguero/valguero_regions_iop.jsn",
     "playerSpawnDataUrl": "https://raw.githubusercontent.com/iophantonie/IOP_Custom_Map_Explorer/main/Valguero/valguero_spawnpoints_iop.jsn",
     "caveSpotsDataUrl": "https://raw.githubusercontent.com/iophantonie/IOP_Custom_Map_Explorer/main/Valguero/valguero_caves_iop.jsn",
-    "iframeUrl": "https://arkmap.axi92.at/c953335b-389f-4e89-a548-52058b243445"
+    "iframeUrl": "https://arkmap.axi92.at/0d77d17e-34f7-4dfe-b849-2e4bc174cd6e"
   },
   "CrystalIsles": {
     "displayName": "Crystal Isles",
