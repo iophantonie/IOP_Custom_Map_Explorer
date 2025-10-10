@@ -131,7 +131,7 @@
     "displayName": "Valguero",
     "alphaVariantKey": "Default",
     "activated": true,
-    "mapImageUrl": "https://ark-unity.com/cdn-cgi/image/format=auto,width=3840/images/maps/Valguero.webp",
+    "mapImageUrl": "https://github.com/iophantonie/iophantonie-IOP_Custom_Map_Explorer.github.io/blob/main/Valguero/Valguero_MapImage.png?raw=true",
     "creatureDataUrl": "https://raw.githubusercontent.com/iophantonie/IOP_Custom_Map_Explorer/main/Valguero/valguero_dinospawns_iop.jsn",
     "resourceDataUrl": "https://raw.githubusercontent.com/iophantonie/IOP_Custom_Map_Explorer/main/Valguero/valguero_resources_iop.jsn",
     "publicSpotsDataUrl": "https://raw.githubusercontent.com/iophantonie/IOP_Custom_Map_Explorer/main/Valguero/valguero_publicspots_iop.jsn",
