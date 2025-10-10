@@ -136,7 +136,7 @@
     "resourceDataUrl": "https://raw.githubusercontent.com/iophantonie/IOP_Custom_Map_Explorer/main/Valguero/valguero_resources_iop.jsn",
     "publicSpotsDataUrl": "https://raw.githubusercontent.com/iophantonie/IOP_Custom_Map_Explorer/main/Valguero/valguero_publicspots_iop.jsn",
     "infoBadgeUrl": "https://raw.githubusercontent.com/iophantonie/IOP_Custom_Map_Explorer/main/Valguero/valguero_infobadges_iop.jsn",
-    "obeliskDataUrl": "https://raw.githubusercontent.com/iophantonie/IOP_Custom_Map_Explorer/main/Valguero/valguero_obelisks_iop.jsn",
+    "obeliskDataUrl": "https://raw.githubusercontent.com/iophantonie/IOP_Custom_Map_Explorer/main/Valguero/valguero_obelisks_Iop.jsn",
     "notesDataUrl": "https://raw.githubusercontent.com/iophantonie/IOP_Custom_Map_Explorer/main/Valguero/valguero_notes_iop.jsn",
     "regionDataUrl": "https://raw.githubusercontent.com/iophantonie/IOP_Custom_Map_Explorer/main/Valguero/valguero_regions_iop.jsn",
     "playerSpawnDataUrl": "https://raw.githubusercontent.com/iophantonie/IOP_Custom_Map_Explorer/main/Valguero/valguero_spawnpoints_iop.jsn",
