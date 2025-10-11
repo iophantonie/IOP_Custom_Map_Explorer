@@ -10,43 +10,43 @@
       "id": "2",
       "name": "Europäsches Waldgebiet",
       "imageUrl": "https://github.com/iophantonie/iophantonie-IOP_Custom_Map_Explorer.github.io/blob/main/Valguero/Regions/Valguero_Europ%C3%A4sche_Region.png?raw=true",
-      "color": "#cc5d20"
+      "color": "#bcad4c"
     },
     {
       "id": "3",
       "name": "Sumpf",
       "imageUrl": "https://github.com/iophantonie/iophantonie-IOP_Custom_Map_Explorer.github.io/blob/main/Valguero/Regions/Valguero_Sumpf_Region.png?raw=true",
-      "color": "#37ff00"
+      "color": "#07ff00"
     },
     {
       "id": "4",
       "name": "Nadelwald",
       "imageUrl": "https://github.com/iophantonie/iophantonie-IOP_Custom_Map_Explorer.github.io/blob/main/Valguero/Regions/Valguero_Nadelwald_Region.png?raw=true",
-      "color": "#922022"
+      "color": "#b4b4b4"
     },
     {
       "id": "5",
       "name": "Redwood",
       "imageUrl": "https://github.com/iophantonie/iophantonie-IOP_Custom_Map_Explorer.github.io/blob/main/Valguero/Regions/Valguero_Redwood.png?raw=true",
-      "color": "#ff0000"
+      "color": "#d99f21"
     },
     {
       "id": "6",
       "name": "Jungle",
       "imageUrl": "https://github.com/iophantonie/iophantonie-IOP_Custom_Map_Explorer.github.io/blob/main/Valguero/Regions/Valguero_Jungle.png?raw=true",
-      "color": "#eaff00"
+      "color": "#2abc69"
     },
     {
       "id": "7",
       "name": "Tundra",
       "imageUrl": "https://github.com/iophantonie/iophantonie-IOP_Custom_Map_Explorer.github.io/blob/main/Valguero/Regions/Valguero_Tundra_Region.png?raw=true",
-      "color": "#ff0000"
+      "color": "#de8f45"
     },
     {
       "id": "8",
       "name": "Whitecliffs",
       "imageUrl": "https://github.com/iophantonie/iophantonie-IOP_Custom_Map_Explorer.github.io/blob/main/Valguero/Regions/Valguero_Whitecliffs.png?raw=true",
-      "color": "#eaff00"
+      "color": "#70ecfc"
     }
   ]
 }
