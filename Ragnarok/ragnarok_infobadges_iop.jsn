@@ -1,1 +1,52 @@
-
+{
+    "infoBadges": {
+        "Kartenart": "Vanilla Karte",
+        "Bosse": [
+            "Nunatak"
+        ],
+        "Besonderheiten": [
+            "Lavagolem (Miniboss)",
+            "Ice Queen (Miniboss)",
+            "Große Karte"
+        ],
+        "Öffentliche Farmen & Fallen": [
+            "Keine"
+        ],
+        "Höhlen": [
+            "6 Artefakt Höhlen"
+        ],
+        "Artefakte": [
+            "Rudel",
+            "Brutalen",
+            "Jäger",
+            "Schlauen",
+            "Stärke",
+            "List",
+            "Immunen",
+            "Himmelsherr",
+            "Fresser",
+            "Gewaltigen"
+        ]
+    },
+    "specialInfo": {
+        "Kategorie": "S-Kreaturen:",
+        "Liste": [
+            "S- Rex",
+            "S- Maewing",
+            "S- Thylacoleo",
+            "S- Fenrir",
+            "S-Trike",
+            "S- Deinonychus",
+            "S- Basilosaurus"
+        ],
+        "OnEachMap_Liste": [
+            "S-Queen Bee",
+            "S-Unicorn",
+            "S-Cat",
+            "S-Fantastic Tames"
+        ]
+    },
+    "generalInfo": [
+        "Svartalfheim ist eine preisgekrönte, von der nordischen Mythologie inspirierte Custom Map für Ark: Survival Ascended. Sie entführt Spieler in das sagenumwobene Reich der Zwerge – eine Welt voller gewaltiger, nebelverhangener Berge, tiefer Täler und eines riesigen, kunstvoll gestalteten unterirdischen Höhlensystems. An der Oberfläche wechseln sich leuchtende Herbstwälder mit üppigen, grünen Landschaften und schneebedeckten Gipfeln ab und schaffen atemberaubende Panoramen. Die größte Besonderheit: Svartalfheim ist eine No-Flyer-Map. Das zwingt Überlebende, die extreme Vertikalität der Karte mit Kletterhaken, Seilrutschen und Boden-Reittieren zu meistern. Die Erkundung wird dadurch intensiver und belohnender. Bevölkert von einzigartigen, mythologischen Kreaturen und übersät mit beeindruckenden Zwergen-Ruinen, bietet die Karte eine völlig eigenständige Progression mit neuen Ressourcen, seltenen Schätzen und herausfordernden Custom-Bossen. Svartalfheim ist perfekt für Entdecker und Spieler, die eine visuell umwerfende und spielerisch anspruchsvolle Erfahrung suchen, bei der jeder Winkel der Karte zu Fuß erobert werden muss."
+    ]
+}
