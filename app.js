@@ -1471,10 +1471,11 @@ function openCaveSpotModal(spotId) {
         if (spot.artifacts && spot.artifacts.length > 0) {
             spot.artifacts.forEach(artifact => {
                 const artifactName = artifact.name || 'Unbekannt';
-                if (artifactName && artifactName.trim() !== '') {
-                    artifactHtml += `<div class="mt-2 py-1 px-2 border border-red-500 rounded-md text-red-400 text-sm w-full">
-                                        ${artifactName}
-                                    </div>`;
+                if (artifactName.trim() !== '') {
+                    artifactHtml += `
+                        <div class="mt-2 py-1 px-2 border border-red-500 rounded-md text-red-400 text-sm w-full">
+                            ${artifactName}
+                        </div>`;
                 }
             });
         }
