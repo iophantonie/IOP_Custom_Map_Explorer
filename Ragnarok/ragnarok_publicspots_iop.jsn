@@ -123,6 +123,44 @@
             ],
             "shortDescription": "Öffentlicher Teleporter",
             "longDescription": "Am Blauen Obelisken befindet sich ein kleiner Tek Teleporter, der von jedem Spieler genutzt werden kann, der den kleinen Tek Teleporter freigeschaltet hat."
+        },
+        {
+            "id": "7",
+            "name": "Mini Boss: Lava Golem",
+            "lat": 35.7,
+            "lon": 84.9,
+            "icon": "https://i.postimg.cc/X7rnR4WV/IOP-Map-Marker-Icon.png",
+            "images": [
+                "https://i.postimg.cc/rm1gKBPp/Bild-2025-07-09-014751706.jpg"
+            ],
+            "infoBadges": [
+                {
+                    "text": "Official Miniboss",
+                    "type": "miniboss",
+                    "color": "red"
+                }
+            ],
+            "shortDescription": "Ragnarok Mini Boss",
+            "longDescription": "Text Fehlt."
+        },
+        {
+            "id": "8",
+            "name": "Mini Boss: Ice Queen",
+            "lat": 18.7,
+            "lon": 18.0,
+            "icon": "https://i.postimg.cc/X7rnR4WV/IOP-Map-Marker-Icon.png",
+            "images": [
+                "https://i.postimg.cc/PrnsVDZG/Bild-2025-07-09-022338880.jpg"
+            ],
+            "infoBadges": [
+                {
+                    "text": "Official Miniboss",
+                    "type": "miniboss",
+                    "color": "red"
+                }
+            ],
+            "shortDescription": "Ragnarok Mini Boss",
+            "longDescription": "Text Fehlt."
         }
     ]
 }
