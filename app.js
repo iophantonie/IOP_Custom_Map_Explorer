@@ -680,7 +680,7 @@ function openPublicSpotModal(spotId) {
             <button class="spot-image-prev absolute left-2 top-1/2 -translate-y-1/2 bg-gray-800/50 p-2 rounded-full text-red-500 hover:bg-gray-700 border border-red-500 hover:shadow-[0_0_15px_rgba(255,75,62,0.7)] transition-all">&lt;</button>
             <button class="spot-image-next absolute right-2 top-1/2 -translate-y-1/2 bg-gray-800/50 p-2 rounded-full text-red-500 hover:bg-gray-700 border border-red-500 hover:shadow-[0_0_15px_rgba(255,75,62,0.7)] transition-all">&gt;</button>
         ` : '';
-        imageSliderHtml = `<div class="relative overflow-hidden rounded-md mb-4 h-96">${slides}${arrows}</div>`;
+        imageSliderHtml = `<div class="relative overflow-hidden rounded-md mb-4 modal-image-slider">${slides}${arrows}</div>`;
     }
 
     modalBody.innerHTML = `
@@ -1510,7 +1510,7 @@ function openCaveSpotModal(spotId) {
             <button class="cave-image-prev absolute left-2 top-1/2 -translate-y-1/2 bg-gray-800/50 p-2 rounded-full text-red-500 hover:bg-gray-700 border border-red-500 hover:shadow-[0_0_15px_rgba(255,75,62,0.7)] transition-all">&lt;</button>
             <button class="cave-image-next absolute right-2 top-1/2 -translate-y-1/2 bg-gray-800/50 p-2 rounded-full text-red-500 hover:bg-gray-700 border border-red-500 hover:shadow-[0_0_15px_rgba(255,75,62,0.7)] transition-all">&gt;</button>
         ` : '';
-        imageSliderHtml = `<div class="relative overflow-hidden rounded-md mb-4 h-96">${slides}${arrows}</div>`;
+        imageSliderHtml = `<div class="relative overflow-hidden rounded-md mb-4 modal-image-slider">${slides}${arrows}</div>`;
     }
 
 
