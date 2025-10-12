@@ -1,1 +1,80 @@
-
+{
+    "publicSpots": [
+        {
+            "id": "1",
+            "name": "City Terminal",
+            "lat": 50.7,
+            "lon": 36.7,
+            "icon": "https://i.postimg.cc/X7rnR4WV/IOP-Map-Marker-Icon.png",
+            "images": [
+                "https://i.postimg.cc/50w0xq9T/Bild-2025-01-19-131143331.png"
+            ],
+            "infoBadges": [
+                {
+                    "text": "Teleporter",
+                    "type": "teleporter",
+                    "color": "blue"
+                }
+            ],
+            "shortDescription": "Öffentlicher Teleporter",
+            "longDescription": "Eine Öffentliche Harzfarm, bei der sich jeder Spieler an 8 Harzsammlern bedienen kann. Es befindet sich ebenfalls ein kleiner Tek Teleporter dort, der von jedem Spieler genutzt werden kann, der den kleinen Tek Teleporter freigeschaltet hat."
+        },
+        {
+            "id": "2",
+            "name": "Wüstenbiom",
+            "lat": 85.5,
+            "lon": 86.2,
+            "icon": "https://i.postimg.cc/X7rnR4WV/IOP-Map-Marker-Icon.png",
+            "images": [
+                "https://i.postimg.cc/7YTwnLDZ/Bild-2025-01-19-125304820.png"
+            ],
+            "infoBadges": [
+                {
+                    "text": "Teleporter",
+                    "type": "teleporter",
+                    "color": "blue"
+                }
+            ],
+            "shortDescription": "Öffentlicher Teleporter",
+            "longDescription": "Am Grünen Obelisken befindet sich ein kleiner Tek Teleporter, der von jedem Spieler genutzt werden kann, der den kleinen Tek Teleporter freigeschaltet hat."
+        },
+        {
+            "id": "3",
+            "name": "Underground Biom",
+            "lat": 23.5,
+            "lon": 18.0,
+            "icon": "https://i.postimg.cc/X7rnR4WV/IOP-Map-Marker-Icon.png",
+            "images": [
+                "https://i.postimg.cc/bwc2jJRZ/Bild-2025-01-19-131536796.png"
+            ],
+            "infoBadges": [
+                {
+                    "text": "Teleporter",
+                    "type": "teleporter",
+                    "color": "blue"
+                }
+            ],
+            "shortDescription": "Öffentlicher Teleporter",
+            "longDescription": "Am Roten Obelisken befindet sich ein kleiner Tek Teleporter, der von jedem Spieler genutzt werden kann, der den kleinen Tek Teleporter freigeschaltet hat."
+        },
+        {
+            "id": "4",
+            "name": "Schneebiom",
+            "lat": 18.2,
+            "lon": 81.3,
+            "icon": "https://i.postimg.cc/X7rnR4WV/IOP-Map-Marker-Icon.png",
+            "images": [
+                "https://i.postimg.cc/NF3p1tv5/Bild-2025-01-19-131351367.png"
+            ],
+            "infoBadges": [
+                {
+                    "text": "Teleporter",
+                    "type": "teleporter",
+                    "color": "blue"
+                }
+            ],
+            "shortDescription": "Öffentlicher Teleporter",
+            "longDescription": "Am Blauen Obelisken befindet sich ein kleiner Tek Teleporter, der von jedem Spieler genutzt werden kann, der den kleinen Tek Teleporter freigeschaltet hat."
+        }
+    ]
+}
