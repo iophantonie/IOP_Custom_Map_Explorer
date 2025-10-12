@@ -1,1 +1,47 @@
-
+{
+    "infoBadges": {
+        "Kartenart": "Vanilla Karte",
+        "Bosse": [
+            "Rockwell"
+        ],
+        "Besonderheiten": [
+            "Komplett unterirdische Welt",
+            "Tödliche & verstrahlte Zonen",
+            "Keine Flugtiere & vertikales Gameplay",
+            "Einzigartige Kreaturen (Nameless, Reaper, Rock Drake)",
+            "Charge-Light Mechanik"
+        ],
+        "Öffentliche Farmen & Fallen": [
+            "Öffentliche Ölfarm"
+        ],
+        "Höhlen": [
+            "3 Artefakt Höhlen"
+        ],
+        "Artefakte": [
+            "Tiefe",
+            "Schatten",
+            "Pirschen"
+        ]
+    },
+    "specialInfo": {
+        "Kategorie": "S-Kreaturen:",
+        "Liste": [
+            "S- Trike",
+            "S- Shinehorn",
+            "S- Spino",
+            "S- Rockdrake",
+            "S- Megalosaurus",
+            "S- Deinonychus",
+            "S- Reaper Queen"
+        ],
+        "OnEachMap_Liste": [
+            "S-Queen Bee",
+            "S-Unicorn",
+            "S-Cat",
+            "S-Fantastic Tames"
+        ]
+    },
+    "generalInfo": [
+        "Aberration, die zweite Story-Erweiterung, wirft Spieler in eine beschädigte und fehlfunktionierende Arche und bietet eine der einzigartigsten Survival-Erfahrungen in ARK. Statt unter freiem Himmel kämpft man hier ums Überleben in einer riesigen, komplett unterirdischen und fremdartigen Welt. Üppige, biolumineszierende Pilzwälder weichen tückischen, verstrahlten Zonen, in denen ohne spezielle Schutzausrüstung der schnelle Tod wartet. Die größte Umstellung: Flugtiere sind nutzlos. Das Gameplay ist extrem vertikal und erfordert den Einsatz von Kletterhaken, Seilrutschen und neuen Kreaturen wie dem gleitenden Rock Drake. Die Dunkelheit ist ein ständiger Feind, bevölkert von den aggressiven „Namenlosen“, die nur durch das Licht spezieller „Charge-Light“-Tiere in Schach gehalten werden und die furchterregenden Reaper-Königinnen anlocken. Das Endziel ist die Konfrontation mit dem monströsen, mutierten Rockwell in einem der epischsten Bosskämpfe von ARK."
+    ]
+}
