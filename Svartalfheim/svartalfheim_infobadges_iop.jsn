@@ -2,14 +2,20 @@
     "infoBadges": {
         "Kartenart": "Offizielle Community Karte",
         "Bosse": [
-            "Thodes (Zyklop)",
-            "Natrix (Medusa)"
+            "Brutmutter",
+            "Megapithecus",
+            "Dragon",
+            "The Bane Of Thurduar (Balrog)",
+            "Overseer"
         ],
         "Besonderheiten": [
+            "No-Flyer-Map & vertikales Gameplay",
+            "Riesiges unterirdisches Höhlensystem",
+            "Nordisch-mythologisches Thema",
+            "Tek Cave",
+            "Aufstieg",
             "Einzigartige Custom-Kreaturen",
-            "Mehrere Kontinente und Riesige Welt",
-            "Thanatos (Worldboss)",
-            "Erymanthian & Kalydonios (Official Minibosse)"
+            "Eigene Bosse & Endgame-Progression"
         ],
         "Öffentliche Farmen & Fallen": [
             "Keine"
@@ -18,12 +24,16 @@
             "6 Artefakt Höhlen"
         ],
         "Artefakte": [
-            "Jäger",
-            "Gewaltigen",
-            "Schlauen",
+            "Rudel",
             "Brutalen",
+            "Jäger",
+            "Schlauen",
+            "Stärke",
+            "List",
+            "Immunen",
+            "Himmelsherr",
             "Fresser",
-            "Rudel"
+            "Gewaltigen"
         ]
     },
     "specialInfo": {
@@ -45,6 +55,6 @@
         ]
     },
     "generalInfo": [
-        "Astraeos ist eine gewaltige, von der griechischen Mythologie inspirierte Custom Map, die Spieler in eine Welt voller majestätischer Ruinen, epischer Landschaften und mystischer Kreaturen entführt. Als offizieller Partner-DLC ist die Karte auf eine langfristige Entwicklung ausgelegt und wird stetig erweitert. Anstelle von futuristischer Technologie stehen hier klassische Architektur, sagenumwobene Orte und Fabelwesen im Vordergrund. Spieler können neue Biome erkunden, die von idyllischen Küsten bis zu gefährlichen, unerforschten Gebieten reichen. Das Gameplay konzentriert sich auf die Entdeckung von Geheimnissen, das Zähmen einzigartiger Kreaturen wie Minotauren oder Zyklopen und das Bestehen von Herausforderungen, die der griechischen Sagenwelt entsprungen sind. Astraeos ist ideal für alle, die eine frische, fantastische und visuell beeindruckende ARK-Erfahrung suchen, die sich von den offiziellen Karten abhebt."
+        "Svartalfheim ist eine preisgekrönte, von der nordischen Mythologie inspirierte Custom Map für Ark: Survival Ascended. Sie entführt Spieler in das sagenumwobene Reich der Zwerge – eine Welt voller gewaltiger, nebelverhangener Berge, tiefer Täler und eines riesigen, kunstvoll gestalteten unterirdischen Höhlensystems. An der Oberfläche wechseln sich leuchtende Herbstwälder mit üppigen, grünen Landschaften und schneebedeckten Gipfeln ab und schaffen atemberaubende Panoramen. Die größte Besonderheit: Svartalfheim ist eine No-Flyer-Map. Das zwingt Überlebende, die extreme Vertikalität der Karte mit Kletterhaken, Seilrutschen und Boden-Reittieren zu meistern. Die Erkundung wird dadurch intensiver und belohnender. Bevölkert von einzigartigen, mythologischen Kreaturen und übersät mit beeindruckenden Zwergen-Ruinen, bietet die Karte eine völlig eigenständige Progression mit neuen Ressourcen, seltenen Schätzen und herausfordernden Custom-Bossen. Svartalfheim ist perfekt für Entdecker und Spieler, die eine visuell umwerfende und spielerisch anspruchsvolle Erfahrung suchen, bei der jeder Winkel der Karte zu Fuß erobert werden muss."
     ]
 }
