@@ -99,6 +99,62 @@
             ],
             "shortDescription": "Öffentlicher Teleporter",
             "longDescription": "Am Blauen Obelisken befindet sich ein kleiner Tek Teleporter, der von jedem Spieler genutzt werden kann, der den kleinen Tek Teleporter freigeschaltet hat."
+        },
+        {
+            "id": "6",
+            "name": "Mines of Thurduar",
+            "lat": 78.9,
+            "lon": 8.9,
+            "icon": "https://i.postimg.cc/X7rnR4WV/IOP-Map-Marker-Icon.png",
+            "images": [
+                "https://i.postimg.cc/MTmJpG18/Bild-2024-08-03-130554359.png"
+            ],
+            "infoBadges": [
+            ],
+            "shortDescription": "Dungeon mit Endboss",
+            "longDescription": "Am Blauen Obelisken befindet sich ein kleiner Tek Teleporter, der von jedem Spieler genutzt werden kann, der den kleinen Tek Teleporter freigeschaltet hat."
+        },
+        {
+            "id": "7",
+            "name": "Dwarven Kingdom Durungahl",
+            "lat": 18.1,
+            "lon": 60.4,
+            "icon": "https://i.postimg.cc/X7rnR4WV/IOP-Map-Marker-Icon.png",
+            "images": [
+                "https://i.postimg.cc/KYVRDJWY/Bild-2024-08-03-130450722.png"
+            ],
+            "infoBadges": [
+            ],
+            "shortDescription": "Manifest & Schmieden",
+            "longDescription": "Am Blauen Obelisken befindet sich ein kleiner Tek Teleporter, der von jedem Spieler genutzt werden kann, der den kleinen Tek Teleporter freigeschaltet hat."
+        },
+        {
+            "id": "8",
+            "name": "Dwarven Insel-Dorf",
+            "lat": 90.0,
+            "lon": 90.0,
+            "icon": "https://i.postimg.cc/X7rnR4WV/IOP-Map-Marker-Icon.png",
+            "images": [
+                "https://i.postimg.cc/KYGfBvMN/Bild-2024-08-03-125659020.png"
+            ],
+            "infoBadges": [
+            ],
+            "shortDescription": "Dwarven Minigegner",
+            "longDescription": "Am Blauen Obelisken befindet sich ein kleiner Tek Teleporter, der von jedem Spieler genutzt werden kann, der den kleinen Tek Teleporter freigeschaltet hat."
+        },
+        {
+            "id": "9",
+            "name": "Dwarven Bergdorf",
+            "lat": 93.2,
+            "lon": 4.4,
+            "icon": "https://i.postimg.cc/X7rnR4WV/IOP-Map-Marker-Icon.png",
+            "images": [
+                "https://i.postimg.cc/cHgd1WXx/Bild-2024-08-03-130205507.png"
+            ],
+            "infoBadges": [
+            ],
+            "shortDescription": "Dwarven Minigegner",
+            "longDescription": "Am Blauen Obelisken befindet sich ein kleiner Tek Teleporter, der von jedem Spieler genutzt werden kann, der den kleinen Tek Teleporter freigeschaltet hat."
         }
     ]
 }
