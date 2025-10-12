@@ -1,1 +1,71 @@
-
+{
+    "publicSpots": [
+        {
+            "id": "1",
+            "name": "Öffentliche Harzfarm",
+            "lat": 26,
+            "lon": 49,
+            "icon": "https://i.postimg.cc/X7rnR4WV/IOP-Map-Marker-Icon.png",
+            "images": [
+                "https://i.postimg.cc/br9FW8GF/Bild-2024-09-15-114714323.png"
+            ],
+            "infoBadges": [
+                {
+                    "text": "Teleporter",
+                    "type": "teleporter",
+                    "color": "blue"
+                },
+                {
+                    "text": "Farm",
+                    "type": "Farm",
+                    "color": "orange"
+                }
+            ],
+            "shortDescription": "Öffentlicher Teleporter",
+            "longDescription": "Eine Öffentliche Harzfarm, bei der sich jeder Spieler an 8 Harzsammlern bedienen kann. Es befindet sich ebenfalls ein kleiner Tek Teleporter dort, der von jedem Spieler genutzt werden kann, der den kleinen Tek Teleporter freigeschaltet hat."
+        },
+        {
+            "id": "2",
+            "name": "Öffentliche Gasfarm",
+            "lat": 26,
+            "lon": 49,
+            "icon": "https://i.postimg.cc/X7rnR4WV/IOP-Map-Marker-Icon.png",
+            "images": [
+                "https://i.postimg.cc/Y2GzDQLK/Bild-2024-09-15-114928119.png"
+            ],
+            "infoBadges": [
+                {
+                    "text": "Teleporter",
+                    "type": "teleporter",
+                    "color": "blue"
+                },
+                {
+                    "text": "Farm",
+                    "type": "Farm",
+                    "color": "orange"
+                }
+            ],
+            "shortDescription": "Öffentlicher Teleporter",
+            "longDescription": "Eine Öffentliche Gasfarm, bei der sich jeder Spieler an 6 Gassammlern bedienen kann. Es befindet sich ebenfalls ein kleiner Tek Teleporter dort, der von jedem Spieler genutzt werden kann, der den kleinen Tek Teleporter freigeschaltet hat."
+        },
+        {
+            "id": "3",
+            "name": "Öffentliche Reaper Falle",
+            "lat": 61.3,
+            "lon": 72,
+            "icon": "https://i.postimg.cc/X7rnR4WV/IOP-Map-Marker-Icon.png",
+            "images": [
+                "https://i.postimg.cc/SNd9jPhn/Bild-2025-03-15-153702775.png"
+            ],
+            "infoBadges": [
+                {
+                    "text": "Falle",
+                    "type": "Falle",
+                    "color": "white"
+                }
+            ],
+            "shortDescription": "Öffentlicher Teleporter",
+            "longDescription": "Eine Öffentliche Reaper Falle, bei der jeder Spieler einen Reaper fangen und sich von Ihm schwängern lassen kann. Es befindet sich ein Touchpad mit dem Pin 1 1 1 1 im Haus, bei dem Zusätzlich ein Charge Injector ein und ausgeschaltet werden kann, um sich vor Nameless zu schützen."
+        }
+    ]
+}
