@@ -1,1 +1,53 @@
-
+{
+    "infoBadges": {
+        "Kartenart": "Vanilla Karte",
+        "Bosse": [
+            "Thodes (Zyklop)",
+            "Natrix (Medusa)",
+            "Thanatos (Worldboss)",
+            "Erymanthian & Kalydonios (Official Minibosse)"
+        ],
+        "Besonderheiten": [
+  "Einzigartige Custom-Kreaturen",
+  "Viel Wasser",
+  "Viele DLC Biome",
+  "Custom Extinction OSDs und Vains",
+  "Riesige, auf Erkundung ausgelegte Welt"
+        ],
+        "Öffentliche Farmen & Fallen": [
+            "Keine"
+        ],
+        "Höhlen": [
+            "6 Artefakt Höhlen"
+        ],
+        "Artefakte": [
+            "Jäger",
+            "Gewaltigen",
+            "Schlauen",
+            "Brutalen",
+            "Fresser",
+            "Rudel"
+        ]
+    },
+    "specialInfo": {
+        "Kategorie": "S-Kreaturen:",
+        "Liste": [
+"S- Mosasaurus",
+"S- Deinosuchus",
+"S- Basilosaurus",
+"S- Maeguanas",
+"+ Astraeos Mythological Cyclopen",
+"+ Astraeos Mythological Seepferdchen",
+"+ Astraeos Mythological Minotauren"
+        ],
+        "OnEachMap_Liste": [
+            "S-Queen Bee",
+            "S-Unicorn",
+            "S-Cat",
+            "S-Fantastic Tames"
+        ]
+    },
+    "generalInfo": [
+        "Astraeos ist eine riesige und ambitionierte Custom Map, die ARK in eine neue, galaktische Dimension hebt. Die Karte hebt sich durch ihr einzigartiges Konzept von drei getrennten, aber verbundenen Reichen ab, die Spieler bereisen können: die lebendige und vielfältige Hauptwelt Astraeos, die düstere und gefährliche Schattenwelt Nox und das himmlische Reich Aeterna mit seinen schwebenden Inseln. Der Fokus liegt auf Erkundung und dem Meistern der unterschiedlichen Umgebungen, wobei ein starker Science-Fiction-Einschlag den Ton angibt – so ist der Exo Mek von Beginn an ein treuer Begleiter. Spieler treffen auf eine Vielzahl von einzigartigen, von der Community erstellten Kreaturen und stellen sich einer völlig neuen Endgame-Progression mit herausfordernden Custom-Bossen. Astraeos ist perfekt für erfahrene ARK-Veteranen, die eine frische, auf Erkundung und High-Tech ausgerichtete Langzeiterfahrung suchen."
+    ]
+}
