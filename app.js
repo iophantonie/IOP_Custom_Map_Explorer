@@ -1304,103 +1304,105 @@ function populateResourceControls() {
 }
 
 function populateCaveSpotsSlider(filterArtifact = null) {
-    const slider = document.getElementById('cave-spots-slider');
-    const panel = document.getElementById('cave-spots-panel');
-    slider.innerHTML = '';
+    const slider = document.getElementById('cave-spots-slider');
+    const panel = document.getElementById('cave-spots-panel');
+    slider.innerHTML = '';
 
-    if (!allCaveSpotsData.caveSpots || allCaveSpotsData.caveSpots.length === 0) {
-        panel.style.display = 'none';
-        return;
-    }
-    panel.style.display = 'block';
-    
-    const filteredSpots = filterArtifact
-        ? allCaveSpotsData.caveSpots.filter(spot =>
-            spot.artifacts && spot.artifacts.some(artifact => artifact.name === filterArtifact)
-        )
-        : allCaveSpotsData.caveSpots;
+    if (!allCaveSpotsData.caveSpots || allCaveSpotsData.caveSpots.length === 0) {
+        panel.style.display = 'none';
+        return;
+    }
+    panel.style.display = 'block';
+    
+    const filteredSpots = filterArtifact
+        ? allCaveSpotsData.caveSpots.filter(spot =>
+            spot.artifacts && spot.artifacts.some(artifact => artifact.name === filterArtifact)
+        )
+        : allCaveSpotsData.caveSpots;
 
 
-    filteredSpots.forEach(spot => {
-        const card = document.createElement('div');
-        card.id = `cave-spot-card-${spot.id}`;
-        card.className = 'cave-spot-card snap-start flex-shrink-0 w-80 bg-[#222222] rounded-lg p-4 flex flex-col items-center text-center cursor-pointer border border-gray-700 hover:border-amber-500 transition-all duration-300';
-        
-        let difficultyBadgeHtml = '';
-        if (spot.difficulty) {
-            const diffConfig = difficultyConfig[spot.difficulty] || { borderColor: '#a0aec0', bgColor: 'rgba(160, 174, 192, 0.2)', textColor: '#e2e8f0' };
-            difficultyBadgeHtml = `
-                <div class="absolute top-1.5 left-1.5 text-xs font-bold p-1 px-2 rounded-md" style="border: 1px solid ${diffConfig.borderColor}; background-color: ${diffConfig.bgColor}; color: ${diffConfig.textColor};">
-                    ${spot.difficulty}
-                </div>`;
-        }
+    filteredSpots.forEach(spot => {
+        const card = document.createElement('div');
+        card.id = `cave-spot-card-${spot.id}`;
+        // WICHTIG: Wir fügen hier die Klasse "cave-spot-card" hinzu, um sie gezielt stylen zu können
+        card.className = 'cave-spot-card snap-start flex-shrink-0 w-80 bg-[#222222] rounded-lg p-4 flex flex-col items-center text-center cursor-pointer border border-gray-700 hover:border-amber-500 transition-all duration-300';
+        
+        let difficultyBadgeHtml = '';
+        if (spot.difficulty) {
+            const diffConfig = difficultyConfig[spot.difficulty] || { borderColor: '#a0aec0', bgColor: 'rgba(160, 174, 192, 0.2)', textColor: '#e2e8f0' };
+            difficultyBadgeHtml = `
+                <div class="absolute top-1.5 left-1.5 text-xs font-bold p-1 px-2 rounded-md" style="border: 1px solid ${diffConfig.borderColor}; background-color: ${diffConfig.bgColor}; color: ${diffConfig.textColor};">
+                    ${spot.difficulty}
+                </div>`;
+        }
 
-        let artifactHtml = '';
-        if (spot.artifacts && spot.artifacts.length > 0) {
+        let artifactHtml = '';
+        if (spot.artifacts && spot.artifacts.length > 0) {
             spot.artifacts.forEach(artifact => {
                 const artifactName = artifact.name || 'Unbekannt';
                 if (artifactName.trim() !== '') {
-                    // HIER fügen wir die neue CSS-Klasse "artifact-box" hinzu
+                    // Jede Box bekommt eine Klasse für das Styling
                     artifactHtml += `<div class="artifact-box">${artifactName}</div>`;
                 }
             });
-        }
+        }
 
-        let artifactIconsHtml = '';
-        if(spot.artifacts) {
-            spot.artifacts.forEach(artifact => {
-                const iconUrl = artifact.iconUrl;
-                if(iconUrl) {
-                    artifactIconsHtml += `<img src="${iconUrl}" class="w-16 h-16 object-contain">`;
-                }
-            });
-        }
+        let artifactIconsHtml = '';
+        if(spot.artifacts) {
+            spot.artifacts.forEach(artifact => {
+                const iconUrl = artifact.iconUrl;
+                if(iconUrl) {
+                    // Die Icons bekommen eine Klasse für das Styling
+                    artifactIconsHtml += `<img src="${iconUrl}" class="artifact-icon-on-image">`;
+                }
+            });
+        }
 
-        card.innerHTML = `
-            <div class="relative w-full h-72 mb-3 overflow-hidden rounded-md">
-                <img src="${(spot.images && spot.images[0]) || 'https://placehold.co/200x200/111/FFF?text=Icon'}" alt="${spot.name}" class="w-full h-full object-cover">
-                ${difficultyBadgeHtml}
-                <button class="info-button absolute top-1.5 right-1.5 bg-gray-900/60 text-white p-1 rounded-full hover:bg-amber-500 transition-colors focus:outline-none" title="Weitere Infos">
-                    <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" viewBox="0 0 20 20" fill="currentColor"><path fill-rule="evenodd" d="M18 10a8 8 0 11-16 0 8 8 0 0116 0zm-7-4a1 1 0 11-2 0 1 1 0 012 0zM9 9a1 1 0 000 2v3a1 1 0 001 1h1a1 1 0 100-2v-3a1 1 0 00-1-1H9z" clip-rule="evenodd" /></svg>
-                </button>
-                <div class="absolute bottom-1.5 right-1.5 flex space-x-2">
-                    ${artifactIconsHtml}
-                </div>
-            </div>
-            <div class="flex flex-col items-center justify-center w-full">
-                <h4 class="font-bold text-amber-400 text-xl">${spot.name}</h4>
-                <hr class="w-full border-gray-600 my-1">
-                                <div class="artifacts-container">
+        card.innerHTML = `
+            <div class="relative w-full h-72 mb-3 overflow-hidden rounded-md">
+                <img src="${(spot.images && spot.images[0]) || 'https://placehold.co/200x200/111/FFF?text=Icon'}" alt="${spot.name}" class="w-full h-full object-cover">
+                ${difficultyBadgeHtml}
+                <button class="info-button absolute top-1.5 right-1.5 bg-gray-900/60 text-white p-1 rounded-full hover:bg-amber-500 transition-colors focus:outline-none" title="Weitere Infos">
+                    <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" viewBox="0 0 20 20" fill="currentColor"><path fill-rule="evenodd" d="M18 10a8 8 0 11-16 0 8 8 0 0116 0zm-7-4a1 1 0 11-2 0 1 1 0 012 0zM9 9a1 1 0 000 2v3a1 1 0 001 1h1a1 1 0 100-2v-3a1 1 0 00-1-1H9z" clip-rule="evenodd" /></svg>
+                </button>
+                <div class="artifact-icon-container">
+                    ${artifactIconsHtml}
+                </div>
+            </div>
+            <div class="flex flex-col items-center justify-center w-full">
+                <h4 class="font-bold text-amber-400 text-xl">${spot.name}</h4>
+                <hr class="w-full border-gray-600 my-1">
+                <div class="artifacts-container">
                     ${artifactHtml}
                 </div>
-                ${spot.recommendedlevel ? `<p class="text-sm text-gray-400 mt-2">Empfohlenes Level: ${spot.recommendedlevel}</p>` : ''}
-                <p class="text-sm text-gray-300 mt-2">Lat: ${spot.lat.toFixed(2).replace('.',',')} / Lon: ${spot.lon.toFixed(2).replace('.',',')}</p>
-            </div>
-        `;
+                ${spot.recommendedlevel ? `<p class="text-sm text-gray-400 mt-2">Empfohlenes Level: ${spot.recommendedlevel}</p>` : ''}
+                <p class="text-sm text-gray-300 mt-2">Lat: ${spot.lat.toFixed(2).replace('.',',')} / Lon: ${spot.lon.toFixed(2).replace('.',',')}</p>
+            </div>
+        `;
 
-        card.addEventListener('click', () => {
-            if (highlightedCaveSpotId === spot.id) {
-                clearHighlights();
-                scale = 1;
-                panOffset = { x: 0, y: 0 };
-                redrawAll();
-            } else {
-                if (!caveSpotsToggle.checked) {
-                    caveSpotsToggle.checked = true;
-                    caveSpotsToggleLabel.textContent = 'Anzeigen';
-                }
-                highlightCaveSpotCard(spot.id);
-                highlightCaveSpotMarker(spot.id);
-            }
-        });
-        
-        const infoButton = card.querySelector('.info-button');
-        infoButton.addEventListener('click', (e) => {
-            e.stopPropagation();
-            openCaveSpotModal(spot.id);
-        });
-        slider.appendChild(card);
-    });
+        card.addEventListener('click', () => {
+            if (highlightedCaveSpotId === spot.id) {
+                clearHighlights();
+                scale = 1;
+                panOffset = { x: 0, y: 0 };
+                redrawAll();
+            } else {
+                if (!caveSpotsToggle.checked) {
+                    caveSpotsToggle.checked = true;
+                    caveSpotsToggleLabel.textContent = 'Anzeigen';
+                }
+                highlightCaveSpotCard(spot.id);
+                highlightCaveSpotMarker(spot.id);
+            }
+        });
+        
+        const infoButton = card.querySelector('.info-button');
+        infoButton.addEventListener('click', (e) => {
+            e.stopPropagation();
+            openCaveSpotModal(spot.id);
+        });
+        slider.appendChild(card);
+    });
 }
 
 function populateArtifactFilters() {
