@@ -265,6 +265,19 @@
             text-shadow: 0 1px 3px rgba(0,0,0,0.7);
         }
 <style>
+        /* --- Vergrößerung für die Popups --- */
+        
+       /* Erhöht die maximale Breite der beiden Popups auf 90% der Bildschirmbreite */
+        #spot-modal .max-w-6xl,
+        #cave-spot-modal .max-w-6xl {
+        max-width: 90vw; /* vw = viewport width */
+        }
+
+      /* Setzt die Höhe des Bild-Containers auf 75% der Bildschirmhöhe */
+      .modal-image-slider {
+        height: 75vh; /* vh = viewport height */
+        }
+        
       /* Container für die Artefakt-NAMEN (unter dem Bild) */
       .cave-spot-card .artifacts-container {
         display: flex;
