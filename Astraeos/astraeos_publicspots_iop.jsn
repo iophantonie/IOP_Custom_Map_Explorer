@@ -75,6 +75,25 @@
             ],
             "shortDescription": "Öffentlicher Teleporter",
             "longDescription": "Eine Öffentliche Harzfarm, bei der sich jeder Spieler an 8 Harzsammlern bedienen kann. Es befindet sich ebenfalls ein kleiner Tek Teleporter dort, der von jedem Spieler genutzt werden kann, der den kleinen Tek Teleporter freigeschaltet hat."
+        },
+        {
+            "id": "5",
+            "name": "Öffentliche Wyvern Falle",
+            "lat": 15.5,
+            "lon": 48.2,
+            "icon": "https://i.postimg.cc/X7rnR4WV/IOP-Map-Marker-Icon.png",
+            "images": [
+                "https://i.postimg.cc/KYJcPV4h/Bild-2025-04-18-144820353.png"
+            ],
+            "infoBadges": [
+                {
+                    "text": "Falle",
+                    "type": "Falle",
+                    "color": "white"
+                }
+            ],
+            "shortDescription": "Öffentliche Falle",
+            "longDescription": "Eine Öffentliche Reaper Falle, bei der jeder Spieler einen Reaper fangen und sich von Ihm schwängern lassen kann. Es befindet sich ein Touchpad mit dem Pin 1 1 1 1 im Haus, bei dem Zusätzlich ein Charge Injector ein und ausgeschaltet werden kann, um sich vor Nameless zu schützen."
         }
     ]
 }
