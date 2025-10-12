@@ -1,1 +1,87 @@
+{
+    "publicSpots": [
+        {
+            "id": "1",
+            "name": "Öffentliche Ölfarm",
+            "lat": 59.5,
+            "lon": 77.0,
+            "icon": "https://i.postimg.cc/X7rnR4WV/IOP-Map-Marker-Icon.png",
+            "images": [
+                "https://i.postimg.cc/JntyW8hQ/Bild-2024-05-16-143030551.png"
+            ],
+            "infoBadges": [
+                {
+                    "text": "Teleporter",
+                    "type": "teleporter",
+                    "color": "blue"
+                },
+                {
+                    "text": "Farm",
+                    "type": "Farm",
+                    "color": "orange"
+                }
+            ],
+            "shortDescription": "Öffentlicher Teleporter",
+            "longDescription": "Eine Öffentliche Ölfarm, bei der sich jeder Spieler an 2 Ölpumpen bedienen kann. Es befindet sich ebenfalls ein kleiner Tek Teleporter dort, der von jedem Spieler genutzt werden kann, der den kleinen Tek Teleporter freigeschaltet hat."
+        },
+        {
+            "id": "2",
+            "name": "Grüner Obelisk",
+            "lat": 50.5,
+            "lon": 75.0,
+            "icon": "https://i.postimg.cc/X7rnR4WV/IOP-Map-Marker-Icon.png",
+            "images": [
+                "https://i.postimg.cc/3RDKBxRz/Bild-2024-05-16-142927878.png"
+            ],
+            "infoBadges": [
+                {
+                    "text": "Teleporter",
+                    "type": "teleporter",
+                    "color": "blue"
+                }
+            ],
+            "shortDescription": "Öffentlicher Teleporter",
+            "longDescription": "Am Grünen Obelisken befindet sich ein kleiner Tek Teleporter, der von jedem Spieler genutzt werden kann, der den kleinen Tek Teleporter freigeschaltet hat."
+        },
+        {
+            "id": "3",
+            "name": "Roter Obelisk",
+            "lat": 72.0,
+            "lon": 39.5,
+            "icon": "https://i.postimg.cc/X7rnR4WV/IOP-Map-Marker-Icon.png",
+            "images": [
+                "https://i.postimg.cc/SsDKTxbr/Bild-2024-05-16-143219050.png"
+            ],
+            "infoBadges": [
+                {
+                    "text": "Teleporter",
+                    "type": "teleporter",
+                    "color": "blue"
+                }
+            ],
+            "shortDescription": "Öffentlicher Teleporter",
+            "longDescription": "Am Roten Obelisken befindet sich ein kleiner Tek Teleporter, der von jedem Spieler genutzt werden kann, der den kleinen Tek Teleporter freigeschaltet hat."
+        },
+        {
+            "id": "4",
+            "name": "Blauer Obelisk",
+            "lat": 17.0,
+            "lon": 34.0,
+            "icon": "https://i.postimg.cc/X7rnR4WV/IOP-Map-Marker-Icon.png",
+            "images": [
+                "https://i.postimg.cc/MGQXp5SC/Bild-2024-05-16-142802082.png"
+            ],
+            "infoBadges": [
+                {
+                    "text": "Teleporter",
+                    "type": "teleporter",
+                    "color": "blue"
+                }
+            ],
+            "shortDescription": "Öffentlicher Teleporter",
+            "longDescription": "Am Blauen Obelisken befindet sich ein kleiner Tek Teleporter, der von jedem Spieler genutzt werden kann, der den kleinen Tek Teleporter freigeschaltet hat."
+        }
+    ]
+}
+
 
