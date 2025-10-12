@@ -1,1 +1,514 @@
-
+{
+    "caveSpots": [
+        {
+            "id": "1",
+            "name": "Lava Cave",
+            "lat": 74,
+            "lon": 92,
+            "icon": "https://i.postimg.cc/NFr0MYPP/Cave-Entrance-Icon-1.webp",
+            "difficulty": "Mittel",
+            "recommendedlevel": "45",
+            "images": [
+                "https://i.postimg.cc/Fsfddxfy/Bild-2024-06-30-171335914.png",
+                "https://i.postimg.cc/Fsfddxfy/Bild-2024-06-30-171335914.png"
+            ],
+            "description": "Diese Höhle ist relativ einfach zu navigieren und beherbergt hauptsächlich schwächere Kreaturen. Sie ist ein guter Ausgangspunkt für neue Abenteurer.",
+            "specialinfos": [
+                "In dieser Höhle befindet sich im Eingangsbereich meist ein Dung-Beetle, der ohne Probleme gezähmt werden kann. Ab und an, muss man einen Arthropluera töten, der ebenfalls im Höhlen Start sitzt. Ein Ziehmlich guter Bonus, um schnell an einen Mistkäfer zu kommen, um eine Dünger Produktion zu starten."
+            ],
+            "equipment": [
+                "Fackel",
+                "Spitzhacke"
+            ],
+            "tames": [
+                "Raptor",
+                "Baryonyx"
+            ],
+            "strategy": [
+                "Diesen Dungen, schließt man am besten gar nicht ab, da mir die informationen für unsere Explorer Seite noch fehlen :D."
+            ],
+            "creatures": [
+                "Araneo",
+                "Onyc",
+                "Piranha"
+            ],
+            "resources": [
+                "Kristall",
+                "Metall",
+                "Obsidian"
+            ],
+            "artifacts": [
+                {
+                    "name": "Artefakt des Gewaltigen",
+                    "iconUrl": "https://github.com/iophantonie/iophantonie-IOP_Custom_Map_Explorer.github.io/blob/main/Images/artifacts/Artifact_of_the_Massive.png?raw=true"
+                }
+            ],
+            "blueprints": [
+                { "name": "Pike", "quality": "Lila" },
+                { "name": "Crossbow", "quality": "Blau" },
+                { "name": "Cloth Boots", "quality": "Grün" },
+                { "name": "Riot Shield", "quality": "Gelb" },
+                { "name": "Simple Pistol", "quality": "Hellblau" }
+              ]
+        },
+{
+            "id": "2",
+            "name": "Lower South Cave",
+            "lat": 85,
+            "lon": 54,
+            "icon": "https://i.postimg.cc/NFr0MYPP/Cave-Entrance-Icon-1.webp",
+            "difficulty": "Mittel",
+            "recommendedlevel": "30",
+            "images": [
+                "https://i.postimg.cc/1tWM08Mp/Bild-2024-06-30-171919385.png",
+                "https://i.postimg.cc/1tWM08Mp/Bild-2024-06-30-171919385.png"
+            ],
+            "description": "Diese Höhle ist relativ einfach zu navigieren und beherbergt hauptsächlich schwächere Kreaturen. Sie ist ein guter Ausgangspunkt für neue Abenteurer.",
+            "specialinfos": [
+                "In dieser Höhle befindet sich im Eingangsbereich meist ein Dung-Beetle, der ohne Probleme gezähmt werden kann. Ab und an, muss man einen Arthropluera töten, der ebenfalls im Höhlen Start sitzt. Ein Ziehmlich guter Bonus, um schnell an einen Mistkäfer zu kommen, um eine Dünger Produktion zu starten."
+            ],
+            "equipment": [
+                "Fackel",
+                "Spitzhacke"
+            ],
+            "tames": [
+                "Raptor",
+                "Baryonyx"
+            ],
+            "strategy": [
+                "Diesen Dungen, schließt man am besten gar nicht ab, da mir die informationen für unsere Explorer Seite noch fehlen :D."
+            ],
+            "creatures": [
+                "Araneo",
+                "Onyc",
+                "Piranha"
+            ],
+            "resources": [
+                "Kristall",
+                "Metall",
+                "Obsidian"
+            ],
+            "artifacts": [
+                {
+                    "name": "Artefakt des Jägers",
+                    "iconUrl": "https://github.com/iophantonie/iophantonie-IOP_Custom_Map_Explorer.github.io/blob/main/Images/artifacts/Artifact_of_the_Hunter.png?raw=true"
+                }
+            ],
+            "blueprints": [
+                { "name": "Pike", "quality": "Lila" },
+                { "name": "Crossbow", "quality": "Blau" },
+                { "name": "Cloth Boots", "quality": "Grün" },
+                { "name": "Riot Shield", "quality": "Gelb" },
+                { "name": "Simple Pistol", "quality": "Hellblau" }
+              ]
+        },
+{
+            "id": "3",
+            "name": "Swamp Cave",
+            "lat": 65,
+            "lon": 35,
+            "icon": "https://i.postimg.cc/NFr0MYPP/Cave-Entrance-Icon-1.webp",
+            "difficulty": "Schwer",
+            "recommendedlevel": "70",
+            "images": [
+                "https://i.postimg.cc/cHG4DrS6/Bild-2024-06-30-175803492.png",
+                "https://i.postimg.cc/cHG4DrS6/Bild-2024-06-30-175803492.png"
+            ],
+            "description": "Diese Höhle ist relativ einfach zu navigieren und beherbergt hauptsächlich schwächere Kreaturen. Sie ist ein guter Ausgangspunkt für neue Abenteurer.",
+            "specialinfos": [
+                "In dieser Höhle befindet sich im Eingangsbereich meist ein Dung-Beetle, der ohne Probleme gezähmt werden kann. Ab und an, muss man einen Arthropluera töten, der ebenfalls im Höhlen Start sitzt. Ein Ziehmlich guter Bonus, um schnell an einen Mistkäfer zu kommen, um eine Dünger Produktion zu starten."
+            ],
+            "equipment": [
+                "Fackel",
+                "Spitzhacke"
+            ],
+            "tames": [
+                "Raptor",
+                "Baryonyx"
+            ],
+            "strategy": [
+                "Diesen Dungen, schließt man am besten gar nicht ab, da mir die informationen für unsere Explorer Seite noch fehlen :D."
+            ],
+            "creatures": [
+                "Araneo",
+                "Onyc",
+                "Piranha"
+            ],
+            "resources": [
+                "Kristall",
+                "Metall",
+                "Obsidian"
+            ],
+            "artifacts": [
+                {
+                    "name": "Artefakt des Immunen",
+                    "iconUrl": "https://github.com/iophantonie/iophantonie-IOP_Custom_Map_Explorer.github.io/blob/main/Images/artifacts/Artifact_of_the_Immune.png?raw=true"
+                }
+            ],
+            "blueprints": [
+                { "name": "Pike", "quality": "Lila" },
+                { "name": "Crossbow", "quality": "Blau" },
+                { "name": "Cloth Boots", "quality": "Grün" },
+                { "name": "Riot Shield", "quality": "Gelb" },
+                { "name": "Simple Pistol", "quality": "Hellblau" }
+              ]
+        },
+{
+            "id": "4",
+            "name": "Snow Cave",
+            "lat": 26,
+            "lon": 29,
+            "icon": "https://i.postimg.cc/NFr0MYPP/Cave-Entrance-Icon-1.webp",
+            "difficulty": "Leicht",
+            "recommendedlevel": "30",
+            "images": [
+                "https://i.postimg.cc/MKQKV7RV/Bild-2024-06-30-181533870.png",
+                "https://i.postimg.cc/MKQKV7RV/Bild-2024-06-30-181533870.png"
+            ],
+            "description": "Diese Höhle ist relativ einfach zu navigieren und beherbergt hauptsächlich schwächere Kreaturen. Sie ist ein guter Ausgangspunkt für neue Abenteurer.",
+            "specialinfos": [
+                "In dieser Höhle befindet sich im Eingangsbereich meist ein Dung-Beetle, der ohne Probleme gezähmt werden kann. Ab und an, muss man einen Arthropluera töten, der ebenfalls im Höhlen Start sitzt. Ein Ziehmlich guter Bonus, um schnell an einen Mistkäfer zu kommen, um eine Dünger Produktion zu starten."
+            ],
+            "equipment": [
+                "Fackel",
+                "Spitzhacke"
+            ],
+            "tames": [
+                "Raptor",
+                "Baryonyx"
+            ],
+            "strategy": [
+                "Diesen Dungen, schließt man am besten gar nicht ab, da mir die informationen für unsere Explorer Seite noch fehlen :D."
+            ],
+            "creatures": [
+                "Araneo",
+                "Onyc",
+                "Piranha"
+            ],
+            "resources": [
+                "Kristall",
+                "Metall",
+                "Obsidian"
+            ],
+            "artifacts": [
+                {
+                    "name": "Artefakt der Stärke",
+                    "iconUrl": "https://github.com/iophantonie/iophantonie-IOP_Custom_Map_Explorer.github.io/blob/main/Images/artifacts/Artifact_of_the_Strong.png?raw=true"
+                }
+            ],
+            "blueprints": [
+                { "name": "Pike", "quality": "Lila" },
+                { "name": "Crossbow", "quality": "Blau" },
+                { "name": "Cloth Boots", "quality": "Grün" },
+                { "name": "Riot Shield", "quality": "Gelb" },
+                { "name": "Simple Pistol", "quality": "Hellblau" }
+              ]
+        },
+{
+            "id": "5",
+            "name": "North West Cave",
+            "lat": 14,
+            "lon": 14,
+            "icon": "https://i.postimg.cc/NFr0MYPP/Cave-Entrance-Icon-1.webp",
+            "difficulty": "Leicht",
+            "recommendedlevel": "30",
+            "images": [
+                "https://i.postimg.cc/zfCjdz2p/Bild-2024-06-30-190654637.png",
+                "https://i.postimg.cc/zfCjdz2p/Bild-2024-06-30-190654637.png"
+            ],
+            "description": "Diese Höhle ist relativ einfach zu navigieren und beherbergt hauptsächlich schwächere Kreaturen. Sie ist ein guter Ausgangspunkt für neue Abenteurer.",
+            "specialinfos": [
+                "In dieser Höhle befindet sich im Eingangsbereich meist ein Dung-Beetle, der ohne Probleme gezähmt werden kann. Ab und an, muss man einen Arthropluera töten, der ebenfalls im Höhlen Start sitzt. Ein Ziehmlich guter Bonus, um schnell an einen Mistkäfer zu kommen, um eine Dünger Produktion zu starten."
+            ],
+            "equipment": [
+                "Fackel",
+                "Spitzhacke"
+            ],
+            "tames": [
+                "Raptor",
+                "Baryonyx"
+            ],
+            "strategy": [
+                "Diesen Dungen, schließt man am besten gar nicht ab, da mir die informationen für unsere Explorer Seite noch fehlen :D."
+            ],
+            "creatures": [
+                "Araneo",
+                "Onyc",
+                "Piranha"
+            ],
+            "resources": [
+                "Kristall",
+                "Metall",
+                "Obsidian"
+            ],
+            "artifacts": [
+                {
+                    "name": "Artefakt des Himmelsherren",
+                    "iconUrl": "https://github.com/iophantonie/iophantonie-IOP_Custom_Map_Explorer.github.io/blob/main/Images/artifacts/Artifact_of_the_Skylord.png?raw=true"
+                }
+            ],
+            "blueprints": [
+                { "name": "Pike", "quality": "Lila" },
+                { "name": "Crossbow", "quality": "Blau" },
+                { "name": "Cloth Boots", "quality": "Grün" },
+                { "name": "Riot Shield", "quality": "Gelb" },
+                { "name": "Simple Pistol", "quality": "Hellblau" }
+              ]
+        },
+{
+            "id": "6",
+            "name": "North East Cave",
+            "lat": 9,
+            "lon": 91,
+            "icon": "https://i.postimg.cc/NFr0MYPP/Cave-Entrance-Icon-1.webp",
+            "difficulty": "Leicht",
+            "recommendedlevel": "30",
+            "images": [
+                "https://i.postimg.cc/SQnHQ8nM/Bild-2024-06-30-185632249.png",
+                "https://i.postimg.cc/SQnHQ8nM/Bild-2024-06-30-185632249.png"
+            ],
+            "description": "Diese Höhle ist relativ einfach zu navigieren und beherbergt hauptsächlich schwächere Kreaturen. Sie ist ein guter Ausgangspunkt für neue Abenteurer.",
+            "specialinfos": [
+                "In dieser Höhle befindet sich im Eingangsbereich meist ein Dung-Beetle, der ohne Probleme gezähmt werden kann. Ab und an, muss man einen Arthropluera töten, der ebenfalls im Höhlen Start sitzt. Ein Ziehmlich guter Bonus, um schnell an einen Mistkäfer zu kommen, um eine Dünger Produktion zu starten."
+            ],
+            "equipment": [
+                "Fackel",
+                "Spitzhacke"
+            ],
+            "tames": [
+                "Raptor",
+                "Baryonyx"
+            ],
+            "strategy": [
+                "Diesen Dungen, schließt man am besten gar nicht ab, da mir die informationen für unsere Explorer Seite noch fehlen :D."
+            ],
+            "creatures": [
+                "Araneo",
+                "Onyc",
+                "Piranha"
+            ],
+            "resources": [
+                "Kristall",
+                "Metall",
+                "Obsidian"
+            ],
+            "artifacts": [
+                {
+                    "name": "Artefakt des Fressers",
+                    "iconUrl": "https://github.com/iophantonie/iophantonie-IOP_Custom_Map_Explorer.github.io/blob/main/Images/artifacts/Artifact_of_the_Devourer.png?raw=true"
+                }
+            ],
+            "blueprints": [
+                { "name": "Pike", "quality": "Lila" },
+                { "name": "Crossbow", "quality": "Blau" },
+                { "name": "Cloth Boots", "quality": "Grün" },
+                { "name": "Riot Shield", "quality": "Gelb" },
+                { "name": "Simple Pistol", "quality": "Hellblau" }
+              ]
+        },
+{
+            "id": "7",
+            "name": " Upper South Cave",
+            "lat": 80.2,
+            "lon": 53.5,
+            "icon": "https://i.postimg.cc/NFr0MYPP/Cave-Entrance-Icon-1.webp",
+            "difficulty": "Leicht",
+            "recommendedlevel": "30",
+            "images": [
+                "https://i.postimg.cc/brjVqq3F/Bild-2024-06-30-193806399.png",
+                "https://i.postimg.cc/brjVqq3F/Bild-2024-06-30-193806399.png"
+            ],
+            "description": "Diese Höhle ist relativ einfach zu navigieren und beherbergt hauptsächlich schwächere Kreaturen. Sie ist ein guter Ausgangspunkt für neue Abenteurer.",
+            "specialinfos": [
+                "In dieser Höhle befindet sich im Eingangsbereich meist ein Dung-Beetle, der ohne Probleme gezähmt werden kann. Ab und an, muss man einen Arthropluera töten, der ebenfalls im Höhlen Start sitzt. Ein Ziehmlich guter Bonus, um schnell an einen Mistkäfer zu kommen, um eine Dünger Produktion zu starten."
+            ],
+            "equipment": [
+                "Fackel",
+                "Spitzhacke"
+            ],
+            "tames": [
+                "Raptor",
+                "Baryonyx"
+            ],
+            "strategy": [
+                "Diesen Dungen, schließt man am besten gar nicht ab, da mir die informationen für unsere Explorer Seite noch fehlen :D."
+            ],
+            "creatures": [
+                "Araneo",
+                "Onyc",
+                "Piranha"
+            ],
+            "resources": [
+                "Kristall",
+                "Metall",
+                "Obsidian"
+            ],
+            "artifacts": [
+                {
+                    "name": "Artefakt des Rudels",
+                    "iconUrl": "https://github.com/iophantonie/iophantonie-IOP_Custom_Map_Explorer.github.io/blob/main/Images/artifacts/Artifact_of_the_Pack.png?raw=true"
+                }
+            ],
+            "blueprints": [
+                { "name": "Pike", "quality": "Lila" },
+                { "name": "Crossbow", "quality": "Blau" },
+                { "name": "Cloth Boots", "quality": "Grün" },
+                { "name": "Riot Shield", "quality": "Gelb" },
+                { "name": "Simple Pistol", "quality": "Hellblau" }
+              ]
+        },
+{
+            "id": "8",
+            "name": "The Caverns of lost Hope",
+            "lat": 45,
+            "lon": 98,
+            "icon": "https://i.postimg.cc/NFr0MYPP/Cave-Entrance-Icon-1.webp",
+            "difficulty": "Leicht",
+            "recommendedlevel": "30",
+            "images": [
+                "https://i.postimg.cc/hv9qbSC9/Bild-2024-06-30-194923321.png",
+                "https://i.postimg.cc/hv9qbSC9/Bild-2024-06-30-194923321.png"
+            ],
+            "description": "Diese Höhle ist relativ einfach zu navigieren und beherbergt hauptsächlich schwächere Kreaturen. Sie ist ein guter Ausgangspunkt für neue Abenteurer.",
+            "specialinfos": [
+                "In dieser Höhle befindet sich im Eingangsbereich meist ein Dung-Beetle, der ohne Probleme gezähmt werden kann. Ab und an, muss man einen Arthropluera töten, der ebenfalls im Höhlen Start sitzt. Ein Ziehmlich guter Bonus, um schnell an einen Mistkäfer zu kommen, um eine Dünger Produktion zu starten."
+            ],
+            "equipment": [
+                "Fackel",
+                "Spitzhacke"
+            ],
+            "tames": [
+                "Raptor",
+                "Baryonyx"
+            ],
+            "strategy": [
+                "Diesen Dungen, schließt man am besten gar nicht ab, da mir die informationen für unsere Explorer Seite noch fehlen :D."
+            ],
+            "creatures": [
+                "Araneo",
+                "Onyc",
+                "Piranha"
+            ],
+            "resources": [
+                "Kristall",
+                "Metall",
+                "Obsidian"
+            ],
+            "artifacts": [
+                {
+                    "name": "Artefakt der List",
+                    "iconUrl": "https://github.com/iophantonie/iophantonie-IOP_Custom_Map_Explorer.github.io/blob/main/Images/artifacts/Artifact_of_the_Cunning.png?raw=true"
+                }
+            ],
+            "blueprints": [
+                { "name": "Pike", "quality": "Lila" },
+                { "name": "Crossbow", "quality": "Blau" },
+                { "name": "Cloth Boots", "quality": "Grün" },
+                { "name": "Riot Shield", "quality": "Gelb" },
+                { "name": "Simple Pistol", "quality": "Hellblau" }
+              ]
+        },
+{
+            "id": "9",
+            "name": "The caverns of lost Faith",
+            "lat": 53,
+            "lon": 3,
+            "icon": "https://i.postimg.cc/NFr0MYPP/Cave-Entrance-Icon-1.webp",
+            "difficulty": "Leicht",
+            "recommendedlevel": "30",
+            "images": [
+                "https://i.postimg.cc/4yrQZGZF/Bild-2024-06-30-195311581.png",
+                "https://i.postimg.cc/4yrQZGZF/Bild-2024-06-30-195311581.png"
+            ],
+            "description": "Diese Höhle ist relativ einfach zu navigieren und beherbergt hauptsächlich schwächere Kreaturen. Sie ist ein guter Ausgangspunkt für neue Abenteurer.",
+            "specialinfos": [
+                "In dieser Höhle befindet sich im Eingangsbereich meist ein Dung-Beetle, der ohne Probleme gezähmt werden kann. Ab und an, muss man einen Arthropluera töten, der ebenfalls im Höhlen Start sitzt. Ein Ziehmlich guter Bonus, um schnell an einen Mistkäfer zu kommen, um eine Dünger Produktion zu starten."
+            ],
+            "equipment": [
+                "Fackel",
+                "Spitzhacke"
+            ],
+            "tames": [
+                "Raptor",
+                "Baryonyx"
+            ],
+            "strategy": [
+                "Diesen Dungen, schließt man am besten gar nicht ab, da mir die informationen für unsere Explorer Seite noch fehlen :D."
+            ],
+            "creatures": [
+                "Araneo",
+                "Onyc",
+                "Piranha"
+            ],
+            "resources": [
+                "Kristall",
+                "Metall",
+                "Obsidian"
+            ],
+            "artifacts": [
+                {
+                    "name": "Artefakt des Brutalen",
+                    "iconUrl": "https://github.com/iophantonie/iophantonie-IOP_Custom_Map_Explorer.github.io/blob/main/Images/artifacts/Artifact_of_the_Brute.png?raw=true"
+                }
+            ],
+            "blueprints": [
+                { "name": "Pike", "quality": "Lila" },
+                { "name": "Crossbow", "quality": "Blau" },
+                { "name": "Cloth Boots", "quality": "Grün" },
+                { "name": "Riot Shield", "quality": "Gelb" },
+                { "name": "Simple Pistol", "quality": "Hellblau" }
+              ]
+        },
+{
+            "id": "10",
+            "name": "Central Cave",
+            "lat": 40.5,
+            "lon": 46,
+            "icon": "https://i.postimg.cc/NFr0MYPP/Cave-Entrance-Icon-1.webp",
+            "difficulty": "Leicht",
+            "recommendedlevel": "30",
+            "images": [
+                "https://i.postimg.cc/Y9xK2yW6/Bild-2024-07-01-204126849.png",
+                "https://i.postimg.cc/Y9xK2yW6/Bild-2024-07-01-204126849.png"
+            ],
+            "description": "Diese Höhle ist relativ einfach zu navigieren und beherbergt hauptsächlich schwächere Kreaturen. Sie ist ein guter Ausgangspunkt für neue Abenteurer.",
+            "specialinfos": [
+                "In dieser Höhle befindet sich im Eingangsbereich meist ein Dung-Beetle, der ohne Probleme gezähmt werden kann. Ab und an, muss man einen Arthropluera töten, der ebenfalls im Höhlen Start sitzt. Ein Ziehmlich guter Bonus, um schnell an einen Mistkäfer zu kommen, um eine Dünger Produktion zu starten."
+            ],
+            "equipment": [
+                "Fackel",
+                "Spitzhacke"
+            ],
+            "tames": [
+                "Raptor",
+                "Baryonyx"
+            ],
+            "strategy": [
+                "Diesen Dungen, schließt man am besten gar nicht ab, da mir die informationen für unsere Explorer Seite noch fehlen :D."
+            ],
+            "creatures": [
+                "Araneo",
+                "Onyc",
+                "Piranha"
+            ],
+            "resources": [
+                "Kristall",
+                "Metall",
+                "Obsidian"
+            ],
+            "artifacts": [
+                {
+                    "name": "Artefakt des Schlauen",
+                    "iconUrl": "https://github.com/iophantonie/iophantonie-IOP_Custom_Map_Explorer.github.io/blob/main/Images/artifacts/Artifact_of_the_Clever.png?raw=true"
+                }
+            ],
+            "blueprints": [
+                { "name": "Pike", "quality": "Lila" },
+                { "name": "Crossbow", "quality": "Blau" },
+                { "name": "Cloth Boots", "quality": "Grün" },
+                { "name": "Riot Shield", "quality": "Gelb" },
+                { "name": "Simple Pistol", "quality": "Hellblau" }
+              ]
+        }
+    ]
+}
