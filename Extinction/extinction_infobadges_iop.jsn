@@ -1,1 +1,47 @@
-
+{
+    "infoBadges": {
+        "Kartenart": "Vanilla Karte",
+        "Bosse": [
+            "King Titan"
+        ],
+        "Besonderheiten": [
+  "Zerstörte Erde & Proto-ARKs",
+  "Orbital Supply Drops & Element-Adern",
+  "Zähmbare Titanen & finaler Endboss",
+  "Verdorbene Kreaturen als Hauptgegner",
+  "Neue Tek-Kreaturen & einzigartige Tiere"
+        ],
+        "Öffentliche Farmen & Fallen": [
+            "Keine"
+        ],
+        "Höhlen": [
+            "3 Artefakt Höhlen"
+        ],
+        "Artefakte": [
+            "Wachstum",
+            "Chaos",
+            "Leere"
+        ]
+    },
+    "specialInfo": {
+        "Kategorie": "S-Kreaturen:",
+        "Liste": [
+"S- Velonasaur",
+"S- Direbear",
+"S- Snow Owl",
+"S- Rex",
+"S- Ankylosaurus",
+"S- Carcharodontosaurus",
+"S- Fenrir",
+        ],
+        "OnEachMap_Liste": [
+            "S-Queen Bee",
+            "S-Unicorn",
+            "S-Cat",
+            "S-Fantastic Tames"
+        ]
+    },
+    "generalInfo": [
+        "Extinction ist der epische Abschluss der ursprünglichen ARK-Storyline und führt die Spieler zurück zu den Wurzeln des Problems: einer von Element verwüsteten, postapokalyptischen Erde. Im Zentrum liegt "Sanctuary", die letzte High-Tech-Stadt der Menschheit, umgeben von einem kargen Ödland, das von aggressiven "Verdorbenen Kreaturen" heimgesucht wird. In dieser Landschaft ragen drei gigantische Biodome auf, die die Umgebungen vergangener ARKs simulieren. Das Gameplay konzentriert sich auf die Verteidigung von Orbitalen Versorgungsabwürfen (OSDs) und Element-Adern gegen Feinde sowie die Zähmung einzigartiger Kreaturen wie dem raketenartigen Managarmr oder der heilenden Schneeeule. Die ultimative Herausforderung ist die Jagd auf die drei gewaltigen Titanen, die als Schlüssel dienen, um sich dem finalen Endboss zu stellen: dem gigantischen King Titan, dessen Sieg die Reise abschließt."
+    ]
+}
