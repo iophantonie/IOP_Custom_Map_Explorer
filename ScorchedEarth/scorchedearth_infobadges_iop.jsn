@@ -2,44 +2,37 @@
     "infoBadges": {
         "Kartenart": "Vanilla Karte",
         "Bosse": [
-            "Brutmutter",
-            "Megapithecus"
+            "Manticore"
         ],
         "Besonderheiten": [
-      "Unterwelt (The Underworld)",
-      "Schwebende Insel (The Center)",
-      "Doppel-Bosskampf"
+  "Extreme Wetterereignisse",
+  "Permanente Wasserknappheit",
+  "Wyvern-Gräben & Eierdiebstahl",
+  "Einzigartige Kreaturen (Todeswürmer)",
+  "Angepasste Ausrüstung & Strukturen"
         ],
         "Öffentliche Farmen & Fallen": [
-            "Öffentliche Harzfarm"
+            "Öffentliche Ölfarm"
         ],
         "Höhlen": [
-            "10"
+            "3 Artefakt Höhlen"
         ],
         "Artefakte": [
-            "Gewaltigen",
-            "Jäger",
-            "Stärke",
-            "Hinterhältigen",
-            "List",
-            "Schlauen",
-            "Fresser",
-            "Himmelsherr",
-            "Brutalen",
-            "Rudel",
-            "Immunen"
+            "Felsen",
+            "Zerstörer",
+            "Torwächter"
         ]
     },
     "specialInfo": {
         "Kategorie": "S-Kreaturen:",
         "Liste": [
-            "S- Thylacoleo",
-            "S- Plesiosaur",
-            "S- Mosasaurus",
-            "S- Deinosuchus",
-            "S- Carcharodontosaurus",
-            "S- Dunkleosteus",
-            "S- Doedicurus"
+"S- Maewing ",
+"S- Mantis",
+"S- Wyvern",
+"S- Fasolasuchus",
+"S- Doedicurus",
+"S- Daeodon",
+"S- Ankylosaurus"
         ],
         "OnEachMap_Liste": [
             "S-Queen Bee",
@@ -49,7 +42,7 @@
         ]
     },
     "generalInfo": [
-        "The Center ist eine der beliebtesten, von der Community erstellten Karten, die offiziell in Ark: Survival Ascended integriert wurde. Sie besticht durch eine gewaltige, fantasievolle Welt, die von einer riesigen, schwebenden Hauptinsel und einem weitläufigen, unterirdischen Höhlensystem – der Unterwelt – geprägt ist. Von dichten Dschungeln über eine gefährliche Vulkaninsel bis hin zu tiefen Ozeangräben bietet die Karte eine enorme Vielfalt und epische Anblicke. The Center ist ideal für erfahrene Überlebende und gipfelt in einem einzigartigen Doppel-Bosskampf, bei dem Spieler gleichzeitig gegen die Brutmutter und den Megapithecus antreten müssen."
+        "Scorched Earth ist die erste offizielle Story-Erweiterung für Ark: Survival Ascended und eine gnadenlose Prüfung für jeden Überlebenden. Spieler werden in eine riesige, verbrannte Wüstenlandschaft geworfen, in der Wasser Mangelware ist und extreme Wetterbedingungen wie Sandstürme und Hitzewellen an der Tagesordnung sind. Hier sind nicht nur die Kreaturen dein Feind, sondern vor allem die unerbittliche Natur selbst. Das Überleben erfordert den Bau von Lehmstrukturen, die Nutzung neuer Ressourcen und die Zähmung einzigartiger, wüstenangepasster Tiere. Die größte Attraktion sind die majestätischen Wyvern, deren Eier aus tiefen Gräben gestohlen werden müssen, um sie aufzuziehen. Das ultimative Ziel ist der Sieg über den furchterregenden Manticore, den Wächter dieser harschen Welt."
     ]
 }
 
