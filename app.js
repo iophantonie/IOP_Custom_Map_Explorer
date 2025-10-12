@@ -671,11 +671,13 @@ function openPublicSpotModal(spotId) {
 
     let imageSliderHtml = '';
     if(spot.images && spot.images.length > 0) {
-        const slides = spot.images.map((imgSrc, index) => `
-            <div class="spot-image-slide ${index === 0 ? '' : 'hidden'} w-full h-full flex items-center justify-center p-6">
-                <img src="${imgSrc}" class="max-w-full max-h-full object-contain rounded-md border-2 border-red-500 shadow-[0_0_15px_rgba(255,75,62,0.7)] transition-transform duration-300 hover:scale-105">
-            </div>
-        `).join('');
+    const slides = spot.images.map((imgSrc, index) => `
+    <div class="spot-image-slide ${index === 0 ? '' : 'hidden'} w-full h-full flex items-center justify-center p-6">
+        <div class="slide-item">
+            <img src="${imgSrc}" class="max-w-full max-h-full object-contain">
+        </div>
+    </div>
+    `).join('');
         const arrows = spot.images.length > 1 ? `
             <button class="spot-image-prev absolute left-2 top-1/2 -translate-y-1/2 bg-gray-800/50 p-2 rounded-full text-red-500 hover:bg-gray-700 border border-red-500 hover:shadow-[0_0_15px_rgba(255,75,62,0.7)] transition-all">&lt;</button>
             <button class="spot-image-next absolute right-2 top-1/2 -translate-y-1/2 bg-gray-800/50 p-2 rounded-full text-red-500 hover:bg-gray-700 border border-red-500 hover:shadow-[0_0_15px_rgba(255,75,62,0.7)] transition-all">&gt;</button>
@@ -1501,11 +1503,13 @@ function openCaveSpotModal(spotId) {
 
     let imageSliderHtml = '';
     if(spot.images && spot.images.length > 0) {
-        const slides = spot.images.map((imgSrc, index) => `
-            <div class="cave-image-slide ${index === 0 ? '' : 'hidden'} w-full h-full flex items-center justify-center p-4">
-                <img src="${imgSrc}" class="max-w-full max-h-full object-contain rounded-md border-2 border-red-500 shadow-[0_0_15px_rgba(255,75,62,0.7)] transition-transform duration-300 hover:scale-105">
-            </div>
-        `).join('');
+const slides = spot.images.map((imgSrc, index) => `
+    <div class="cave-image-slide ${index === 0 ? '' : 'hidden'} w-full h-full flex items-center justify-center p-4">
+        <div class="slide-item">
+            <img src="${imgSrc}" class="max-w-full max-h-full object-contain">
+        </div>
+    </div>
+`).join('');
         const arrows = spot.images.length > 1 ? `
             <button class="cave-image-prev absolute left-2 top-1/2 -translate-y-1/2 bg-gray-800/50 p-2 rounded-full text-red-500 hover:bg-gray-700 border border-red-500 hover:shadow-[0_0_15px_rgba(255,75,62,0.7)] transition-all">&lt;</button>
             <button class="cave-image-next absolute right-2 top-1/2 -translate-y-1/2 bg-gray-800/50 p-2 rounded-full text-red-500 hover:bg-gray-700 border border-red-500 hover:shadow-[0_0_15px_rgba(255,75,62,0.7)] transition-all">&gt;</button>
