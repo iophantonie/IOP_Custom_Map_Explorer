@@ -2,6 +2,46 @@
     "publicSpots": [
         {
             "id": "1",
+            "name": "Mantisqueen",
+            "lat": 86,
+            "lon": 14.6,
+            "icon": "https://images.emojiterra.com/twitter/512px/1f480.png",
+            "images": [
+                "https://i.postimg.cc/SNgfPFFC/Bild-2024-05-17-200839471.png",
+                "https://i.postimg.cc/Gt2xLqvH/Bild-2024-05-17-200952189.png"
+            ],
+            "infoBadges": [
+                {
+                    "text": "Miniboss",
+                    "type": "miniboss",
+                    "color": "red"
+                }
+            ],
+            "shortDescription": "IOP Miniboss",
+            "longDescription": "Eine Öffentliche Harzfarm, bei der sich jeder Spieler an 8 Harzsammlern bedienen kann. Es befindet sich ebenfalls ein kleiner Tek Teleporter dort, der von jedem Spieler genutzt werden kann, der den kleinen Tek Teleporter freigeschaltet hat."
+        },
+        {
+            "id": "2",
+            "name": "Scorpionking",
+            "lat": 86,
+            "lon": 14.6,
+            "icon": "https://images.emojiterra.com/twitter/512px/1f480.png",
+            "images": [
+                "https://i.postimg.cc/jqnkVjdK/Bild-2024-05-17-200157932.png",
+                "https://i.postimg.cc/66GwHwk4/Bild-2024-05-17-200418541.png"
+            ],
+            "infoBadges": [
+                {
+                    "text": "Miniboss",
+                    "type": "miniboss",
+                    "color": "red"
+                }
+            ],
+            "shortDescription": "IOP Miniboss",
+            "longDescription": "Eine Öffentliche Harzfarm, bei der sich jeder Spieler an 8 Harzsammlern bedienen kann. Es befindet sich ebenfalls ein kleiner Tek Teleporter dort, der von jedem Spieler genutzt werden kann, der den kleinen Tek Teleporter freigeschaltet hat."
+        },
+        {
+            "id": "3",
             "name": "Öffentliche Ölfarm",
             "lat": 59.5,
             "lon": 77.0,
@@ -25,7 +65,7 @@
             "longDescription": "Eine Öffentliche Ölfarm, bei der sich jeder Spieler an 2 Ölpumpen bedienen kann. Es befindet sich ebenfalls ein kleiner Tek Teleporter dort, der von jedem Spieler genutzt werden kann, der den kleinen Tek Teleporter freigeschaltet hat."
         },
         {
-            "id": "2",
+            "id": "4",
             "name": "Wyvern Falle Südwestlich",
             "lat": 70.5,
             "lon": 15.5,
@@ -44,7 +84,7 @@
             "longDescription": "Eine Öffentliche Ölfarm, bei der sich jeder Spieler an 2 Ölpumpen bedienen kann. Es befindet sich ebenfalls ein kleiner Tek Teleporter dort, der von jedem Spieler genutzt werden kann, der den kleinen Tek Teleporter freigeschaltet hat."
         },
         {
-            "id": "3",
+            "id": "5",
             "name": "Öffentliche Wyvern Falle Westlich",
             "lat": 56.5,
             "lon": 12.5,
@@ -63,7 +103,7 @@
             "longDescription": "Eine Öffentliche Ölfarm, bei der sich jeder Spieler an 2 Ölpumpen bedienen kann. Es befindet sich ebenfalls ein kleiner Tek Teleporter dort, der von jedem Spieler genutzt werden kann, der den kleinen Tek Teleporter freigeschaltet hat."
         },
         {
-            "id": "4",
+            "id": "6",
             "name": "Öffentliche Wyvern Falle Nordwestlich",
             "lat": 34.0,
             "lon": 8.0,
@@ -82,7 +122,7 @@
             "longDescription": "Eine Öffentliche Ölfarm, bei der sich jeder Spieler an 2 Ölpumpen bedienen kann. Es befindet sich ebenfalls ein kleiner Tek Teleporter dort, der von jedem Spieler genutzt werden kann, der den kleinen Tek Teleporter freigeschaltet hat."
         },
         {
-            "id": "5",
+            "id": "7",
             "name": "Grüner Obelisk",
             "lat": 50.5,
             "lon": 75.0,
@@ -101,7 +141,7 @@
             "longDescription": "Am Grünen Obelisken befindet sich ein kleiner Tek Teleporter, der von jedem Spieler genutzt werden kann, der den kleinen Tek Teleporter freigeschaltet hat."
         },
         {
-            "id": "6",
+            "id": "8",
             "name": "Roter Obelisk",
             "lat": 72.0,
             "lon": 39.5,
@@ -120,7 +160,7 @@
             "longDescription": "Am Roten Obelisken befindet sich ein kleiner Tek Teleporter, der von jedem Spieler genutzt werden kann, der den kleinen Tek Teleporter freigeschaltet hat."
         },
         {
-            "id": "7",
+            "id": "9",
             "name": "Blauer Obelisk",
             "lat": 17.0,
             "lon": 34.0,
