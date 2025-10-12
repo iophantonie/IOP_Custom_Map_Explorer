@@ -460,54 +460,6 @@ function drawPlayerSpawns() {
     playerSpawnCtx.restore();
 }
 
-function updateSelectAllObelisksState() {
-    const selectAllCheckbox = document.getElementById('select-all-obelisks');
-    const obeliskCheckboxes = document.querySelectorAll('#obelisk-controls input[type="checkbox"]');
-    if (!selectAllCheckbox || obeliskCheckboxes.length === 0) return;
-    const allChecked = ![...obeliskCheckboxes].some(cb => !cb.checked);
-    selectAllCheckbox.checked = allChecked;
-}
-
-function populateObeliskControls() {
-    const controlsContainer = document.getElementById('obelisk-controls');
-    const sectionContainer = document.getElementById('obelisk-section');
-    controlsContainer.innerHTML = '';
-
-    if (!allObeliskData.obelisks || allObeliskData.obelisks.length === 0) {
-        sectionContainer.style.display = 'none';
-        return;
-    }
-    sectionContainer.style.display = 'block';
-
-    allObeliskData.obelisks.forEach(obelisk => {
-        const label = document.createElement('label');
-        label.className = 'flex items-center text-white cursor-pointer';
-
-        const checkbox = document.createElement('input');
-        checkbox.type = 'checkbox';
-        checkbox.name = obelisk.name;
-        checkbox.className = 'w-4 h-4 mr-2';
-        checkbox.addEventListener('change', () => {
-            drawObelisks();
-            updateSelectAllObelisksState();
-        });
-
-        const colorCircle = document.createElement('div');
-        colorCircle.className = 'w-4 h-4 mr-2 rounded-full';
-        colorCircle.style.backgroundColor = obeliskConfig[obelisk.name]?.color || '#FFFFFF';
-
-        const span = document.createElement('span');
-        span.textContent = obelisk.name;
-
-        label.appendChild(checkbox);
-        label.appendChild(colorCircle);
-        label.appendChild(span);
-        controlsContainer.appendChild(label);
-    });
-    updateSelectAllObelisksState();
-}
-
-
 function createCavePattern() {
     const patternCanvas = document.createElement('canvas');
     const pCtx = patternCanvas.getContext('2d');
@@ -950,56 +902,53 @@ function drawObelisks() {
     const height = obeliskCanvas.height;
     obeliskCtx.clearRect(0, 0, width, height);
 
-    const checkboxes = document.querySelectorAll('#obelisk-controls input[type="checkbox"]:checked');
-    if (checkboxes.length === 0 || !allObeliskData.obelisks) return;
+    // Wir prüfen nur noch, ob Obelisk-Daten überhaupt vorhanden sind.
+    if (!allObeliskData.obelisks) return;
 
     obeliskCtx.save();
     obeliskCtx.translate(panOffset.x, panOffset.y);
     obeliskCtx.scale(scale, scale);
 
-    const checkedNames = Array.from(checkboxes).map(cb => cb.name);
-
+    // Die Schleife läuft jetzt alle Obelisken durch, OHNE Prüfung der Checkboxen.
     allObeliskData.obelisks.forEach(obelisk => {
-        if (checkedNames.includes(obelisk.name)) {
-            const x = ((obelisk.lon - SPOT_LON_MIN) / SPOT_LON_RANGE) * width;
-            const y = ((obelisk.lat - SPOT_LAT_MIN) / SPOT_LAT_RANGE) * height;
-            const icon = obeliskIcons[obelisk.name];
-            
-            const isHighlighted = obelisk.name === highlightedObeliskId;
-            const isHovered = obelisk.name === hoveredObeliskId;
-            
-            const baseScale = 0.15;
-            const hoverScale = 1.5;
-            const finalScale = (isHighlighted || isHovered) ? baseScale * hoverScale : baseScale;
+        const x = ((obelisk.lon - SPOT_LON_MIN) / SPOT_LON_RANGE) * width;
+        const y = ((obelisk.lat - SPOT_LAT_MIN) / SPOT_LAT_RANGE) * height;
+        const icon = obeliskIcons[obelisk.name];
+        
+        const isHighlighted = obelisk.name === highlightedObeliskId;
+        const isHovered = obelisk.name === hoveredObeliskId;
+        
+        const baseScale = 0.15;
+        const hoverScale = 1.5;
+        const finalScale = (isHighlighted || isHovered) ? baseScale * hoverScale : baseScale;
 
-            obeliskCtx.save();
-            if (isHighlighted || isHovered) {
-                obeliskCtx.shadowColor = obeliskConfig[obelisk.name]?.color || '#FFFFFF';
-                obeliskCtx.shadowBlur = 20;
-            }
-
-            if (icon && icon.complete) {
-                const dWidth = icon.width * finalScale;
-                const dHeight = icon.height * finalScale;
-                obelisk.screenX = x * scale + panOffset.x;
-                obelisk.screenY = (y - dHeight/2) * scale + panOffset.y;
-                obelisk.screenRadius = (dWidth + dHeight) / 4 * scale;
-                obeliskCtx.drawImage(icon, x - dWidth / 2, y - dHeight, dWidth, dHeight);
-            } else {
-                const radius = 10 * ((isHighlighted || isHovered) ? 1.5 : 1.0);
-                obelisk.screenX = x * scale + panOffset.x;
-                obelisk.screenY = (y-radius) * scale + panOffset.y;
-                obelisk.screenRadius = radius * scale;
-                obeliskCtx.beginPath();
-                obeliskCtx.arc(x, y - radius, radius, 0, 2 * Math.PI, false);
-                obeliskCtx.fillStyle = obeliskConfig[obelisk.name]?.color || '#FFFFFF';
-                obeliskCtx.fill();
-                obeliskCtx.strokeStyle = 'rgba(255, 255, 255, 0.9)';
-                obeliskCtx.lineWidth = 2;
-                obeliskCtx.stroke();
-            }
-            obeliskCtx.restore();
+        obeliskCtx.save();
+        if (isHighlighted || isHovered) {
+            obeliskCtx.shadowColor = obeliskConfig[obelisk.name]?.color || '#FFFFFF';
+            obeliskCtx.shadowBlur = 20;
         }
+
+        if (icon && icon.complete) {
+            const dWidth = icon.width * finalScale;
+            const dHeight = icon.height * finalScale;
+            obelisk.screenX = x * scale + panOffset.x;
+            obelisk.screenY = (y - dHeight/2) * scale + panOffset.y;
+            obelisk.screenRadius = (dWidth + dHeight) / 4 * scale;
+            obeliskCtx.drawImage(icon, x - dWidth / 2, y - dHeight, dWidth, dHeight);
+        } else {
+            const radius = 10 * ((isHighlighted || isHovered) ? 1.5 : 1.0);
+            obelisk.screenX = x * scale + panOffset.x;
+            obelisk.screenY = (y-radius) * scale + panOffset.y;
+            obelisk.screenRadius = radius * scale;
+            obeliskCtx.beginPath();
+            obeliskCtx.arc(x, y - radius, radius, 0, 2 * Math.PI, false);
+            obeliskCtx.fillStyle = obeliskConfig[obelisk.name]?.color || '#FFFFFF';
+            obeliskCtx.fill();
+            obeliskCtx.strokeStyle = 'rgba(255, 255, 255, 0.9)';
+            obeliskCtx.lineWidth = 2;
+            obeliskCtx.stroke();
+        }
+        obeliskCtx.restore();
     });
     obeliskCtx.restore();
 }
@@ -2060,7 +2009,6 @@ async function loadMapData(mapKey) {
             populateInfoBadges();
             populateDropdown();
             populateResourceControls();
-            populateObeliskControls();
             populateRegionControls();
             populatePlayerSpawnControls();
             populateExplorerNotesControls();
