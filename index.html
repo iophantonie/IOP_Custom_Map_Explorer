@@ -488,6 +488,28 @@
             </div>
 
             <hr class="border-gray-700 my-6">
+
+            <div id="obelisk-section" style="display: none;">
+                <div id="obelisks-header" class="flex justify-between items-center cursor-pointer mb-3">
+                    <h3 class="text-lg font-bold text-fire-red">Obelisken</h3>
+                       <svg id="obelisks-arrow" class="collapsible-arrow w-5 h-5 text-white" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="3" stroke="currentColor">
+                           <path stroke-linecap="round" stroke-linejoin="round" d="M19.5 8.25l-7.5 7.5-7.5-7.5" />
+                    </svg>
+                </div>
+                <div id="obelisks-content" class="collapsible-content">
+                    <div class="relative mb-4">
+                        <div class="absolute top-0 right-0">
+                            <label class="flex items-center text-white text-sm cursor-pointer">
+                                <span class="mr-2">Alle</span>
+                                <input type="checkbox" id="select-all-obelisks" class="w-4 h-4 mr-2">
+                            </label>
+                        </div>
+                        <p class="text-xs font-medium text-red-200 pr-12">Hake die Kästchen an, um die Obelisken anzuzeigen.</p>
+                    </div>
+                    <div id="obelisk-controls" class="grid grid-cols-1 gap-4"></div>
+                </div>
+                <hr class="border-gray-700 my-6">
+            </div>
             
             <div id="region-section" style="display: none;">
                    <div id="regions-header" class="flex justify-between items-center cursor-pointer mb-3">
@@ -587,4 +609,3 @@
     <script src="app.js" defer></script>
 </body>
 </html>
-
