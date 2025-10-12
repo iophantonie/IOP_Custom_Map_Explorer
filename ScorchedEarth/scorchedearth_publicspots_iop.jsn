@@ -26,6 +26,63 @@
         },
         {
             "id": "2",
+            "name": "Wyvern Falle Südwestlich",
+            "lat": 70.5,
+            "lon": 15.5,
+            "icon": "https://i.postimg.cc/X7rnR4WV/IOP-Map-Marker-Icon.png",
+            "images": [
+                "https://i.postimg.cc/3J7znFx3/Bild-2024-05-16-143627729.png"
+            ],
+            "infoBadges": [
+                {
+                    "text": "Falle",
+                    "type": "Falle",
+                    "color": "white"
+                }
+            ],
+            "shortDescription": "Öffentlicher Teleporter",
+            "longDescription": "Eine Öffentliche Ölfarm, bei der sich jeder Spieler an 2 Ölpumpen bedienen kann. Es befindet sich ebenfalls ein kleiner Tek Teleporter dort, der von jedem Spieler genutzt werden kann, der den kleinen Tek Teleporter freigeschaltet hat."
+        },
+        {
+            "id": "3",
+            "name": "Öffentliche Wyvern Falle Westlich",
+            "lat": 56.5,
+            "lon": 12.5,
+            "icon": "https://i.postimg.cc/X7rnR4WV/IOP-Map-Marker-Icon.png",
+            "images": [
+                "https://i.postimg.cc/vT3RW49r/Bild-2024-05-16-143808360.png"
+            ],
+            "infoBadges": [
+                {
+                    "text": "Falle",
+                    "type": "Falle",
+                    "color": "white"
+                }
+            ],
+            "shortDescription": "Öffentlicher Teleporter",
+            "longDescription": "Eine Öffentliche Ölfarm, bei der sich jeder Spieler an 2 Ölpumpen bedienen kann. Es befindet sich ebenfalls ein kleiner Tek Teleporter dort, der von jedem Spieler genutzt werden kann, der den kleinen Tek Teleporter freigeschaltet hat."
+        },
+        {
+            "id": "4",
+            "name": "Öffentliche Wyvern Falle Nordwestlich",
+            "lat": 34.0,
+            "lon": 8.0,
+            "icon": "https://i.postimg.cc/X7rnR4WV/IOP-Map-Marker-Icon.png",
+            "images": [
+                "https://i.postimg.cc/MpcTpw2P/Bild-2024-05-16-143932986.png"
+            ],
+            "infoBadges": [
+                {
+                    "text": "Falle",
+                    "type": "Falle",
+                    "color": "white"
+                }
+            ],
+            "shortDescription": "Öffentlicher Teleporter",
+            "longDescription": "Eine Öffentliche Ölfarm, bei der sich jeder Spieler an 2 Ölpumpen bedienen kann. Es befindet sich ebenfalls ein kleiner Tek Teleporter dort, der von jedem Spieler genutzt werden kann, der den kleinen Tek Teleporter freigeschaltet hat."
+        },
+        {
+            "id": "5",
             "name": "Grüner Obelisk",
             "lat": 50.5,
             "lon": 75.0,
@@ -44,7 +101,7 @@
             "longDescription": "Am Grünen Obelisken befindet sich ein kleiner Tek Teleporter, der von jedem Spieler genutzt werden kann, der den kleinen Tek Teleporter freigeschaltet hat."
         },
         {
-            "id": "3",
+            "id": "6",
             "name": "Roter Obelisk",
             "lat": 72.0,
             "lon": 39.5,
@@ -63,7 +120,7 @@
             "longDescription": "Am Roten Obelisken befindet sich ein kleiner Tek Teleporter, der von jedem Spieler genutzt werden kann, der den kleinen Tek Teleporter freigeschaltet hat."
         },
         {
-            "id": "4",
+            "id": "7",
             "name": "Blauer Obelisk",
             "lat": 17.0,
             "lon": 34.0,
