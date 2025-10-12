@@ -1,1 +1,52 @@
-
+{
+    "infoBadges": {
+        "Kartenart": "Vanilla Karte",
+        "Bosse": [
+            "Brutmutter",
+            "Megapithecus"
+        ],
+        "Besonderheiten": [
+            "Double- Boss Kampf"
+        ],
+        "Öffentliche Farmen & Fallen": [
+            "Öffentliche Harzfarm"
+        ],
+        "Höhlen": [
+            "10"
+        ],
+        "Artefakte": [
+            "Gewaltigen",
+            "Jäger",
+            "Stärke",
+            "Hinterhältigen",
+            "List",
+            "Schlauen",
+            "Fresser",
+            "Himmelsherr",
+            "Brutalen",
+            "Rudel",
+            "Immunen"
+        ]
+    },
+    "specialInfo": {
+        "Kategorie": "S-Kreaturen:",
+        "Liste": [
+            "S- Thylacoleo",
+            "S- Plesiosaur",
+            "S- Mosasaurus",
+            "S- Deinosuchus",
+            "S- Carcharodontosaurus",
+            "S- Dunkleosteus",
+            "S- Doedicurus",
+        ],
+        "OnEachMap_Liste": [
+            "S-Queen Bee",
+            "S-Unicorn",
+            "S-Cat",
+            "S-Fantastic Tames"
+        ]
+    },
+    "generalInfo": [
+        "Text steht noch aus :)."
+    ]
+}
