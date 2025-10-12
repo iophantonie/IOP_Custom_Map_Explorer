@@ -264,28 +264,47 @@
             pointer-events: none;
             text-shadow: 0 1px 3px rgba(0,0,0,0.7);
         }
-    <style>
-      .artifacts-container {
+<style>
+      /* Container für die Artefakt-NAMEN (unter dem Bild) */
+      .cave-spot-card .artifacts-container {
         display: flex;
-        flex-wrap: nowrap; /* Verhindert, dass die Boxen umbrechen */
-        gap: 8px; /* Abstand zwischen den Boxen */
+        flex-wrap: nowrap; /* Stellt sicher, dass die Boxen nebeneinander bleiben */
+        gap: 8px;
         width: 100%;
         margin-top: 0.5rem;
         margin-bottom: 0.5rem;
+        min-height: 36px; /* Gibt dem Container eine feste Mindesthöhe */
       }
-      .artifact-box {
-        /* Basis-Styling der Box */
+      
+      /* Styling für die einzelnen Artefakt-NAMEN-Boxen */
+      .cave-spot-card .artifact-box {
         border: 1px solid #ef4444;
         border-radius: 0.375rem;
         padding: 0.25rem 0.5rem;
         font-size: 0.875rem;
         color: #f87171;
         text-align: center;
-        
-        /* Wichtig, damit der Text bei Platzmangel nicht umbricht */
         white-space: nowrap;
         overflow: hidden;
-        text-overflow: ellipsis; /* Fügt "..." hinzu, wenn Text zu lang ist */
+        text-overflow: ellipsis;
+        flex-grow: 1; /* Lässt Boxen wachsen, um Platz zu füllen */
+        flex-basis: 0; /* Sorgt für gleichmäßige Verteilung */
+      }
+
+      /* Container für die Artefakt-ICONS (auf dem Bild) */
+      .cave-spot-card .artifact-icon-container {
+        position: absolute;
+        bottom: 0.375rem; /* bottom-1.5 */
+        right: 0.375rem; /* right-1.5 */
+        display: flex;
+        gap: 0.5rem; /* space-x-2 */
+      }
+
+      /* Styling für die einzelnen Artefakt-ICONS */
+      .cave-spot-card .artifact-icon-on-image {
+        width: 4rem; /* w-16 */
+        height: 4rem; /* h-16 */
+        object-fit: contain;
       }
     </style>
 </head>
