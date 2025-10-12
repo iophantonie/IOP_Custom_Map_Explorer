@@ -29,13 +29,13 @@
     "specialInfo": {
         "Kategorie": "S-Kreaturen:",
         "Liste": [
-"S- Rex",
-"S- Maewing",
-"S- Thylacoleo",
-"S- Fenrir",
-"S-Trike",
-"S- Deinonychus",
-"S- Basilosaurus",
+            "S- Rex",
+            "S- Maewing",
+            "S- Thylacoleo",
+            "S- Fenrir",
+            "S-Trike",
+            "S- Deinonychus",
+            "S- Basilosaurus"
         ],
         "OnEachMap_Liste": [
             "S-Queen Bee",
