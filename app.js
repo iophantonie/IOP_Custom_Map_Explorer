@@ -1338,12 +1338,10 @@ function populateCaveSpotsSlider(filterArtifact = null) {
         let artifactHtml = '';
         if (spot.artifacts && spot.artifacts.length > 0) {
             spot.artifacts.forEach(artifact => {
-                // HIER IST DIE KORREKTUR: Wir lesen artifact.name
                 const artifactName = artifact.name || 'Unbekannt';
                 if (artifactName.trim() !== '') {
-                    artifactHtml += `<div class="flex-1 py-1 px-2 border border-red-500 rounded-md text-red-400 text-sm">
-                                        ${artifactName}
-                                    </div>`;
+                    // HIER fügen wir die neue CSS-Klasse "artifact-box" hinzu
+                    artifactHtml += `<div class="artifact-box">${artifactName}</div>`;
                 }
             });
         }
@@ -1372,11 +1370,11 @@ function populateCaveSpotsSlider(filterArtifact = null) {
             <div class="flex flex-col items-center justify-center w-full">
                 <h4 class="font-bold text-amber-400 text-xl">${spot.name}</h4>
                 <hr class="w-full border-gray-600 my-1">
-                                <div class="w-full flex flex-row justify-center gap-2 mt-2">
+                                <div class="artifacts-container">
                     ${artifactHtml}
                 </div>
                 ${spot.recommendedlevel ? `<p class="text-sm text-gray-400 mt-2">Empfohlenes Level: ${spot.recommendedlevel}</p>` : ''}
-                <p class="text-sm text-gray-300 ${!spot.recommendedlevel ? 'mt-2' : ''}">Lat: ${spot.lat.toFixed(2).replace('.',',')} / Lon: ${spot.lon.toFixed(2).replace('.',',')}</p>
+                <p class="text-sm text-gray-300 mt-2">Lat: ${spot.lat.toFixed(2).replace('.',',')} / Lon: ${spot.lon.toFixed(2).replace('.',',')}</p>
             </div>
         `;
 
