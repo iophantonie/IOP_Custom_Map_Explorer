@@ -1,1 +1,128 @@
-
+{
+    "publicSpots": [
+        {
+            "id": "1",
+            "name": "Brutmutter Worldboss",
+            "lat": 74,
+            "lon": 42.5,
+            "icon": "https://images.emojiterra.com/twitter/512px/1f480.png",
+            "images": [
+                "https://i.postimg.cc/hGMKKJbN/image.png"
+            ],
+            "infoBadges": [
+                {
+                    "text": "Miniboss",
+                    "type": "miniboss",
+                    "color": "red"
+                }
+            ],
+            "shortDescription": "IOP Miniboss",
+            "longDescription": "Eine Öffentliche Harzfarm, bei der sich jeder Spieler an 8 Harzsammlern bedienen kann. Es befindet sich ebenfalls ein kleiner Tek Teleporter dort, der von jedem Spieler genutzt werden kann, der den kleinen Tek Teleporter freigeschaltet hat."
+        },
+        {
+            "id": "2",
+            "name": "Öffentliche Harzfarm",
+            "lat": 83.3,
+            "lon": 50.2,
+            "icon": "https://i.postimg.cc/X7rnR4WV/IOP-Map-Marker-Icon.png",
+            "images": [
+                "https://i.postimg.cc/VL5fwyg2/image.png"
+            ],
+            "infoBadges": [
+                {
+                    "text": "Teleporter",
+                    "type": "teleporter",
+                    "color": "blue"
+                },
+                {
+                    "text": "Farm",
+                    "type": "Farm",
+                    "color": "orange"
+                }
+            ],
+            "shortDescription": "Öffentlicher Teleporter",
+            "longDescription": "Eine Öffentliche Harzfarm, bei der sich jeder Spieler an 8 Harzsammlern bedienen kann. Es befindet sich ebenfalls ein kleiner Tek Teleporter dort, der von jedem Spieler genutzt werden kann, der den kleinen Tek Teleporter freigeschaltet hat."
+        },
+        {
+            "id": "3",
+            "name": "Öffentliche Ölfarm",
+            "lat": 49,
+            "lon": 19.5,
+            "icon": "https://i.postimg.cc/X7rnR4WV/IOP-Map-Marker-Icon.png",
+            "images": [
+                "https://i.postimg.cc/02CBVr71/image.png"
+            ],
+            "infoBadges": [
+                {
+                    "text": "Teleporter",
+                    "type": "teleporter",
+                    "color": "blue"
+                },
+                {
+                    "text": "Farm",
+                    "type": "Farm",
+                    "color": "orange"
+                }
+            ],
+            "shortDescription": "Öffentlicher Teleporter",
+            "longDescription": "Eine Öffentliche Harzfarm, bei der sich jeder Spieler an 8 Harzsammlern bedienen kann. Es befindet sich ebenfalls ein kleiner Tek Teleporter dort, der von jedem Spieler genutzt werden kann, der den kleinen Tek Teleporter freigeschaltet hat."
+        },
+        {
+            "id": "4",
+            "name": "Grüner Obelisk",
+            "lat": 50.6,
+            "lon": 76,
+            "icon": "https://i.postimg.cc/X7rnR4WV/IOP-Map-Marker-Icon.png",
+            "images": [
+                "https://i.postimg.cc/DZxfPxCc/image.png"
+            ],
+            "infoBadges": [
+                {
+                    "text": "Teleporter",
+                    "type": "teleporter",
+                    "color": "blue"
+                }
+            ],
+            "shortDescription": "Öffentlicher Teleporter",
+            "longDescription": "Am Grünen Obelisken befindet sich ein kleiner Tek Teleporter, der von jedem Spieler genutzt werden kann, der den kleinen Tek Teleporter freigeschaltet hat."
+        },
+        {
+            "id": "5",
+            "name": "Roter Obelisk",
+            "lat": 75,
+            "lon": 17,
+            "icon": "https://i.postimg.cc/X7rnR4WV/IOP-Map-Marker-Icon.png",
+            "images": [
+                "https://i.postimg.cc/CdyNPs5v/image.png"
+            ],
+            "infoBadges": [
+                {
+                    "text": "Teleporter",
+                    "type": "teleporter",
+                    "color": "blue"
+                }
+            ],
+            "shortDescription": "Öffentlicher Teleporter",
+            "longDescription": "Am Roten Obelisken befindet sich ein kleiner Tek Teleporter, der von jedem Spieler genutzt werden kann, der den kleinen Tek Teleporter freigeschaltet hat."
+        },
+        {
+            "id": "6",
+            "name": "Blauer Obelisk",
+            "lat": 11,
+            "lon": 19,
+            "icon": "https://i.postimg.cc/X7rnR4WV/IOP-Map-Marker-Icon.png",
+            "images": [
+                "https://i.postimg.cc/pdndxQLW/image.png"
+            ],
+            "infoBadges": [
+                {
+                    "text": "Teleporter",
+                    "type": "teleporter",
+                    "color": "blue"
+                }
+            ],
+            "shortDescription": "Öffentlicher Teleporter",
+            "longDescription": "Am Blauen Obelisken befindet sich ein kleiner Tek Teleporter, der von jedem Spieler genutzt werden kann, der den kleinen Tek Teleporter freigeschaltet hat."
+        }
+    ]
+}
