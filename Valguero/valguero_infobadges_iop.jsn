@@ -1,1 +1,46 @@
-
+{
+    "infoBadges": {
+        "Kartenart": "Offizielle Community Karte",
+        "Bosse": [
+            "Grendel"
+        ],
+        "Besonderheiten": [
+            "Open World Brutmutter Boss",
+            "Megaraptor Spawn",
+            "Deinonychus Spawn"
+        ],
+        "Öffentliche Farmen & Fallen": [
+            "Öffentliche Harzfarm",
+            "Öffentliche ölfarm"
+        ],
+        "Höhlen": [
+            "6"
+        ],
+        "Artefakte": [
+            "Himmelsherr",
+            "Felsen",
+            "Brutalen",
+            "Fresser",
+            "List",
+            "Zerstörer",
+            "Rudel",
+            "Stärke",
+            "Immunen",
+            "Torwächter"
+        ]
+    },
+    "specialInfo": {
+        "Kategorie": "S-Kreaturen:",
+        "Liste": [
+        ],
+        "OnEachMap_Liste": [
+            "S-Queen Bee",
+            "S-Unicorn",
+            "S-Cat",
+            "S-Fantastic Tames"
+        ]
+    },
+    "generalInfo": [
+        "Valguero ist eine riesige und bei Spielern beliebte Community-Karte, deren Veröffentlichung für Ark: Survival Ascended geplant ist. Die Karte ist bekannt für ihre atemberaubende Schönheit und die enorme Vielfalt an Biomen, die nahtlos ineinander übergehen. Von idyllischen grünen Ebenen und dichten Redwood-Wäldern über die malerischen Weißen Klippen (White Cliffs) bis hin zu ausgedehnten Tundren und Sumpfgebieten bietet Valguero für jeden etwas."
+    ]
+}
