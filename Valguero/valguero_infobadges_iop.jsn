@@ -30,6 +30,13 @@
     "specialInfo": {
         "Kategorie": "S-Kreaturen:",
         "Liste": [
+            "S- Megaraptor",
+            "S- Rockdrake",
+            "S- Reaper",
+            "S- Rockdrake",
+            "S- Deinonychus",
+            "S- Megalodon",
+            "S- Megalosaurus"
         ],
         "OnEachMap_Liste": [
             "S-Queen Bee",
